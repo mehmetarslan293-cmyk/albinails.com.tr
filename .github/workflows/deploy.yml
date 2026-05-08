@@ -1,15 +1,7 @@
-# Secrets: SSH_HOST, SSH_USER, SSH_KEY (Repository secrets - Actions)
+# Secrets: SSH_HOST, SSH_USER, SSH_KEY (Repository > Secrets and variables > Actions)
+# SSH_KEY = tam PRIVATE key metni (-----BEGIN ... PRIVATE KEY----- ile baslar)
 #
-# SSH_KEY = PRIVATE key (tam metin):
-#   -----BEGIN OPENSSH PRIVATE KEY-----  veya  -----BEGIN RSA PRIVATE KEY-----
-#   ... orta satirlar ...
-#   -----END ...-----
-# Hata "ssh: no key found" -> Secret bos, public key yapisti, veya satirlar kopuk.
-# Olusturma: ssh-keygen -t ed25519 -f github_actions -N ""
-# Public -> sunucu ~/.ssh/authorized_keys | Private -> GitHub SSH_KEY secret
-#
-# Deploy key (repo Settings > Deploy keys) BURADA KULLANILMAZ; o sunucunun git pull icin GitHub'a gitmesi icindir.
-# Port 22 degilse asagidaki port satirini guncelleyin.
+# Port 22 degilse "SSH ile baglan" adimindaki port satirini guncelleyin.
 
 name: Sunucuya Deploy
 
@@ -23,12 +15,30 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+      - name: SSH anahtarini dosyaya yaz (multiline secret sorunlarini onler)
+        env:
+          SSH_KEY: ${{ secrets.SSH_KEY }}
+        run: |
+          set -e
+          if [ -z "$SSH_KEY" ]; then
+            echo "::error::SSH_KEY secret tanimli degil veya bos. Settings > Secrets > Actions > New repository secret > adi tam olarak SSH_KEY olmali."
+            exit 1
+          fi
+          case "$SSH_KEY" in *BEGIN*PRIVATE*KEY*) ;; *)
+            echo "::error::SSH_KEY bir private key gibi degil. ssh-ed25519 AAAA... ile baslayan PUBLIC key degil; dosya -----BEGIN OPENSSH PRIVATE KEY----- ile baslamali."
+            exit 1
+            ;;
+          esac
+          printf '%s\n' "$SSH_KEY" > "$GITHUB_WORKSPACE/.deploy_ssh_key"
+          chmod 600 "$GITHUB_WORKSPACE/.deploy_ssh_key"
+          echo "Private key dosyaya yazildi (uzunluk: $(wc -c < "$GITHUB_WORKSPACE/.deploy_ssh_key") bayt)."
+
       - name: SSH ile baglan ve guncelle
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
-          key: ${{ secrets.SSH_KEY }}
+          key_path: .deploy_ssh_key
           port: 22
           command_timeout: 10m
           script_stop: true

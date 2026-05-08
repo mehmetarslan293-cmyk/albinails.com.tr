@@ -1,2 +1,5 @@
 # Deploy keys — asla repoya commit etmeyin
 deploy-keys/
+
+# CI runner'da olusan gecici anahtar yolu (yerelde yanlislikla olusursa)
+.deploy_ssh_key
