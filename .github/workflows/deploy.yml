@@ -1,7 +1,7 @@
 # Secrets: SSH_HOST, SSH_USER, SSH_KEY (Repository > Secrets and variables > Actions)
 # SSH_KEY = tam PRIVATE key metni (-----BEGIN ... PRIVATE KEY----- ile baslar)
 #
-# Port 22 degilse "SSH ile baglan" adimindaki port satirini guncelleyin.
+# SSH_PORT (opsiyonel): bos birakirsaniz 22 kullanilir. Ornek: 2222
 
 name: Sunucuya Deploy
 
@@ -39,7 +39,7 @@ jobs:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
           key_path: .deploy_ssh_key
-          port: 22
+          port: ${{ secrets.SSH_PORT && secrets.SSH_PORT || 22 }}
           command_timeout: 10m
           script_stop: true
           script: |
