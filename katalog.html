@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ALBI | Ürün Kataloğu</title>
+    <meta
+      name="description"
+      content="ALBI ürün kataloğu: gel polish, base coat, top coat ve diğer profesyonel ürünler."
+    />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EL9R2YGGH2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-EL9R2YGGH2");
+    </script>
+    <link rel="preconnect" href="https://optim.tildacdn.com" crossorigin />
+    <link rel="dns-prefetch" href="https://optim.tildacdn.com" />
+    <link rel="preconnect" href="https://static.tildacdn.com" crossorigin />
+    <link rel="preconnect" href="https://vo-kalipso.com" crossorigin />
+    <link rel="dns-prefetch" href="https://vo-kalipso.com" />
+    <link rel="preconnect" href="https://admin.lovely-professional.ru" crossorigin />
+    <link rel="dns-prefetch" href="https://admin.lovely-professional.ru" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container nav">
+        <a href="./index.html#anasayfa" class="logo">ALBI<span>tırnak</span></a>
+        <nav>
+          <a href="./katalog.html?filter=all">Tüm Ürünler</a>
+          <a href="./katalog.html?filter=new">Yeniler</a>
+          <a href="./katalog.html?filter=all">Kategoriler</a>
+          <a href="./katalog.html?filter=all">Katalog</a>
+          <a href="./index.html#iletisim">İletişim</a>
+        </nav>
+        <a
+          href="https://wa.me/971585962868?text=Merhaba%2C%20sipari%C5%9F%20vermek%20istiyorum."
+          class="btn btn-dark"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Sipariş Ver
+        </a>
+      </div>
+    </header>
+
+    <main>
+      <section class="section container catalog" id="katalog">
+        <div class="catalog-head">
+          <div>
+            <h2>Katalog</h2>
+            <p id="catalogCurrent">Tüm ürünler listeleniyor</p>
+          </div>
+          <div class="catalog-top-filters">
+            <label>
+              ML
+              <select id="topMlFilter">
+                <option value="all">Tümü</option>
+              </select>
+            </label>
+            <label>
+              Marka
+              <select id="topBrandFilter">
+                <option value="all">Tümü</option>
+              </select>
+            </label>
+            <label>
+              Renk
+              <select id="topColorFilter">
+                <option value="all">Tümü</option>
+              </select>
+            </label>
+            <button type="button" id="resetTopFilters" class="btn btn-light">Tümünü Seç</button>
+          </div>
+        </div>
+        <aside class="catalog-menu">
+          <a href="#katalog" data-filter="all" class="active">Tümü</a>
+          <a href="#katalog" data-filter="new">Yeni</a>
+          <a href="#katalog" data-filter="gel-polish">Kalıcı ojeler</a>
+          <a href="#katalog" data-filter="base-coat">Baz Kat</a>
+          <a href="#katalog" data-filter="top-coat">Top Kat</a>
+          <a href="#katalog" data-filter="building-gel">Jel Güçlendirme</a>
+          <a href="#katalog" data-filter="liquid-polygel">Sıvı Polijel</a>
+          <a href="#katalog" data-filter="nail-skin-care">Tırnak ve Cilt Bakımı</a>
+          <a href="#katalog" data-filter="nail-files">Tırnak Törpüleri</a>
+          <a href="#katalog" data-filter="ipek-kirpik">İpek Kirpik</a>
+          <a href="#katalog" data-filter="kirpik-malzemeleri">Kirpik malzemeleri</a>
+          <a href="#katalog" data-filter="kirpik-ekipman">Ekipman ve aletler</a>
+          <a href="#katalog" data-filter="kirpik-markali">Markalı ürünler</a>
+          <a href="#katalog" data-filter="kirpik-alt-izolasyon">Alt kirpik izolasyonu</a>
+          <a href="#katalog" data-filter="kirpik-ek-malzemeler">Ek malzemeler</a>
+          <a href="#katalog" data-filter="kirpik-tekstil">Tekstil</a>
+          <a href="#katalog" data-filter="kirpik-sarf">Sarf malzemeleri</a>
+          <a href="#katalog" data-filter="kirpik-tablet-stand">Tablet ve paletler</a>
+        </aside>
+        <div class="catalog-grid" id="catalogGridDynamic">
+          <article class="catalog-card" data-category="gel-polish,new">
+            <div class="catalog-photo"></div>
+            <h3>Kalıcı Oje ALBI 277</h3>
+            <p>Marka: ALBI</p>
+            <p>Boyut: 10 ml</p>
+          </article>
+          <article class="catalog-card" data-category="gel-polish,new">
+            <div class="catalog-photo tone-2"></div>
+            <h3>Kalıcı Oje ALBI 278</h3>
+            <p>Marka: ALBI</p>
+            <p>Boyut: 10 ml</p>
+          </article>
+          <article class="catalog-card" data-category="gel-polish">
+            <div class="catalog-photo tone-3"></div>
+            <h3>Kalıcı Oje ALBI 279</h3>
+            <p>Marka: ALBI</p>
+            <p>Boyut: 10 ml</p>
+          </article>
+          <article class="catalog-card" data-category="gel-polish,special-offers">
+            <div class="catalog-photo tone-4"></div>
+            <h3>Kalıcı Oje ALBI 280</h3>
+            <p>Marka: ALBI</p>
+            <p>Boyut: 10 ml</p>
+          </article>
+          <article class="catalog-card" data-category="base-coat">
+            <div class="catalog-photo tone-5"></div>
+            <h3>Baz Kat ALBI 301</h3>
+            <p>Marka: ALBI</p>
+            <p>Boyut: 10 ml</p>
+          </article>
+          <article class="catalog-card" data-category="top-coat">
+            <div class="catalog-photo tone-6"></div>
+            <h3>Top Kat ALBI 401</h3>
+            <p>Marka: ALBI</p>
+            <p>Boyut: 10 ml</p>
+          </article>
+          <article class="catalog-card" data-category="building-gel">
+            <div class="catalog-photo tone-7"></div>
+            <h3>Jel Güçlendirme ALBI 510</h3>
+            <p>Marka: ALBI</p>
+            <p>Boyut: 15 ml</p>
+          </article>
+          <article class="catalog-card" data-category="liquid-polygel">
+            <div class="catalog-photo tone-8"></div>
+            <h3>Sıvı Polijel ALBI 610</h3>
+            <p>Marka: ALBI</p>
+            <p>Boyut: 15 ml</p>
+          </article>
+          <article class="catalog-card" data-category="nail-files,nail-skin-care">
+            <div class="catalog-photo tone-3"></div>
+            <h3>Tırnak Törpüsü Pro 180</h3>
+            <p>Marka: ALBI</p>
+            <p>Boyut: 180 grit</p>
+          </article>
+          <article class="catalog-card" data-category="nail-skin-care,new,special-offers">
+            <div class="catalog-photo tone-2"></div>
+            <h3>Hazırlık Solüsyonu ALBI</h3>
+            <p>Marka: ALBI</p>
+            <p>Boyut: 10 ml</p>
+          </article>
+        </div>
+        <p class="catalog-empty" id="catalogEmpty">Bu kategoride henüz ürün bulunmuyor.</p>
+        <div class="catalog-pagination" id="catalogPagination"></div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>© 2026 ALBI tırnak. Tüm hakları saklıdır.</p>
+        <a href="./index.html#anasayfa">Ana Sayfaya Dön</a>
+      </div>
+    </footer>
+
+    <a
+      class="whatsapp-float"
+      href="https://wa.me/971585962868?text=Merhaba%2C%20sipari%C5%9F%20ve%20fiyat%20bilgisi%20almak%20istiyorum."
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="WhatsApp ile iletişime geç"
+    >
+      <span class="wa-icon" aria-hidden="true">
+        <svg viewBox="0 0 32 32" role="img">
+          <path
+            fill="#ffffff"
+            d="M19.1 17.3c-.3-.2-1.7-.8-2-.9-.3-.1-.5-.2-.7.2-.2.3-.8.9-1 1.1-.2.2-.4.2-.7 0-.3-.2-1.4-.5-2.6-1.6-1-1-1.6-2.1-1.8-2.5-.2-.3 0-.5.2-.7.1-.1.3-.4.5-.6.2-.2.2-.4.3-.6.1-.2 0-.4 0-.6 0-.2-.7-1.8-.9-2.4-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.2-1.2 2.8 0 1.7 1.2 3.2 1.4 3.5.2.2 2.4 3.7 5.8 5.1.8.4 1.5.6 2 .7.8.3 1.5.3 2.1.2.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4 0-.1-.2-.2-.5-.3z"
+          />
+          <path
+            fill="#ffffff"
+            d="M16 3C8.8 3 3 8.8 3 16c0 2.3.6 4.4 1.7 6.3L3 29l6.9-1.8c1.8 1 3.9 1.6 6.1 1.6 7.2 0 13-5.8 13-13S23.2 3 16 3zm0 23.6c-2 0-3.9-.6-5.5-1.6l-.4-.2-4.1 1.1 1.1-4-.2-.4C5.8 19.9 5.3 18 5.3 16 5.3 10 10 5.3 16 5.3S26.7 10 26.7 16 22 26.6 16 26.6z"
+          />
+        </svg>
+      </span>
+      <span>WhatsApp</span>
+    </a>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

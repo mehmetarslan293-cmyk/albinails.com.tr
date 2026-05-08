@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ALBI | Yönetici Paneli</title>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EL9R2YGGH2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-EL9R2YGGH2");
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./admin.css" />
+  </head>
+  <body>
+    <main class="admin-wrap">
+      <section class="auth-card" id="loginCard">
+        <h1>Yönetici Girişi</h1>
+        <p>Ürün ve içerik yönetimi için giriş yapın.</p>
+        <form id="loginForm">
+          <label>Kullanıcı Adı<input type="text" id="username" required /></label>
+          <label>Şifre<input type="password" id="password" required /></label>
+          <button type="submit">Giriş Yap</button>
+        </form>
+        <p class="auth-hint">Demo giriş: admin / albi2026</p>
+        <p class="auth-error" id="authError"></p>
+      </section>
+
+      <section class="panel hidden" id="adminPanel">
+        <header class="panel-head">
+          <h2>Site Yönetim Paneli</h2>
+          <div>
+            <a href="./index.html" target="_blank" rel="noopener noreferrer">Siteyi Gör</a>
+            <button id="logoutBtn" type="button">Çıkış Yap</button>
+          </div>
+        </header>
+
+        <section class="panel-card">
+          <h3>Ziyaret Verileri</h3>
+          <div class="metrics-grid">
+            <article class="metric">
+              <span>Toplam Ziyaret</span>
+              <strong id="metricTotalVisits">0</strong>
+            </article>
+            <article class="metric">
+              <span>Bugün Ziyaret</span>
+              <strong id="metricTodayVisits">0</strong>
+            </article>
+            <article class="metric">
+              <span>Ana Sayfa Görüntüleme</span>
+              <strong id="metricHomeViews">0</strong>
+            </article>
+            <article class="metric">
+              <span>Katalog Görüntüleme</span>
+              <strong id="metricCatalogViews">0</strong>
+            </article>
+            <article class="metric">
+              <span>Admin Giriş Sayısı</span>
+              <strong id="metricAdminLogins">0</strong>
+            </article>
+          </div>
+        </section>
+
+        <section class="panel-card">
+          <h3>Ürün Ekle / Düzenle</h3>
+          <form id="productForm" class="grid-2">
+            <input type="hidden" id="productId" />
+            <label>Ürün Adı<input id="productName" type="text" required /></label>
+            <label>Kategori
+              <select id="productCategory" required>
+                <option value="new">Yeni</option>
+                <option value="gel-polish">Kalıcı ojeler</option>
+                <option value="base-coat">Base Coat</option>
+                <option value="top-coat">Top Coat</option>
+                <option value="building-gel">Building Gel</option>
+                <option value="liquid-polygel">Liquid Polygel</option>
+                <option value="nail-skin-care">Nail and Skin Care</option>
+                <option value="nail-files">Nail Files</option>
+                <option value="ipek-kirpik">İpek Kirpik</option>
+                <option value="kirpik-malzemeleri">Kirpik malzemeleri (genel)</option>
+                <option value="kirpik-ekipman">Kirpik — Ekipman ve aletler</option>
+                <option value="kirpik-markali">Kirpik — Markalı ürünler</option>
+                <option value="kirpik-alt-izolasyon">Kirpik — Alt kirpik izolasyonu</option>
+                <option value="kirpik-ek-malzemeler">Kirpik — Ek malzemeler</option>
+                <option value="kirpik-tekstil">Kirpik — Tekstil</option>
+                <option value="kirpik-sarf">Kirpik — Sarf malzemeleri</option>
+                <option value="kirpik-tablet-stand">Kirpik — Tablet ve paletler</option>
+                <option value="special-offers">Special Offers</option>
+              </select>
+            </label>
+            <label>Marka
+              <select id="productBrand" required></select>
+            </label>
+            <label class="full">Boyut
+              <input id="productSize" type="text" inputmode="decimal" placeholder="10" required />
+              <p id="productSizeHint" class="auth-hint"></p>
+            </label>
+            <label class="full">Renk (isteğe bağlı, özellikle İpek Kirpik)
+              <input id="productColor" type="text" placeholder="Örn. Kahverengi, Toffee, Koyu kahverengi" />
+            </label>
+            <label class="full">Yeni Marka Ekle
+              <div class="inline-group">
+                <input id="newBrandInput" type="text" placeholder="Yeni marka adı" />
+                <button type="button" id="addBrandBtn">Marka Ekle</button>
+              </div>
+            </label>
+            <label class="full">Görsel URL<input id="productImageUrl" type="url" placeholder="https://..." /></label>
+            <label class="full">veya Görsel Yükle<input id="productImageFile" type="file" accept="image/*" /></label>
+            <button type="submit" id="saveProductBtn">Ürünü Kaydet</button>
+          </form>
+        </section>
+
+        <section class="panel-card">
+          <h3>Ürün Listesi</h3>
+          <div class="admin-filters">
+            <label>Ürün İsmi
+              <input id="filterProductName" type="text" placeholder="Ürün adına göre ara" />
+            </label>
+            <label>Marka
+              <input id="filterBrand" type="text" placeholder="Markaya göre ara" />
+            </label>
+          </div>
+          <div id="productList" class="product-admin-list"></div>
+        </section>
+
+        <section class="panel-card">
+          <h3>Banner Yönetimi</h3>
+          <p class="panel-note">
+            Önerilen görsel oranı: <strong>16:9</strong> (örn. 1920x1080). Uygun değilse sitede
+            otomatik `cover` ile dengeli görünür.
+          </p>
+          <form id="bannerForm" class="grid-2">
+            <input type="hidden" id="bannerId" />
+            <label>Üst Başlık<input id="bannerSubtitle" type="text" placeholder="Profesyonel Jel Seti" required /></label>
+            <label>Fiyat Rozeti<input id="bannerPrice" type="text" placeholder="220 AED" /></label>
+            <label class="full">Başlık<input id="bannerTitle" type="text" placeholder="FRANSIZ MANİKÜRÜ" required /></label>
+            <label class="full">Açıklama<textarea id="bannerDescription" rows="3" required></textarea></label>
+            <label>Buton Metni<input id="bannerButtonText" type="text" value="Detayları İncele" /></label>
+            <label>Buton Linki<input id="bannerButtonUrl" type="text" value="./katalog.html?filter=all" /></label>
+            <label class="full">Görsel URL<input id="bannerImageUrl" type="url" placeholder="https://..." /></label>
+            <label class="full">veya Görsel Yükle<input id="bannerImageFile" type="file" accept="image/*" /></label>
+            <p class="ratio-status full" id="bannerRatioInfo">Oran bilgisi: Henüz seçilmedi.</p>
+            <button type="submit" id="saveBannerBtn">Banner Kaydet</button>
+          </form>
+          <div id="bannerList" class="banner-admin-list"></div>
+        </section>
+      </section>
+    </main>
+
+    <script src="./admin.js"></script>
+  </body>
+</html>
