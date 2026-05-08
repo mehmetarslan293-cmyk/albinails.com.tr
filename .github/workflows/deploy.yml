@@ -15,7 +15,9 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: SSH anahtarini dosyaya yaz (multiline secret sorunlarini onler)
+      # Not: key_path + dosya, ssh-action Docker'da "permission denied" verebiliyor.
+      # key: secrets.SSH_KEY dogrudan kullanilir (cok satirli secret desteklenir).
+      - name: SSH anahtarini dogrula
         env:
           SSH_KEY: ${{ secrets.SSH_KEY }}
         run: |
@@ -29,16 +31,14 @@ jobs:
             exit 1
             ;;
           esac
-          printf '%s\n' "$SSH_KEY" > "$GITHUB_WORKSPACE/.deploy_ssh_key"
-          chmod 600 "$GITHUB_WORKSPACE/.deploy_ssh_key"
-          echo "Private key dosyaya yazildi (uzunluk: $(wc -c < "$GITHUB_WORKSPACE/.deploy_ssh_key") bayt)."
+          echo "SSH_KEY dogrulandi ($(printf '%s' "$SSH_KEY" | wc -c) bayt)."
 
       - name: SSH ile baglan ve guncelle
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
-          key_path: .deploy_ssh_key
+          key: ${{ secrets.SSH_KEY }}
           port: ${{ secrets.SSH_PORT && secrets.SSH_PORT || 22 }}
           command_timeout: 10m
           script_stop: true
