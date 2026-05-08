@@ -1,0 +1,28 @@
+# Statik site (HTML/CSS/JS) icin Nginx ornegi — PM2 / Node port GEREKMEZ.
+# Kurulum (Ubuntu):
+#   sudo cp deploy/nginx-albinails-static.conf.example /etc/nginx/sites-available/albinails.com.tr
+#   sudo ln -sf /etc/nginx/sites-available/albinails.com.tr /etc/nginx/sites-enabled/
+#   # Eski proxy (3003) sitesini sites-enabled'dan kaldirin veya icindeki proxy_pass satirlarini silin.
+#   sudo nginx -t && sudo systemctl reload nginx
+#
+# Web kokunun repo klasoru ile ayni oldugundan emin olun (git pull buraya iner).
+# GitHub Actions workflow cd /var/www/albinails kullaniyorsa root da bu olmali.
+
+server {
+    listen 80;
+    listen [::]:80;
+    server_name albinails.com.tr www.albinails.com.tr;
+
+    root /var/www/albinails;
+    index index.html;
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+
+    # Opsiyonel: uzun cache (surum guncellemesinde tarayici cache sorunu olursa kaldirin)
+    # location ~* \.(css|js|jpg|jpeg|png|gif|ico|svg|webp|woff2?)$ {
+    #     expires 7d;
+    #     add_header Cache-Control "public, immutable";
+    # }
+}
