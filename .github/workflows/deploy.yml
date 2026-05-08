@@ -1,7 +1,15 @@
-# Gerekli GitHub Secrets: SSH_HOST, SSH_USER, SSH_KEY
-# SSH_KEY = sunucuya normal giris icin PRIVATE key (authorized_keys'teki ciftin kisa parcasi)
-# Bu, "Deploy key" (GitHub'dan repoya cekmek) ile farklidir.
-# Port 22 disiysa asagidaki "port" satirini 2222 gibi guncelleyin.
+# Secrets: SSH_HOST, SSH_USER, SSH_KEY (Repository secrets - Actions)
+#
+# SSH_KEY = PRIVATE key (tam metin):
+#   -----BEGIN OPENSSH PRIVATE KEY-----  veya  -----BEGIN RSA PRIVATE KEY-----
+#   ... orta satirlar ...
+#   -----END ...-----
+# Hata "ssh: no key found" -> Secret bos, public key yapisti, veya satirlar kopuk.
+# Olusturma: ssh-keygen -t ed25519 -f github_actions -N ""
+# Public -> sunucu ~/.ssh/authorized_keys | Private -> GitHub SSH_KEY secret
+#
+# Deploy key (repo Settings > Deploy keys) BURADA KULLANILMAZ; o sunucunun git pull icin GitHub'a gitmesi icindir.
+# Port 22 degilse asagidaki port satirini guncelleyin.
 
 name: Sunucuya Deploy
 
