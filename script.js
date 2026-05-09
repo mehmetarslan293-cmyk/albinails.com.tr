@@ -13,6 +13,7 @@ const topSearchFilter = document.querySelector("#topSearchFilter");
 const topCategoryFilter = document.querySelector("#topCategoryFilter");
 const resetTopFilters = document.querySelector("#resetTopFilters");
 const catalogPagination = document.querySelector("#catalogPagination");
+const instagramFeed = document.querySelector("#instagramFeed");
 
 const PRODUCTS_KEY = "albiProducts";
 const CONTENT_KEY = "albiSiteContent";
@@ -47,6 +48,46 @@ const tildaThumbnailSrc = (originalUrl, maxEdgePx = 520) => {
     return `https://optim.tildacdn.com${dir}/-/resize/${edge}x${edge}/-/format/webp/${file}.webp`;
   } catch {
     return trimmed;
+  }
+};
+
+const renderInstagramFeed = (items) => {
+  if (!instagramFeed) return;
+  if (!Array.isArray(items) || !items.length) {
+    instagramFeed.innerHTML = `
+      <a class="instagram-card" href="https://www.instagram.com/kalipso_albi_turkey/" target="_blank" rel="noopener noreferrer">
+        <span class="instagram-card-fallback">Instagram içerikleri yakında burada görünecek.</span>
+      </a>
+    `;
+    return;
+  }
+
+  instagramFeed.innerHTML = items
+    .slice(0, 4)
+    .map((item) => {
+      const image = escapeHtml(item.image || "");
+      const permalink = escapeHtml(item.permalink || "https://www.instagram.com/kalipso_albi_turkey/");
+      const caption = escapeHtml(item.caption || "Instagram paylaşımını görüntüle");
+      const shortCaption = caption.length > 95 ? `${caption.slice(0, 95)}...` : caption;
+      return `
+      <a class="instagram-card" href="${permalink}" target="_blank" rel="noopener noreferrer">
+        <img src="${image}" alt="Instagram paylaşımı" loading="lazy" decoding="async" />
+        <p>${shortCaption}</p>
+      </a>
+    `;
+    })
+    .join("");
+};
+
+const loadInstagramFeed = async () => {
+  if (!instagramFeed) return;
+  try {
+    const response = await fetch(`/instagram-feed.json?ts=${Date.now()}`, { cache: "no-store" });
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    const payload = await response.json();
+    renderInstagramFeed(payload.items || []);
+  } catch {
+    renderInstagramFeed([]);
   }
 };
 
@@ -1663,6 +1704,7 @@ const initializeCatalogFromUrl = () => {
 
 renderCatalogProducts();
 renderPreviewProducts();
+loadInstagramFeed();
 applySiteContent();
 trackVisitMetrics();
 renderHomeSlider();

@@ -1,0 +1,36 @@
+name: Instagram Feed Sync
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "*/30 * * * *"
+
+jobs:
+  sync-feed:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Repo'yu cek
+        uses: actions/checkout@v4
+
+      - name: Python kur
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Instagram son 4 icerigi cek
+        env:
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+        run: python scripts/fetch_instagram_feed.py
+
+      - name: Degisiklik varsa commit et
+        run: |
+          if git diff --quiet -- instagram-feed.json; then
+            echo "Feed degismedi."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add instagram-feed.json
+          git commit -m "chore(feed): instagram son 4 icerik guncelle"
+          git push

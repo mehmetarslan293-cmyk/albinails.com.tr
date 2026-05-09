@@ -1066,6 +1066,51 @@ h3 {
   gap: 16px;
 }
 
+.instagram-section .section-head p {
+  margin-bottom: 0;
+}
+
+.instagram-grid {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.instagram-card {
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: #fff;
+  display: grid;
+  grid-template-rows: auto auto;
+  min-height: 100%;
+}
+
+.instagram-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+}
+
+.instagram-card p {
+  margin: 0;
+  padding: 10px 10px 12px;
+  font-size: 0.85rem;
+  color: #4e4057;
+  line-height: 1.35;
+}
+
+.instagram-card-fallback {
+  display: grid;
+  place-items: center;
+  min-height: 190px;
+  padding: 14px;
+  text-align: center;
+  color: #6f6077;
+}
+
 .preview-catalog-link {
   margin-top: 0;
   white-space: nowrap;
@@ -1276,6 +1321,10 @@ dialog::backdrop {
   }
 
   .catalog-preview-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .instagram-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
@@ -1505,6 +1554,11 @@ dialog::backdrop {
   .catalog-preview-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 12px;
+  }
+
+  .instagram-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
   }
 
   .catalog-card h3 {
