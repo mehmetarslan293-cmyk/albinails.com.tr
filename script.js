@@ -1174,12 +1174,22 @@ const loadProducts = () => {
     return { next, changed };
   };
 
+  const normalizeBrandForAlbiRemoval = (raw) =>
+    String(raw || "")
+      .trim()
+      .toLocaleLowerCase("tr")
+      .replace(/\u0131/g, "i")
+      .replace(/\./g, "");
+
   const migrateRemoveAlbiBrand = (arr) => {
     let changed = false;
     const next = arr.filter((p) => {
-      const b = String(p?.brand || "")
-        .trim()
-        .toLocaleLowerCase("tr");
+      const id = String(p?.id || "").toLowerCase();
+      if (id.startsWith("albi-")) {
+        changed = true;
+        return false;
+      }
+      const b = normalizeBrandForAlbiRemoval(p?.brand);
       if (b === "albi") {
         changed = true;
         return false;
