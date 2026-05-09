@@ -14,6 +14,16 @@ const topSearchFilter = document.querySelector("#topSearchFilter");
 const topCategoryFilter = document.querySelector("#topCategoryFilter");
 const resetTopFilters = document.querySelector("#resetTopFilters");
 const catalogPagination = document.querySelector("#catalogPagination");
+const catalogGridEl = document.querySelector("#catalogGridDynamic");
+const seriesDetailModal = document.querySelector("#seriesDetailModal");
+const seriesDetailClose = document.querySelector("#seriesDetailClose");
+const seriesDetailHeroImg = document.querySelector("#seriesDetailHeroImg");
+const seriesDetailBrand = document.querySelector("#seriesDetailBrand");
+const seriesDetailTitle = document.querySelector("#seriesDetailTitle");
+const seriesDetailVariantName = document.querySelector("#seriesDetailVariantName");
+const seriesDetailSizes = document.querySelector("#seriesDetailSizes");
+const seriesDetailThumbs = document.querySelector("#seriesDetailThumbs");
+const seriesDetailWa = document.querySelector("#seriesDetailWa");
 const instagramFeed = document.querySelector("#instagramFeed");
 const instagramFeedLovely = document.querySelector("#instagramFeedLovely");
 
@@ -1436,6 +1446,61 @@ const sortProductsForCatalog = (products) =>
     return String(a.name || "").localeCompare(String(b.name || ""), "tr");
   });
 
+const renderSeriesGroupCard = (unit, index, { lazyImage = true } = {}) => {
+  const { key, seriesLabel, products } = unit;
+  const first = products[0];
+  const toneClass = productPhotoClass(index);
+  const thumbSrc = first.image ? tildaThumbnailSrc(first.image, 540) : "";
+  const loadingAttr = lazyImage ? "lazy" : "eager";
+  const fetchPri = lazyImage ? "low" : "auto";
+  const imgMarkup = thumbSrc
+    ? `<img src="${thumbSrc}" alt="${escapeHtml(seriesLabel)}" width="540" height="540" loading="${loadingAttr}" decoding="async" fetchpriority="${fetchPri}" />`
+    : "";
+  const imageClass = first.image ? "has-image" : "";
+  const categoriesUnion = [...new Set(products.flatMap((p) => p.categories || []))];
+  const brandSlugs = [...new Set(products.map((p) => slugifyBrand(getBrandForFilter(p))))];
+  const brandLabel = getBrandForFilter(first);
+  const brandKey = `brand-${slugifyBrand(brandLabel)}`;
+  const mlVals = [...new Set(products.map((p) => normalizeMl(p.size)).filter(Boolean))];
+  const skipMl = products.some((p) => isLashProduct(p) || isFircaProduct(p));
+  const nameKey = products.map((p) => normalizeSearchText(p.name)).filter(Boolean).join(" ");
+  const seriesKey = slugifySeries(seriesLabel);
+  const variantCount = products.length;
+  const sizeSummary = skipMl
+    ? [...new Set(products.map((p) => String(p.size || "").trim() || "—"))].join(" · ")
+    : [...new Set(products.map((p) => formatSizeUnit(normalizeMl(p.size))))].join(" · ");
+  const sizeDisplay = escapeHtml(sizeSummary || "—");
+  const brandSlugsAttr = escapeHtml(brandSlugs.join(","));
+  const mlListAttr = escapeHtml(mlVals.join(","));
+  return `
+    <article
+      class="catalog-card catalog-card--series"
+      role="button"
+      tabindex="0"
+      data-series-group="1"
+      data-series-key="${escapeHtml(key)}"
+      data-series-label="${escapeHtml(seriesLabel)}"
+      data-category="${categoriesUnion.join(",")}"
+      data-size-ml="${skipMl ? "" : mlVals[0] || ""}"
+      data-size-ml-list="${mlListAttr}"
+      data-brand-key="${brandKey}"
+      data-brand-slugs="${brandSlugsAttr}"
+      data-series="${seriesKey}"
+      data-skip-ml-filter="${skipMl ? "true" : "false"}"
+      data-name-key="${escapeHtml(nameKey)}"
+    >
+      <div class="catalog-photo ${toneClass} ${imageClass}">
+        ${imgMarkup}
+      </div>
+      <h3>${escapeHtml(seriesLabel)}</h3>
+      <p>Marka: ${escapeHtml(brandLabel)}</p>
+      <p>Boyut: ${sizeDisplay}</p>
+      <p class="catalog-card__series-meta">${variantCount} varyant</p>
+      <p class="catalog-card__series-cta">Detay ve renkler için tıklayın</p>
+    </article>
+  `;
+};
+
 const renderProductCard = (product, index, { lazyImage = true } = {}) => {
   const toneClass = productPhotoClass(index);
   const thumbSrc = product.image ? tildaThumbnailSrc(product.image, 540) : "";
@@ -1462,8 +1527,9 @@ const renderProductCard = (product, index, { lazyImage = true } = {}) => {
   const seriesRaw = String(product.series || "").trim();
   const seriesKey = slugifySeries(seriesRaw);
   const seriesLine = seriesRaw ? `<p>Seri: ${escapeHtml(seriesRaw)}</p>` : "";
+  const brandSlug = slugifyBrand(brandLabel);
   return `
-    <article class="catalog-card" data-category="${(product.categories || []).join(",")}" data-size-ml="${mlValue}" data-brand-key="${brandKey}" data-series="${seriesKey}" data-skip-ml-filter="${skipMl}" data-name-key="${escapeHtml(nameKey)}">
+    <article class="catalog-card" data-category="${(product.categories || []).join(",")}" data-size-ml="${mlValue}" data-brand-key="${brandKey}" data-brand-slugs="${escapeHtml(brandSlug)}" data-series="${seriesKey}" data-skip-ml-filter="${skipMl}" data-name-key="${escapeHtml(nameKey)}">
       <div class="catalog-photo ${toneClass} ${imageClass}">
         ${imgMarkup}
       </div>
@@ -1477,10 +1543,17 @@ const renderProductCard = (product, index, { lazyImage = true } = {}) => {
 };
 
 const renderCatalogProducts = () => {
-  const grid = document.querySelector("#catalogGridDynamic");
-  if (!grid) return;
+  if (!catalogGridEl) return;
   const products = sortProductsForCatalog(loadProducts());
-  grid.innerHTML = products.map((p, i) => renderProductCard(p, i, { lazyImage: true })).join("");
+  const units = groupSeriesCatalogUnits(products);
+  seriesCatalogLookup = new Map();
+  catalogGridEl.innerHTML = units
+    .map((u, i) => {
+      if (u.kind === "single") return renderProductCard(u.product, i, { lazyImage: true });
+      seriesCatalogLookup.set(u.key, u.products);
+      return renderSeriesGroupCard(u, i, { lazyImage: true });
+    })
+    .join("");
   populateTopFilters();
 };
 
@@ -1544,12 +1617,63 @@ const slugifyBrand = (value) =>
     .replace(/\s+/g, "-")
     .replace(/[^a-z0-9-]/g, "");
 
-const slugifySeries = (value) =>
-  String(value || "")
-    .toLocaleLowerCase("tr")
-    .trim()
-    .replace(/\s+/g, "-")
-    .replace(/[^a-z0-9-]/g, "");
+const slugifySeries = (value) => {
+  const raw = String(value || "").trim();
+  if (!raw) return "";
+  const t = raw.toLocaleLowerCase("tr").replace(/\s+/g, "-");
+  let s = t
+    .replace(/[^\p{L}\p{N}-]+/gu, "")
+    .replace(/-+/g, "-")
+    .replace(/^-|-$/g, "");
+  if (!s) {
+    let h = 0;
+    for (let i = 0; i < raw.length; i += 1) h = (Math.imul(31, h) + raw.charCodeAt(i)) | 0;
+    return `series-${Math.abs(h)}`;
+  }
+  return s;
+};
+
+let seriesCatalogLookup = new Map();
+let seriesModalProducts = [];
+let seriesModalSeriesLabel = "";
+
+const seriesGroupKeyFromProduct = (p) => {
+  const s = String(p.series || "").trim();
+  return s ? slugifySeries(s) : "";
+};
+
+const groupSeriesCatalogUnits = (sorted) => {
+  const byKey = new Map();
+  for (const p of sorted) {
+    const k = seriesGroupKeyFromProduct(p);
+    if (!k) continue;
+    if (!byKey.has(k)) byKey.set(k, []);
+    byKey.get(k).push(p);
+  }
+  const used = new Set();
+  const units = [];
+  for (const p of sorted) {
+    const k = seriesGroupKeyFromProduct(p);
+    if (!k) {
+      units.push({ kind: "single", product: p });
+      continue;
+    }
+    const list = byKey.get(k) || [];
+    if (list.length < 2) {
+      units.push({ kind: "single", product: p });
+      continue;
+    }
+    if (used.has(k)) continue;
+    used.add(k);
+    units.push({
+      kind: "series",
+      key: k,
+      seriesLabel: String(list[0].series || "").trim(),
+      products: list,
+    });
+  }
+  return units;
+};
 
 let currentCategoryFilter = "all";
 let currentCatalogPage = 1;
@@ -1628,10 +1752,19 @@ const applyCatalogFilter = (filterKey = currentCategoryFilter, resetPage = false
   cards.forEach((card) => {
     const categoryList = (card.dataset.category || "").split(",");
     const sizeValue = card.dataset.sizeMl || "";
+    const brandSlugs = (card.dataset.brandSlugs || "").split(",").filter(Boolean);
     const brandKey = card.dataset.brandKey || "";
+    const brandMatch =
+      selectedBrand === "all" ||
+      (brandSlugs.length ? brandSlugs.includes(selectedBrand) : brandKey === `brand-${selectedBrand}`);
+    const mlList = (card.dataset.sizeMlList || "").split(",").filter(Boolean);
+    const skipMl = card.dataset.skipMlFilter === "true";
+    const mlMatch =
+      selectedMl === "all" ||
+      skipMl ||
+      (mlList.length ? mlList.includes(selectedMl) : sizeValue === selectedMl);
     const seriesSlug = card.dataset.series || "";
     const nameKey = card.dataset.nameKey || "";
-    const skipMl = card.dataset.skipMlFilter === "true";
     const lovelyParentMatch =
       currentCategoryFilter === LOVELY_LINE_PARENT &&
       (categoryList.includes(LOVELY_LINE_PARENT) ||
@@ -1643,8 +1776,6 @@ const applyCatalogFilter = (filterKey = currentCategoryFilter, resetPage = false
       (currentCategoryFilter === "kirpik-malzemeleri" &&
         (categoryList.includes("kirpik-malzemeleri") ||
           categoryList.some((c) => KIRPIK_SUPPLY_CATEGORY_SLUGS.includes(c))));
-    const mlMatch = selectedMl === "all" || (!skipMl && sizeValue === selectedMl);
-    const brandMatch = selectedBrand === "all" || brandKey === `brand-${selectedBrand}`;
     const seriesMatch =
       selectedSeries === "all" ||
       (selectedSeries === "__empty__" && !seriesSlug) ||
@@ -1709,6 +1840,102 @@ const initializeCatalogFromUrl = () => {
     applyCatalogFilter("all", true);
   }
 };
+
+const setSeriesModalWaLink = (product) => {
+  if (!seriesDetailWa) return;
+  const line = seriesModalSeriesLabel
+    ? `${seriesModalSeriesLabel} — ${product.name}`
+    : String(product.name || "");
+  seriesDetailWa.href = `https://wa.me/905436792212?text=${encodeURIComponent(
+    `Merhaba, ${line} hakkında bilgi almak istiyorum.`
+  )}`;
+};
+
+const setSeriesModalVariant = (idx) => {
+  const p = seriesModalProducts[idx];
+  if (!p || !seriesDetailHeroImg) return;
+  const heroSrc = p.image ? tildaThumbnailSrc(p.image, 920) : "";
+  seriesDetailHeroImg.src = heroSrc || "";
+  seriesDetailHeroImg.alt = String(p.name || "");
+  if (seriesDetailVariantName) seriesDetailVariantName.textContent = String(p.name || "").trim();
+  if (seriesDetailSizes) {
+    const lash = isLashProduct(p);
+    const firca = isFircaProduct(p);
+    const skip = lash || firca;
+    seriesDetailSizes.textContent = skip
+      ? `Boyut: ${String(p.size || "").trim() || "—"}`
+      : `Boyut: ${formatSizeUnit(normalizeMl(p.size))}`;
+  }
+  if (seriesDetailThumbs) {
+    seriesDetailThumbs.querySelectorAll("[data-series-thumb]").forEach((btn, i) => {
+      btn.classList.toggle("is-active", i === idx);
+    });
+  }
+  setSeriesModalWaLink(p);
+};
+
+const renderSeriesModalThumbs = () => {
+  if (!seriesDetailThumbs) return;
+  seriesDetailThumbs.innerHTML = seriesModalProducts
+    .map((p, idx) => {
+      const thumb = p.image ? tildaThumbnailSrc(p.image, 200) : "";
+      const active = idx === 0 ? " is-active" : "";
+      const inner = thumb
+        ? `<img class="series-detail-thumb__img" src="${thumb}" alt="" width="72" height="72" loading="lazy" decoding="async" />`
+        : `<span class="series-detail-thumb__img series-detail-thumb__img--empty" aria-hidden="true"></span>`;
+      return `<button type="button" class="series-detail-thumb${active}" data-series-thumb="${idx}" aria-label="${escapeHtml(p.name)}">${inner}</button>`;
+    })
+    .join("");
+};
+
+const openSeriesDetailModal = (products, seriesLabel) => {
+  if (!seriesDetailModal || !products.length) return;
+  seriesModalProducts = products;
+  seriesModalSeriesLabel = String(seriesLabel || "").trim();
+  const first = products[0];
+  if (seriesDetailTitle) seriesDetailTitle.textContent = seriesModalSeriesLabel || first.name;
+  if (seriesDetailBrand) seriesDetailBrand.textContent = `Marka: ${getBrandForFilter(first)}`;
+  renderSeriesModalThumbs();
+  setSeriesModalVariant(0);
+  seriesDetailModal.showModal();
+};
+
+const bindSeriesDetailUi = () => {
+  if (!catalogGridEl) return;
+  catalogGridEl.addEventListener("click", (e) => {
+    const card = e.target.closest(".catalog-card--series");
+    if (!card) return;
+    const key = card.dataset.seriesKey;
+    if (!key) return;
+    const list = seriesCatalogLookup.get(key);
+    if (!list || !list.length) return;
+    openSeriesDetailModal(list, card.dataset.seriesLabel || "");
+  });
+  catalogGridEl.addEventListener("keydown", (e) => {
+    if (e.key !== "Enter" && e.key !== " ") return;
+    const card = e.target instanceof Element ? e.target.closest(".catalog-card--series") : null;
+    if (!card || !catalogGridEl.contains(card)) return;
+    if (e.key === " ") e.preventDefault();
+    const key = card.dataset.seriesKey;
+    const list = key ? seriesCatalogLookup.get(key) : null;
+    if (!list || !list.length) return;
+    openSeriesDetailModal(list, card.dataset.seriesLabel || "");
+  });
+  if (seriesDetailClose && seriesDetailModal) {
+    seriesDetailClose.addEventListener("click", () => seriesDetailModal.close());
+  }
+  if (seriesDetailThumbs) {
+    seriesDetailThumbs.addEventListener("click", (e) => {
+      const btn = e.target.closest("[data-series-thumb]");
+      if (!(btn instanceof HTMLElement)) return;
+      const idx = Number(btn.dataset.seriesThumb);
+      if (Number.isNaN(idx)) return;
+      setSeriesModalVariant(idx);
+    });
+  }
+};
+
+bindSeriesDetailUi();
 
 renderCatalogProducts();
 renderPreviewProducts();

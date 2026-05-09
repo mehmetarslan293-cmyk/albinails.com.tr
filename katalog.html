@@ -209,6 +209,35 @@
       </section>
     </main>
 
+    <dialog id="seriesDetailModal" class="series-detail-modal" aria-labelledby="seriesDetailTitle">
+      <div class="series-detail-modal__panel">
+        <button type="button" class="series-detail-modal__close" id="seriesDetailClose" aria-label="Kapat">
+          ×
+        </button>
+        <div class="series-detail-modal__layout">
+          <div class="series-detail-modal__hero">
+            <img id="seriesDetailHeroImg" alt="" width="720" height="720" decoding="async" />
+          </div>
+          <div class="series-detail-modal__side">
+            <p class="series-detail-modal__brand" id="seriesDetailBrand"></p>
+            <h2 id="seriesDetailTitle" class="series-detail-modal__title"></h2>
+            <p class="series-detail-modal__variant" id="seriesDetailVariantName"></p>
+            <p class="series-detail-modal__sizes" id="seriesDetailSizes"></p>
+            <p class="series-detail-modal__thumb-label">Renk seçin</p>
+            <div class="series-detail-modal__thumbs" id="seriesDetailThumbs" role="list"></div>
+            <p class="series-detail-modal__hint">Küçük görsele tıklayarak büyük görseli değiştirebilirsiniz.</p>
+            <a
+              class="btn btn-primary series-detail-modal__wa"
+              id="seriesDetailWa"
+              href="https://wa.me/905436792212"
+              target="_blank"
+              rel="noopener noreferrer"
+              >WhatsApp ile sor</a>
+          </div>
+        </div>
+      </div>
+    </dialog>
+
     <footer class="footer">
       <div class="container">
         <p>© 2026 ALBI tırnak. Tüm hakları saklıdır.</p>

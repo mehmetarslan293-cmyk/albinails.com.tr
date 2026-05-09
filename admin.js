@@ -1045,12 +1045,21 @@ const defaultBrands = ["Kalipso", "LOVELY", "MIO NAILS"];
 
 const defaultSeriesPresets = ["Klasik seri", "SILK CAT", "Sezon koleksiyonu", "Set / çoklu"];
 
-const slugifySeries = (value) =>
-  String(value || "")
-    .toLocaleLowerCase("tr")
-    .trim()
-    .replace(/\s+/g, "-")
-    .replace(/[^a-z0-9-]/g, "");
+const slugifySeries = (value) => {
+  const raw = String(value || "").trim();
+  if (!raw) return "";
+  const t = raw.toLocaleLowerCase("tr").replace(/\s+/g, "-");
+  let s = t
+    .replace(/[^\p{L}\p{N}-]+/gu, "")
+    .replace(/-+/g, "-")
+    .replace(/^-|-$/g, "");
+  if (!s) {
+    let h = 0;
+    for (let i = 0; i < raw.length; i += 1) h = (Math.imul(31, h) + raw.charCodeAt(i)) | 0;
+    return `series-${Math.abs(h)}`;
+  }
+  return s;
+};
 
 const loadExtraSeries = () => {
   try {
