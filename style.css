@@ -53,13 +53,22 @@ a {
 }
 
 .logo {
-  font-weight: 800;
-  font-size: 1.12rem;
   justify-self: start;
+  align-self: center;
+  line-height: 0;
 }
 
-.logo span {
-  color: var(--primary);
+.logo-brand {
+  display: inline-flex;
+  align-items: center;
+}
+
+.logo-img {
+  width: auto;
+  height: clamp(42px, 10vw, 52px);
+  max-width: min(148px, 42vw);
+  display: block;
+  object-fit: contain;
 }
 
 .nav-toggle {
