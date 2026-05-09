@@ -1291,7 +1291,12 @@ dialog::backdrop {
   }
 
   .catalog-menu a {
-    flex: 0 1 auto;
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    max-width: 100%;
     white-space: nowrap;
     font-size: 0.94rem;
     line-height: 1.2;
@@ -1308,6 +1313,7 @@ dialog::backdrop {
     background: linear-gradient(180deg, #fce7f2, #f8dbea);
     border-color: rgba(159, 22, 95, 0.45);
     color: var(--primary);
+    box-shadow: 0 2px 8px rgba(159, 22, 95, 0.14);
   }
 
   .catalog-menu a:hover {
