@@ -1690,11 +1690,13 @@ const renderSeriesGroupCard = (unit, index, { lazyImage = true } = {}) => {
   const sizeDisplay = escapeHtml(sizeSummary || "—");
   const brandSlugsAttr = escapeHtml(brandSlugs.join(","));
   const mlListAttr = escapeHtml(mlVals.join(","));
+  const seriesBadgeIcon = `<svg class="catalog-card__series-badge-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 2 2 7l10 5 10-5L12 2Z" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/><path d="m2 12 10 5 10-5M2 17l10 5 10-5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
   return `
     <article
       class="catalog-card catalog-card--series"
       role="button"
       tabindex="0"
+      aria-label="${escapeHtml(seriesLabel)} — Seriyi görmek için tıklayın veya Enter'a basın"
       data-series-group="1"
       data-series-key="${escapeHtml(key)}"
       data-series-label="${escapeHtml(seriesLabel)}"
@@ -1709,6 +1711,10 @@ const renderSeriesGroupCard = (unit, index, { lazyImage = true } = {}) => {
     >
       <div class="catalog-photo ${toneClass} ${imageClass}">
         ${imgMarkup}
+        <span class="catalog-card__series-badge" aria-hidden="true">
+          ${seriesBadgeIcon}
+          <span class="catalog-card__series-badge-label">Seriyi Gör</span>
+        </span>
       </div>
       <h3>${escapeHtml(seriesLabel)}</h3>
       <p>Marka: ${escapeHtml(brandLabel)}</p>

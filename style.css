@@ -1124,6 +1124,37 @@ h3 {
   font-weight: 600;
 }
 
+.catalog-card--series .catalog-card__series-badge {
+  position: absolute;
+  z-index: 2;
+  left: 10px;
+  bottom: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 11px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  color: var(--primary);
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 2px 12px rgba(20, 12, 18, 0.14);
+  border: 1px solid rgba(159, 22, 95, 0.2);
+  pointer-events: none;
+}
+
+.catalog-card--series .catalog-card__series-badge-icon {
+  flex-shrink: 0;
+  display: block;
+}
+
+.catalog-card--series:hover .catalog-card__series-badge {
+  border-color: rgba(159, 22, 95, 0.35);
+  box-shadow: 0 4px 14px rgba(159, 22, 95, 0.12);
+}
+
 .series-detail-modal {
   max-width: min(1080px, 100vw - 24px);
   width: 100%;
