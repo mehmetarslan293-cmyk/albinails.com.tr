@@ -1440,6 +1440,12 @@ const normalizeMl = (value) => {
   return numeric || "10";
 };
 
+const formatSizeUnit = (value) => {
+  const numeric = Number(String(value || "").trim());
+  if ([1, 2, 3].includes(numeric)) return `${numeric} adet`;
+  return `${String(value || "").trim()} ml`;
+};
+
 const LASH_CATEGORY = "ipek-kirpik";
 /** İpek kirpik telleri ve kirpik sarf / palet / ekipman ürünleri (ml filtresi ve kart boyutu için). */
 const isLashProduct = (product) =>
@@ -1510,7 +1516,7 @@ const renderProductCard = (product, index, { lazyImage = true } = {}) => {
   const brandLabel = getBrandForFilter(product);
   const brandKey = `brand-${slugifyBrand(brandLabel)}`;
   const nameKey = normalizeSearchText(product.name);
-  const sizeDisplay = lash ? escapeHtml(String(product.size || "").trim() || "—") : `${escapeHtml(mlValue)} ml`;
+  const sizeDisplay = lash ? escapeHtml(String(product.size || "").trim() || "—") : escapeHtml(formatSizeUnit(mlValue));
   const colorLine = lash && colorRaw ? `<p>Renk: ${escapeHtml(colorRaw)}</p>` : "";
   return `
     <article class="catalog-card" data-category="${(product.categories || []).join(",")}" data-size-ml="${mlValue}" data-brand-key="${brandKey}" data-skip-ml-filter="${skipMl}" data-name-key="${escapeHtml(nameKey)}">
@@ -1619,7 +1625,7 @@ const populateTopFilters = () => {
       ...new Set(products.filter((p) => !isLashProduct(p)).map((p) => normalizeMl(p.size)).filter(Boolean)),
     ].sort((a, b) => Number(a) - Number(b));
     topMlFilter.innerHTML = `<option value="all">Tümü</option>${mlValues
-      .map((ml) => `<option value="${ml}">${ml} ml</option>`)
+      .map((ml) => `<option value="${ml}">${escapeHtml(formatSizeUnit(ml))}</option>`)
       .join("")}`;
   }
 
@@ -1678,7 +1684,7 @@ const applyCatalogFilter = (filterKey = currentCategoryFilter, resetPage = false
 
   if (catalogCurrent) {
     const baseLabel = filterLabelMap[currentCategoryFilter] || filterLabelMap.all;
-    const mlLabel = selectedMl === "all" ? "Tümü" : `${selectedMl} ml`;
+    const mlLabel = selectedMl === "all" ? "Tümü" : formatSizeUnit(selectedMl);
     const brandLabel =
       selectedBrand === "all"
         ? "Tümü"
