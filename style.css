@@ -926,6 +926,16 @@ h3 {
   background: #fff;
 }
 
+.catalog-top-filters input {
+  margin-top: 4px;
+  min-width: 150px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 8px 10px;
+  font: inherit;
+  background: #fff;
+}
+
 #resetTopFilters {
   padding: 9px 14px;
 }

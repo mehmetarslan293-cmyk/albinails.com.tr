@@ -9,6 +9,7 @@ const catalogEmpty = document.querySelector("#catalogEmpty");
 const previewGrid = document.querySelector("#catalogPreviewGrid");
 const topMlFilter = document.querySelector("#topMlFilter");
 const topBrandFilter = document.querySelector("#topBrandFilter");
+const topSearchFilter = document.querySelector("#topSearchFilter");
 const topCategoryFilter = document.querySelector("#topCategoryFilter");
 const resetTopFilters = document.querySelector("#resetTopFilters");
 const catalogPagination = document.querySelector("#catalogPagination");
@@ -1413,6 +1414,35 @@ const KIRPIK_SUPPLY_CATEGORY_SLUGS = [
   "kirpik-tablet-stand",
 ];
 
+const normalizeSearchText = (value) =>
+  String(value || "")
+    .toLocaleLowerCase("tr")
+    .replace(/\s+/g, " ")
+    .trim();
+
+const extractFirstNumber = (value) => {
+  const match = String(value || "").match(/\d+/);
+  return match ? Number(match[0]) : null;
+};
+
+const isPolishProduct = (product) =>
+  Array.isArray(product?.categories) && product.categories.includes("gel-polish");
+
+const sortProductsForCatalog = (products) =>
+  [...products].sort((a, b) => {
+    const aPolish = isPolishProduct(a);
+    const bPolish = isPolishProduct(b);
+    if (!aPolish || !bPolish) return 0;
+
+    const aNum = extractFirstNumber(a.name);
+    const bNum = extractFirstNumber(b.name);
+    if (aNum === null && bNum === null) return String(a.name || "").localeCompare(String(b.name || ""), "tr");
+    if (aNum === null) return 1;
+    if (bNum === null) return -1;
+    if (aNum !== bNum) return aNum - bNum;
+    return String(a.name || "").localeCompare(String(b.name || ""), "tr");
+  });
+
 const renderProductCard = (product, index, { lazyImage = true } = {}) => {
   const toneClass = productPhotoClass(index);
   const thumbSrc = product.image ? tildaThumbnailSrc(product.image, 540) : "";
@@ -1428,10 +1458,11 @@ const renderProductCard = (product, index, { lazyImage = true } = {}) => {
   const skipMl = lash ? "true" : "false";
   const colorRaw = String(product.color || "").trim();
   const brandKey = `brand-${slugifyBrand(product.brand || "ALBI")}`;
+  const nameKey = normalizeSearchText(product.name);
   const sizeDisplay = lash ? escapeHtml(String(product.size || "").trim() || "—") : `${escapeHtml(mlValue)} ml`;
   const colorLine = lash && colorRaw ? `<p>Renk: ${escapeHtml(colorRaw)}</p>` : "";
   return `
-    <article class="catalog-card" data-category="${(product.categories || []).join(",")}" data-size-ml="${mlValue}" data-brand-key="${brandKey}" data-skip-ml-filter="${skipMl}">
+    <article class="catalog-card" data-category="${(product.categories || []).join(",")}" data-size-ml="${mlValue}" data-brand-key="${brandKey}" data-skip-ml-filter="${skipMl}" data-name-key="${escapeHtml(nameKey)}">
       <div class="catalog-photo ${toneClass} ${imageClass}">
         ${imgMarkup}
       </div>
@@ -1446,7 +1477,7 @@ const renderProductCard = (product, index, { lazyImage = true } = {}) => {
 const renderCatalogProducts = () => {
   const grid = document.querySelector("#catalogGridDynamic");
   if (!grid) return;
-  const products = loadProducts();
+  const products = sortProductsForCatalog(loadProducts());
   grid.innerHTML = products.map((p, i) => renderProductCard(p, i, { lazyImage: true })).join("");
   populateTopFilters();
 };
@@ -1558,12 +1589,14 @@ const applyCatalogFilter = (filterKey = currentCategoryFilter, resetPage = false
 
   const selectedMl = topMlFilter?.value || "all";
   const selectedBrand = topBrandFilter?.value || "all";
+  const selectedSearch = normalizeSearchText(topSearchFilter?.value || "");
   const matchedCards = [];
 
   cards.forEach((card) => {
     const categoryList = (card.dataset.category || "").split(",");
     const sizeValue = card.dataset.sizeMl || "";
     const brandKey = card.dataset.brandKey || "";
+    const nameKey = card.dataset.nameKey || "";
     const skipMl = card.dataset.skipMlFilter === "true";
     const categoryMatch =
       currentCategoryFilter === "all" ||
@@ -1573,7 +1606,8 @@ const applyCatalogFilter = (filterKey = currentCategoryFilter, resetPage = false
           categoryList.some((c) => KIRPIK_SUPPLY_CATEGORY_SLUGS.includes(c))));
     const mlMatch = selectedMl === "all" || (!skipMl && sizeValue === selectedMl);
     const brandMatch = selectedBrand === "all" || brandKey === `brand-${selectedBrand}`;
-    const shouldShow = categoryMatch && mlMatch && brandMatch;
+    const searchMatch = !selectedSearch || nameKey.includes(selectedSearch);
+    const shouldShow = categoryMatch && mlMatch && brandMatch && searchMatch;
     if (shouldShow) matchedCards.push(card);
   });
 
@@ -1598,7 +1632,8 @@ const applyCatalogFilter = (filterKey = currentCategoryFilter, resetPage = false
       selectedBrand === "all"
         ? "Tümü"
         : topBrandFilter?.selectedOptions?.[0]?.textContent || "Tümü";
-    catalogCurrent.textContent = `${baseLabel} | ML: ${mlLabel} | Marka: ${brandLabel}`;
+    const searchLabel = selectedSearch ? ` | Arama: ${selectedSearch}` : "";
+    catalogCurrent.textContent = `${baseLabel} | ML: ${mlLabel} | Marka: ${brandLabel}${searchLabel}`;
   }
 
   if (catalogEmpty) {
@@ -1718,6 +1753,12 @@ if (topBrandFilter) {
   });
 }
 
+if (topSearchFilter) {
+  topSearchFilter.addEventListener("input", () => {
+    applyCatalogFilter(currentCategoryFilter, true);
+  });
+}
+
 if (topCategoryFilter) {
   topCategoryFilter.addEventListener("change", () => {
     applyCatalogFilter(topCategoryFilter.value || "all", true);
@@ -1731,6 +1772,7 @@ if (resetTopFilters) {
   resetTopFilters.addEventListener("click", () => {
     if (topMlFilter) topMlFilter.value = "all";
     if (topBrandFilter) topBrandFilter.value = "all";
+    if (topSearchFilter) topSearchFilter.value = "";
     if (topCategoryFilter) topCategoryFilter.value = "all";
     applyCatalogFilter("all", true);
   });
