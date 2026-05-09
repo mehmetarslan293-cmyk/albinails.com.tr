@@ -508,19 +508,13 @@ const defaultProducts = [
   { id: "lovely-catalog-silicone-20", name: "Güzel Siyah Kirpikler, \"Silikon\" Serisi - 20 Sıra", brand: "LOVELY", size: "20 sıra", color: "Siyah", image: "https://admin.lovely-professional.ru/storage/media-cache/cards_and_offers_images/05.05.2025/L09924_1_card_37159_webp.webp", categories: ["ipek-kirpik", "lovely", "lovely-lovely"] },
   { id: "lovely-catalog-rili-16", name: "Rili Siyah Kirpikler - 16 Sıra", brand: "LOVELY", size: "16 sıra", color: "Siyah", image: "https://admin.lovely-professional.ru/storage/media-cache/cards_and_offers_images/05.05.2025/L10016_1_card_37337_webp.webp", categories: ["ipek-kirpik", "lovely", "lovely-rili"] },
   { id: "lovely-supply-mikrobrasi", name: "Mikrofırçalar", brand: "LOVELY", size: "Küçük / Orta", color: "Çoklu", image: "https://admin.lovely-professional.ru/storage/media-cache/2025/10/14/3b6b0b96008b83e26dadfe48efe44c397763db2b_25079_webp.webp", categories: ["kirpik-sarf"] },
-  { id: "lovely-supply-paket-2635", name: "LOVELY kağıt çanta (26×35)", brand: "LOVELY", size: "26×35 cm", color: "", image: "https://admin.lovely-professional.ru/storage/media-cache/cards_and_offers_images/05.05.2025/L40128_1_card_37828_webp.webp", categories: ["kirpik-markali"] },
   { id: "lovely-supply-kolco-klei-1", name: "Yapıştırıcı halkası #1", brand: "LOVELY", size: "Adet", color: "", image: "https://admin.lovely-professional.ru/storage/media-cache/card/j76n79ffb2D6JNjJkOjO_3326_webp.webp", categories: ["kirpik-sarf"] },
   { id: "lovely-supply-nylon-brush-50", name: "Siyah naylon fırçalar (50 adet)", brand: "LOVELY", size: "50 adet", color: "Siyah", image: "https://admin.lovely-professional.ru/storage/media-cache/2025/10/14/a0c1e752c2c8900b99b24782377fd3c4072ac3dd_25042_webp.webp", categories: ["kirpik-sarf"] },
-  { id: "lovely-supply-paket-kagit", name: "LOVELY kağıt çanta", brand: "LOVELY", size: "Standart", color: "", image: "https://admin.lovely-professional.ru/storage/media-cache/card/pAGHKn9OEaLtTUgu7Ydh_2813_webp.webp", categories: ["kirpik-markali"] },
   { id: "lovely-supply-silikon-firca", name: "Silikon kirpik fırçası", brand: "LOVELY", size: "Çoklu renk", color: "Çoklu", image: "", categories: ["kirpik-sarf"] },
-  { id: "lovely-supply-tape-48mm", name: "LOVELY markalı bant (48 mm)", brand: "LOVELY", size: "48 mm", color: "", image: "https://admin.lovely-professional.ru/storage/media-cache/cards_and_offers_images/05.05.2025/L88046_1_card_37881_webp.webp", categories: ["kirpik-markali"] },
   { id: "lovely-supply-dez-wipes", name: "Dezenfektan mendiller (100 adet)", brand: "LOVELY", size: "100 adet", color: "", image: "https://admin.lovely-professional.ru/storage/media-cache/cards_and_offers_images/05.05.2025/L52010_1_card_37831_webp.webp", categories: ["kirpik-sarf"] },
   { id: "lovely-supply-palet-headband", name: "Kafa bandı için yedek tablet", brand: "LOVELY", size: "Yedek parça", color: "", image: "https://admin.lovely-professional.ru/storage/media-cache/cards_and_offers_images/05.05.2025/L30064_1_card_37728_webp.webp", categories: ["kirpik-tablet-stand"] },
-  { id: "lovely-supply-paket-3040", name: "LOVELY paket (30×40)", brand: "LOVELY", size: "30×40 cm", color: "", image: "https://admin.lovely-professional.ru/storage/media-cache/cards_and_offers_images/05.05.2025/L40116_1_card_37827_webp.webp", categories: ["kirpik-markali"] },
   { id: "lovely-supply-silikon-palet", name: "LOVELY silikon yapıştırıcı tableti", brand: "LOVELY", size: "Tablet", color: "", image: "https://admin.lovely-professional.ru/storage/media-cache/cards_and_offers_images/05.05.2025/L30592_1_card_37803_webp.webp", categories: ["kirpik-tablet-stand"] },
-  { id: "lovely-supply-paket-2530", name: "LOVELY küçük paket (25×30)", brand: "LOVELY", size: "25×30 cm", color: "", image: "https://admin.lovely-professional.ru/storage/media-cache/cards_and_offers_images/05.05.2025/L400111_1_card_37820_webp.webp", categories: ["kirpik-markali"] },
   { id: "lovely-supply-rili-palet-mavi", name: "Riley mavi palet", brand: "LOVELY", size: "Tablet", color: "Mavi", image: "https://admin.lovely-professional.ru/storage/media-cache/cards_and_offers_images/05.05.2025/L30602_1_card_37816_webp.webp", categories: ["kirpik-tablet-stand"] },
-  { id: "lovely-supply-rili-paket", name: "Riley paketi", brand: "LOVELY", size: "Standart", color: "", image: "https://admin.lovely-professional.ru/storage/media-cache/cards_and_offers_images/05.05.2025/L88044_1_card_37880_webp.webp", categories: ["kirpik-markali"] },
   { id: "lovely-supply-mannequin-head", name: "LOVELY kirpik uzatma manken kafası", brand: "LOVELY", size: "Manken", color: "", image: "https://admin.lovely-professional.ru/storage/media-cache/card/TjSYyaJmbnS4xUhhXv3C_3325_webp.webp", categories: ["kirpik-ekipman"] },
   { id: "lovely-supply-diamond-brush", name: "LOVELY «Elmas» kirpik fırçası", brand: "LOVELY", size: "Çoklu model", color: "Çoklu", image: "https://admin.lovely-professional.ru/storage/media-cache/cards_and_offers_images/05.05.2025/L70050_1_card_37857_webp.webp", categories: ["kirpik-sarf"] },
   { id: "lovely-supply-glue-palet", name: "LOVELY tutkal paleti", brand: "LOVELY", size: "Palet", color: "", image: "https://admin.lovely-professional.ru/storage/media-cache/2025/09/09/92c00dd649b7786d89945a1575e295e6dae4739d_24444_webp.webp", categories: ["kirpik-tablet-stand"] },
@@ -535,10 +529,10 @@ const defaultProducts = [
   { id: "lovely-supply-kirpik-fircasi-tup", name: "LOVELY kirpik fırçası (tüp)", brand: "LOVELY", size: "Tüp", color: "", image: "https://admin.lovely-professional.ru/storage/media-cache/cards_and_offers_images/05.05.2025/L30551_1_card_37779_webp.webp", categories: ["kirpik-sarf"] },
   { id: "lovely-supply-lash-organizer", name: "LOVELY kirpik uzmanı organizatörü", brand: "LOVELY", size: "Standart", color: "", image: "https://admin.lovely-professional.ru/storage/media-cache/cards_and_offers_images/05.05.2025/L60025_1_card_37838_webp.webp", categories: ["kirpik-tablet-stand"] },
   { id: "lovely-supply-tutkal-acacigi", name: "LOVELY tutkal açacağı", brand: "LOVELY", size: "Adet", color: "", image: "https://admin.lovely-professional.ru/storage/media-cache/cards_and_offers_images/05.05.2025/L70039_1_card_37842_webp.webp", categories: ["kirpik-ekipman"] },
-  { id: "lovely-supply-lashy-kirpik-tableti", name: "LASHY kirpik tableti", brand: "LOVELY", size: "Tablet", color: "", image: "https://admin.lovely-professional.ru/storage/media-cache/cards_and_offers_images/05.05.2025/L30593_1_card_37807_webp.webp", categories: ["kirpik-markali", "kirpik-tablet-stand"] },
+  { id: "lovely-supply-lashy-kirpik-tableti", name: "LASHY kirpik tableti", brand: "LOVELY", size: "Tablet", color: "", image: "https://admin.lovely-professional.ru/storage/media-cache/cards_and_offers_images/05.05.2025/L30593_1_card_37807_webp.webp", categories: ["kirpik-tablet-stand"] },
   { id: "lovely-supply-pincet-standi", name: "LOVELY cımbız standı", brand: "LOVELY", size: "Standart", color: "", image: "https://admin.lovely-professional.ru/storage/media-cache/2026/03/17/43d55a21576f72b860816f34a7e5d69a7ac26aef_38470_webp.webp", categories: ["kirpik-tablet-stand"] },
   { id: "lovely-supply-multi-tutkal-paleti", name: "Çoklu yapıştırıcı paleti", brand: "LOVELY", size: "Palet", color: "", image: "https://admin.lovely-professional.ru/storage/media-cache/card/8ZOPE9SkqE1ThP8jGSbs_3901_webp.webp", categories: ["kirpik-tablet-stand"] },
-  { id: "lovely-supply-rili-sari-tablet", name: "Riley sarı tablet", brand: "LOVELY", size: "Tablet", color: "Sarı", image: "https://admin.lovely-professional.ru/storage/media-cache/cards_and_offers_images/05.05.2025/L30591_1_card_37802_webp.webp", categories: ["kirpik-markali", "kirpik-tablet-stand"] },
+  { id: "lovely-supply-rili-sari-tablet", name: "Riley sarı tablet", brand: "LOVELY", size: "Tablet", color: "Sarı", image: "https://admin.lovely-professional.ru/storage/media-cache/cards_and_offers_images/05.05.2025/L30591_1_card_37802_webp.webp", categories: ["kirpik-tablet-stand"] },
   { id: "lovely-supply-kirpik-tableti-no2", name: "LOVELY kirpik tableti No. 2", brand: "LOVELY", size: "Tablet", color: "", image: "https://admin.lovely-professional.ru/storage/media-cache/cards_and_offers_images/05.05.2025/L30082_1_card_37733_webp.webp", categories: ["kirpik-tablet-stand"] },
   { id: "lovely-supply-vinil-cikartma", name: "Vinil çıkartmalar (1 yaprak)", brand: "LOVELY", size: "1 yaprak", color: "", image: "https://admin.lovely-professional.ru/storage/media-cache/cards_and_offers_images/05.05.2025/L30126_1_card_37760_webp.webp", categories: ["kirpik-sarf"] },
   { id: "lovely-supply-kirpik-tableti-no1", name: "LOVELY kirpik tableti No. 1", brand: "LOVELY", size: "Tablet", color: "", image: "https://admin.lovely-professional.ru/storage/media-cache/cards_and_offers_images/05.05.2025/L30142_1_card_37764_webp.webp", categories: ["kirpik-tablet-stand"] },
@@ -1313,6 +1307,12 @@ const loadProducts = () => {
     "nail-file-albi-moon",
     "nail-file-albi-boomerang",
     "nail-file-albi-straight",
+    "lovely-supply-paket-2635",
+    "lovely-supply-paket-kagit",
+    "lovely-supply-tape-48mm",
+    "lovely-supply-paket-3040",
+    "lovely-supply-paket-2530",
+    "lovely-supply-rili-paket",
   ]);
   const normSizeDigits = (value) => {
     const raw = String(value || "").trim();
@@ -1400,6 +1400,22 @@ const loadProducts = () => {
     if (albiMig.changed) {
       changed = true;
       next = albiMig.next;
+    }
+    const migrateStripKirpikMarkaliCategory = (arr) => {
+      let changedInner = false;
+      const out = arr.map((p) => {
+        const cats = Array.isArray(p.categories) ? p.categories : [];
+        if (!cats.includes("kirpik-markali")) return p;
+        changedInner = true;
+        const merged = cats.filter((c) => c !== "kirpik-markali");
+        return { ...p, categories: merged.length ? merged : ["kirpik-sarf"] };
+      });
+      return { next: out, changed: changedInner };
+    };
+    const markaliMig = migrateStripKirpikMarkaliCategory(next);
+    if (markaliMig.changed) {
+      changed = true;
+      next = markaliMig.next;
     }
     const cleaned = next.filter((p) => !REMOVED_PRODUCT_IDS.has(p.id));
     if (cleaned.length !== next.length) {
