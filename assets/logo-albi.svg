@@ -1,6 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80" fill="none" role="img" aria-labelledby="logoTitle">
-  <title id="logoTitle">ALBI t?rnak</title>
-  <!-- Stilize A: sol tarafta halka hissi, ince hat -->
+  <title id="logoTitle">ALBI t&#305;rnak</title>
   <g
     stroke="#3d332d"
     stroke-width="2.1"
@@ -10,13 +10,7 @@
     transform="translate(0, 3)"
   >
     <path
-      d="M 76 42
-         C 54 42 46 30 50 14
-         C 53 4 64 -1 74 6
-         L 106 42
-         M 74 6
-         L 130 42
-         M 82 25 L 122 25"
+      d="M 76 42 C 54 42 46 30 50 14 C 53 4 64 -1 74 6 L 106 42 M 74 6 L 130 42 M 82 25 L 122 25"
     />
   </g>
   <text
@@ -28,9 +22,7 @@
     font-weight="800"
     letter-spacing="0.38em"
     fill="#2a221f"
-  >
-    A · L · B · I
-  </text>
+  >A &#183; L &#183; B &#183; I</text>
   <text
     x="100"
     y="74"
@@ -40,7 +32,5 @@
     font-weight="700"
     letter-spacing="0.42em"
     fill="#9f165f"
-  >
-    t?rnak
-  </text>
+  >t&#305;rnak</text>
 </svg>
