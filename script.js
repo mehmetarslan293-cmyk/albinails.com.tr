@@ -1455,6 +1455,15 @@ const KIRPIK_SUPPLY_CATEGORY_SLUGS = [
   "kirpik-tablet-stand",
 ];
 
+const getBrandForFilter = (product) => {
+  const brand = String(product?.brand || "ALBI").trim() || "ALBI";
+  if (brand.toLocaleLowerCase("tr") !== "lovely") return brand;
+  const name = String(product?.name || "").toLocaleLowerCase("tr");
+  if (name.includes("rili") || name.includes("riley")) return "LOVELY / Riley";
+  if (name.includes("lashy")) return "LOVELY / LASHY";
+  return "LOVELY";
+};
+
 const normalizeSearchText = (value) =>
   String(value || "")
     .toLocaleLowerCase("tr")
@@ -1498,7 +1507,8 @@ const renderProductCard = (product, index, { lazyImage = true } = {}) => {
   const mlValue = lash ? "" : normalizeMl(product.size);
   const skipMl = lash ? "true" : "false";
   const colorRaw = String(product.color || "").trim();
-  const brandKey = `brand-${slugifyBrand(product.brand || "ALBI")}`;
+  const brandLabel = getBrandForFilter(product);
+  const brandKey = `brand-${slugifyBrand(brandLabel)}`;
   const nameKey = normalizeSearchText(product.name);
   const sizeDisplay = lash ? escapeHtml(String(product.size || "").trim() || "—") : `${escapeHtml(mlValue)} ml`;
   const colorLine = lash && colorRaw ? `<p>Renk: ${escapeHtml(colorRaw)}</p>` : "";
@@ -1508,7 +1518,7 @@ const renderProductCard = (product, index, { lazyImage = true } = {}) => {
         ${imgMarkup}
       </div>
       <h3>${safeName}</h3>
-      <p>Marka: ${product.brand || "ALBI"}</p>
+      <p>Marka: ${escapeHtml(brandLabel)}</p>
       <p>Boyut: ${sizeDisplay}</p>
       ${colorLine}
     </article>
@@ -1614,7 +1624,7 @@ const populateTopFilters = () => {
   }
 
   if (topBrandFilter) {
-    const brands = [...new Set(products.map((p) => (p.brand || "ALBI").trim()).filter(Boolean))];
+    const brands = [...new Set(products.map((p) => getBrandForFilter(p)).filter(Boolean))];
     topBrandFilter.innerHTML = `<option value="all">Tümü</option>${brands
       .map((brand) => `<option value="${slugifyBrand(brand)}">${brand}</option>`)
       .join("")}`;

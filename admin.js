@@ -1246,7 +1246,7 @@ const metricAdminLogins = document.querySelector("#metricAdminLogins");
 let pendingImageData = "";
 let pendingBannerImageData = "";
 
-const defaultBrands = ["ALBI", "Kalipso", "LOVELY", "MIO NAILS"];
+const defaultBrands = ["ALBI", "Kalipso", "LOVELY", "LOVELY / Riley", "LOVELY / LASHY", "MIO NAILS"];
 const TARGET_BANNER_RATIO = 16 / 9;
 const RATIO_TOLERANCE = 0.08;
 
@@ -1330,7 +1330,11 @@ const loadBrands = () => {
   if (!stored) return [...defaultBrands];
   try {
     const parsed = JSON.parse(stored);
-    return Array.isArray(parsed) && parsed.length ? parsed : [...defaultBrands];
+    if (Array.isArray(parsed) && parsed.length) {
+      const merged = [...new Set([...parsed, ...defaultBrands])];
+      return merged;
+    }
+    return [...defaultBrands];
   } catch {
     return [...defaultBrands];
   }
