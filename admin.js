@@ -1008,7 +1008,7 @@ const defaultProducts = [
   {
     id: "hypnotic-01-night-no-sleep",
     name: "01 — Hypnotic — NIGHT NO SLEEP",
-    brand: "Kalipso",
+    brand: "ALBI",
     size: "10 ml",
     series: HYPNOTIC_SERIES,
     image: "https://static.tildacdn.com/stor6331-6138-4265-a336-613737393631/50032507.jpg",
@@ -1019,7 +1019,7 @@ const defaultProducts = [
   {
     id: "hypnotic-02-darkside-effect",
     name: "02 — Hypnotic — DARKSIDE EFFECT",
-    brand: "Kalipso",
+    brand: "ALBI",
     size: "10 ml",
     series: HYPNOTIC_SERIES,
     image: "https://static.tildacdn.com/stor3463-6239-4533-a236-366461613166/69327459.jpg",
@@ -1030,7 +1030,7 @@ const defaultProducts = [
   {
     id: "hypnotic-03-double-harmony",
     name: "03 — Hypnotic — DOUBLE HARMONY",
-    brand: "Kalipso",
+    brand: "ALBI",
     size: "10 ml",
     series: HYPNOTIC_SERIES,
     image: "https://static.tildacdn.com/stor6133-6531-4265-b939-643361613132/94370768.jpg",
@@ -1041,7 +1041,7 @@ const defaultProducts = [
   {
     id: "hypnotic-04-heart-diamond",
     name: "04 — Hypnotic — HEART DIAMOND",
-    brand: "Kalipso",
+    brand: "ALBI",
     size: "10 ml",
     series: HYPNOTIC_SERIES,
     image: "https://static.tildacdn.com/stor3137-3963-4362-b162-373733373931/14402646.jpg",
@@ -1052,7 +1052,7 @@ const defaultProducts = [
   {
     id: "hypnotic-05-lady-danger",
     name: "05 — Hypnotic — LADY DANGER",
-    brand: "Kalipso",
+    brand: "ALBI",
     size: "10 ml",
     series: HYPNOTIC_SERIES,
     image: "https://static.tildacdn.com/stor6162-6437-4531-b434-633230633936/84481830.jpg",
@@ -1063,7 +1063,7 @@ const defaultProducts = [
   {
     id: "hypnotic-06-euphoria",
     name: "06 — Hypnotic — EUPHORIA",
-    brand: "Kalipso",
+    brand: "ALBI",
     size: "10 ml",
     series: HYPNOTIC_SERIES,
     image: "https://static.tildacdn.com/stor6634-3063-4664-b233-633133366462/76129448.jpg",
@@ -1074,7 +1074,7 @@ const defaultProducts = [
   {
     id: "hypnotic-07-brilliant-addiction",
     name: "07 — Hypnotic — BRILLIANT ADDICTION",
-    brand: "Kalipso",
+    brand: "ALBI",
     size: "10 ml",
     series: HYPNOTIC_SERIES,
     image: "https://static.tildacdn.com/stor3535-6630-4339-b537-636536636633/15607787.jpg",
@@ -1085,7 +1085,7 @@ const defaultProducts = [
   {
     id: "hypnotic-08-extreme-shine",
     name: "08 — Hypnotic — EXTREME SHINE",
-    brand: "Kalipso",
+    brand: "ALBI",
     size: "10 ml",
     series: HYPNOTIC_SERIES,
     image: "https://static.tildacdn.com/stor3535-6630-4339-b537-636536636633/15607787.jpg",
@@ -1096,7 +1096,7 @@ const defaultProducts = [
   {
     id: "hypnotic-09-intoxicated",
     name: "09 — Hypnotic — INTOXICATED",
-    brand: "Kalipso",
+    brand: "ALBI",
     size: "10 ml",
     series: HYPNOTIC_SERIES,
     image: "https://static.tildacdn.com/stor3535-6630-4339-b537-636536636633/15607787.jpg",
@@ -1370,6 +1370,7 @@ const loadProducts = () => {
     let changed = false;
     const next = arr.filter((p) => {
       const id = String(p?.id || "").toLowerCase();
+      if (id.startsWith("hypnotic-")) return true;
       if (id.startsWith("albi-")) {
         changed = true;
         return false;
@@ -1400,6 +1401,30 @@ const loadProducts = () => {
     if (albiMig.changed) {
       changed = true;
       next = albiMig.next;
+    }
+    const migrateHypnoticGelBrand = (arr) => {
+      let changedInner = false;
+      const out = arr.map((p) => {
+        const id = String(p?.id || "").toLowerCase();
+        if (!id.startsWith("hypnotic-")) return p;
+        let row = { ...p };
+        if (String(row.brand || "").trim() !== "ALBI") {
+          row.brand = "ALBI";
+          changedInner = true;
+        }
+        const prevCats = Array.isArray(row.categories) ? row.categories : [];
+        if (!prevCats.includes("gel-polish")) {
+          row.categories = [...new Set([...prevCats, "gel-polish"])];
+          changedInner = true;
+        }
+        return row;
+      });
+      return { next: out, changed: changedInner };
+    };
+    const hypoMig = migrateHypnoticGelBrand(next);
+    if (hypoMig.changed) {
+      changed = true;
+      next = hypoMig.next;
     }
     const migrateStripKirpikMarkaliCategory = (arr) => {
       let changedInner = false;
