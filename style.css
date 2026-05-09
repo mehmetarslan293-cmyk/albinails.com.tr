@@ -1281,17 +1281,17 @@ dialog::backdrop {
     position: static;
     top: auto;
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     gap: 8px;
-    overflow-x: auto;
-    overflow-y: hidden;
+    overflow: visible;
     -webkit-overflow-scrolling: touch;
     padding-bottom: 4px;
     scrollbar-width: thin;
+    margin-bottom: 6px;
   }
 
   .catalog-menu a {
-    flex: 0 0 auto;
+    flex: 0 1 auto;
     white-space: nowrap;
     font-size: 0.94rem;
     line-height: 1.2;
@@ -1299,6 +1299,19 @@ dialog::backdrop {
     border: 1px solid var(--line);
     border-radius: 999px;
     background: #fff;
+    color: #3f3344;
+    font-weight: 600;
+    transition: all 0.18s ease;
+  }
+
+  .catalog-menu a.active {
+    background: linear-gradient(180deg, #fce7f2, #f8dbea);
+    border-color: rgba(159, 22, 95, 0.45);
+    color: var(--primary);
+  }
+
+  .catalog-menu a:hover {
+    border-color: rgba(159, 22, 95, 0.28);
   }
 
   .catalog-head {
@@ -1353,6 +1366,16 @@ dialog::backdrop {
 @media (max-width: 640px) {
   .product-grid {
     grid-template-columns: 1fr;
+  }
+
+  .catalog-menu {
+    gap: 6px;
+    margin-bottom: 2px;
+  }
+
+  .catalog-menu a {
+    font-size: 0.88rem;
+    padding: 7px 10px;
   }
 
   .catalog-grid {
