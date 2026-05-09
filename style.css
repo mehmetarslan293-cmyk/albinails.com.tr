@@ -62,6 +62,45 @@ a {
   color: var(--primary);
 }
 
+.nav-toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #fff;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+  color: inherit;
+  flex-shrink: 0;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  border-radius: 1px;
+  background: var(--text);
+  transition: transform 0.22s ease, opacity 0.2s ease;
+}
+
+body.nav-menu-open .nav-toggle span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+body.nav-menu-open .nav-toggle span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle:focus-visible {
+  outline: 2px solid var(--primary-2);
+  outline-offset: 2px;
+}
+
 nav {
   display: flex;
   gap: 22px;
@@ -1114,8 +1153,80 @@ dialog::backdrop {
     top: 0;
   }
 
-  nav {
-    display: none;
+  body.nav-menu-open {
+    overflow: hidden;
+  }
+
+  .nav {
+    grid-template-columns: 1fr auto 1fr;
+    grid-template-rows: auto auto;
+    column-gap: 12px;
+    row-gap: 0;
+    align-items: center;
+  }
+
+  .logo {
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: start;
+  }
+
+  .nav-toggle {
+    display: inline-flex;
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: center;
+  }
+
+  .nav .btn-dark {
+    grid-column: 3;
+    grid-row: 1;
+    justify-self: end;
+    min-width: 0;
+    padding: 10px 14px;
+    font-size: 0.86rem;
+  }
+
+  nav#mainNav {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    flex-direction: column;
+    align-items: stretch;
+    text-align: left;
+    gap: 0;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    padding: 0;
+    width: 100%;
+    border-top: 1px solid transparent;
+    transition:
+      max-height 0.38s ease,
+      opacity 0.22s ease,
+      padding 0.22s ease,
+      border-color 0.2s ease;
+  }
+
+  body.nav-menu-open nav#mainNav {
+    max-height: min(78vh, 480px);
+    opacity: 1;
+    padding: 12px 0 20px;
+    border-top-color: var(--line);
+    gap: 2px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  nav#mainNav a {
+    padding: 12px 10px;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text);
+  }
+
+  nav#mainNav a:active {
+    background: rgba(159, 22, 95, 0.08);
   }
 
   .hero,

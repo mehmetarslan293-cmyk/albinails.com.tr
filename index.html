@@ -34,7 +34,19 @@
     <header class="header">
       <div class="container nav">
         <a href="#anasayfa" class="logo">ALBI<span>tırnak</span></a>
-        <nav>
+        <button
+          type="button"
+          class="nav-toggle"
+          id="navToggle"
+          aria-expanded="false"
+          aria-controls="mainNav"
+          aria-label="Menüyü aç"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <nav id="mainNav" aria-label="Ana menü">
           <a href="./katalog.html?filter=all">Tüm Ürünler</a>
           <a href="./katalog.html?filter=new">Yeniler</a>
           <a href="./katalog.html?filter=all">Kategoriler</a>

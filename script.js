@@ -10,7 +10,6 @@ const catalogEmpty = document.querySelector("#catalogEmpty");
 const previewGrid = document.querySelector("#catalogPreviewGrid");
 const topMlFilter = document.querySelector("#topMlFilter");
 const topBrandFilter = document.querySelector("#topBrandFilter");
-const topColorFilter = document.querySelector("#topColorFilter");
 const resetTopFilters = document.querySelector("#resetTopFilters");
 const catalogPagination = document.querySelector("#catalogPagination");
 
@@ -1381,12 +1380,11 @@ const renderProductCard = (product, index, { lazyImage = true } = {}) => {
   const mlValue = lash ? "" : normalizeMl(product.size);
   const skipMl = lash ? "true" : "false";
   const colorRaw = String(product.color || "").trim();
-  const colorKey = colorRaw ? slugifyBrand(colorRaw) : "";
   const brandKey = `brand-${slugifyBrand(product.brand || "ALBI")}`;
   const sizeDisplay = lash ? escapeHtml(String(product.size || "").trim() || "—") : `${escapeHtml(mlValue)} ml`;
   const colorLine = lash && colorRaw ? `<p>Renk: ${escapeHtml(colorRaw)}</p>` : "";
   return `
-    <article class="catalog-card" data-category="${(product.categories || []).join(",")}" data-size-ml="${mlValue}" data-brand-key="${brandKey}" data-skip-ml-filter="${skipMl}" data-color-key="${colorKey}">
+    <article class="catalog-card" data-category="${(product.categories || []).join(",")}" data-size-ml="${mlValue}" data-brand-key="${brandKey}" data-skip-ml-filter="${skipMl}">
       <div class="catalog-photo ${toneClass} ${imageClass}">
         ${imgMarkup}
       </div>
@@ -1504,14 +1502,6 @@ const populateTopFilters = () => {
       .join("")}`;
   }
 
-  if (topColorFilter) {
-    const colors = [...new Set(products.map((p) => String(p.color || "").trim()).filter(Boolean))].sort((a, b) =>
-      a.localeCompare(b, "tr")
-    );
-    topColorFilter.innerHTML = `<option value="all">Tümü</option>${colors
-      .map((c) => `<option value="${slugifyBrand(c)}">${escapeHtml(c)}</option>`)
-      .join("")}`;
-  }
 };
 
 const applyCatalogFilter = (filterKey = currentCategoryFilter, resetPage = false) => {
@@ -1522,7 +1512,6 @@ const applyCatalogFilter = (filterKey = currentCategoryFilter, resetPage = false
 
   const selectedMl = topMlFilter?.value || "all";
   const selectedBrand = topBrandFilter?.value || "all";
-  const selectedColor = topColorFilter?.value || "all";
   const matchedCards = [];
 
   cards.forEach((card) => {
@@ -1530,7 +1519,6 @@ const applyCatalogFilter = (filterKey = currentCategoryFilter, resetPage = false
     const sizeValue = card.dataset.sizeMl || "";
     const brandKey = card.dataset.brandKey || "";
     const skipMl = card.dataset.skipMlFilter === "true";
-    const colorKeyCard = card.dataset.colorKey || "";
     const categoryMatch =
       filterKey === "all" ||
       categoryList.includes(filterKey) ||
@@ -1539,9 +1527,7 @@ const applyCatalogFilter = (filterKey = currentCategoryFilter, resetPage = false
           categoryList.some((c) => KIRPIK_SUPPLY_CATEGORY_SLUGS.includes(c))));
     const mlMatch = selectedMl === "all" || (!skipMl && sizeValue === selectedMl);
     const brandMatch = selectedBrand === "all" || brandKey === `brand-${selectedBrand}`;
-    const colorMatch =
-      selectedColor === "all" || (Boolean(colorKeyCard) && colorKeyCard === selectedColor);
-    const shouldShow = categoryMatch && mlMatch && brandMatch && colorMatch;
+    const shouldShow = categoryMatch && mlMatch && brandMatch;
     if (shouldShow) matchedCards.push(card);
   });
 
@@ -1566,11 +1552,7 @@ const applyCatalogFilter = (filterKey = currentCategoryFilter, resetPage = false
       selectedBrand === "all"
         ? "Tümü"
         : topBrandFilter?.selectedOptions?.[0]?.textContent || "Tümü";
-    const colorLabel =
-      selectedColor === "all"
-        ? "Tümü"
-        : topColorFilter?.selectedOptions?.[0]?.textContent || "Tümü";
-    catalogCurrent.textContent = `${baseLabel} | ML: ${mlLabel} | Marka: ${brandLabel} | Renk: ${colorLabel}`;
+    catalogCurrent.textContent = `${baseLabel} | ML: ${mlLabel} | Marka: ${brandLabel}`;
   }
 
   if (catalogEmpty) {
@@ -1669,17 +1651,10 @@ if (topBrandFilter) {
   });
 }
 
-if (topColorFilter) {
-  topColorFilter.addEventListener("change", () => {
-    applyCatalogFilter(currentCategoryFilter, true);
-  });
-}
-
 if (resetTopFilters) {
   resetTopFilters.addEventListener("click", () => {
     if (topMlFilter) topMlFilter.value = "all";
     if (topBrandFilter) topBrandFilter.value = "all";
-    if (topColorFilter) topColorFilter.value = "all";
     applyCatalogFilter(currentCategoryFilter, true);
   });
 }
@@ -1727,5 +1702,40 @@ if (contactForm) {
     }, 1800);
   });
 }
+
+const initSiteHeaderMenu = () => {
+  const toggle = document.querySelector("#navToggle");
+  const nav = document.querySelector("#mainNav");
+  if (!toggle || !nav) return;
+
+  const setOpen = (open) => {
+    document.body.classList.toggle("nav-menu-open", open);
+    toggle.setAttribute("aria-expanded", String(open));
+    toggle.setAttribute("aria-label", open ? "Menüyü kapat" : "Menüyü aç");
+  };
+
+  toggle.addEventListener("click", (event) => {
+    event.stopPropagation();
+    setOpen(!document.body.classList.contains("nav-menu-open"));
+  });
+
+  nav.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => setOpen(false));
+  });
+
+  document.addEventListener("click", (event) => {
+    if (!document.body.classList.contains("nav-menu-open")) return;
+    const t = event.target;
+    if (!(t instanceof Node)) return;
+    if (toggle.contains(t) || nav.contains(t)) return;
+    setOpen(false);
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") setOpen(false);
+  });
+};
+
+initSiteHeaderMenu();
 
 initializeCatalogFromUrl();
