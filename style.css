@@ -64,11 +64,12 @@ a {
 }
 
 .logo-img {
-  width: auto;
-  height: clamp(42px, 10vw, 52px);
-  max-width: min(148px, 42vw);
   display: block;
+  width: min(140px, 34vw);
+  height: auto;
+  aspect-ratio: 200 / 80;
   object-fit: contain;
+  flex-shrink: 0;
 }
 
 .nav-toggle {
@@ -1194,6 +1195,10 @@ dialog::backdrop {
     min-width: 0;
     padding: 10px 14px;
     font-size: 0.86rem;
+  }
+
+  .logo-img {
+    width: min(118px, 30vw);
   }
 
   nav#mainNav {

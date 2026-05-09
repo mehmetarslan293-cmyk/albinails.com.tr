@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80" fill="none" role="img" aria-labelledby="logoTitle">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80" fill="none" role="img" aria-labelledby="logoTitle" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
   <title id="logoTitle">ALBI t&#305;rnak</title>
   <g
     stroke="#3d332d"
