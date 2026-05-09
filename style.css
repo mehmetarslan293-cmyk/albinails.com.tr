@@ -891,9 +891,52 @@ h3 {
 .catalog-head {
   grid-column: 1 / -1;
   display: flex;
-  align-items: flex-end;
+  align-items: flex-start;
   justify-content: space-between;
   gap: 16px;
+}
+
+.catalog-toolbar {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 14px 18px;
+}
+
+.catalog-search-field {
+  flex: 1 1 280px;
+  max-width: min(100%, 440px);
+  min-width: min(100%, 220px);
+}
+
+.catalog-toolbar-label {
+  display: block;
+  font-size: 0.8rem;
+  color: #6f6077;
+}
+
+.catalog-search-field input {
+  display: block;
+  width: 100%;
+  margin-top: 4px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 10px 12px;
+  font: inherit;
+  background: #fff;
+  box-shadow: 0 1px 0 rgba(63, 51, 68, 0.04);
+}
+
+.catalog-search-field input:focus {
+  outline: none;
+  border-color: rgba(159, 22, 95, 0.45);
+  box-shadow: 0 0 0 3px rgba(159, 22, 95, 0.12);
+}
+
+.catalog-toolbar .catalog-top-filters {
+  margin-left: auto;
+  justify-content: flex-end;
 }
 
 .catalog-head h2 {
@@ -908,6 +951,7 @@ h3 {
 .catalog-top-filters {
   display: flex;
   align-items: end;
+  flex-wrap: wrap;
   gap: 10px;
 }
 
@@ -919,16 +963,6 @@ h3 {
 .catalog-top-filters select {
   margin-top: 4px;
   min-width: 120px;
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  padding: 8px 10px;
-  font: inherit;
-  background: #fff;
-}
-
-.catalog-top-filters input {
-  margin-top: 4px;
-  min-width: 150px;
   border: 1px solid var(--line);
   border-radius: 10px;
   padding: 8px 10px;
@@ -1485,6 +1519,23 @@ dialog::backdrop {
     align-items: flex-start;
   }
 
+  .catalog-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .catalog-search-field {
+    max-width: none;
+    min-width: 0;
+  }
+
+  .catalog-toolbar .catalog-top-filters {
+    margin-left: 0;
+    width: 100%;
+    justify-content: flex-start;
+  }
+
   .catalog-top-filters {
     width: 100%;
     flex-wrap: wrap;
@@ -1579,7 +1630,7 @@ dialog::backdrop {
     align-items: flex-start;
   }
 
-  .catalog-top-filters {
+  .catalog-toolbar .catalog-top-filters {
     width: 100%;
   }
 
