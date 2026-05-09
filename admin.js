@@ -41,6 +41,38 @@ const tildaThumbnailSrc = (originalUrl, maxEdgePx = 96) => {
   }
 };
 
+/** Tilda albinails.ru — Hypnotic koleksiyonu (script.js ile aynı tohum). */
+const HYPNOTIC_SERIES = "Hypnotic — yansıtıcı jel oje";
+const HYPNOTIC_SERIES_GALLERY = [
+  "https://static.tildacdn.com/stor3139-6565-4433-a135-623762343732/75565413.jpg",
+  "https://static.tildacdn.com/stor3535-6630-4339-b537-636536636633/15607787.jpg",
+  "https://static.tildacdn.com/stor3463-6239-4533-a236-366461613166/69327459.jpg",
+  "https://static.tildacdn.com/stor6133-6531-4265-b939-643361613132/94370768.jpg",
+  "https://static.tildacdn.com/stor6634-3063-4664-b233-633133366462/76129448.jpg",
+  "https://static.tildacdn.com/stor3137-3963-4362-b162-373733373931/14402646.jpg",
+  "https://static.tildacdn.com/stor6162-6437-4531-b434-633230633936/84481830.jpg",
+  "https://static.tildacdn.com/stor6331-6138-4265-a336-613737393631/50032507.jpg",
+  "https://static.tildacdn.com/stor3765-6465-4038-b036-666565356234/54829240.jpg",
+  "https://static.tildacdn.com/stor3334-3833-4861-b235-363265306161/55497536.jpg",
+  "https://static.tildacdn.com/stor6566-3662-4630-a535-656334353932/91405490.jpg",
+  "https://static.tildacdn.com/stor6461-3337-4632-a332-346230613733/97286599.jpg",
+  "https://static.tildacdn.com/stor3334-3537-4130-b863-643234363430/92390404.jpg",
+  "https://static.tildacdn.com/stor6462-6239-4433-a462-623462353465/97379710.jpg",
+];
+const HYPNOTIC_SERIES_ABOUT =
+  "Yeni sınırlı üretim yansıtıcı (reflektör) jel oje koleksiyonu: yapay ışıkta belirgin parıltı, doğal ışıkta da canlı görünüm.\n\n" +
+  "NIGHT NO SLEEP — siyah (hit)\n" +
+  "DARKSIDE EFFECT — koyu lacivert\n" +
+  "DOUBLE HARMONY — derin mor\n" +
+  "HEART DIAMOND — yoğun kırmızı\n" +
+  "LADY DANGER — bej altın\n" +
+  "EUPHORIA — pembe altın\n" +
+  "BRILLIANT ADDICTION — gümüş\n" +
+  "EXTREME SHINE — ekstra parlama\n" +
+  "INTOXICATED — (Tilda mağazasında önizleme görseli diğer tonla paylaşılmış olabilir; siparişte SKU doğrulanır.)\n\n" +
+  "Sınırlı stok. 1–2 ince kat ile opaklık ayarlanabilir; gradient ve nail art için uygundur.\n\n" +
+  "Saklama: serin ve kuru ortam, 10–26 °C; açıkken UV/LED ışığından uzak tutun.";
+
 const defaultProducts = [
   { id: "kalipso-top-flakes-velor-15", name: "TOP FLAKES VELOR, 15 ML", brand: "Kalipso", size: "15 ml", image: "https://vo-kalipso.com/wp-content/uploads/2021/05/\u0432\u0435\u0440\u043b\u044e\u0440-\u043c\u0430\u0442\u043e\u0432-1--600x600.jpg", categories: ["top-coat"] },
   { id: "kalipso-top-snow-flakes-15", name: "TOP SNOW FLAKES WITHOUT STICKY LAYER, 15 ML", brand: "Kalipso", size: "15 ml", image: "https://vo-kalipso.com/wp-content/uploads/2021/05/\u0441\u043d\u0435\u0436\u043d\u044b\u0435-\u0445\u043b\u043e\u043f--600x600.jpg", categories: ["top-coat"] },
@@ -979,6 +1011,137 @@ const defaultProducts = [
   { id: "mio-gel-gel-lak-leo-05-leo-cats-05", name: "Гель-лак. LEO-05. Leo Cats № 05", brand: "MIO NAILS", size: "8 ml", color: "", image: "https://mionails.ru/upload/iblock/53d/24gonu0b4h6mvw4u6cb3oydh1iyosazk.jpg", categories: ["gel-polish"] },
   { id: "mio-gel-gel-lak-lunnaya-koshka-moon-cats-belaya-8-ml", name: "Гель-лак. Лунная кошка (Moon Cats) # Белая, 8 мл", brand: "MIO NAILS", size: "8 ml", color: "", image: "https://mionails.ru/upload/iblock/764/biqr3fvmdc3eugz5zes0ly9q0og7umpd.jpg", categories: ["gel-polish"] },
   { id: "mio-gel-gel-lak-lunnaya-koshka-moon-cats-prozrachnaya-8-ml", name: "Гель-лак. Лунная кошка (Moon Cats) # Прозрачная, 8 мл", brand: "MIO NAILS", size: "8 ml", color: "", image: "https://mionails.ru/upload/iblock/dc4/ypvahsi3y7duqbvnpbm0y5akco1o071n.jpg", categories: ["gel-polish"] },
+  {
+    id: "hypnotic-01-night-no-sleep",
+    name: "01 — Hypnotic — NIGHT NO SLEEP",
+    brand: "Kalipso",
+    size: "10 ml",
+    series: HYPNOTIC_SERIES,
+    image: "https://static.tildacdn.com/stor6331-6138-4265-a336-613737393631/50032507.jpg",
+    categories: ["gel-polish", "new"],
+    seriesGallery: HYPNOTIC_SERIES_GALLERY,
+    seriesAbout: HYPNOTIC_SERIES_ABOUT,
+  },
+  {
+    id: "hypnotic-02-darkside-effect",
+    name: "02 — Hypnotic — DARKSIDE EFFECT",
+    brand: "Kalipso",
+    size: "10 ml",
+    series: HYPNOTIC_SERIES,
+    image: "https://static.tildacdn.com/stor3463-6239-4533-a236-366461613166/69327459.jpg",
+    categories: ["gel-polish", "new"],
+    seriesGallery: HYPNOTIC_SERIES_GALLERY,
+    seriesAbout: HYPNOTIC_SERIES_ABOUT,
+  },
+  {
+    id: "hypnotic-03-double-harmony",
+    name: "03 — Hypnotic — DOUBLE HARMONY",
+    brand: "Kalipso",
+    size: "10 ml",
+    series: HYPNOTIC_SERIES,
+    image: "https://static.tildacdn.com/stor6133-6531-4265-b939-643361613132/94370768.jpg",
+    categories: ["gel-polish", "new"],
+    seriesGallery: HYPNOTIC_SERIES_GALLERY,
+    seriesAbout: HYPNOTIC_SERIES_ABOUT,
+  },
+  {
+    id: "hypnotic-04-heart-diamond",
+    name: "04 — Hypnotic — HEART DIAMOND",
+    brand: "Kalipso",
+    size: "10 ml",
+    series: HYPNOTIC_SERIES,
+    image: "https://static.tildacdn.com/stor3137-3963-4362-b162-373733373931/14402646.jpg",
+    categories: ["gel-polish", "new"],
+    seriesGallery: HYPNOTIC_SERIES_GALLERY,
+    seriesAbout: HYPNOTIC_SERIES_ABOUT,
+  },
+  {
+    id: "hypnotic-05-lady-danger",
+    name: "05 — Hypnotic — LADY DANGER",
+    brand: "Kalipso",
+    size: "10 ml",
+    series: HYPNOTIC_SERIES,
+    image: "https://static.tildacdn.com/stor6162-6437-4531-b434-633230633936/84481830.jpg",
+    categories: ["gel-polish", "new"],
+    seriesGallery: HYPNOTIC_SERIES_GALLERY,
+    seriesAbout: HYPNOTIC_SERIES_ABOUT,
+  },
+  {
+    id: "hypnotic-06-euphoria",
+    name: "06 — Hypnotic — EUPHORIA",
+    brand: "Kalipso",
+    size: "10 ml",
+    series: HYPNOTIC_SERIES,
+    image: "https://static.tildacdn.com/stor6634-3063-4664-b233-633133366462/76129448.jpg",
+    categories: ["gel-polish", "new"],
+    seriesGallery: HYPNOTIC_SERIES_GALLERY,
+    seriesAbout: HYPNOTIC_SERIES_ABOUT,
+  },
+  {
+    id: "hypnotic-07-brilliant-addiction",
+    name: "07 — Hypnotic — BRILLIANT ADDICTION",
+    brand: "Kalipso",
+    size: "10 ml",
+    series: HYPNOTIC_SERIES,
+    image: "https://static.tildacdn.com/stor3535-6630-4339-b537-636536636633/15607787.jpg",
+    categories: ["gel-polish", "new"],
+    seriesGallery: HYPNOTIC_SERIES_GALLERY,
+    seriesAbout: HYPNOTIC_SERIES_ABOUT,
+  },
+  {
+    id: "hypnotic-08-extreme-shine",
+    name: "08 — Hypnotic — EXTREME SHINE",
+    brand: "Kalipso",
+    size: "10 ml",
+    series: HYPNOTIC_SERIES,
+    image: "https://static.tildacdn.com/stor3535-6630-4339-b537-636536636633/15607787.jpg",
+    categories: ["gel-polish", "new"],
+    seriesGallery: HYPNOTIC_SERIES_GALLERY,
+    seriesAbout: HYPNOTIC_SERIES_ABOUT,
+  },
+  {
+    id: "hypnotic-09-intoxicated",
+    name: "09 — Hypnotic — INTOXICATED",
+    brand: "Kalipso",
+    size: "10 ml",
+    series: HYPNOTIC_SERIES,
+    image: "https://static.tildacdn.com/stor3535-6630-4339-b537-636536636633/15607787.jpg",
+    categories: ["gel-polish", "new"],
+    seriesGallery: HYPNOTIC_SERIES_GALLERY,
+    seriesAbout: HYPNOTIC_SERIES_ABOUT,
+  },
+  {
+    id: "tilda-albin-primer-ultrabond",
+    name: "Asidsiz primer (Ultrabond)",
+    brand: "Kalipso",
+    size: "10 ml",
+    image: "https://static.tildacdn.com/tild6163-3235-4035-a239-383838653266/photo_2021-07-22_15-.jpg",
+    categories: ["base-coat", "new"],
+  },
+  {
+    id: "tilda-albin-stickers-phone",
+    name: "Telefon çıkartmaları",
+    brand: "Kalipso",
+    size: "1 takım",
+    image: "https://static.tildacdn.com/stor3434-3438-4566-b932-303837666438/18817871.jpg",
+    categories: ["new"],
+  },
+  {
+    id: "tilda-albin-magnet-cat-eye",
+    name: "Mıknatıs (cat eye)",
+    brand: "Kalipso",
+    size: "1 adet",
+    image: "https://static.tildacdn.com/stor6630-6662-4432-a561-636538383234/61049524.jpg",
+    categories: ["new"],
+  },
+  {
+    id: "tilda-albin-dehydrator-nail-fresher",
+    name: "Dehydrator Nail Fresher",
+    brand: "Kalipso",
+    size: "10 ml",
+    image: "https://static.tildacdn.com/tild6138-6562-4137-b231-326632656537/IMG_7408.jpg",
+    categories: ["base-coat", "new"],
+  },
 ];
 
 const isLegacySeedData = (products) => {
@@ -1242,6 +1405,19 @@ const loadProducts = () => {
     if (cleaned.length !== next.length) {
       changed = true;
       next = cleaned;
+    }
+    const migrateAppendTildaHypnoticBundle = (arr) => {
+      const seeds = defaultProducts.filter((p) => /^hypnotic-|^tilda-albin-/.test(String(p?.id || "")));
+      if (!seeds.length) return { next: arr, changed: false };
+      const have = new Set(arr.map((p) => String(p?.id || "")));
+      const add = seeds.filter((p) => p?.id && !have.has(p.id));
+      if (!add.length) return { next: arr, changed: false };
+      return { next: [...arr, ...add], changed: true };
+    };
+    const tildaMig = migrateAppendTildaHypnoticBundle(next);
+    if (tildaMig.changed) {
+      changed = true;
+      next = tildaMig.next;
     }
     if (changed) localStorage.setItem(PRODUCTS_KEY, JSON.stringify(next));
     return next;
