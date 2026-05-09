@@ -235,6 +235,37 @@ button {
   background: #b3261e;
 }
 
+.offer-admin-list {
+  display: grid;
+  gap: 10px;
+}
+
+.admin-offer-item {
+  border: 1px solid rgba(38, 28, 44, 0.1);
+  border-radius: 12px;
+  padding: 12px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  align-items: start;
+  background: #faf8fc;
+}
+
+.admin-offer-item strong {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.admin-offer-item p {
+  margin: 3px 0;
+  color: #5f5268;
+}
+
+.admin-offer-meta {
+  font-size: 0.82rem;
+  color: #7a6f82;
+}
+
 @media (max-width: 760px) {
   .grid-2 {
     grid-template-columns: 1fr;
@@ -251,6 +282,10 @@ button {
   }
 
   .admin-banner-item {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-offer-item {
     grid-template-columns: 1fr;
   }
 

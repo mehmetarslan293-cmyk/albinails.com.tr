@@ -17,6 +17,7 @@ const PRODUCTS_KEY = "albiProducts";
 const CONTENT_KEY = "albiSiteContent";
 const METRICS_KEY = "albiMetrics";
 const BANNERS_KEY = "albiBanners";
+const OFFERS_KEY = "albiOffers";
 
 const escapeHtml = (value) =>
   String(value ?? "")
@@ -1767,6 +1768,32 @@ if (contactForm) {
     event.preventDefault();
     const submitButton = contactForm.querySelector("button[type='submit']");
     if (!submitButton) return;
+    const nameInput = contactForm.querySelector("#contactName");
+    const emailInput = contactForm.querySelector("#contactEmail");
+    const phoneInput = contactForm.querySelector("#contactPhone");
+    const messageInput = contactForm.querySelector("#contactMessage");
+
+    const offer = {
+      id: `offer_${Date.now()}`,
+      createdAt: new Date().toISOString(),
+      name: String(nameInput?.value || "").trim(),
+      email: String(emailInput?.value || "").trim(),
+      phone: String(phoneInput?.value || "").trim(),
+      message: String(messageInput?.value || "").trim(),
+    };
+
+    const storedOffersRaw = localStorage.getItem(OFFERS_KEY);
+    let offers = [];
+    if (storedOffersRaw) {
+      try {
+        const parsed = JSON.parse(storedOffersRaw);
+        if (Array.isArray(parsed)) offers = parsed;
+      } catch {
+        offers = [];
+      }
+    }
+    offers.unshift(offer);
+    localStorage.setItem(OFFERS_KEY, JSON.stringify(offers));
 
     submitButton.textContent = "Talebiniz alındı";
     submitButton.disabled = true;

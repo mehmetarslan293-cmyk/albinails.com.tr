@@ -6,6 +6,7 @@ const CONTENT_KEY = "albiSiteContent";
 const METRICS_KEY = "albiMetrics";
 const BRANDS_KEY = "albiBrands";
 const BANNERS_KEY = "albiBanners";
+const OFFERS_KEY = "albiOffers";
 
 const tildaThumbnailSrc = (originalUrl, maxEdgePx = 96) => {
   if (!originalUrl || typeof originalUrl !== "string") return originalUrl;
@@ -1235,6 +1236,7 @@ const bannerImageFileInput = document.querySelector("#bannerImageFile");
 const bannerRatioInfo = document.querySelector("#bannerRatioInfo");
 const saveBannerBtn = document.querySelector("#saveBannerBtn");
 const bannerList = document.querySelector("#bannerList");
+const offerList = document.querySelector("#offerList");
 const metricTotalVisits = document.querySelector("#metricTotalVisits");
 const metricTodayVisits = document.querySelector("#metricTodayVisits");
 const metricHomeViews = document.querySelector("#metricHomeViews");
@@ -1353,6 +1355,21 @@ const saveBanners = (banners) => {
   localStorage.setItem(BANNERS_KEY, JSON.stringify(banners));
 };
 
+const loadOffers = () => {
+  const stored = localStorage.getItem(OFFERS_KEY);
+  if (!stored) return [];
+  try {
+    const parsed = JSON.parse(stored);
+    return Array.isArray(parsed) ? parsed : [];
+  } catch {
+    return [];
+  }
+};
+
+const saveOffers = (offers) => {
+  localStorage.setItem(OFFERS_KEY, JSON.stringify(offers));
+};
+
 const ratioText = (w, h) => {
   if (!w || !h) return "Oran bilgisi: Hesaplanamadı.";
   const ratio = w / h;
@@ -1398,6 +1415,36 @@ const renderBanners = () => {
       </article>
     `
     )
+    .join("");
+};
+
+const renderOffers = () => {
+  if (!offerList) return;
+  const offers = loadOffers();
+  if (!offers.length) {
+    offerList.innerHTML = `<p class="auth-hint">Henüz teklif kaydı yok.</p>`;
+    return;
+  }
+  offerList.innerHTML = offers
+    .map((offer) => {
+      const dateLabel = offer.createdAt
+        ? new Date(offer.createdAt).toLocaleString("tr-TR")
+        : "Tarih yok";
+      return `
+      <article class="admin-offer-item">
+        <div>
+          <strong>${escapeHtml(offer.name || "İsimsiz")}</strong>
+          <p><b>E-posta:</b> ${escapeHtml(offer.email || "-")}</p>
+          <p><b>Telefon:</b> ${escapeHtml(offer.phone || "-")}</p>
+          <p><b>Mesaj:</b> ${escapeHtml(offer.message || "-")}</p>
+          <p class="admin-offer-meta">${escapeHtml(dateLabel)}</p>
+        </div>
+        <div class="admin-actions">
+          <button type="button" class="danger" data-offer-delete="${escapeHtml(offer.id || "")}">Sil</button>
+        </div>
+      </article>
+    `;
+    })
     .join("");
 };
 
@@ -1523,6 +1570,7 @@ if (loginForm) {
       loginCard.classList.add("hidden");
       adminPanel.classList.remove("hidden");
       renderProducts();
+      renderOffers();
       fillContentForm();
       renderMetrics();
       authError.textContent = "";
@@ -1712,6 +1760,19 @@ if (bannerList) {
   });
 }
 
+if (offerList) {
+  offerList.addEventListener("click", (event) => {
+    const target = event.target;
+    if (!(target instanceof HTMLElement)) return;
+    const offerId = target.dataset.offerDelete;
+    if (!offerId) return;
+    const offers = loadOffers();
+    const next = offers.filter((item) => item.id !== offerId);
+    saveOffers(next);
+    renderOffers();
+  });
+}
+
 if (addBrandBtn) {
   addBrandBtn.addEventListener("click", () => {
     const name = newBrandInput?.value.trim();
@@ -1751,6 +1812,7 @@ if (sessionStorage.getItem(AUTH_KEY) === "1") {
   loginCard.classList.add("hidden");
   adminPanel.classList.remove("hidden");
   renderProducts();
+  renderOffers();
   renderBanners();
   fillContentForm();
   renderMetrics();
