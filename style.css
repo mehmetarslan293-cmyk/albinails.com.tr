@@ -1279,9 +1279,26 @@ dialog::backdrop {
 
   .catalog-menu {
     position: static;
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 8px 14px;
+    top: auto;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 8px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 4px;
+    scrollbar-width: thin;
+  }
+
+  .catalog-menu a {
+    flex: 0 0 auto;
+    white-space: nowrap;
+    font-size: 0.94rem;
+    line-height: 1.2;
+    padding: 8px 12px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: #fff;
   }
 
   .catalog-head {
@@ -1328,11 +1345,22 @@ dialog::backdrop {
   }
 
   .catalog-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
   }
 
   .catalog-preview-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .catalog-card h3 {
+    font-size: 0.92rem;
+    line-height: 1.25;
+  }
+
+  .catalog-card p {
+    font-size: 0.82rem;
   }
 
   .catalog-head {
