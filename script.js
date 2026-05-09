@@ -2028,12 +2028,10 @@ const goToCatalog = (filterKey) => {
 
 const initializeCatalogFromUrl = () => {
   const params = new URLSearchParams(window.location.search);
-  const initialFilter = params.get("filter");
-  if (initialFilter) {
-    applyCatalogFilter(initialFilter, true);
-  } else {
-    applyCatalogFilter("all", true);
-  }
+  const raw = params.get("filter");
+  const initialFilter =
+    raw && Object.prototype.hasOwnProperty.call(filterLabelMap, raw) ? raw : "all";
+  applyCatalogFilter(initialFilter, true);
 };
 
 const mergeSeriesGalleryUrls = (products) => {
