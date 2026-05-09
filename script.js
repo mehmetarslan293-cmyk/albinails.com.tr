@@ -1313,6 +1313,32 @@ const nextSlideBtn = document.querySelector("#nextSlide");
 const homeSlider = document.querySelector("#homeSlider");
 const sliderDots = document.querySelector("#sliderDots");
 let currentSlideIndex = 0;
+let mobileSliderTimer = null;
+const MOBILE_SLIDER_MS = 4500;
+const isMobileViewport = () => window.matchMedia("(max-width: 980px)").matches;
+
+const stopMobileSliderAutoplay = () => {
+  if (!mobileSliderTimer) return;
+  clearInterval(mobileSliderTimer);
+  mobileSliderTimer = null;
+};
+
+const startMobileSliderAutoplay = () => {
+  stopMobileSliderAutoplay();
+  if (!isMobileViewport() || !homeSlider) return;
+  const banners = loadBanners();
+  if (banners.length <= 1) return;
+  mobileSliderTimer = window.setInterval(() => {
+    const latestBanners = loadBanners();
+    if (!latestBanners.length) return;
+    currentSlideIndex = (currentSlideIndex + 1) % latestBanners.length;
+    renderHomeSlider();
+  }, MOBILE_SLIDER_MS);
+};
+
+const resetMobileSliderAutoplay = () => {
+  startMobileSliderAutoplay();
+};
 
 const renderHomeSlider = () => {
   if (!homeSlider) return;
@@ -1605,11 +1631,13 @@ if (prevSlideBtn && nextSlideBtn) {
     const banners = loadBanners();
     currentSlideIndex = (currentSlideIndex - 1 + banners.length) % banners.length;
     renderHomeSlider();
+    resetMobileSliderAutoplay();
   });
   nextSlideBtn.addEventListener("click", () => {
     const banners = loadBanners();
     currentSlideIndex = (currentSlideIndex + 1) % banners.length;
     renderHomeSlider();
+    resetMobileSliderAutoplay();
   });
 }
 
@@ -1621,8 +1649,18 @@ if (sliderDots) {
     if (Number.isNaN(dotIndex)) return;
     currentSlideIndex = dotIndex;
     renderHomeSlider();
+    resetMobileSliderAutoplay();
   });
 }
+
+window.addEventListener("resize", startMobileSliderAutoplay);
+document.addEventListener("visibilitychange", () => {
+  if (document.hidden) {
+    stopMobileSliderAutoplay();
+  } else {
+    startMobileSliderAutoplay();
+  }
+});
 
 if (topMlFilter) {
   topMlFilter.addEventListener("change", () => {
@@ -1734,3 +1772,4 @@ const initSiteHeaderMenu = () => {
 initSiteHeaderMenu();
 
 initializeCatalogFromUrl();
+startMobileSliderAutoplay();
