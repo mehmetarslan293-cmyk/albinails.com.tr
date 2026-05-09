@@ -94,7 +94,7 @@ const renderInstagramFeedInto = (container, items, profileUrl) => {
       return `
       <a class="instagram-card instagram-card-placeholder" href="${profile}" target="_blank" rel="noopener noreferrer">
         <span class="instagram-card-ph-visual" aria-hidden="true"></span>
-        <p class="instagram-card-ph-caption">Son paylaşımlar için Instagram profilimizi açın.</p>
+        <p class="instagram-card-ph-caption">Güncel görseller yüklendiğinde burada görünür. Şimdilik profilimizi Instagram üzerinden açabilirsiniz.</p>
       </a>`;
     }).join("");
     container.innerHTML = cards;
@@ -110,7 +110,7 @@ const renderInstagramFeedInto = (container, items, profileUrl) => {
       const shortCaption = caption.length > 95 ? `${caption.slice(0, 95)}...` : caption;
       return `
       <a class="instagram-card" href="${permalink}" target="_blank" rel="noopener noreferrer">
-        <img src="${image}" alt="Instagram paylaşımı" loading="lazy" decoding="async" />
+        <img src="${image}" alt="Instagram paylaşımı" loading="lazy" decoding="async" referrerpolicy="no-referrer" />
         <p>${shortCaption}</p>
       </a>
     `;

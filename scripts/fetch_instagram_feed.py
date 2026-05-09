@@ -46,10 +46,31 @@ def http_json(url: str) -> dict:
         return json.loads(response.read().decode("utf-8"))
 
 
+def pick_image_url_from_media(item: dict) -> str:
+    """Graph API: CAROUSEL_ALBUM kokunde genelde media_url yok; ilk cocuktan al."""
+    if not isinstance(item, dict):
+        return ""
+    media_type = (item.get("media_type") or "").strip()
+    if media_type == "CAROUSEL_ALBUM":
+        kids = item.get("children") or {}
+        if isinstance(kids, dict):
+            for ch in kids.get("data") or []:
+                u = pick_image_url_from_media(ch)
+                if u:
+                    return u
+        return ""
+    if media_type in {"VIDEO", "REELS"}:
+        return (item.get("thumbnail_url") or item.get("media_url") or "").strip()
+    return (item.get("media_url") or item.get("thumbnail_url") or "").strip()
+
+
 def fetch_media_items(user_id: str, access_token: str) -> list[dict]:
     params = {
-        "fields": "id,caption,media_type,media_url,permalink,thumbnail_url,timestamp",
-        "limit": "8",
+        "fields": (
+            "id,caption,media_type,media_url,permalink,thumbnail_url,timestamp,"
+            "children{media_type,media_url,thumbnail_url}"
+        ),
+        "limit": "12",
         "access_token": access_token,
     }
     url = f"https://graph.facebook.com/v21.0/{user_id}/media?{urlencode(params)}"
@@ -57,10 +78,7 @@ def fetch_media_items(user_id: str, access_token: str) -> list[dict]:
     raw_items = data.get("data", [])
     items: list[dict] = []
     for item in raw_items:
-        media_type = item.get("media_type", "")
-        image = item.get("media_url", "")
-        if media_type in {"VIDEO", "REELS"}:
-            image = item.get("thumbnail_url", "") or image
+        image = pick_image_url_from_media(item)
         if not image:
             continue
         items.append(
