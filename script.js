@@ -4,12 +4,12 @@ const catalogModal = document.querySelector("#catalogModal");
 const contactForm = document.querySelector(".contact-form");
 const catalogSection = document.querySelector("#katalog");
 const catalogLinks = document.querySelectorAll("[data-catalog-trigger]");
-const catalogMenu = document.querySelector(".catalog-menu");
 const catalogCurrent = document.querySelector("#catalogCurrent");
 const catalogEmpty = document.querySelector("#catalogEmpty");
 const previewGrid = document.querySelector("#catalogPreviewGrid");
 const topMlFilter = document.querySelector("#topMlFilter");
 const topBrandFilter = document.querySelector("#topBrandFilter");
+const topCategoryFilter = document.querySelector("#topCategoryFilter");
 const resetTopFilters = document.querySelector("#resetTopFilters");
 const catalogPagination = document.querySelector("#catalogPagination");
 
@@ -1459,8 +1459,7 @@ const slugifyBrand = (value) =>
     .replace(/\s+/g, "-")
     .replace(/[^a-z0-9-]/g, "");
 
-const getCategoryCheckboxes = () => document.querySelectorAll(".catalog-menu input[data-filter]");
-let currentCategoryFilters = ["all"];
+let currentCategoryFilter = "all";
 let currentCatalogPage = 1;
 const ITEMS_PER_PAGE = 20;
 
@@ -1504,15 +1503,8 @@ const populateTopFilters = () => {
 
 };
 
-const applyCatalogFilter = (filterKeys = currentCategoryFilters, resetPage = false) => {
-  const normalizedKeys = Array.isArray(filterKeys)
-    ? filterKeys.filter(Boolean)
-    : [String(filterKeys || "all")];
-  const activeFilterKeys =
-    normalizedKeys.length === 0 || normalizedKeys.includes("all")
-      ? ["all"]
-      : [...new Set(normalizedKeys.filter((k) => k !== "all"))];
-  currentCategoryFilters = activeFilterKeys;
+const applyCatalogFilter = (filterKey = currentCategoryFilter, resetPage = false) => {
+  currentCategoryFilter = filterKey || "all";
   if (resetPage) currentCatalogPage = 1;
   const cards = document.querySelectorAll(".catalog-card[data-category]");
   if (!cards.length) return;
@@ -1527,14 +1519,11 @@ const applyCatalogFilter = (filterKeys = currentCategoryFilters, resetPage = fal
     const brandKey = card.dataset.brandKey || "";
     const skipMl = card.dataset.skipMlFilter === "true";
     const categoryMatch =
-      activeFilterKeys.includes("all") ||
-      activeFilterKeys.some(
-        (key) =>
-          categoryList.includes(key) ||
-          (key === "kirpik-malzemeleri" &&
-            (categoryList.includes("kirpik-malzemeleri") ||
-              categoryList.some((c) => KIRPIK_SUPPLY_CATEGORY_SLUGS.includes(c))))
-      );
+      currentCategoryFilter === "all" ||
+      categoryList.includes(currentCategoryFilter) ||
+      (currentCategoryFilter === "kirpik-malzemeleri" &&
+        (categoryList.includes("kirpik-malzemeleri") ||
+          categoryList.some((c) => KIRPIK_SUPPLY_CATEGORY_SLUGS.includes(c))));
     const mlMatch = selectedMl === "all" || (!skipMl && sizeValue === selectedMl);
     const brandMatch = selectedBrand === "all" || brandKey === `brand-${selectedBrand}`;
     const shouldShow = categoryMatch && mlMatch && brandMatch;
@@ -1551,22 +1540,12 @@ const applyCatalogFilter = (filterKeys = currentCategoryFilters, resetPage = fal
     card.classList.toggle("is-hidden", !visibleCards.has(card));
   });
 
-  getCategoryCheckboxes().forEach((checkbox) => {
-    const checked = activeFilterKeys.includes(checkbox.dataset.filter || "");
-    checkbox.checked = checked;
-    const filterChip = checkbox.closest(".catalog-filter");
-    if (filterChip) {
-      filterChip.classList.toggle("active", checked);
-    }
-  });
+  if (topCategoryFilter) {
+    topCategoryFilter.value = currentCategoryFilter;
+  }
 
   if (catalogCurrent) {
-    const baseLabel = activeFilterKeys.includes("all")
-      ? filterLabelMap.all
-      : `Seçili kategoriler: ${activeFilterKeys
-          .map((key) => filterLabelMap[key] || key)
-          .map((label) => label.replace(" listeleniyor", ""))
-          .join(", ")}`;
+    const baseLabel = filterLabelMap[currentCategoryFilter] || filterLabelMap.all;
     const mlLabel = selectedMl === "all" ? "Tümü" : `${selectedMl} ml`;
     const brandLabel =
       selectedBrand === "all"
@@ -1583,7 +1562,8 @@ const applyCatalogFilter = (filterKeys = currentCategoryFilters, resetPage = fal
 };
 
 const goToCatalog = (filterKey) => {
-  applyCatalogFilter([filterKey], true);
+  if (topCategoryFilter) topCategoryFilter.value = filterKey || "all";
+  applyCatalogFilter(filterKey, true);
   if (catalogSection) {
     catalogSection.scrollIntoView({ behavior: "smooth", block: "start" });
   }
@@ -1593,13 +1573,9 @@ const initializeCatalogFromUrl = () => {
   const params = new URLSearchParams(window.location.search);
   const initialFilter = params.get("filter");
   if (initialFilter) {
-    const initialFilterKeys = initialFilter
-      .split(",")
-      .map((item) => item.trim())
-      .filter(Boolean);
-    applyCatalogFilter(initialFilterKeys.length ? initialFilterKeys : ["all"], true);
+    applyCatalogFilter(initialFilter, true);
   } else {
-    applyCatalogFilter(["all"], true);
+    applyCatalogFilter("all", true);
   }
 };
 
@@ -1648,42 +1624,24 @@ if (sliderDots) {
   });
 }
 
-if (catalogMenu) {
-  catalogMenu.addEventListener("change", (event) => {
-    const target = event.target;
-    if (!(target instanceof HTMLElement)) return;
-    const checkbox = target.closest("input[data-filter]");
-    if (!(checkbox instanceof HTMLInputElement)) return;
-    const selectedKeys = Array.from(getCategoryCheckboxes())
-      .filter((item) => item.checked)
-      .map((item) => item.dataset.filter || "")
-      .filter(Boolean);
-
-    const clickedKey = checkbox.dataset.filter || "all";
-    let nextKeys = selectedKeys;
-    if (clickedKey === "all" && checkbox.checked) {
-      nextKeys = ["all"];
-    } else {
-      nextKeys = selectedKeys.filter((key) => key !== "all");
-      if (!nextKeys.length) nextKeys = ["all"];
-    }
-
-    applyCatalogFilter(nextKeys, true);
-    const url = new URL(window.location.href);
-    url.searchParams.set("filter", currentCategoryFilters.join(","));
-    window.history.replaceState({}, "", url);
-  });
-}
-
 if (topMlFilter) {
   topMlFilter.addEventListener("change", () => {
-    applyCatalogFilter(currentCategoryFilters, true);
+    applyCatalogFilter(currentCategoryFilter, true);
   });
 }
 
 if (topBrandFilter) {
   topBrandFilter.addEventListener("change", () => {
-    applyCatalogFilter(currentCategoryFilters, true);
+    applyCatalogFilter(currentCategoryFilter, true);
+  });
+}
+
+if (topCategoryFilter) {
+  topCategoryFilter.addEventListener("change", () => {
+    applyCatalogFilter(topCategoryFilter.value || "all", true);
+    const url = new URL(window.location.href);
+    url.searchParams.set("filter", topCategoryFilter.value || "all");
+    window.history.replaceState({}, "", url);
   });
 }
 
@@ -1691,7 +1649,8 @@ if (resetTopFilters) {
   resetTopFilters.addEventListener("click", () => {
     if (topMlFilter) topMlFilter.value = "all";
     if (topBrandFilter) topBrandFilter.value = "all";
-    applyCatalogFilter(currentCategoryFilters, true);
+    if (topCategoryFilter) topCategoryFilter.value = "all";
+    applyCatalogFilter("all", true);
   });
 }
 
@@ -1704,19 +1663,19 @@ if (catalogPagination) {
     const page = Number(target.dataset.page || 0);
     if (pageAction === "prev" && currentCatalogPage > 1) {
       currentCatalogPage -= 1;
-      applyCatalogFilter(currentCategoryFilters);
+      applyCatalogFilter(currentCategoryFilter);
       if (catalogSection) catalogSection.scrollIntoView({ behavior: "smooth", block: "start" });
       return;
     }
     if (pageAction === "next") {
       currentCatalogPage += 1;
-      applyCatalogFilter(currentCategoryFilters);
+      applyCatalogFilter(currentCategoryFilter);
       if (catalogSection) catalogSection.scrollIntoView({ behavior: "smooth", block: "start" });
       return;
     }
     if (!Number.isNaN(page) && page > 0) {
       currentCatalogPage = page;
-      applyCatalogFilter(currentCategoryFilters);
+      applyCatalogFilter(currentCategoryFilter);
       if (catalogSection) catalogSection.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   });

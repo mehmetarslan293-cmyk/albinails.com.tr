@@ -99,83 +99,32 @@
                 <option value="all">Tümü</option>
               </select>
             </label>
+            <label>
+              Kategori
+              <select id="topCategoryFilter">
+                <option value="all">Tümü</option>
+                <option value="new">Yeni</option>
+                <option value="gel-polish">Kalıcı ojeler</option>
+                <option value="base-coat">Baz Kat</option>
+                <option value="top-coat">Top Kat</option>
+                <option value="building-gel">Jel Güçlendirme</option>
+                <option value="liquid-polygel">Sıvı Polijel</option>
+                <option value="nail-skin-care">Tırnak ve Cilt Bakımı</option>
+                <option value="nail-files">Tırnak Törpüleri</option>
+                <option value="ipek-kirpik">İpek Kirpik</option>
+                <option value="kirpik-malzemeleri">Kirpik malzemeleri</option>
+                <option value="kirpik-ekipman">Ekipman ve aletler</option>
+                <option value="kirpik-markali">Markalı ürünler</option>
+                <option value="kirpik-alt-izolasyon">Alt kirpik izolasyonu</option>
+                <option value="kirpik-ek-malzemeler">Ek malzemeler</option>
+                <option value="kirpik-tekstil">Tekstil</option>
+                <option value="kirpik-sarf">Sarf malzemeleri</option>
+                <option value="kirpik-tablet-stand">Tablet ve paletler</option>
+              </select>
+            </label>
             <button type="button" id="resetTopFilters" class="btn btn-light">Tümünü Seç</button>
           </div>
         </div>
-        <aside class="catalog-menu">
-          <label class="catalog-filter active">
-            <input type="checkbox" data-filter="all" checked />
-            <span>Tümü</span>
-          </label>
-          <label class="catalog-filter">
-            <input type="checkbox" data-filter="new" />
-            <span>Yeni</span>
-          </label>
-          <label class="catalog-filter">
-            <input type="checkbox" data-filter="gel-polish" />
-            <span>Kalıcı ojeler</span>
-          </label>
-          <label class="catalog-filter">
-            <input type="checkbox" data-filter="base-coat" />
-            <span>Baz Kat</span>
-          </label>
-          <label class="catalog-filter">
-            <input type="checkbox" data-filter="top-coat" />
-            <span>Top Kat</span>
-          </label>
-          <label class="catalog-filter">
-            <input type="checkbox" data-filter="building-gel" />
-            <span>Jel Güçlendirme</span>
-          </label>
-          <label class="catalog-filter">
-            <input type="checkbox" data-filter="liquid-polygel" />
-            <span>Sıvı Polijel</span>
-          </label>
-          <label class="catalog-filter">
-            <input type="checkbox" data-filter="nail-skin-care" />
-            <span>Tırnak ve Cilt Bakımı</span>
-          </label>
-          <label class="catalog-filter">
-            <input type="checkbox" data-filter="nail-files" />
-            <span>Tırnak Törpüleri</span>
-          </label>
-          <label class="catalog-filter">
-            <input type="checkbox" data-filter="ipek-kirpik" />
-            <span>İpek Kirpik</span>
-          </label>
-          <label class="catalog-filter">
-            <input type="checkbox" data-filter="kirpik-malzemeleri" />
-            <span>Kirpik malzemeleri</span>
-          </label>
-          <label class="catalog-filter">
-            <input type="checkbox" data-filter="kirpik-ekipman" />
-            <span>Ekipman ve aletler</span>
-          </label>
-          <label class="catalog-filter">
-            <input type="checkbox" data-filter="kirpik-markali" />
-            <span>Markalı ürünler</span>
-          </label>
-          <label class="catalog-filter">
-            <input type="checkbox" data-filter="kirpik-alt-izolasyon" />
-            <span>Alt kirpik izolasyonu</span>
-          </label>
-          <label class="catalog-filter">
-            <input type="checkbox" data-filter="kirpik-ek-malzemeler" />
-            <span>Ek malzemeler</span>
-          </label>
-          <label class="catalog-filter">
-            <input type="checkbox" data-filter="kirpik-tekstil" />
-            <span>Tekstil</span>
-          </label>
-          <label class="catalog-filter">
-            <input type="checkbox" data-filter="kirpik-sarf" />
-            <span>Sarf malzemeleri</span>
-          </label>
-          <label class="catalog-filter">
-            <input type="checkbox" data-filter="kirpik-tablet-stand" />
-            <span>Tablet ve paletler</span>
-          </label>
-        </aside>
         <div class="catalog-grid" id="catalogGridDynamic">
           <article class="catalog-card" data-category="gel-polish,new">
             <div class="catalog-photo"></div>
