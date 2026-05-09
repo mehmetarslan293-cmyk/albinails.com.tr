@@ -1315,6 +1315,10 @@ const sliderDots = document.querySelector("#sliderDots");
 let currentSlideIndex = 0;
 let mobileSliderTimer = null;
 const MOBILE_SLIDER_MS = 4500;
+let touchStartX = 0;
+let touchStartY = 0;
+let touchInProgress = false;
+const SWIPE_THRESHOLD_PX = 42;
 const isMobileViewport = () => window.matchMedia("(max-width: 980px)").matches;
 
 const stopMobileSliderAutoplay = () => {
@@ -1338,6 +1342,22 @@ const startMobileSliderAutoplay = () => {
 
 const resetMobileSliderAutoplay = () => {
   startMobileSliderAutoplay();
+};
+
+const showPrevSlide = () => {
+  const banners = loadBanners();
+  if (!banners.length) return;
+  currentSlideIndex = (currentSlideIndex - 1 + banners.length) % banners.length;
+  renderHomeSlider();
+  resetMobileSliderAutoplay();
+};
+
+const showNextSlide = () => {
+  const banners = loadBanners();
+  if (!banners.length) return;
+  currentSlideIndex = (currentSlideIndex + 1) % banners.length;
+  renderHomeSlider();
+  resetMobileSliderAutoplay();
 };
 
 const renderHomeSlider = () => {
@@ -1627,18 +1647,8 @@ if (catalogLinks.length) {
 }
 
 if (prevSlideBtn && nextSlideBtn) {
-  prevSlideBtn.addEventListener("click", () => {
-    const banners = loadBanners();
-    currentSlideIndex = (currentSlideIndex - 1 + banners.length) % banners.length;
-    renderHomeSlider();
-    resetMobileSliderAutoplay();
-  });
-  nextSlideBtn.addEventListener("click", () => {
-    const banners = loadBanners();
-    currentSlideIndex = (currentSlideIndex + 1) % banners.length;
-    renderHomeSlider();
-    resetMobileSliderAutoplay();
-  });
+  prevSlideBtn.addEventListener("click", showPrevSlide);
+  nextSlideBtn.addEventListener("click", showNextSlide);
 }
 
 if (sliderDots) {
@@ -1651,6 +1661,39 @@ if (sliderDots) {
     renderHomeSlider();
     resetMobileSliderAutoplay();
   });
+}
+
+if (homeSlider) {
+  homeSlider.addEventListener(
+    "touchstart",
+    (event) => {
+      const point = event.changedTouches[0];
+      if (!point) return;
+      touchStartX = point.clientX;
+      touchStartY = point.clientY;
+      touchInProgress = true;
+    },
+    { passive: true }
+  );
+
+  homeSlider.addEventListener(
+    "touchend",
+    (event) => {
+      if (!touchInProgress) return;
+      const point = event.changedTouches[0];
+      if (!point) return;
+      const deltaX = point.clientX - touchStartX;
+      const deltaY = point.clientY - touchStartY;
+      touchInProgress = false;
+      if (Math.abs(deltaX) < SWIPE_THRESHOLD_PX || Math.abs(deltaX) < Math.abs(deltaY)) return;
+      if (deltaX > 0) {
+        showPrevSlide();
+      } else {
+        showNextSlide();
+      }
+    },
+    { passive: true }
+  );
 }
 
 window.addEventListener("resize", startMobileSliderAutoplay);
