@@ -63,13 +63,25 @@ a {
   align-items: center;
 }
 
+/* 1:1 (4x4) kutu: orijinal SVG oranı korunur, siyah letterbox referansla uyumlu */
+.logo-square {
+  display: grid;
+  place-items: center;
+  width: clamp(56px, 14vw, 72px);
+  aspect-ratio: 1 / 1;
+  background: #0a0a0a;
+  border-radius: 14px;
+  overflow: hidden;
+  flex-shrink: 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.14);
+}
+
 .logo-img {
   display: block;
-  width: min(140px, 34vw);
-  height: auto;
-  aspect-ratio: 200 / 80;
+  width: 86%;
+  height: 86%;
   object-fit: contain;
-  flex-shrink: 0;
+  object-position: center;
 }
 
 .nav-toggle {
@@ -1197,8 +1209,9 @@ dialog::backdrop {
     font-size: 0.86rem;
   }
 
-  .logo-img {
-    width: min(118px, 30vw);
+  .logo-square {
+    width: clamp(48px, 13vw, 62px);
+    border-radius: 12px;
   }
 
   nav#mainNav {
