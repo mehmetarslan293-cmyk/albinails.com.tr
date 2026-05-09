@@ -133,18 +133,24 @@ nav {
 }
 
 .slide-media {
-  min-height: 320px;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  min-height: 200px;
   border-radius: 18px;
-  background: #fff;
   overflow: hidden;
   box-shadow: 0 12px 22px rgba(66, 39, 85, 0.15);
+  /* Görsel tam dolmazsa beyaz şerit yerine arka plana yakın ton */
+  background: linear-gradient(160deg, #fce8f4 0%, #ebe4ff 100%);
 }
 
 .slide-media img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  aspect-ratio: 16 / 9;
+  object-position: center;
   display: block;
 }
 
