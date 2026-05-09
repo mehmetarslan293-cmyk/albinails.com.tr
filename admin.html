@@ -88,7 +88,12 @@
                 <option value="liquid-polygel">Liquid Polygel</option>
                 <option value="nail-skin-care">Nail and Skin Care</option>
                 <option value="nail-files">Nail Files</option>
+                <option value="firca">Fırça</option>
                 <option value="ipek-kirpik">İpek Kirpik</option>
+                <option value="lovely">LOVELY (tüm seriler)</option>
+                <option value="lovely-rili">LOVELY — Rili</option>
+                <option value="lovely-lashy">LOVELY — Lashy</option>
+                <option value="lovely-lovely">LOVELY — Lovely</option>
                 <option value="kirpik-malzemeleri">Kirpik malzemeleri (genel)</option>
                 <option value="kirpik-ekipman">Kirpik — Ekipman ve aletler</option>
                 <option value="kirpik-markali">Kirpik — Markalı ürünler</option>
@@ -102,6 +107,14 @@
             </label>
             <label>Marka
               <select id="productBrand" required></select>
+            </label>
+            <label>Seri
+              <select id="productSeries">
+                <option value="">— Seri yok</option>
+              </select>
+            </label>
+            <label class="full">Yeni seri (listede yoksa)
+              <input id="productSeriesNew" type="text" placeholder="Boş bırakın veya yeni seri adı yazın" />
             </label>
             <label class="full">Boyut
               <input id="productSize" type="text" inputmode="decimal" placeholder="10" required />
@@ -130,6 +143,11 @@
             </label>
             <label>Marka
               <input id="filterBrand" type="text" placeholder="Markaya göre ara" />
+            </label>
+            <label>Seri
+              <select id="filterSeries">
+                <option value="all">Tümü</option>
+              </select>
             </label>
           </div>
           <div id="productList" class="product-admin-list"></div>

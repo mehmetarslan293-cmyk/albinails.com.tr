@@ -9,11 +9,13 @@ const catalogEmpty = document.querySelector("#catalogEmpty");
 const previewGrid = document.querySelector("#catalogPreviewGrid");
 const topMlFilter = document.querySelector("#topMlFilter");
 const topBrandFilter = document.querySelector("#topBrandFilter");
+const topSeriesFilter = document.querySelector("#topSeriesFilter");
 const topSearchFilter = document.querySelector("#topSearchFilter");
 const topCategoryFilter = document.querySelector("#topCategoryFilter");
 const resetTopFilters = document.querySelector("#resetTopFilters");
 const catalogPagination = document.querySelector("#catalogPagination");
 const instagramFeed = document.querySelector("#instagramFeed");
+const instagramFeedLovely = document.querySelector("#instagramFeedLovely");
 
 const PRODUCTS_KEY = "albiProducts";
 const CONTENT_KEY = "albiSiteContent";
@@ -51,22 +53,59 @@ const tildaThumbnailSrc = (originalUrl, maxEdgePx = 520) => {
   }
 };
 
-const renderInstagramFeed = (items) => {
-  if (!instagramFeed) return;
+const IG_FEED_DEFAULTS = [
+  { id: "kalipso_albi_turkey", profileUrl: "https://www.instagram.com/kalipso_albi_turkey/" },
+  { id: "lovely_albi_kalipso", profileUrl: "https://www.instagram.com/lovely_albi_kalipso/" },
+];
+
+const parseInstagramFeedPayload = (payload) => {
+  if (!payload || typeof payload !== "object") {
+    return IG_FEED_DEFAULTS.map((d) => ({ ...d, items: [] }));
+  }
+  if (payload.version === 2 && Array.isArray(payload.accounts)) {
+    const mapById = Object.fromEntries(
+      payload.accounts.filter((a) => a && typeof a.id === "string").map((a) => [a.id, a])
+    );
+    return IG_FEED_DEFAULTS.map((def) => {
+      const row = mapById[def.id];
+      const items = row && Array.isArray(row.items) ? row.items : [];
+      const profileUrl = String(row?.profile_url || def.profileUrl).trim() || def.profileUrl;
+      return { id: def.id, profileUrl, items };
+    });
+  }
+  if (Array.isArray(payload.items)) {
+    return [
+      {
+        id: "kalipso_albi_turkey",
+        profileUrl: "https://www.instagram.com/kalipso_albi_turkey/",
+        items: payload.items,
+      },
+      { ...IG_FEED_DEFAULTS[1], items: [] },
+    ];
+  }
+  return IG_FEED_DEFAULTS.map((d) => ({ ...d, items: [] }));
+};
+
+const renderInstagramFeedInto = (container, items, profileUrl) => {
+  if (!container) return;
+  const profile = String(profileUrl || "").trim() || IG_FEED_DEFAULTS[0].profileUrl;
   if (!Array.isArray(items) || !items.length) {
-    instagramFeed.innerHTML = `
-      <a class="instagram-card" href="https://www.instagram.com/kalipso_albi_turkey/" target="_blank" rel="noopener noreferrer">
-        <span class="instagram-card-fallback">Instagram içerikleri yakında burada görünecek.</span>
-      </a>
-    `;
+    const cards = Array.from({ length: 4 }, () => {
+      return `
+      <a class="instagram-card instagram-card-placeholder" href="${profile}" target="_blank" rel="noopener noreferrer">
+        <span class="instagram-card-ph-visual" aria-hidden="true"></span>
+        <p class="instagram-card-ph-caption">Son paylaşımlar için Instagram profilimizi açın.</p>
+      </a>`;
+    }).join("");
+    container.innerHTML = cards;
     return;
   }
 
-  instagramFeed.innerHTML = items
+  container.innerHTML = items
     .slice(0, 4)
     .map((item) => {
       const image = escapeHtml(item.image || "");
-      const permalink = escapeHtml(item.permalink || "https://www.instagram.com/kalipso_albi_turkey/");
+      const permalink = escapeHtml(item.permalink || profile);
       const caption = escapeHtml(item.caption || "Instagram paylaşımını görüntüle");
       const shortCaption = caption.length > 95 ? `${caption.slice(0, 95)}...` : caption;
       return `
@@ -80,14 +119,20 @@ const renderInstagramFeed = (items) => {
 };
 
 const loadInstagramFeed = async () => {
-  if (!instagramFeed) return;
+  if (!instagramFeed && !instagramFeedLovely) return;
   try {
-    const response = await fetch(`/instagram-feed.json?ts=${Date.now()}`, { cache: "no-store" });
+    const feedUrl = new URL("instagram-feed.json", document.baseURI);
+    feedUrl.searchParams.set("ts", String(Date.now()));
+    const response = await fetch(feedUrl.toString(), { cache: "no-store" });
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     const payload = await response.json();
-    renderInstagramFeed(payload.items || []);
-  } catch {
-    renderInstagramFeed([]);
+    const rows = parseInstagramFeedPayload(payload);
+    renderInstagramFeedInto(instagramFeed, rows[0]?.items || [], rows[0]?.profileUrl);
+    renderInstagramFeedInto(instagramFeedLovely, rows[1]?.items || [], rows[1]?.profileUrl);
+  } catch (e) {
+    console.warn("[instagram] feed yüklenemedi:", e);
+    renderInstagramFeedInto(instagramFeed, [], IG_FEED_DEFAULTS[0].profileUrl);
+    renderInstagramFeedInto(instagramFeedLovely, [], IG_FEED_DEFAULTS[1].profileUrl);
   }
 };
 
@@ -119,7 +164,7 @@ const defaultProducts = [
   { id: "albi-279", name: "Gel Polish ALBI 279", brand: "ALBI", size: "10 ml", image: "https://static.tildacdn.com/stor3063-6531-4065-b164-396664653831/79328829.jpg", categories: ["gel-polish"] },
   { id: "albi-280", name: "Gel Polish ALBI 280", brand: "ALBI", size: "10 ml", image: "https://static.tildacdn.com/stor6635-3231-4132-b736-343939333634/30513505.jpg", categories: ["gel-polish"] },
   { id: "albi-281", name: "Gel Polish ALBI 281", brand: "ALBI", size: "10 ml", image: "https://static.tildacdn.com/stor3565-6266-4765-a335-383136636264/45772877.jpg", categories: ["gel-polish"] },
-  { id: "albi-silk-cat-4", name: "Gel Polish ALBI SILK CAT 4", brand: "ALBI", size: "10 ml", image: "https://static.tildacdn.com/stor3965-3837-4030-a464-323166343438/97761522.jpg", categories: ["gel-polish"] },
+  { id: "albi-silk-cat-4", name: "Gel Polish ALBI SILK CAT 4", brand: "ALBI", size: "10 ml", image: "https://static.tildacdn.com/stor3965-3837-4030-a464-323166343438/97761522.jpg", categories: ["gel-polish"], series: "SILK CAT" },
   { id: "albi-282", name: "Gel Polish ALBI 282", brand: "ALBI", size: "10 ml", image: "https://static.tildacdn.com/stor3133-6234-4639-b831-393364643535/44585962.jpg", categories: ["gel-polish"] },
   { id: "albi-283", name: "Gel Polish ALBI 283", brand: "ALBI", size: "10 ml", image: "https://static.tildacdn.com/stor3533-3864-4161-a135-643630316130/56945487.jpg", categories: ["gel-polish"] },
   { id: "albi-284", name: "Gel Polish ALBI 284", brand: "ALBI", size: "10 ml", image: "https://static.tildacdn.com/stor3330-6662-4666-b035-316665623935/56328849.jpg", categories: ["gel-polish"] },
@@ -222,7 +267,6 @@ const defaultProducts = [
   { id: "albi-shine-cat", name: "Gel Polish ALBI Shine Cat", brand: "ALBI", size: "10 ml", image: "https://static.tildacdn.com/stor6530-6233-4530-b334-656336376235/75993941.jpg", categories: ["gel-polish"] },
   { id: "albi-star-1-10", name: "Gel Polish ALBI Star 1-10", brand: "ALBI", size: "10 ml", image: "https://static.tildacdn.com/stor3061-6639-4432-b961-313663626332/87885818.jpg", categories: ["gel-polish"] },
   { id: "albi-star-11-19", name: "Gel Polish ALBI Star 11-19", brand: "ALBI", size: "10 ml", image: "https://static.tildacdn.com/stor6136-3732-4962-b839-666432616332/57152986.jpg", categories: ["gel-polish"] },
-  { id: "starter-kit", name: "Starter kit", brand: "ALBI", size: "20 shades + base coat + top coat", image: "https://static.tildacdn.com/stor3538-6662-4262-b833-663333643539/74818866.jpg", categories: ["new"] },
   { id: "base-coat-flex", name: "Base Coat FLEX", brand: "ALBI", size: "15 ml", image: "https://static.tildacdn.com/tild3332-3666-4431-b134-393139303332/instasaver-613215040.jpg", categories: ["base-coat"] },
   { id: "base-rubber", name: "Base RUBBER", brand: "ALBI", size: "15 ml", image: "https://static.tildacdn.com/tild3366-3239-4632-b865-663535323261/base_rubber.jpg", categories: ["base-coat"] },
   { id: "pedicure-base-coat-lite", name: "Pedicure Base Coat LITE", brand: "ALBI", size: "15 ml", image: "https://static.tildacdn.com/tild3930-6438-4964-a230-363661343937/IMG_7407.jpg", categories: ["base-coat"] },
@@ -375,11 +419,6 @@ const defaultProducts = [
   { id: "liquid-polygel-albi-summer-06", name: "Liquid polygel ALBI SUMMER COLLECTION 06", brand: "ALBI", size: "15 ml", image: "https://static.tildacdn.com/stor6461-3763-4766-b462-653239653438/50780759.jpg", categories: ["liquid-polygel", "new"] },
   { id: "liquid-polygel-albi-summer-07", name: "Liquid polygel ALBI SUMMER COLLECTION 07", brand: "ALBI", size: "15 ml", image: "https://static.tildacdn.com/stor3537-3465-4137-b432-353932306639/82170588.jpg", categories: ["liquid-polygel", "new"] },
   { id: "liquid-polygel-albi-summer-08", name: "Liquid polygel ALBI SUMMER COLLECTION 08", brand: "ALBI", size: "15 ml", image: "https://static.tildacdn.com/stor3366-3962-4666-b864-346432383164/98871218.jpg", categories: ["liquid-polygel", "new"] },
-  { id: "albi-regenerating-hand-cream-seaweed-coconut", name: "Albi regenerating HAND cream with seaweed extract and coconut oil", brand: "ALBI", size: "300 ml", image: "https://static.tildacdn.com/stor3161-6332-4262-a337-373233363564/97771341.jpg", categories: ["nail-skin-care"] },
-  { id: "albi-cream-for-tired-feet-menthol-camphor", name: "Albi cream for tired feet with menthol and camphor", brand: "ALBI", size: "300 ml", image: "https://static.tildacdn.com/stor6233-6330-4138-b637-303533333332/53971918.jpg", categories: ["nail-skin-care"] },
-  { id: "albi-foot-cream-softening-corns-cracks", name: "Albi FOOT cream softening corns, corns and cracks", brand: "ALBI", size: "300 ml", image: "https://static.tildacdn.com/stor3961-3939-4336-a439-343862356365/42986164.jpg", categories: ["nail-skin-care"] },
-  { id: "albi-nourishing-hand-cream", name: "ALBI Nourishing HAND Cream", brand: "ALBI", size: "340 ml", image: "https://static.tildacdn.com/stor6561-6164-4630-b033-653634646165/10560910.jpg", categories: ["nail-skin-care"] },
-  { id: "albi-foot-softening-cream", name: "Albi FOOT Softening Cream", brand: "ALBI", size: "340 ml", image: "https://static.tildacdn.com/stor3462-3539-4462-b665-393865396231/74741060.png", categories: ["nail-skin-care"] },
   { id: "cuticle-oil-albi-almond", name: "Cuticle oil ALBI Almond", brand: "ALBI", size: "30 ml", image: "https://static.tildacdn.com/stor3762-3838-4630-a465-393063663633/92347093.jpg", categories: ["nail-skin-care"] },
   { id: "kalipso-cuticle-oil-pencil-cherry-4", name: "CUTICLE OIL IN PENCIL \u201cCHERRY\u201d, 4 ML", brand: "Kalipso", size: "4 ml", image: "https://vo-kalipso.com/wp-content/uploads/2024/04/IMG_3507-\u043a\u043e\u043f\u0438\u044f-600x600.jpg", categories: ["nail-skin-care"] },
   { id: "kalipso-cuticle-oil-pencil-osmanthus-4", name: "CUTICLE OIL IN PENCIL \u201cOSMANTHUS\u201d, 4 ML", brand: "Kalipso", size: "4 ml", image: "https://vo-kalipso.com/wp-content/uploads/2024/04/IMG_3499-\u043a\u043e\u043f\u0438\u044f-600x600.jpg", categories: ["nail-skin-care"] },
@@ -406,15 +445,12 @@ const defaultProducts = [
   { id: "kalipso-gel-paint-metal-effect-beige-gold-5", name: "GEL PAINT VOICE OF KALIPSO, METAL EFFECT, BIEGE GOLD, 5 ML", brand: "Kalipso", size: "5 ml", image: "https://vo-kalipso.com/wp-content/uploads/2024/03/6--600x600.jpg", categories: ["gel-polish"] },
   { id: "kalipso-gel-paint-metal-effect-rose-gold-5", name: "GEL PAINT VOICE OF KALIPSO, METAL EFFECT, ROSE GOLD, 5 ML", brand: "Kalipso", size: "5 ml", image: "https://vo-kalipso.com/wp-content/uploads/2024/03/5--600x600.jpg", categories: ["gel-polish"] },
   { id: "kalipso-paste-gel-stamping-black-5", name: "PASTE GEL & STAMPING VOICE OF KALIPSO, BLACK, 5 ML", brand: "Kalipso", size: "5 ml", image: "https://vo-kalipso.com/wp-content/uploads/2024/03/1-600x600.jpg", categories: ["gel-polish"] },
-  { id: "kalipso-collapsible-brush-acrylic-12", name: "Collapsible brush for acrylic No. 12", brand: "Kalipso", size: "No. 12", image: "https://vo-kalipso.com/wp-content/uploads/2024/03/1600-5-600x600.jpg", categories: ["nail-files"] },
-  { id: "kalipso-flat-beveled-brush-no-2", name: "FLAT BEVELED BRUSH VOICE OF KALIPSO No. 2", brand: "Kalipso", size: "No. 2", image: "https://vo-kalipso.com/wp-content/uploads/2024/03/sk2-600x600.jpg", categories: ["nail-files"] },
+  { id: "kalipso-collapsible-brush-acrylic-12", name: "Collapsible brush for acrylic No. 12", brand: "Kalipso", size: "No. 12", image: "https://vo-kalipso.com/wp-content/uploads/2024/03/1600-5-600x600.jpg", categories: ["firca"] },
+  { id: "kalipso-flat-beveled-brush-no-2", name: "FLAT BEVELED BRUSH VOICE OF KALIPSO No. 2", brand: "Kalipso", size: "No. 2", image: "https://vo-kalipso.com/wp-content/uploads/2024/03/sk2-600x600.jpg", categories: ["firca"] },
   { id: "kalipso-straight-flat-brush-kalipso-no-4", name: "STRAIGHT FLAT BRUSH VOICE OF KALIPSO No. 4", brand: "Kalipso", size: "No. 4", image: "https://vo-kalipso.com/wp-content/uploads/2024/03/pr4-600x600.jpg", categories: ["nail-files"] },
   { id: "kalipso-straight-flat-brush-cosmolac-no-4", name: "STRAIGHT FLAT BRUSH COSMOLAC No. 4", brand: "Cosmolac", size: "No. 4", image: "https://vo-kalipso.com/wp-content/uploads/2024/03/pryam4-600x600.jpeg", categories: ["nail-files"] },
-  { id: "kalipso-ombre-design-brush", name: "OMBRE DESIGN BRUSH VOICE OF KALIPSO", brand: "Kalipso", size: "1 pc", image: "https://vo-kalipso.com/wp-content/uploads/2024/03/IMG_8721--600x600.jpg", categories: ["nail-files"] },
-  { id: "kalipso-brush-set-design-3pcs", name: "VOICE OF KALIPSO BRUSH SET FOR DESIGN, 3PCS", brand: "Kalipso", size: "3 pcs", image: "https://vo-kalipso.com/wp-content/uploads/2024/03/nabor-kistey-voice-of-kalipso-dlya-dizayna-3sht-2-600x600.jpg", categories: ["nail-files"] },
-  { id: "nail-file-albi-moon", name: "Nail file ALBI MOON", brand: "ALBI", size: "120/120", image: "https://static.tildacdn.com/tild6164-3465-4638-b132-613439663766/3U1A9406.jpg", categories: ["nail-files"] },
-  { id: "nail-file-albi-boomerang", name: "Nail file ALBI BOOMERANG", brand: "ALBI", size: "80/80", image: "https://static.tildacdn.com/tild6437-3761-4339-a434-656333386337/3U1A9417.jpg", categories: ["nail-files"] },
-  { id: "nail-file-albi-straight", name: "Nail file ALBI STRAIGHT", brand: "ALBI", size: "100/180", image: "https://static.tildacdn.com/tild3637-3130-4535-a366-623561646430/Screenshot_2021-07-1.png", categories: ["nail-files"] },
+  { id: "kalipso-ombre-design-brush", name: "OMBRE DESIGN BRUSH VOICE OF KALIPSO", brand: "Kalipso", size: "1 pc", image: "https://vo-kalipso.com/wp-content/uploads/2024/03/IMG_8721--600x600.jpg", categories: ["firca"] },
+  { id: "kalipso-brush-set-design-3pcs", name: "VOICE OF KALIPSO BRUSH SET FOR DESIGN, 3PCS", brand: "Kalipso", size: "3 pcs", image: "https://vo-kalipso.com/wp-content/uploads/2024/03/nabor-kistey-voice-of-kalipso-dlya-dizayna-3sht-2-600x600.jpg", categories: ["firca"] },
   { id: "gel-polish-albi-143-151", name: "Gel polish Albi 143-151", brand: "ALBI", size: "SUMMER COLLECTION", image: "https://static.tildacdn.com/stor3061-3863-4230-b835-663661653032/91904699.jpg", categories: ["gel-polish", "special-offers"] },
   { id: "gel-polish-albi-159-169", name: "Gel polish Albi 159-169", brand: "ALBI", size: "SUMMER COLLECTION", image: "https://static.tildacdn.com/stor3938-6437-4031-a338-346336663961/64615977.jpg", categories: ["gel-polish", "special-offers"] },
   { id: "special-offer-sculptural-gel-albi-new-milky-rose", name: "1+1 Sculptural gel ALBI NEW MILKY ROSE", brand: "ALBI", size: "30 ml", image: "https://static.tildacdn.com/stor3338-3131-4335-b335-383037383766/30975319.jpg", categories: ["building-gel", "special-offers"] },
@@ -733,40 +769,40 @@ const defaultProducts = [
   { id: "albi-450-454", name: "Gel Polish ALBI 450-454", brand: "ALBI", size: "10 ml", image: "https://static.tildacdn.com/tild3835-3466-4133-b639-636464643730/3U1A0103.jpg", categories: ["gel-polish"] },
   { id: "albi-455-459", name: "Gel Polish ALBI 455-459", brand: "ALBI", size: "10 ml", image: "https://static.tildacdn.com/stor3030-3836-4464-b734-346536626531/78881655.jpg", categories: ["gel-polish", "new"] },
 
-  { id: "lovely-lash-560", name: "Brown Rili Cookie İpek Kirpik — 6 sıra karışık", brand: "LOVELY", size: "6 sıra", color: "Kahverengi", image: "https://admin.lovely-professional.ru/storage/media-cache/cards_and_offers_images/05.05.2025/L23450_1_card_37725_webp.webp", categories: ["ipek-kirpik"] },
-  { id: "lovely-lash-473", name: "Rili Brown Toffee İpek Kirpik — 6 sıra karışık", brand: "LOVELY", size: "6 sıra", color: "Kahverengi", image: "https://admin.lovely-professional.ru/storage/media-cache/cards_and_offers_images/05.05.2025/L23107_1_card_37713_webp.webp", categories: ["ipek-kirpik"] },
-  { id: "lovely-lash-853", name: "Rili Karamel Kahverengi İpek Kirpik — 16 sıra karışık (indirimli)", brand: "LOVELY", size: "16 sıra", color: "Karamel", image: "https://admin.lovely-professional.ru/storage/media-cache/cards_and_offers_images/L24332_1_card_37977_webp.webp", categories: ["ipek-kirpik"] },
-  { id: "lovely-lash-179", name: "Koyu kahverengi Rili Choco İpek Kirpik — 6 sıra karışık", brand: "LOVELY", size: "6 sıra", color: "Koyu kahverengi", image: "https://admin.lovely-professional.ru/storage/media-cache/cards_and_offers_images/05.05.2025/L11522_1_card_37351_webp.webp", categories: ["ipek-kirpik"] },
-  { id: "lovely-lash-923", name: "LASHY Shok — koyu kahverengi kirpik, 20 sıra", brand: "LOVELY", size: "20 sıra", color: "Koyu kahverengi", image: "https://admin.lovely-professional.ru/storage/media-cache/2025/09/10/b8ae2047b82cf76df84b48a24d97dfab5e178cfa_24708_webp.webp", categories: ["ipek-kirpik"] },
-  { id: "lovely-lash-924", name: "LASHY Shok — koyu kahverengi kirpik, 20 sıra MIX", brand: "LOVELY", size: "20 sıra", color: "Koyu kahverengi", image: "https://admin.lovely-professional.ru/storage/media-cache/2025/09/10/b8ae2047b82cf76df84b48a24d97dfab5e178cfa_24717_webp.webp", categories: ["ipek-kirpik"] },
-  { id: "lovely-lash-471", name: "Brown Rili Toffee İpek Kirpik — 16 sıra", brand: "LOVELY", size: "16 sıra", color: "Kahverengi", image: "https://admin.lovely-professional.ru/storage/media-cache/cards_and_offers_images/05.05.2025/L23003_1_card_37709_webp.webp", categories: ["ipek-kirpik"] },
-  { id: "lovely-lash-512", name: "LOVELY Siena kahverengi kirpik — 16 sıra karışık", brand: "LOVELY", size: "16 sıra", color: "Kahverengi", image: "https://admin.lovely-professional.ru/storage/media-cache/cards_and_offers_images/05.05.2025/L23348_1_card_37718_webp.webp", categories: ["ipek-kirpik"] },
-  { id: "lovely-lash-555", name: "Brown Rili Cookie İpek Kirpik — 16 sıra", brand: "LOVELY", size: "16 sıra", color: "Kahverengi", image: "https://admin.lovely-professional.ru/storage/media-cache/cards_and_offers_images/05.05.2025/L23356_1_card_37721_webp.webp", categories: ["ipek-kirpik"] },
-  { id: "lovely-lash-511", name: "LOVELY Siena kahverengi kirpik — 16 sıra", brand: "LOVELY", size: "16 sıra", color: "Kahverengi", image: "https://admin.lovely-professional.ru/storage/media-cache/cards_and_offers_images/05.05.2025/L23347_1_card_37715_webp.webp", categories: ["ipek-kirpik"] },
-  { id: "lovely-lash-472", name: "Rili Toffee kahverengi kirpik seti — 16 sıra karışık", brand: "LOVELY", size: "16 sıra", color: "Kahverengi", image: "https://admin.lovely-professional.ru/storage/media-cache/cards_and_offers_images/05.05.2025/L23083_1_card_37711_webp.webp", categories: ["ipek-kirpik"] },
-  { id: "lovely-lash-1004", name: "LOVELY Valencia kahverengi kirpik — 16 sıra karışık", brand: "LOVELY", size: "16 sıra", color: "Kahverengi", image: "https://admin.lovely-professional.ru/storage/media-cache/2026/02/09/7c5ba80f56a9fb615b5af5a3e8455078a92adbb9_38240_webp.webp", categories: ["ipek-kirpik", "new"] },
-  { id: "lovely-lash-427", name: "Koyu kahverengi LOVELY Monaco kirpik — 16 sıra MIX", brand: "LOVELY", size: "16 sıra", color: "Koyu kahverengi", image: "https://admin.lovely-professional.ru/storage/media-cache/cards_and_offers_images/05.05.2025/L11813_1_card_37362_webp.webp", categories: ["ipek-kirpik"] },
-  { id: "lovely-lash-559", name: "Brown Rili Cookie İpek Kirpik — 16 sıra karışık", brand: "LOVELY", size: "16 sıra", color: "Kahverengi", image: "https://admin.lovely-professional.ru/storage/media-cache/cards_and_offers_images/05.05.2025/L23429_1_card_37723_webp.webp", categories: ["ipek-kirpik"] },
-  { id: "lovely-lash-426", name: "Koyu kahverengi LOVELY Monaco kirpik — 16 sıra", brand: "LOVELY", size: "16 sıra", color: "Koyu kahverengi", image: "https://admin.lovely-professional.ru/storage/media-cache/cards_and_offers_images/05.05.2025/L11728_1_card_37359_webp.webp", categories: ["ipek-kirpik"] },
-  { id: "lovely-lash-178", name: "Koyu kahverengi Rili Choco İpek Kirpik — 16 sıra karışık", brand: "LOVELY", size: "16 sıra", color: "Koyu kahverengi", image: "https://admin.lovely-professional.ru/storage/media-cache/cards_and_offers_images/05.05.2025/L11503_1_card_37349_webp.webp", categories: ["ipek-kirpik"] },
-  { id: "lovely-lash-981", name: "Koyu kahverengi LOVELY Bordèu kirpik — 16 sıra MIX", brand: "LOVELY", size: "16 sıra", color: "Koyu kahverengi", image: "https://admin.lovely-professional.ru/storage/media-cache/2025/11/25/c4153eeba85a39f9401a59e998692c4135f65be9_25286_webp.webp", categories: ["ipek-kirpik", "new"] },
-  { id: "lovely-lash-177", name: "Koyu kahverengi Rili Choco İpek Kirpik — 16 sıra", brand: "LOVELY", size: "16 sıra", color: "Koyu kahverengi", image: "https://admin.lovely-professional.ru/storage/media-cache/cards_and_offers_images/05.05.2025/L11420_1_card_37347_webp.webp", categories: ["ipek-kirpik"] },
+  { id: "lovely-lash-560", name: "Brown Rili Cookie İpek Kirpik — 6 sıra karışık", brand: "LOVELY", size: "6 sıra", color: "Kahverengi", image: "https://admin.lovely-professional.ru/storage/media-cache/cards_and_offers_images/05.05.2025/L23450_1_card_37725_webp.webp", categories: ["ipek-kirpik", "lovely", "lovely-rili"] },
+  { id: "lovely-lash-473", name: "Rili Brown Toffee İpek Kirpik — 6 sıra karışık", brand: "LOVELY", size: "6 sıra", color: "Kahverengi", image: "https://admin.lovely-professional.ru/storage/media-cache/cards_and_offers_images/05.05.2025/L23107_1_card_37713_webp.webp", categories: ["ipek-kirpik", "lovely", "lovely-rili"] },
+  { id: "lovely-lash-853", name: "Rili Karamel Kahverengi İpek Kirpik — 16 sıra karışık (indirimli)", brand: "LOVELY", size: "16 sıra", color: "Karamel", image: "https://admin.lovely-professional.ru/storage/media-cache/cards_and_offers_images/L24332_1_card_37977_webp.webp", categories: ["ipek-kirpik", "lovely", "lovely-rili"] },
+  { id: "lovely-lash-179", name: "Koyu kahverengi Rili Choco İpek Kirpik — 6 sıra karışık", brand: "LOVELY", size: "6 sıra", color: "Koyu kahverengi", image: "https://admin.lovely-professional.ru/storage/media-cache/cards_and_offers_images/05.05.2025/L11522_1_card_37351_webp.webp", categories: ["ipek-kirpik", "lovely", "lovely-rili"] },
+  { id: "lovely-lash-923", name: "LASHY Shok — koyu kahverengi kirpik, 20 sıra", brand: "LOVELY", size: "20 sıra", color: "Koyu kahverengi", image: "https://admin.lovely-professional.ru/storage/media-cache/2025/09/10/b8ae2047b82cf76df84b48a24d97dfab5e178cfa_24708_webp.webp", categories: ["ipek-kirpik", "lovely", "lovely-lashy"] },
+  { id: "lovely-lash-924", name: "LASHY Shok — koyu kahverengi kirpik, 20 sıra MIX", brand: "LOVELY", size: "20 sıra", color: "Koyu kahverengi", image: "https://admin.lovely-professional.ru/storage/media-cache/2025/09/10/b8ae2047b82cf76df84b48a24d97dfab5e178cfa_24717_webp.webp", categories: ["ipek-kirpik", "lovely", "lovely-lashy"] },
+  { id: "lovely-lash-471", name: "Brown Rili Toffee İpek Kirpik — 16 sıra", brand: "LOVELY", size: "16 sıra", color: "Kahverengi", image: "https://admin.lovely-professional.ru/storage/media-cache/cards_and_offers_images/05.05.2025/L23003_1_card_37709_webp.webp", categories: ["ipek-kirpik", "lovely", "lovely-rili"] },
+  { id: "lovely-lash-512", name: "LOVELY Siena kahverengi kirpik — 16 sıra karışık", brand: "LOVELY", size: "16 sıra", color: "Kahverengi", image: "https://admin.lovely-professional.ru/storage/media-cache/cards_and_offers_images/05.05.2025/L23348_1_card_37718_webp.webp", categories: ["ipek-kirpik", "lovely", "lovely-lovely"] },
+  { id: "lovely-lash-555", name: "Brown Rili Cookie İpek Kirpik — 16 sıra", brand: "LOVELY", size: "16 sıra", color: "Kahverengi", image: "https://admin.lovely-professional.ru/storage/media-cache/cards_and_offers_images/05.05.2025/L23356_1_card_37721_webp.webp", categories: ["ipek-kirpik", "lovely", "lovely-rili"] },
+  { id: "lovely-lash-511", name: "LOVELY Siena kahverengi kirpik — 16 sıra", brand: "LOVELY", size: "16 sıra", color: "Kahverengi", image: "https://admin.lovely-professional.ru/storage/media-cache/cards_and_offers_images/05.05.2025/L23347_1_card_37715_webp.webp", categories: ["ipek-kirpik", "lovely", "lovely-lovely"] },
+  { id: "lovely-lash-472", name: "Rili Toffee kahverengi kirpik seti — 16 sıra karışık", brand: "LOVELY", size: "16 sıra", color: "Kahverengi", image: "https://admin.lovely-professional.ru/storage/media-cache/cards_and_offers_images/05.05.2025/L23083_1_card_37711_webp.webp", categories: ["ipek-kirpik", "lovely", "lovely-rili"] },
+  { id: "lovely-lash-1004", name: "LOVELY Valencia kahverengi kirpik — 16 sıra karışık", brand: "LOVELY", size: "16 sıra", color: "Kahverengi", image: "https://admin.lovely-professional.ru/storage/media-cache/2026/02/09/7c5ba80f56a9fb615b5af5a3e8455078a92adbb9_38240_webp.webp", categories: ["ipek-kirpik", "new", "lovely", "lovely-lovely"] },
+  { id: "lovely-lash-427", name: "Koyu kahverengi LOVELY Monaco kirpik — 16 sıra MIX", brand: "LOVELY", size: "16 sıra", color: "Koyu kahverengi", image: "https://admin.lovely-professional.ru/storage/media-cache/cards_and_offers_images/05.05.2025/L11813_1_card_37362_webp.webp", categories: ["ipek-kirpik", "lovely", "lovely-lovely"] },
+  { id: "lovely-lash-559", name: "Brown Rili Cookie İpek Kirpik — 16 sıra karışık", brand: "LOVELY", size: "16 sıra", color: "Kahverengi", image: "https://admin.lovely-professional.ru/storage/media-cache/cards_and_offers_images/05.05.2025/L23429_1_card_37723_webp.webp", categories: ["ipek-kirpik", "lovely", "lovely-rili"] },
+  { id: "lovely-lash-426", name: "Koyu kahverengi LOVELY Monaco kirpik — 16 sıra", brand: "LOVELY", size: "16 sıra", color: "Koyu kahverengi", image: "https://admin.lovely-professional.ru/storage/media-cache/cards_and_offers_images/05.05.2025/L11728_1_card_37359_webp.webp", categories: ["ipek-kirpik", "lovely", "lovely-lovely"] },
+  { id: "lovely-lash-178", name: "Koyu kahverengi Rili Choco İpek Kirpik — 16 sıra karışık", brand: "LOVELY", size: "16 sıra", color: "Koyu kahverengi", image: "https://admin.lovely-professional.ru/storage/media-cache/cards_and_offers_images/05.05.2025/L11503_1_card_37349_webp.webp", categories: ["ipek-kirpik", "lovely", "lovely-rili"] },
+  { id: "lovely-lash-981", name: "Koyu kahverengi LOVELY Bordèu kirpik — 16 sıra MIX", brand: "LOVELY", size: "16 sıra", color: "Koyu kahverengi", image: "https://admin.lovely-professional.ru/storage/media-cache/2025/11/25/c4153eeba85a39f9401a59e998692c4135f65be9_25286_webp.webp", categories: ["ipek-kirpik", "new", "lovely", "lovely-lovely"] },
+  { id: "lovely-lash-177", name: "Koyu kahverengi Rili Choco İpek Kirpik — 16 sıra", brand: "LOVELY", size: "16 sıra", color: "Koyu kahverengi", image: "https://admin.lovely-professional.ru/storage/media-cache/cards_and_offers_images/05.05.2025/L11420_1_card_37347_webp.webp", categories: ["ipek-kirpik", "lovely", "lovely-rili"] },
 
-  { id: "lovely-catalog-deluxe-20-mix", name: "Muhteşem Lüks Siyah Kirpikler - 20 Sıra - Karışık", brand: "LOVELY", size: "20 sıra", color: "Siyah", image: "https://admin.lovely-professional.ru/storage/media-cache/cards_and_offers_images/05.05.2025/L09920_1_card_37153_webp.webp", categories: ["ipek-kirpik"] },
-  { id: "lovely-catalog-silicone-20-orange", name: "DÜŞÜK FİYATLI Siyah Kirpikler, Sevimli \"Silikon\" Serisi - 20 Sıra (Turuncu)", brand: "LOVELY", size: "20 sıra", color: "Turuncu", image: "https://admin.lovely-professional.ru/storage/media-cache/cards_and_offers_images/05.05.2025/L10022_1_card_25392_webp.webp", categories: ["ipek-kirpik"] },
-  { id: "lovely-catalog-deluxe-20", name: "Muhteşem Lüks Siyah Kirpikler - 20 Sıra", brand: "LOVELY", size: "20 sıra", color: "Siyah", image: "https://admin.lovely-professional.ru/storage/media-cache/cards_and_offers_images/05.05.2025/L09919_1_card_37147_webp.webp", categories: ["ipek-kirpik"] },
-  { id: "lovely-catalog-rili-6-mix", name: "Rili Siyah Kirpikler - 6 Sıra - Karışık", brand: "LOVELY", size: "6 sıra", color: "Siyah", image: "https://admin.lovely-professional.ru/storage/media-cache/cards_and_offers_images/05.05.2025/L19655_1_card_37435_webp.webp", categories: ["ipek-kirpik"] },
-  { id: "lovely-catalog-deluxe-16-mix", name: "Muhteşem Lüks Siyah Kirpikler - 16 Sıra - Karışık", brand: "LOVELY", size: "16 sıra", color: "Siyah", image: "https://admin.lovely-professional.ru/storage/media-cache/2025/10/27/d82f2e3cf72603deebd1b77daeb68d1ad4c0a7db_25244_webp.webp", categories: ["ipek-kirpik"] },
-  { id: "lovely-catalog-silicone-6-mini", name: "Güzel Siyah Kirpikler, \"Silikon\" Serisi - 6 Sıra - MİNİ", brand: "LOVELY", size: "6 sıra", color: "Siyah", image: "https://admin.lovely-professional.ru/storage/media-cache/card/TMi7ZhxDEyFqGPYfxydF_38253_webp.webp", categories: ["ipek-kirpik"] },
-  { id: "lovely-catalog-lashy-ultra-20-mix", name: "LASHY Ultra Siyah Kirpikler - 20 Sıra - Karışık", brand: "LOVELY", size: "20 sıra", color: "Siyah", image: "https://admin.lovely-professional.ru/storage/media-cache/cards_and_offers_images/05.05.2025/L20431_1_card_37450_webp.webp", categories: ["ipek-kirpik"] },
-  { id: "lovely-catalog-silicone-6-mini-mix", name: "Güzel Siyah Kirpikler, \"Silikon\" Serisi - 6 Çeşit - MİNİ KARIŞIM", brand: "LOVELY", size: "6 çeşit", color: "Siyah", image: "https://admin.lovely-professional.ru/storage/media-cache/card/ud3eqw4TKy6Z4bzwNvBg_38494_webp.webp", categories: ["ipek-kirpik"] },
-  { id: "lovely-catalog-lashy-ultra-20", name: "LASHY Ultra Siyah Kirpikler - 20 Sıra", brand: "LOVELY", size: "20 sıra", color: "Siyah", image: "https://admin.lovely-professional.ru/storage/media-cache/cards_and_offers_images/05.05.2025/L20308_1_card_37448_webp.webp", categories: ["ipek-kirpik"] },
-  { id: "lovely-catalog-silicone-16-mix", name: "Güzel Siyah Kirpikler, \"Silikon\" Serisi - 16 Çeşit - Karışık", brand: "LOVELY", size: "16 çeşit", color: "Siyah", image: "https://admin.lovely-professional.ru/storage/media-cache/cards_and_offers_images/05.05.2025/L19518_1_card_37430_webp.webp", categories: ["ipek-kirpik"] },
-  { id: "lovely-catalog-silicone-16", name: "Güzel Siyah Kirpikler, \"Silikon\" Serisi - 16 Sıra", brand: "LOVELY", size: "16 sıra", color: "Siyah", image: "https://admin.lovely-professional.ru/storage/media-cache/cards_and_offers_images/05.05.2025/L19473_1_card_23933_webp.webp", categories: ["ipek-kirpik"] },
-  { id: "lovely-catalog-silicone-20-mix", name: "Güzel Siyah Kirpikler, \"Silikon\" Serisi - 20 Sıra - Karışık", brand: "LOVELY", size: "20 sıra", color: "Siyah", image: "https://admin.lovely-professional.ru/storage/media-cache/cards_and_offers_images/05.05.2025/L09925_1_card_37164_webp.webp", categories: ["ipek-kirpik"] },
-  { id: "lovely-catalog-rili-16-mix", name: "Rili Siyah Kirpikler - 16 Sıra - Karışık", brand: "LOVELY", size: "16 sıra", color: "Siyah", image: "https://admin.lovely-professional.ru/storage/media-cache/cards_and_offers_images/05.05.2025/L10017_1_card_37341_webp.webp", categories: ["ipek-kirpik"] },
-  { id: "lovely-catalog-silicone-20", name: "Güzel Siyah Kirpikler, \"Silikon\" Serisi - 20 Sıra", brand: "LOVELY", size: "20 sıra", color: "Siyah", image: "https://admin.lovely-professional.ru/storage/media-cache/cards_and_offers_images/05.05.2025/L09924_1_card_37159_webp.webp", categories: ["ipek-kirpik"] },
-  { id: "lovely-catalog-rili-16", name: "Rili Siyah Kirpikler - 16 Sıra", brand: "LOVELY", size: "16 sıra", color: "Siyah", image: "https://admin.lovely-professional.ru/storage/media-cache/cards_and_offers_images/05.05.2025/L10016_1_card_37337_webp.webp", categories: ["ipek-kirpik"] },
+  { id: "lovely-catalog-deluxe-20-mix", name: "Muhteşem Lüks Siyah Kirpikler - 20 Sıra - Karışık", brand: "LOVELY", size: "20 sıra", color: "Siyah", image: "https://admin.lovely-professional.ru/storage/media-cache/cards_and_offers_images/05.05.2025/L09920_1_card_37153_webp.webp", categories: ["ipek-kirpik", "lovely", "lovely-lovely"] },
+  { id: "lovely-catalog-silicone-20-orange", name: "DÜŞÜK FİYATLI Siyah Kirpikler, Sevimli \"Silikon\" Serisi - 20 Sıra (Turuncu)", brand: "LOVELY", size: "20 sıra", color: "Turuncu", image: "https://admin.lovely-professional.ru/storage/media-cache/cards_and_offers_images/05.05.2025/L10022_1_card_25392_webp.webp", categories: ["ipek-kirpik", "lovely", "lovely-lovely"] },
+  { id: "lovely-catalog-deluxe-20", name: "Muhteşem Lüks Siyah Kirpikler - 20 Sıra", brand: "LOVELY", size: "20 sıra", color: "Siyah", image: "https://admin.lovely-professional.ru/storage/media-cache/cards_and_offers_images/05.05.2025/L09919_1_card_37147_webp.webp", categories: ["ipek-kirpik", "lovely", "lovely-lovely"] },
+  { id: "lovely-catalog-rili-6-mix", name: "Rili Siyah Kirpikler - 6 Sıra - Karışık", brand: "LOVELY", size: "6 sıra", color: "Siyah", image: "https://admin.lovely-professional.ru/storage/media-cache/cards_and_offers_images/05.05.2025/L19655_1_card_37435_webp.webp", categories: ["ipek-kirpik", "lovely", "lovely-rili"] },
+  { id: "lovely-catalog-deluxe-16-mix", name: "Muhteşem Lüks Siyah Kirpikler - 16 Sıra - Karışık", brand: "LOVELY", size: "16 sıra", color: "Siyah", image: "https://admin.lovely-professional.ru/storage/media-cache/2025/10/27/d82f2e3cf72603deebd1b77daeb68d1ad4c0a7db_25244_webp.webp", categories: ["ipek-kirpik", "lovely", "lovely-lovely"] },
+  { id: "lovely-catalog-silicone-6-mini", name: "Güzel Siyah Kirpikler, \"Silikon\" Serisi - 6 Sıra - MİNİ", brand: "LOVELY", size: "6 sıra", color: "Siyah", image: "https://admin.lovely-professional.ru/storage/media-cache/card/TMi7ZhxDEyFqGPYfxydF_38253_webp.webp", categories: ["ipek-kirpik", "lovely", "lovely-lovely"] },
+  { id: "lovely-catalog-lashy-ultra-20-mix", name: "LASHY Ultra Siyah Kirpikler - 20 Sıra - Karışık", brand: "LOVELY", size: "20 sıra", color: "Siyah", image: "https://admin.lovely-professional.ru/storage/media-cache/cards_and_offers_images/05.05.2025/L20431_1_card_37450_webp.webp", categories: ["ipek-kirpik", "lovely", "lovely-lashy"] },
+  { id: "lovely-catalog-silicone-6-mini-mix", name: "Güzel Siyah Kirpikler, \"Silikon\" Serisi - 6 Çeşit - MİNİ KARIŞIM", brand: "LOVELY", size: "6 çeşit", color: "Siyah", image: "https://admin.lovely-professional.ru/storage/media-cache/card/ud3eqw4TKy6Z4bzwNvBg_38494_webp.webp", categories: ["ipek-kirpik", "lovely", "lovely-lovely"] },
+  { id: "lovely-catalog-lashy-ultra-20", name: "LASHY Ultra Siyah Kirpikler - 20 Sıra", brand: "LOVELY", size: "20 sıra", color: "Siyah", image: "https://admin.lovely-professional.ru/storage/media-cache/cards_and_offers_images/05.05.2025/L20308_1_card_37448_webp.webp", categories: ["ipek-kirpik", "lovely", "lovely-lashy"] },
+  { id: "lovely-catalog-silicone-16-mix", name: "Güzel Siyah Kirpikler, \"Silikon\" Serisi - 16 Çeşit - Karışık", brand: "LOVELY", size: "16 çeşit", color: "Siyah", image: "https://admin.lovely-professional.ru/storage/media-cache/cards_and_offers_images/05.05.2025/L19518_1_card_37430_webp.webp", categories: ["ipek-kirpik", "lovely", "lovely-lovely"] },
+  { id: "lovely-catalog-silicone-16", name: "Güzel Siyah Kirpikler, \"Silikon\" Serisi - 16 Sıra", brand: "LOVELY", size: "16 sıra", color: "Siyah", image: "https://admin.lovely-professional.ru/storage/media-cache/cards_and_offers_images/05.05.2025/L19473_1_card_23933_webp.webp", categories: ["ipek-kirpik", "lovely", "lovely-lovely"] },
+  { id: "lovely-catalog-silicone-20-mix", name: "Güzel Siyah Kirpikler, \"Silikon\" Serisi - 20 Sıra - Karışık", brand: "LOVELY", size: "20 sıra", color: "Siyah", image: "https://admin.lovely-professional.ru/storage/media-cache/cards_and_offers_images/05.05.2025/L09925_1_card_37164_webp.webp", categories: ["ipek-kirpik", "lovely", "lovely-lovely"] },
+  { id: "lovely-catalog-rili-16-mix", name: "Rili Siyah Kirpikler - 16 Sıra - Karışık", brand: "LOVELY", size: "16 sıra", color: "Siyah", image: "https://admin.lovely-professional.ru/storage/media-cache/cards_and_offers_images/05.05.2025/L10017_1_card_37341_webp.webp", categories: ["ipek-kirpik", "lovely", "lovely-rili"] },
+  { id: "lovely-catalog-silicone-20", name: "Güzel Siyah Kirpikler, \"Silikon\" Serisi - 20 Sıra", brand: "LOVELY", size: "20 sıra", color: "Siyah", image: "https://admin.lovely-professional.ru/storage/media-cache/cards_and_offers_images/05.05.2025/L09924_1_card_37159_webp.webp", categories: ["ipek-kirpik", "lovely", "lovely-lovely"] },
+  { id: "lovely-catalog-rili-16", name: "Rili Siyah Kirpikler - 16 Sıra", brand: "LOVELY", size: "16 sıra", color: "Siyah", image: "https://admin.lovely-professional.ru/storage/media-cache/cards_and_offers_images/05.05.2025/L10016_1_card_37337_webp.webp", categories: ["ipek-kirpik", "lovely", "lovely-rili"] },
   { id: "lovely-supply-mikrobrasi", name: "Mikrofırçalar", brand: "LOVELY", size: "Küçük / Orta", color: "Çoklu", image: "https://admin.lovely-professional.ru/storage/media-cache/2025/10/14/3b6b0b96008b83e26dadfe48efe44c397763db2b_25079_webp.webp", categories: ["kirpik-sarf"] },
   { id: "lovely-supply-paket-2635", name: "LOVELY kağıt çanta (26×35)", brand: "LOVELY", size: "26×35 cm", color: "", image: "https://admin.lovely-professional.ru/storage/media-cache/cards_and_offers_images/05.05.2025/L40128_1_card_37828_webp.webp", categories: ["kirpik-markali"] },
   { id: "lovely-supply-kolco-klei-1", name: "Yapıştırıcı halkası #1", brand: "LOVELY", size: "Adet", color: "", image: "https://admin.lovely-professional.ru/storage/media-cache/card/j76n79ffb2D6JNjJkOjO_3326_webp.webp", categories: ["kirpik-sarf"] },
@@ -1292,12 +1328,81 @@ const defaultBanners = [
 ];
 
 const loadProducts = () => {
+  const REMOVED_PRODUCT_IDS = new Set([
+    "starter-kit",
+    "albi-regenerating-hand-cream-seaweed-coconut",
+    "albi-cream-for-tired-feet-menthol-camphor",
+    "albi-foot-cream-softening-corns-cracks",
+    "albi-nourishing-hand-cream",
+    "albi-foot-softening-cream",
+    "nail-file-albi-moon",
+    "nail-file-albi-boomerang",
+    "nail-file-albi-straight",
+  ]);
+  const normSizeDigits = (value) => {
+    const raw = String(value || "").trim();
+    const numeric = raw.replace(/[^\d]/g, "");
+    return numeric || "10";
+  };
+  const isKirpikFamily = (p) =>
+    Array.isArray(p?.categories) &&
+    p.categories.some((c) => c === "ipek-kirpik" || (typeof c === "string" && c.startsWith("kirpik-")));
+
+  const migrateAdetBucketToFirca = (arr) => {
+    let changed = false;
+    const next = arr.map((p) => {
+      if (p.id === "kalipso-collapsible-brush-acrylic-12") {
+        const cats = p.categories || [];
+        if (cats.length === 1 && cats[0] === "firca") return p;
+        changed = true;
+        return { ...p, categories: ["firca"] };
+      }
+      if (isKirpikFamily(p)) return p;
+      const n = normSizeDigits(p.size);
+      if (!["1", "2", "3"].includes(n)) return p;
+      const cats = p.categories || [];
+      if (cats.length === 1 && cats[0] === "firca") return p;
+      changed = true;
+      return { ...p, categories: ["firca"] };
+    });
+    return { next, changed };
+  };
+
+  const migrateLovelyIpekLine = (arr) => {
+    let changed = false;
+    const next = arr.map((p) => {
+      const brand = String(p.brand || "").trim().toLocaleLowerCase("tr");
+      if (brand !== "lovely") return p;
+      const cats = p.categories || [];
+      if (!cats.includes("ipek-kirpik")) return p;
+      if (LOVELY_LINE_SUBCATEGORIES.some((s) => cats.includes(s)) && cats.includes(LOVELY_LINE_PARENT)) return p;
+      const sub = detectLovelySubFromName(p.name);
+      changed = true;
+      const merged = [...new Set([...cats.filter((c) => !LOVELY_LINE_SUBCATEGORIES.includes(c)), LOVELY_LINE_PARENT, sub])];
+      return { ...p, categories: merged };
+    });
+    return { next, changed };
+  };
+
   const stored = localStorage.getItem(PRODUCTS_KEY);
   if (!stored) return [...defaultProducts];
   try {
     const parsed = JSON.parse(stored);
     if (!Array.isArray(parsed) || !parsed.length) return [...defaultProducts];
-    return isLegacySeedData(parsed) ? [...defaultProducts] : parsed;
+    if (isLegacySeedData(parsed)) return [...defaultProducts];
+    let { next, changed } = migrateAdetBucketToFirca(parsed);
+    const lovelyMig = migrateLovelyIpekLine(next);
+    if (lovelyMig.changed) {
+      changed = true;
+      next = lovelyMig.next;
+    }
+    const cleaned = next.filter((p) => !REMOVED_PRODUCT_IDS.has(p.id));
+    if (cleaned.length !== next.length) {
+      changed = true;
+      next = cleaned;
+    }
+    if (changed) localStorage.setItem(PRODUCTS_KEY, JSON.stringify(next));
+    return next;
   } catch {
     return [...defaultProducts];
   }
@@ -1451,6 +1556,8 @@ const LASH_CATEGORY = "ipek-kirpik";
 const isLashProduct = (product) =>
   (product.categories || []).some((c) => c === LASH_CATEGORY || (typeof c === "string" && c.startsWith("kirpik-")));
 
+const isFircaProduct = (product) => (product.categories || []).includes("firca");
+
 const KIRPIK_SUPPLY_CATEGORY_SLUGS = [
   "kirpik-ekipman",
   "kirpik-markali",
@@ -1460,6 +1567,17 @@ const KIRPIK_SUPPLY_CATEGORY_SLUGS = [
   "kirpik-sarf",
   "kirpik-tablet-stand",
 ];
+
+/** LOVELY ana hat (ipek kirpik); alt seriler: rili / lashy / lovely (çekirdek seri). */
+const LOVELY_LINE_PARENT = "lovely";
+const LOVELY_LINE_SUBCATEGORIES = ["lovely-rili", "lovely-lashy", "lovely-lovely"];
+
+const detectLovelySubFromName = (name) => {
+  const n = String(name || "");
+  if (/\bLASHY\b/i.test(n)) return "lovely-lashy";
+  if (/\bRili\b/i.test(n)) return "lovely-rili";
+  return "lovely-lovely";
+};
 
 const getBrandForFilter = (product) => {
   const brand = String(product?.brand || "ALBI").trim() || "ALBI";
@@ -1509,22 +1627,30 @@ const renderProductCard = (product, index, { lazyImage = true } = {}) => {
     : "";
   const imageClass = product.image ? "has-image" : "";
   const lash = isLashProduct(product);
-  const mlValue = lash ? "" : normalizeMl(product.size);
-  const skipMl = lash ? "true" : "false";
+  const firca = isFircaProduct(product);
+  const skipMlPack = lash || firca;
+  const mlValue = skipMlPack ? "" : normalizeMl(product.size);
+  const skipMl = skipMlPack ? "true" : "false";
   const colorRaw = String(product.color || "").trim();
   const brandLabel = getBrandForFilter(product);
   const brandKey = `brand-${slugifyBrand(brandLabel)}`;
   const nameKey = normalizeSearchText(product.name);
-  const sizeDisplay = lash ? escapeHtml(String(product.size || "").trim() || "—") : escapeHtml(formatSizeUnit(mlValue));
+  const sizeDisplay = skipMlPack
+    ? escapeHtml(String(product.size || "").trim() || "—")
+    : escapeHtml(formatSizeUnit(mlValue));
   const colorLine = lash && colorRaw ? `<p>Renk: ${escapeHtml(colorRaw)}</p>` : "";
+  const seriesRaw = String(product.series || "").trim();
+  const seriesKey = slugifySeries(seriesRaw);
+  const seriesLine = seriesRaw ? `<p>Seri: ${escapeHtml(seriesRaw)}</p>` : "";
   return `
-    <article class="catalog-card" data-category="${(product.categories || []).join(",")}" data-size-ml="${mlValue}" data-brand-key="${brandKey}" data-skip-ml-filter="${skipMl}" data-name-key="${escapeHtml(nameKey)}">
+    <article class="catalog-card" data-category="${(product.categories || []).join(",")}" data-size-ml="${mlValue}" data-brand-key="${brandKey}" data-series="${seriesKey}" data-skip-ml-filter="${skipMl}" data-name-key="${escapeHtml(nameKey)}">
       <div class="catalog-photo ${toneClass} ${imageClass}">
         ${imgMarkup}
       </div>
       <h3>${safeName}</h3>
       <p>Marka: ${escapeHtml(brandLabel)}</p>
       <p>Boyut: ${sizeDisplay}</p>
+      ${seriesLine}
       ${colorLine}
     </article>
   `;
@@ -1575,6 +1701,7 @@ const filterLabelMap = {
   "liquid-polygel": "Sıvı polijel ürünleri listeleniyor",
   "nail-skin-care": "Tırnak ve cilt bakımı ürünleri listeleniyor",
   "nail-files": "Tırnak törpüleri listeleniyor",
+  firca: "Fırça ve fırça setleri listeleniyor",
   "ipek-kirpik": "İpek kirpik ürünleri listeleniyor",
   "kirpik-malzemeleri": "Kirpik sarf ve yardımcı ürünleri listeleniyor",
   "kirpik-ekipman": "Kirpik ekipmanı ve aletleri listeleniyor",
@@ -1584,11 +1711,22 @@ const filterLabelMap = {
   "kirpik-tekstil": "Kirpik tekstil ürünleri listeleniyor",
   "kirpik-sarf": "Kirpik sarf malzemeleri listeleniyor",
   "kirpik-tablet-stand": "Tablet, palet ve yardımcı yüzeyler listeleniyor",
+  lovely: "LOVELY ipek kirpik (tüm seriler) listeleniyor",
+  "lovely-rili": "LOVELY — Rili serisi listeleniyor",
+  "lovely-lashy": "LOVELY — Lashy serisi listeleniyor",
+  "lovely-lovely": "LOVELY — Lovely çekirdek seri listeleniyor",
 };
 
 const slugifyBrand = (value) =>
   String(value || "")
     .toLowerCase()
+    .trim()
+    .replace(/\s+/g, "-")
+    .replace(/[^a-z0-9-]/g, "");
+
+const slugifySeries = (value) =>
+  String(value || "")
+    .toLocaleLowerCase("tr")
     .trim()
     .replace(/\s+/g, "-")
     .replace(/[^a-z0-9-]/g, "");
@@ -1621,7 +1759,12 @@ const populateTopFilters = () => {
   const products = loadProducts();
   if (topMlFilter) {
     const mlValues = [
-      ...new Set(products.filter((p) => !isLashProduct(p)).map((p) => normalizeMl(p.size)).filter(Boolean)),
+      ...new Set(
+        products
+          .filter((p) => !isLashProduct(p) && !isFircaProduct(p))
+          .map((p) => normalizeMl(p.size))
+          .filter(Boolean)
+      ),
     ].sort((a, b) => Number(a) - Number(b));
     topMlFilter.innerHTML = `<option value="all">Tümü</option>${mlValues
       .map((ml) => `<option value="${ml}">${escapeHtml(formatSizeUnit(ml))}</option>`)
@@ -1635,6 +1778,19 @@ const populateTopFilters = () => {
       .join("")}`;
   }
 
+  if (topSeriesFilter) {
+    const prev = topSeriesFilter.value;
+    const withSeries = products.map((p) => String(p.series || "").trim()).filter(Boolean);
+    const unique = [...new Set(withSeries)].sort((a, b) => a.localeCompare(b, "tr"));
+    const hasEmpty = products.some((p) => !String(p.series || "").trim());
+    let html = `<option value="all">Tümü</option>`;
+    if (hasEmpty) html += `<option value="__empty__">Seri atanmamış</option>`;
+    html += unique.map((s) => `<option value="${slugifySeries(s)}">${escapeHtml(s)}</option>`).join("");
+    topSeriesFilter.innerHTML = html;
+    if ([...topSeriesFilter.options].some((o) => o.value === prev)) {
+      topSeriesFilter.value = prev;
+    }
+  }
 };
 
 const applyCatalogFilter = (filterKey = currentCategoryFilter, resetPage = false) => {
@@ -1645,6 +1801,7 @@ const applyCatalogFilter = (filterKey = currentCategoryFilter, resetPage = false
 
   const selectedMl = topMlFilter?.value || "all";
   const selectedBrand = topBrandFilter?.value || "all";
+  const selectedSeries = topSeriesFilter?.value || "all";
   const selectedSearch = normalizeSearchText(topSearchFilter?.value || "");
   const matchedCards = [];
 
@@ -1652,18 +1809,28 @@ const applyCatalogFilter = (filterKey = currentCategoryFilter, resetPage = false
     const categoryList = (card.dataset.category || "").split(",");
     const sizeValue = card.dataset.sizeMl || "";
     const brandKey = card.dataset.brandKey || "";
+    const seriesSlug = card.dataset.series || "";
     const nameKey = card.dataset.nameKey || "";
     const skipMl = card.dataset.skipMlFilter === "true";
+    const lovelyParentMatch =
+      currentCategoryFilter === LOVELY_LINE_PARENT &&
+      (categoryList.includes(LOVELY_LINE_PARENT) ||
+        LOVELY_LINE_SUBCATEGORIES.some((slug) => categoryList.includes(slug)));
     const categoryMatch =
       currentCategoryFilter === "all" ||
+      lovelyParentMatch ||
       categoryList.includes(currentCategoryFilter) ||
       (currentCategoryFilter === "kirpik-malzemeleri" &&
         (categoryList.includes("kirpik-malzemeleri") ||
           categoryList.some((c) => KIRPIK_SUPPLY_CATEGORY_SLUGS.includes(c))));
     const mlMatch = selectedMl === "all" || (!skipMl && sizeValue === selectedMl);
     const brandMatch = selectedBrand === "all" || brandKey === `brand-${selectedBrand}`;
+    const seriesMatch =
+      selectedSeries === "all" ||
+      (selectedSeries === "__empty__" && !seriesSlug) ||
+      (selectedSeries !== "__empty__" && seriesSlug === selectedSeries);
     const searchMatch = !selectedSearch || nameKey.includes(selectedSearch);
-    const shouldShow = categoryMatch && mlMatch && brandMatch && searchMatch;
+    const shouldShow = categoryMatch && mlMatch && brandMatch && seriesMatch && searchMatch;
     if (shouldShow) matchedCards.push(card);
   });
 
@@ -1688,8 +1855,14 @@ const applyCatalogFilter = (filterKey = currentCategoryFilter, resetPage = false
       selectedBrand === "all"
         ? "Tümü"
         : topBrandFilter?.selectedOptions?.[0]?.textContent || "Tümü";
+    const seriesLabel =
+      selectedSeries === "all"
+        ? "Tümü"
+        : selectedSeries === "__empty__"
+          ? "Seri atanmamış"
+          : topSeriesFilter?.selectedOptions?.[0]?.textContent || "Tümü";
     const searchLabel = selectedSearch ? ` | Arama: ${selectedSearch}` : "";
-    catalogCurrent.textContent = `${baseLabel} | ML: ${mlLabel} | Marka: ${brandLabel}${searchLabel}`;
+    catalogCurrent.textContent = `${baseLabel} | ML: ${mlLabel} | Marka: ${brandLabel} | Seri: ${seriesLabel}${searchLabel}`;
   }
 
   if (catalogEmpty) {
@@ -1810,6 +1983,12 @@ if (topBrandFilter) {
   });
 }
 
+if (topSeriesFilter) {
+  topSeriesFilter.addEventListener("change", () => {
+    applyCatalogFilter(currentCategoryFilter, true);
+  });
+}
+
 if (topSearchFilter) {
   topSearchFilter.addEventListener("input", () => {
     applyCatalogFilter(currentCategoryFilter, true);
@@ -1829,6 +2008,7 @@ if (resetTopFilters) {
   resetTopFilters.addEventListener("click", () => {
     if (topMlFilter) topMlFilter.value = "all";
     if (topBrandFilter) topBrandFilter.value = "all";
+    if (topSeriesFilter) topSeriesFilter.value = "all";
     if (topSearchFilter) topSearchFilter.value = "";
     if (topCategoryFilter) topCategoryFilter.value = "all";
     applyCatalogFilter("all", true);

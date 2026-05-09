@@ -1,5 +1,19 @@
 {
-  "source": "kalipso_albi_turkey",
-  "updated_at": "",
-  "items": []
+  "version": 2,
+  "accounts": [
+    {
+      "id": "kalipso_albi_turkey",
+      "handle": "@kalipso_albi_turkey",
+      "profile_url": "https://www.instagram.com/kalipso_albi_turkey/",
+      "updated_at": "",
+      "items": []
+    },
+    {
+      "id": "lovely_albi_kalipso",
+      "handle": "@lovely_albi_kalipso",
+      "profile_url": "https://www.instagram.com/lovely_albi_kalipso/",
+      "updated_at": "",
+      "items": []
+    }
+  ]
 }

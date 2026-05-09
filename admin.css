@@ -198,7 +198,7 @@ button {
 
 .admin-filters {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 10px;
   margin-bottom: 12px;
 }
@@ -210,7 +210,34 @@ button {
   display: grid;
   grid-template-columns: 72px 1fr auto;
   gap: 12px;
-  align-items: center;
+  align-items: start;
+}
+
+.admin-product-body {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.admin-inline-seri {
+  font-size: 0.8rem;
+  color: #6f6077;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 4px;
+}
+
+.admin-inline-seri select {
+  width: 100%;
+  max-width: 280px;
+  margin-top: 2px;
+  border: 1px solid rgba(38, 28, 44, 0.12);
+  border-radius: 10px;
+  padding: 6px 8px;
+  font: inherit;
+  background: #fff;
 }
 
 .admin-product-item img {

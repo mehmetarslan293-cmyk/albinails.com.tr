@@ -5,6 +5,9 @@ on:
   schedule:
     - cron: "*/30 * * * *"
 
+permissions:
+  contents: write
+
 jobs:
   sync-feed:
     runs-on: ubuntu-latest
@@ -17,11 +20,20 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Instagram son 4 icerigi cek
+      - name: Instagram son 4 icerigi cek (2 hesap)
         env:
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
           IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
-        run: python scripts/fetch_instagram_feed.py
+          IG_USER_ID_2: ${{ secrets.IG_USER_ID_2 }}
+          IG_ACCESS_TOKEN_2: ${{ secrets.IG_ACCESS_TOKEN_2 }}
+        run: |
+          if [ -z "${IG_USER_ID:-}" ] || [ -z "${IG_ACCESS_TOKEN:-}" ]; then
+            echo "::notice::IG_USER_ID veya IG_ACCESS_TOKEN tanimli degil. Repo Settings > Secrets and variables > Actions ile ekleyin; ardindan bu workflow'u tekrar calistirin."
+          fi
+          if [ -z "${IG_USER_ID_2:-}" ]; then
+            echo "::notice::IG_USER_ID_2 bos; @lovely_albi_kalipso feedi API ile doldurulmaz (istege bagli secret)."
+          fi
+          python scripts/fetch_instagram_feed.py
 
       - name: Degisiklik varsa commit et
         run: |
