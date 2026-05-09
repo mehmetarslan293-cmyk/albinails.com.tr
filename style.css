@@ -25,6 +25,89 @@ body {
   background: linear-gradient(180deg, #fff 0%, var(--bg) 70%);
 }
 
+@keyframes homeGradientShift {
+  0% { background-position: 0% 20%; }
+  50% { background-position: 100% 80%; }
+  100% { background-position: 0% 20%; }
+}
+
+@keyframes homeFloatGlow {
+  0%,
+  100% { transform: translate3d(0, 0, 0) scale(1); opacity: 0.42; }
+  50% { transform: translate3d(0, -12px, 0) scale(1.06); opacity: 0.72; }
+}
+
+@keyframes homeCardLift {
+  0%,
+  100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+@keyframes homePulseAccent {
+  0%,
+  100% { box-shadow: 0 10px 26px rgba(159, 22, 95, 0.18); }
+  50% { box-shadow: 0 16px 34px rgba(111, 26, 169, 0.28); }
+}
+
+body.home-page {
+  background:
+    radial-gradient(circle at 18% 16%, rgba(255, 214, 238, 0.9), transparent 36%),
+    radial-gradient(circle at 82% 14%, rgba(225, 208, 255, 0.72), transparent 34%),
+    linear-gradient(140deg, #fff 0%, #fff5ff 28%, #f4efff 56%, #f7f6ff 100%);
+  background-size: 160% 160%;
+  animation: homeGradientShift 16s ease-in-out infinite;
+}
+
+body.home-page #anasayfa {
+  position: relative;
+  overflow: hidden;
+}
+
+body.home-page #anasayfa::before,
+body.home-page #anasayfa::after {
+  content: "";
+  position: fixed;
+  width: 220px;
+  height: 220px;
+  border-radius: 999px;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(16px);
+}
+
+body.home-page #anasayfa::before {
+  top: 18%;
+  left: -60px;
+  background: radial-gradient(circle, rgba(255, 157, 210, 0.3), rgba(255, 157, 210, 0));
+  animation: homeFloatGlow 8s ease-in-out infinite;
+}
+
+body.home-page #anasayfa::after {
+  top: 54%;
+  right: -70px;
+  background: radial-gradient(circle, rgba(164, 126, 255, 0.32), rgba(164, 126, 255, 0));
+  animation: homeFloatGlow 10s ease-in-out infinite reverse;
+}
+
+body.home-page .slider-showcase,
+body.home-page .hero-banner,
+body.home-page .promo,
+body.home-page .cat-banner {
+  position: relative;
+  z-index: 1;
+}
+
+body.home-page .slide-card,
+body.home-page .hero-banner,
+body.home-page .promo {
+  animation: homeCardLift 6s ease-in-out infinite;
+}
+
+body.home-page .btn-primary,
+body.home-page .slide-btn {
+  animation: homePulseAccent 2.8s ease-in-out infinite;
+}
+
 a {
   color: inherit;
   text-decoration: none;
