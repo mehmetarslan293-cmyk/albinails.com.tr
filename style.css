@@ -63,13 +63,13 @@ a {
   align-items: center;
 }
 
-/* 1:1 (4x4) kutu: orijinal SVG oranı korunur, siyah letterbox referansla uyumlu */
+/* Kare kutu: PNG orijinal piksel oranı — sadece ölçeklenir, bozulmaz */
 .logo-square {
   display: grid;
   place-items: center;
-  width: clamp(56px, 14vw, 72px);
+  width: clamp(64px, 15vw, 84px);
   aspect-ratio: 1 / 1;
-  background: #0a0a0a;
+  background: #000000;
   border-radius: 14px;
   overflow: hidden;
   flex-shrink: 0;
@@ -78,8 +78,8 @@ a {
 
 .logo-img {
   display: block;
-  width: 86%;
-  height: 86%;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
   object-position: center;
 }
@@ -1210,7 +1210,7 @@ dialog::backdrop {
   }
 
   .logo-square {
-    width: clamp(48px, 13vw, 62px);
+    width: clamp(56px, 14vw, 72px);
     border-radius: 12px;
   }
 
