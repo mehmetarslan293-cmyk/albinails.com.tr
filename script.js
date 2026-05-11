@@ -1668,7 +1668,9 @@ const renderSeriesGroupCard = (unit, index, { lazyImage = true } = {}) => {
   const { key, seriesLabel, products } = unit;
   const first = products[0];
   const toneClass = productPhotoClass(index);
-  const thumbSrc = first.image ? tildaThumbnailSrc(first.image, 540) : "";
+  const galleryFirst = products.find((p) => Array.isArray(p.seriesGallery) && p.seriesGallery.length)?.seriesGallery[0];
+  const cardImage = String(galleryFirst || first.image || "").trim();
+  const thumbSrc = cardImage ? tildaThumbnailSrc(cardImage, 540) : "";
   const loadingAttr = lazyImage ? "lazy" : "eager";
   const fetchPri = lazyImage ? "low" : "auto";
   const imgMarkup = thumbSrc
@@ -2194,8 +2196,13 @@ const openSeriesDetailModal = (products, seriesLabel) => {
     }
   }
   renderSeriesModalThumbs();
-  renderSeriesGalleryStrip(seriesModalGalleryUrls);
   setSeriesModalVariant(0);
+  const firstGalleryUrl = String(seriesModalGalleryUrls[0] || "").trim();
+  if (firstGalleryUrl) {
+    seriesModalHeroOverride = firstGalleryUrl;
+    updateSeriesDetailHero();
+  }
+  renderSeriesGalleryStrip(seriesModalGalleryUrls);
   seriesDetailModal.showModal();
 };
 
