@@ -73,6 +73,31 @@ const HYPNOTIC_SERIES_ABOUT =
   "Sınırlı stok. 1–2 ince kat ile opaklık ayarlanabilir; gradient ve nail art için uygundur.\n\n" +
   "Saklama: serin ve kuru ortam, 10–26 °C; açıkken UV/LED ışığından uzak tutun.";
 
+/** Tilda albinails.ru — Burgundy koleksiyonu (script.js ile aynı tohum). */
+const BURGUNDY_SERIES = "Burgundy koleksiyonu — bordo jel oje";
+const BURGUNDY_SERIES_GALLERY = [
+  "https://static.tildacdn.com/stor6137-6464-4432-b763-303362353264/92951782.jpg",
+  "https://static.tildacdn.com/stor3961-3666-4835-b466-356536373636/19913864.jpg",
+  "https://static.tildacdn.com/stor6564-3761-4031-a461-333933633535/82007084.jpg",
+  "https://static.tildacdn.com/stor3830-3138-4361-a539-373239616464/16531705.jpg",
+  "https://static.tildacdn.com/stor6135-3331-4663-a565-353531343938/66461924.jpg",
+  "https://static.tildacdn.com/stor3032-3765-4532-b664-386163323334/99251839.jpg",
+  "https://static.tildacdn.com/stor3263-6337-4665-a465-306162356465/29065066.jpg",
+  "https://static.tildacdn.com/stor3364-3261-4530-b536-626432336230/91221737.jpg",
+  "https://static.tildacdn.com/stor6564-3030-4665-b931-303263643236/12295672.jpg",
+  "https://static.tildacdn.com/stor6130-3163-4934-b262-336439633763/84809254.jpg",
+  "https://static.tildacdn.com/stor6264-3637-4564-b165-313131623538/38688639.jpg",
+  "https://static.tildacdn.com/stor3763-3536-4138-b964-313661336136/61193170.jpg",
+  "https://static.tildacdn.com/stor3262-6461-4663-b133-643763363337/62012564.jpg",
+];
+const BURGUNDY_SERIES_ABOUT =
+  "ALBI Burgundy koleksiyonu: sonbahar 2024 trendine uygun, sofistike bordo ve kahverengi alt tonların birleşimi.\n\n" +
+  "01 — çok koyu şarap bordosu; serin mor alt ton; açık tenlilere yakışır.\n" +
+  "02 — 01’e yakın, koyu soğuk bordo ton.\n" +
+  "03 — kahverengi ağırlıklı, ultra koyu; sarılık yok; esmer ve bronz tende güçlü durur.\n\n" +
+  "Yoğun pigment, kendiliğinden dengeleyen kıvam; 1–2 ince kat ile opaklık. Gradient ve nail art için uygundur.\n\n" +
+  "Saklama: serin ve kuru ortam, 10–26 °C; açıkken UV/LED ışığından uzak tutun.";
+
 const defaultProducts = [
   { id: "kalipso-top-flakes-velor-15", name: "TOP FLAKES VELOR, 15 ML", brand: "Kalipso", size: "15 ml", image: "https://vo-kalipso.com/wp-content/uploads/2021/05/\u0432\u0435\u0440\u043b\u044e\u0440-\u043c\u0430\u0442\u043e\u0432-1--600x600.jpg", categories: ["top-coat"] },
   { id: "kalipso-top-snow-flakes-15", name: "TOP SNOW FLAKES WITHOUT STICKY LAYER, 15 ML", brand: "Kalipso", size: "15 ml", image: "https://vo-kalipso.com/wp-content/uploads/2021/05/\u0441\u043d\u0435\u0436\u043d\u044b\u0435-\u0445\u043b\u043e\u043f--600x600.jpg", categories: ["top-coat"] },
@@ -1105,6 +1130,39 @@ const defaultProducts = [
     seriesAbout: HYPNOTIC_SERIES_ABOUT,
   },
   {
+    id: "burgundy-01",
+    name: "01 — Burgundy koleksiyonu",
+    brand: "ALBI",
+    size: "10 ml",
+    series: BURGUNDY_SERIES,
+    image: "https://static.tildacdn.com/stor6564-3761-4031-a461-333933633535/82007084.jpg",
+    categories: ["gel-polish", "new"],
+    seriesGallery: BURGUNDY_SERIES_GALLERY,
+    seriesAbout: BURGUNDY_SERIES_ABOUT,
+  },
+  {
+    id: "burgundy-02",
+    name: "02 — Burgundy koleksiyonu",
+    brand: "ALBI",
+    size: "10 ml",
+    series: BURGUNDY_SERIES,
+    image: "https://static.tildacdn.com/stor3961-3666-4835-b466-356536373636/19913864.jpg",
+    categories: ["gel-polish", "new"],
+    seriesGallery: BURGUNDY_SERIES_GALLERY,
+    seriesAbout: BURGUNDY_SERIES_ABOUT,
+  },
+  {
+    id: "burgundy-03",
+    name: "03 — Burgundy koleksiyonu",
+    brand: "ALBI",
+    size: "10 ml",
+    series: BURGUNDY_SERIES,
+    image: "https://static.tildacdn.com/stor3830-3138-4361-a539-373239616464/16531705.jpg",
+    categories: ["gel-polish", "new"],
+    seriesGallery: BURGUNDY_SERIES_GALLERY,
+    seriesAbout: BURGUNDY_SERIES_ABOUT,
+  },
+  {
     id: "tilda-albin-primer-ultrabond",
     name: "Asidsiz primer (Ultrabond)",
     brand: "Kalipso",
@@ -1370,7 +1428,7 @@ const loadProducts = () => {
     let changed = false;
     const next = arr.filter((p) => {
       const id = String(p?.id || "").toLowerCase();
-      if (id.startsWith("hypnotic-")) return true;
+      if (id.startsWith("hypnotic-") || id.startsWith("burgundy-")) return true;
       if (id.startsWith("albi-")) {
         changed = true;
         return false;
@@ -1406,7 +1464,7 @@ const loadProducts = () => {
       let changedInner = false;
       const out = arr.map((p) => {
         const id = String(p?.id || "").toLowerCase();
-        if (!id.startsWith("hypnotic-")) return p;
+        if (!/^(hypnotic|burgundy)-/.test(id)) return p;
         let row = { ...p };
         if (String(row.brand || "").trim() !== "ALBI") {
           row.brand = "ALBI";
@@ -1448,7 +1506,7 @@ const loadProducts = () => {
       next = cleaned;
     }
     const migrateAppendTildaHypnoticBundle = (arr) => {
-      const seeds = defaultProducts.filter((p) => /^hypnotic-|^tilda-albin-/.test(String(p?.id || "")));
+      const seeds = defaultProducts.filter((p) => /^(hypnotic-|burgundy-|tilda-albin-)/.test(String(p?.id || "")));
       if (!seeds.length) return { next: arr, changed: false };
       const have = new Set(arr.map((p) => String(p?.id || "")));
       const add = seeds.filter((p) => p?.id && !have.has(p.id));
