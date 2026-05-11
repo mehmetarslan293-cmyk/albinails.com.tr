@@ -2220,17 +2220,16 @@ const loadProducts = () => {
       changed = true;
       next = cleaned;
     }
-    const migrateAppendTildaHypnoticBundle = (arr) => {
-      const seeds = defaultProducts.filter((p) =>
-        /^(hypnotic-|burgundy-|men-|butterfly-|menwomen-|women-|classic-|cat5d-|prizmatic-|autumn-|star-|metallic-|mozaic-|silkcat-|french-|tilda-albin-)/.test(String(p?.id || ""))
-      );
-      if (!seeds.length) return { next: arr, changed: false };
+    /** localStorage yalnızca ALBI serisi vb. ile dolduysa katalog tek satırda kalır; Kalipso yoksa eksik tüm varsayılanları ekle. */
+    const migrateAppendMissingCatalogDefaults = (arr) => {
+      const hasKalipso = arr.some((p) => /^kalipso-/i.test(String(p?.id || "")));
+      if (hasKalipso) return { next: arr, changed: false };
       const have = new Set(arr.map((p) => String(p?.id || "")));
-      const add = seeds.filter((p) => p?.id && !have.has(p.id));
+      const add = defaultProducts.filter((p) => p?.id && !have.has(p.id));
       if (!add.length) return { next: arr, changed: false };
       return { next: [...arr, ...add], changed: true };
     };
-    const tildaMig = migrateAppendTildaHypnoticBundle(next);
+    const tildaMig = migrateAppendMissingCatalogDefaults(next);
     if (tildaMig.changed) {
       changed = true;
       next = tildaMig.next;
