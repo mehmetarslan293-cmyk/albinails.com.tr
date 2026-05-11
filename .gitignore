@@ -3,3 +3,7 @@ deploy-keys/
 
 # CI runner'da olusan gecici anahtar yolu (yerelde yanlislikla olusursa)
 .deploy_ssh_key
+
+# Python
+__pycache__/
+*.pyc
