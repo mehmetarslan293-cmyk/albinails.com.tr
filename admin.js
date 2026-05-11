@@ -98,6 +98,40 @@ const BURGUNDY_SERIES_ABOUT =
   "Yoğun pigment, kendiliğinden dengeleyen kıvam; 1–2 ince kat ile opaklık. Gradient ve nail art için uygundur.\n\n" +
   "Saklama: serin ve kuru ortam, 10–26 °C; açıkken UV/LED ışığından uzak tutun.";
 
+/** Tilda albinails.ru — Men koleksiyonu (script.js ile aynı tohum). */
+const MEN_COLLECTION_SERIES = "Men koleksiyonu — jel oje";
+const MEN_COLLECTION_SERIES_GALLERY = [
+  "https://static.tildacdn.com/stor3862-6635-4335-b566-363361626237/26299078.jpg",
+  "https://static.tildacdn.com/stor6335-3161-4135-a263-326138366434/41644840.jpg",
+  "https://static.tildacdn.com/stor6430-3863-4333-b431-396336376439/38038015.jpg",
+  "https://static.tildacdn.com/stor3636-3333-4463-b766-373563643837/56513912.jpg",
+  "https://static.tildacdn.com/stor3831-3737-4766-a337-623830333831/92098695.png",
+  "https://static.tildacdn.com/stor6137-6436-4234-b930-323731373861/22905253.png",
+  "https://static.tildacdn.com/stor3565-6331-4963-b836-353862623733/41468514.png",
+  "https://static.tildacdn.com/stor3130-6630-4231-a166-656336316264/87687004.jpg",
+  "https://static.tildacdn.com/stor6264-6632-4134-b536-356139303061/83319603.jpg",
+  "https://static.tildacdn.com/stor6666-3162-4465-b836-376430626564/77286200.png",
+  "https://static.tildacdn.com/stor6164-3835-4637-a639-353330373136/70932392.png",
+  "https://static.tildacdn.com/stor3835-6138-4939-a439-373433303036/61434302.jpg",
+  "https://static.tildacdn.com/stor6430-3532-4666-a164-386331333331/28522498.jpg",
+  "https://static.tildacdn.com/stor6565-3437-4531-a264-613964326463/75495379.png",
+  "https://static.tildacdn.com/stor3835-3831-4638-b465-646261386431/15966448.jpg",
+  "https://static.tildacdn.com/stor6165-3237-4435-b462-313664623336/35752206.png",
+  "https://static.tildacdn.com/stor6239-3362-4266-b733-613937366332/32129649.jpg",
+  "https://static.tildacdn.com/stor6234-6365-4136-b966-306536333662/49646269.png",
+  "https://static.tildacdn.com/stor6537-3036-4565-b830-613437303332/31215841.png",
+];
+const MEN_COLLECTION_SERIES_ABOUT =
+  "ALBI Men koleksiyonu: sevdiklerinizden duyacağınız cümlelerden ilham alan altı jel oje tonu.\n\n" +
+  "080 — «Gidelim, sana fotoğraf çekelim» — turuncu-kahve karmaşı; enerjik ama agresif değil.\n" +
+  "180 — «Denize gittik» — derin kahveye göre daha yumuşak, sıcak ve rahatlatıcı.\n" +
+  "228 — «Telefon şifren (doğum günün)» — altın ve bal yansımalı, sakinleştirici sarı ton.\n" +
+  "301 — «Ne kadar güzel manikür» — yoğun meyvemsi bordo; parlaklık ve derinlik dengeli.\n" +
+  "341 — «Kızlar gecesi SPA'yı ödedim» — koyu mor, meyvemsi ve kadifemsi; sıradışı sonuç.\n" +
+  "342 — «İşte kartım» — beyaz katkılı moda zeytin tonu; doğal ve sakin.\n\n" +
+  "Yoğun pigment, kendiliğinden dengeleyen kıvam; 1–2 ince kat. Gradient ve nail art için uygundur.\n\n" +
+  "Saklama: serin ve kuru ortam, 10–26 °C; açıkken UV/LED ışığından uzak tutun.";
+
 const defaultProducts = [
   { id: "kalipso-top-flakes-velor-15", name: "TOP FLAKES VELOR, 15 ML", brand: "Kalipso", size: "15 ml", image: "https://vo-kalipso.com/wp-content/uploads/2021/05/\u0432\u0435\u0440\u043b\u044e\u0440-\u043c\u0430\u0442\u043e\u0432-1--600x600.jpg", categories: ["top-coat"] },
   { id: "kalipso-top-snow-flakes-15", name: "TOP SNOW FLAKES WITHOUT STICKY LAYER, 15 ML", brand: "Kalipso", size: "15 ml", image: "https://vo-kalipso.com/wp-content/uploads/2021/05/\u0441\u043d\u0435\u0436\u043d\u044b\u0435-\u0445\u043b\u043e\u043f--600x600.jpg", categories: ["top-coat"] },
@@ -1163,6 +1197,72 @@ const defaultProducts = [
     seriesAbout: BURGUNDY_SERIES_ABOUT,
   },
   {
+    id: "men-080",
+    name: "080 — Men koleksiyonu — Gidelim, sana fotoğraf çekelim",
+    brand: "ALBI",
+    size: "10 ml",
+    series: MEN_COLLECTION_SERIES,
+    image: "https://static.tildacdn.com/stor6239-3362-4266-b733-613937366332/32129649.jpg",
+    categories: ["gel-polish", "new"],
+    seriesGallery: MEN_COLLECTION_SERIES_GALLERY,
+    seriesAbout: MEN_COLLECTION_SERIES_ABOUT,
+  },
+  {
+    id: "men-180",
+    name: "180 — Men koleksiyonu — Denize gittik",
+    brand: "ALBI",
+    size: "10 ml",
+    series: MEN_COLLECTION_SERIES,
+    image: "https://static.tildacdn.com/stor6264-6632-4134-b536-356139303061/83319603.jpg",
+    categories: ["gel-polish", "new"],
+    seriesGallery: MEN_COLLECTION_SERIES_GALLERY,
+    seriesAbout: MEN_COLLECTION_SERIES_ABOUT,
+  },
+  {
+    id: "men-228",
+    name: "228 — Men koleksiyonu — Telefon şifren (doğum günün)",
+    brand: "ALBI",
+    size: "10 ml",
+    series: MEN_COLLECTION_SERIES,
+    image: "https://static.tildacdn.com/stor3130-6630-4231-a166-656336316264/87687004.jpg",
+    categories: ["gel-polish", "new"],
+    seriesGallery: MEN_COLLECTION_SERIES_GALLERY,
+    seriesAbout: MEN_COLLECTION_SERIES_ABOUT,
+  },
+  {
+    id: "men-301",
+    name: "301 — Men koleksiyonu — Ne kadar güzel manikür",
+    brand: "ALBI",
+    size: "10 ml",
+    series: MEN_COLLECTION_SERIES,
+    image: "https://static.tildacdn.com/stor3636-3333-4463-b766-373563643837/56513912.jpg",
+    categories: ["gel-polish", "new"],
+    seriesGallery: MEN_COLLECTION_SERIES_GALLERY,
+    seriesAbout: MEN_COLLECTION_SERIES_ABOUT,
+  },
+  {
+    id: "men-341",
+    name: "341 — Men koleksiyonu — Kızlar gecesi SPA'yı ödedim",
+    brand: "ALBI",
+    size: "10 ml",
+    series: MEN_COLLECTION_SERIES,
+    image: "https://static.tildacdn.com/stor3835-3831-4638-b465-646261386431/15966448.jpg",
+    categories: ["gel-polish", "new"],
+    seriesGallery: MEN_COLLECTION_SERIES_GALLERY,
+    seriesAbout: MEN_COLLECTION_SERIES_ABOUT,
+  },
+  {
+    id: "men-342",
+    name: "342 — Men koleksiyonu — İşte kartım",
+    brand: "ALBI",
+    size: "10 ml",
+    series: MEN_COLLECTION_SERIES,
+    image: "https://static.tildacdn.com/stor3835-6138-4939-a439-373433303036/61434302.jpg",
+    categories: ["gel-polish", "new"],
+    seriesGallery: MEN_COLLECTION_SERIES_GALLERY,
+    seriesAbout: MEN_COLLECTION_SERIES_ABOUT,
+  },
+  {
     id: "tilda-albin-primer-ultrabond",
     name: "Asidsiz primer (Ultrabond)",
     brand: "Kalipso",
@@ -1428,7 +1528,7 @@ const loadProducts = () => {
     let changed = false;
     const next = arr.filter((p) => {
       const id = String(p?.id || "").toLowerCase();
-      if (id.startsWith("hypnotic-") || id.startsWith("burgundy-")) return true;
+      if (id.startsWith("hypnotic-") || id.startsWith("burgundy-") || id.startsWith("men-")) return true;
       if (id.startsWith("albi-")) {
         changed = true;
         return false;
@@ -1464,7 +1564,7 @@ const loadProducts = () => {
       let changedInner = false;
       const out = arr.map((p) => {
         const id = String(p?.id || "").toLowerCase();
-        if (!/^(hypnotic|burgundy)-/.test(id)) return p;
+        if (!/^(hypnotic|burgundy|men)-/.test(id)) return p;
         let row = { ...p };
         if (String(row.brand || "").trim() !== "ALBI") {
           row.brand = "ALBI";
@@ -1506,7 +1606,7 @@ const loadProducts = () => {
       next = cleaned;
     }
     const migrateAppendTildaHypnoticBundle = (arr) => {
-      const seeds = defaultProducts.filter((p) => /^(hypnotic-|burgundy-|tilda-albin-)/.test(String(p?.id || "")));
+      const seeds = defaultProducts.filter((p) => /^(hypnotic-|burgundy-|men-|tilda-albin-)/.test(String(p?.id || "")));
       if (!seeds.length) return { next: arr, changed: false };
       const have = new Set(arr.map((p) => String(p?.id || "")));
       const add = seeds.filter((p) => p?.id && !have.has(p.id));
