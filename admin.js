@@ -132,6 +132,31 @@ const MEN_COLLECTION_SERIES_ABOUT =
   "Yoğun pigment, kendiliğinden dengeleyen kıvam; 1–2 ince kat. Gradient ve nail art için uygundur.\n\n" +
   "Saklama: serin ve kuru ortam, 10–26 °C; açıkken UV/LED ışığından uzak tutun.";
 
+/** Tilda albinails.ru — Butterfly koleksiyonu (script.js ile aynı tohum). */
+const BUTTERFLY_SERIES = "Butterfly koleksiyonu — duo-krom jel oje";
+const BUTTERFLY_SERIES_GALLERY = [
+  "https://static.tildacdn.com/stor6634-6466-4462-a332-616232356338/58539247.jpg",
+  "https://static.tildacdn.com/stor3732-6365-4138-a139-633235306164/60969813.jpg",
+  "https://static.tildacdn.com/stor3733-3632-4532-b237-316633306134/83474010.jpg",
+  "https://static.tildacdn.com/stor3964-6165-4639-b535-393235313262/91119715.jpg",
+  "https://static.tildacdn.com/stor3261-6665-4035-b539-326266326432/97312063.jpg",
+  "https://static.tildacdn.com/stor3432-3930-4538-a330-613064656631/34910965.png",
+  "https://static.tildacdn.com/stor6266-6365-4431-b439-383739343930/18902644.jpg",
+  "https://static.tildacdn.com/stor3763-3766-4332-b665-356430666266/15016752.jpg",
+  "https://static.tildacdn.com/stor3732-3636-4338-a564-613231373234/90423299.jpg",
+  "https://static.tildacdn.com/stor3734-3937-4430-b766-306236343138/92940973.jpg",
+];
+const BUTTERFLY_SERIES_ABOUT =
+  "ALBI Butterfly koleksiyonu: kelebek kanadındaki polen kadar ince duo-krom shimmer parçacıkları; yumuşak, zarif geçişler.\n\n" +
+  "080 — Pink\n" +
+  "180 — Gold\n" +
+  "228 — Rose (Tilda mağazasında dönem dönem stoksuz görünebilir; siparişte teyit edilir.)\n" +
+  "301 — Green\n" +
+  "341 — Blue\n" +
+  "342 — Violet\n\n" +
+  "Vitrinsiz katmanlarla uğraşmadan kolay uygulama; nail art ve tasarımlarda kullanıma uygun formül.\n\n" +
+  "Saklama: serin ve kuru ortam, 10–26 °C; açıkken UV/LED ışığından uzak tutun.";
+
 const defaultProducts = [
   { id: "kalipso-top-flakes-velor-15", name: "TOP FLAKES VELOR, 15 ML", brand: "Kalipso", size: "15 ml", image: "https://vo-kalipso.com/wp-content/uploads/2021/05/\u0432\u0435\u0440\u043b\u044e\u0440-\u043c\u0430\u0442\u043e\u0432-1--600x600.jpg", categories: ["top-coat"] },
   { id: "kalipso-top-snow-flakes-15", name: "TOP SNOW FLAKES WITHOUT STICKY LAYER, 15 ML", brand: "Kalipso", size: "15 ml", image: "https://vo-kalipso.com/wp-content/uploads/2021/05/\u0441\u043d\u0435\u0436\u043d\u044b\u0435-\u0445\u043b\u043e\u043f--600x600.jpg", categories: ["top-coat"] },
@@ -1263,6 +1288,72 @@ const defaultProducts = [
     seriesAbout: MEN_COLLECTION_SERIES_ABOUT,
   },
   {
+    id: "butterfly-pink",
+    name: "080 — Butterfly koleksiyonu — Pink",
+    brand: "ALBI",
+    size: "10 ml",
+    series: BUTTERFLY_SERIES,
+    image: "https://static.tildacdn.com/stor3763-3766-4332-b665-356430666266/15016752.jpg",
+    categories: ["gel-polish", "new"],
+    seriesGallery: BUTTERFLY_SERIES_GALLERY,
+    seriesAbout: BUTTERFLY_SERIES_ABOUT,
+  },
+  {
+    id: "butterfly-gold",
+    name: "180 — Butterfly koleksiyonu — Gold",
+    brand: "ALBI",
+    size: "10 ml",
+    series: BUTTERFLY_SERIES,
+    image: "https://static.tildacdn.com/stor3964-6165-4639-b535-393235313262/91119715.jpg",
+    categories: ["gel-polish", "new"],
+    seriesGallery: BUTTERFLY_SERIES_GALLERY,
+    seriesAbout: BUTTERFLY_SERIES_ABOUT,
+  },
+  {
+    id: "butterfly-rose",
+    name: "228 — Butterfly koleksiyonu — Rose",
+    brand: "ALBI",
+    size: "10 ml",
+    series: BUTTERFLY_SERIES,
+    image: "https://static.tildacdn.com/stor3733-3632-4532-b237-316633306134/83474010.jpg",
+    categories: ["gel-polish", "new"],
+    seriesGallery: BUTTERFLY_SERIES_GALLERY,
+    seriesAbout: BUTTERFLY_SERIES_ABOUT,
+  },
+  {
+    id: "butterfly-green",
+    name: "301 — Butterfly koleksiyonu — Green",
+    brand: "ALBI",
+    size: "10 ml",
+    series: BUTTERFLY_SERIES,
+    image: "https://static.tildacdn.com/stor3732-6365-4138-a139-633235306164/60969813.jpg",
+    categories: ["gel-polish", "new"],
+    seriesGallery: BUTTERFLY_SERIES_GALLERY,
+    seriesAbout: BUTTERFLY_SERIES_ABOUT,
+  },
+  {
+    id: "butterfly-blue",
+    name: "341 — Butterfly koleksiyonu — Blue",
+    brand: "ALBI",
+    size: "10 ml",
+    series: BUTTERFLY_SERIES,
+    image: "https://static.tildacdn.com/stor6266-6365-4431-b439-383739343930/18902644.jpg",
+    categories: ["gel-polish", "new"],
+    seriesGallery: BUTTERFLY_SERIES_GALLERY,
+    seriesAbout: BUTTERFLY_SERIES_ABOUT,
+  },
+  {
+    id: "butterfly-violet",
+    name: "342 — Butterfly koleksiyonu — Violet",
+    brand: "ALBI",
+    size: "10 ml",
+    series: BUTTERFLY_SERIES,
+    image: "https://static.tildacdn.com/stor3261-6665-4035-b539-326266326432/97312063.jpg",
+    categories: ["gel-polish", "new"],
+    seriesGallery: BUTTERFLY_SERIES_GALLERY,
+    seriesAbout: BUTTERFLY_SERIES_ABOUT,
+  },
+  {
     id: "tilda-albin-primer-ultrabond",
     name: "Asidsiz primer (Ultrabond)",
     brand: "Kalipso",
@@ -1528,7 +1619,8 @@ const loadProducts = () => {
     let changed = false;
     const next = arr.filter((p) => {
       const id = String(p?.id || "").toLowerCase();
-      if (id.startsWith("hypnotic-") || id.startsWith("burgundy-") || id.startsWith("men-")) return true;
+      if (id.startsWith("hypnotic-") || id.startsWith("burgundy-") || id.startsWith("men-") || id.startsWith("butterfly-"))
+        return true;
       if (id.startsWith("albi-")) {
         changed = true;
         return false;
@@ -1564,7 +1656,7 @@ const loadProducts = () => {
       let changedInner = false;
       const out = arr.map((p) => {
         const id = String(p?.id || "").toLowerCase();
-        if (!/^(hypnotic|burgundy|men)-/.test(id)) return p;
+        if (!/^(hypnotic|burgundy|men|butterfly)-/.test(id)) return p;
         let row = { ...p };
         if (String(row.brand || "").trim() !== "ALBI") {
           row.brand = "ALBI";
@@ -1606,7 +1698,9 @@ const loadProducts = () => {
       next = cleaned;
     }
     const migrateAppendTildaHypnoticBundle = (arr) => {
-      const seeds = defaultProducts.filter((p) => /^(hypnotic-|burgundy-|men-|tilda-albin-)/.test(String(p?.id || "")));
+      const seeds = defaultProducts.filter((p) =>
+        /^(hypnotic-|burgundy-|men-|butterfly-|tilda-albin-)/.test(String(p?.id || ""))
+      );
       if (!seeds.length) return { next: arr, changed: false };
       const have = new Set(arr.map((p) => String(p?.id || "")));
       const add = seeds.filter((p) => p?.id && !have.has(p.id));
