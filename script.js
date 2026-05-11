@@ -286,6 +286,419 @@ const BUTTERFLY_SERIES_ABOUT =
   "Vitrinsiz katmanlarla uğraşmadan kolay uygulama; nail art ve tasarımlarda kullanıma uygun formül.\n\n" +
   "Saklama: serin ve kuru ortam, 10–26 °C; açıkken UV/LED ışığından uzak tutun.";
 
+/** Tilda albinails.ru — Women koleksiyonu (6 ton; ortak seri kartı + modal). */
+const WOMEN_SERIES = "Women koleksiyonu — 6 jel oje";
+const WOMEN_SERIES_GALLERY = [
+  "https://static.tildacdn.com/stor6363-6637-4235-a134-363037316332/45325630.jpg",
+  "https://static.tildacdn.com/stor6435-6538-4563-b761-353963626537/82737180.jpg",
+  "https://static.tildacdn.com/stor6165-3132-4337-b366-353337336139/27941599.jpg",
+  "https://static.tildacdn.com/stor6463-6364-4639-b035-376638643430/11415832.jpg",
+  "https://static.tildacdn.com/stor6138-6663-4239-b334-366362393736/18559238.jpg",
+  "https://static.tildacdn.com/stor3663-6238-4336-b462-656466643538/13356845.jpg",
+  "https://static.tildacdn.com/stor6261-3739-4433-a164-333333666634/32840382.jpg",
+  "https://static.tildacdn.com/stor3130-6630-4231-a166-656336316264/87687004.jpg",
+  "https://static.tildacdn.com/stor3533-6239-4239-a530-383938626638/22610395.jpg",
+  "https://static.tildacdn.com/stor6331-3964-4437-b231-306237653566/71171404.png",
+  "https://static.tildacdn.com/stor6662-6230-4233-b266-303734346339/31216114.jpg",
+  "https://static.tildacdn.com/stor6330-3032-4462-a333-626432353530/36274416.png",
+  "https://static.tildacdn.com/stor6234-6531-4936-a639-333934383337/29667847.jpg",
+  "https://static.tildacdn.com/stor3336-3035-4361-b161-646364363162/75750418.jpg",
+  "https://static.tildacdn.com/stor6262-6230-4564-b233-616264396562/37271694.jpg",
+  "https://static.tildacdn.com/stor3766-6538-4064-b164-363361663961/21294196.jpg",
+  "https://static.tildacdn.com/stor3736-6334-4535-a538-373239373162/33379641.jpg",
+];
+const WOMEN_SERIES_ABOUT =
+  "ALBI Women koleksiyonu: altı yeni jel oje; Tilda’da isimleri Rusça (СЕКСУАЛЬНАЯ, НЕЖНАЯ, МАНЯЩАЯ, ВДОХНОВЛЯЮЩАЯ, ЛЕГКАЯ, ХРУПКАЯ) ve numaraları mağaza seçenekleriyle verilir.\n\n" +
+  "221 — Seksi — kırmızı ile soğuk mavi dengesi; etkileyici, davet tonu.\n" +
+  "266 — Büyüleyici — yumuşak gök mavisi; romantik, zarif.\n" +
+  "436 — İlham verici — derin, sofistike yeşil; hacimli ve ilgi çekici.\n" +
+  "439 — Kırılgan — sıcak-gri grej; çok yönlü nötr baz ton.\n" +
+  "446 — Hafif — beyaza yakın gri; sakin nötr (Tilda’da dönem dönem stoksuz görünebilir).\n" +
+  "457 — Nazik — lila, gri ve beyaz notaları; koleksiyonun en alışılmadığı tonlardan (Tilda’da dönem dönem stoksuz görünebilir).\n\n" +
+  "Yoğun pigment; 1–2 ince kat. Gradient ve nail art için uygundur.\n\n" +
+  "Saklama: serin ve kuru ortam, 10–26 °C; açıkken UV/LED ışığından uzak tutun.";
+
+const WOMEN_SERIES_PRODUCT_SEED = [
+  { id: "women-221", name: "221 — Women koleksiyonu — Seksi", image: "https://static.tildacdn.com/stor6662-6230-4233-b266-303734346339/31216114.jpg" },
+  { id: "women-266", name: "266 — Women koleksiyonu — Büyüleyici", image: "https://static.tildacdn.com/stor3533-6239-4239-a530-383938626638/22610395.jpg" },
+  { id: "women-436", name: "436 — Women koleksiyonu — İlham verici", image: "https://static.tildacdn.com/stor6234-6531-4936-a639-333934383337/29667847.jpg" },
+  { id: "women-439", name: "439 — Women koleksiyonu — Kırılgan", image: "https://static.tildacdn.com/stor6435-6538-4563-b761-353963626537/82737180.jpg" },
+  { id: "women-446", name: "446 — Women koleksiyonu — Hafif", image: "https://static.tildacdn.com/stor6261-3739-4433-a164-333333666634/32840382.jpg" },
+  { id: "women-457", name: "457 — Women koleksiyonu — Nazik", image: "https://static.tildacdn.com/stor3130-6630-4231-a166-656336316264/87687004.jpg" },
+];
+
+/** Tilda albinails.ru — Classic koleksiyonu (6 ton; ortak seri kartı + modal). */
+const CLASSIC_SERIES = "ALBI Classic koleksiyonu — 6 jel oje";
+const CLASSIC_SERIES_GALLERY = [
+  "https://static.tildacdn.com/stor3634-6539-4430-b830-643561346363/30227906.jpg",
+  "https://static.tildacdn.com/stor6461-6466-4865-a661-356231323964/62830421.jpg",
+  "https://static.tildacdn.com/stor6236-6137-4262-a338-643666316439/21925796.jpg",
+];
+const CLASSIC_SERIES_ABOUT =
+  "ALBI Classic koleksiyonu: mevsimden bağımsız, günlük kullanım için güvenli ve çok yönlü altı klasik ton.\n\n" +
+  "Canlı renklerin aksine tasarım seçiminde daha özgür bir temel sunar; fazla iddialı görünmeden düzenli ve zarif sonuç verir.\n\n" +
+  "Klasik manikürün ana avantajı evrenselliktir: farklı kombinlerle kolay eşleşir.\n\n" +
+  "Set: 6 ton / 60 ml (Tilda seri ürünü).";
+
+const CLASSIC_SERIES_PRODUCT_SEED = Array.from({ length: 6 }, (_, i) => {
+  const num = String(i + 1).padStart(2, "0");
+  return {
+    id: `classic-${num}`,
+    name: `${num} — ALBI Classic koleksiyonu`,
+    image: CLASSIC_SERIES_GALLERY[i % CLASSIC_SERIES_GALLERY.length],
+  };
+});
+
+/** Tilda albinails.ru — Cat 5D koleksiyonu (10 ton; ortak seri kartı + modal). */
+const CAT5D_SERIES = "Cat 5D koleksiyonu — manyetik jel oje";
+const CAT5D_SERIES_GALLERY = [
+  "https://static.tildacdn.com/stor3232-3063-4533-a161-373463653133/51799516.png",
+  "https://static.tildacdn.com/stor3864-3666-4538-b234-346638616564/33482813.jpg",
+  "https://static.tildacdn.com/stor3563-3538-4261-b062-373438343536/78752901.jpg",
+  "https://static.tildacdn.com/stor3762-3665-4433-b163-333136333237/18127817.jpg",
+  "https://static.tildacdn.com/stor6463-3964-4261-b537-616430663362/91726469.jpg",
+  "https://static.tildacdn.com/stor3364-6634-4231-b937-656163306132/35870833.jpg",
+  "https://static.tildacdn.com/stor6265-3931-4132-a236-393132306636/35297600.jpg",
+  "https://static.tildacdn.com/stor3330-3166-4333-a334-396231336330/71332042.jpg",
+  "https://static.tildacdn.com/stor6664-6537-4962-a236-623032356235/21890839.jpg",
+  "https://static.tildacdn.com/stor6135-3764-4561-a135-666239356334/11718340.jpg",
+  "https://static.tildacdn.com/stor3137-6366-4463-b366-323838323832/48967043.jpg",
+  "https://static.tildacdn.com/stor3361-3935-4832-b935-653038633237/69746196.jpg",
+  "https://static.tildacdn.com/stor3537-3564-4131-b130-353562663463/93975558.jpg",
+  "https://static.tildacdn.com/stor6463-6234-4862-a330-656538656134/48663381.jpg",
+  "https://static.tildacdn.com/stor6430-3965-4933-a235-393030346535/30597498.jpg",
+  "https://static.tildacdn.com/stor3430-6331-4933-b239-343436346233/41061797.jpg",
+  "https://static.tildacdn.com/stor3931-3535-4866-a639-653164316264/24750072.jpg",
+  "https://static.tildacdn.com/stor3237-3736-4532-a636-663039383762/93158492.jpg",
+  "https://static.tildacdn.com/stor3435-3132-4266-b939-386334663232/15724203.jpg",
+  "https://static.tildacdn.com/stor3064-6461-4066-a562-366332663935/75593132.jpg",
+  "https://static.tildacdn.com/stor3661-3833-4432-a562-626565623064/32617040.jpg",
+  "https://static.tildacdn.com/stor3065-3761-4266-b262-356266643362/58914165.jpg",
+  "https://static.tildacdn.com/stor6130-3334-4431-b964-656661363832/47755757.jpg",
+  "https://static.tildacdn.com/stor6263-6135-4337-b531-616636653534/89126876.jpg",
+  "https://static.tildacdn.com/stor6265-6664-4435-a538-623833336332/71100719.jpg",
+  "https://static.tildacdn.com/stor6137-6166-4163-a133-376535663031/26478395.jpg",
+  "https://static.tildacdn.com/stor6432-6430-4564-a430-396462636364/11544492.jpg",
+];
+const CAT5D_SERIES_ABOUT =
+  "ALBI Cat 5D: manyetik parçacıklı jel oje; özel mıknatıs ile 5D kedi gözü efekti ve farklı açılarda derin, hacimli yansıma verir.\n\n" +
+  "Tonlar: Cat5D 01–10. Yoğun pigment ve kendiliğinden dengeleyen kıvam sayesinde 1–2 ince katta derinlik ayarlanır.\n\n" +
+  "Klasik uygulamanın yanında gradient ve nail art için de uygundur.\n\n" +
+  "Saklama: serin-kuru ortam, 10–26 °C; açıkken UV/LED ışığından uzak tutun. Her kullanım öncesi şişeyi avuçta hafifçe yuvarlayın.";
+
+const CAT5D_SERIES_PRODUCT_SEED = [
+  { id: "cat5d-01", name: "Cat5D 01 — Cat 5D koleksiyonu", image: "https://static.tildacdn.com/stor3864-3666-4538-b234-346638616564/33482813.jpg" },
+  { id: "cat5d-02", name: "Cat5D 02 — Cat 5D koleksiyonu", image: "https://static.tildacdn.com/stor3563-3538-4261-b062-373438343536/78752901.jpg" },
+  { id: "cat5d-03", name: "Cat5D 03 — Cat 5D koleksiyonu", image: "https://static.tildacdn.com/stor3762-3665-4433-b163-333136333237/18127817.jpg" },
+  { id: "cat5d-04", name: "Cat5D 04 — Cat 5D koleksiyonu", image: "https://static.tildacdn.com/stor6463-3964-4261-b537-616430663362/91726469.jpg" },
+  { id: "cat5d-05", name: "Cat5D 05 — Cat 5D koleksiyonu", image: "https://static.tildacdn.com/stor3364-6634-4231-b937-656163306132/35870833.jpg" },
+  { id: "cat5d-06", name: "Cat5D 06 — Cat 5D koleksiyonu", image: "https://static.tildacdn.com/stor6265-3931-4132-a236-393132306636/35297600.jpg" },
+  { id: "cat5d-07", name: "Cat5D 07 — Cat 5D koleksiyonu", image: "https://static.tildacdn.com/stor3330-3166-4333-a334-396231336330/71332042.jpg" },
+  { id: "cat5d-08", name: "Cat5D 08 — Cat 5D koleksiyonu", image: "https://static.tildacdn.com/stor6664-6537-4962-a236-623032356235/21890839.jpg" },
+  { id: "cat5d-09", name: "Cat5D 09 — Cat 5D koleksiyonu", image: "https://static.tildacdn.com/stor6664-6537-4962-a236-623032356235/21890839.jpg" },
+  { id: "cat5d-10", name: "Cat5D 10 — Cat 5D koleksiyonu", image: "https://static.tildacdn.com/stor6135-3764-4561-a135-666239356334/11718340.jpg" },
+];
+
+/** Tilda albinails.ru — Prizmatic koleksiyonu (7 ton; ortak seri kartı + modal). */
+const PRIZMATIC_SERIES = "Prizmatic koleksiyonu — yansıtıcı jel oje (7 ton)";
+const PRIZMATIC_SERIES_GALLERY = [
+  "https://static.tildacdn.com/stor3730-6236-4666-b933-333166306531/39571399.jpg",
+  "https://static.tildacdn.com/stor3939-3939-4965-b966-373931633536/32693815.jpg",
+  "https://static.tildacdn.com/stor3536-3065-4764-b661-636139383361/89998282.jpg",
+  "https://static.tildacdn.com/stor3635-3039-4638-a264-383936343934/18913763.jpg",
+  "https://static.tildacdn.com/stor3239-3630-4133-b933-636662303739/23158672.jpg",
+  "https://static.tildacdn.com/stor6538-3461-4362-b936-343133346131/82531493.jpg",
+  "https://static.tildacdn.com/stor3634-3036-4336-a133-376664643731/58033547.jpg",
+  "https://static.tildacdn.com/stor3930-3539-4436-b166-333163396636/89171747.jpg",
+  "https://static.tildacdn.com/tild6361-3236-4431-a432-393361326637/IMG_2892.jpg",
+  "https://static.tildacdn.com/stor3330-6362-4530-b835-636539326661/75462307.png",
+  "https://static.tildacdn.com/stor3434-6538-4436-a332-373166393137/26532160.png",
+  "https://static.tildacdn.com/stor3634-3732-4835-b564-663435636636/24463352.jpg",
+  "https://static.tildacdn.com/stor3637-3335-4964-b730-643139376237/76903918.jpg",
+  "https://static.tildacdn.com/stor3238-6262-4632-a235-323964363563/45184711.jpg",
+  "https://static.tildacdn.com/stor3633-3830-4131-b866-376632613064/25568752.jpg",
+  "https://static.tildacdn.com/stor3437-6562-4339-a534-396634396134/82387859.jpg",
+  "https://static.tildacdn.com/stor6632-3134-4533-a662-636338376137/47842604.jpg",
+  "https://static.tildacdn.com/stor3933-6538-4337-b763-613831633138/17470822.jpg",
+  "https://static.tildacdn.com/stor3737-3164-4264-b338-323461386239/29856162.jpg",
+];
+const PRIZMATIC_SERIES_ABOUT =
+  "ALBI Prizmatic (PRIZMATIC COLLECTION): çok yönlü yansıma ve prizmatik parıltı; yoğun pigmentli, kendiliğinden dengeleyen orta-yoğun kıvam.\n\n" +
+  "Prizmatic 1–7: Tilda mağazasında ton seçimi bu SKU adlarıyla verilir.\n\n" +
+  "1–2 ince kat ile opaklık ayarlanır; klasik kaplama, gradient ve nail art için uygundur. Hacim 15 ml.\n\n" +
+  "Saklama: serin ve kuru ortam, 10–26 °C; açıkken UV/LED ışığından uzak tutun. Kullanım öncesi şişeyi hafifçe yuvarlayın.";
+
+const PRIZMATIC_SERIES_PRODUCT_SEED = [
+  { id: "prizmatic-01", name: "Prizmatic 1 — Prizmatic koleksiyonu", image: "https://static.tildacdn.com/stor3939-3939-4965-b966-373931633536/32693815.jpg" },
+  { id: "prizmatic-02", name: "Prizmatic 2 — Prizmatic koleksiyonu", image: "https://static.tildacdn.com/stor3536-3065-4764-b661-636139383361/89998282.jpg" },
+  { id: "prizmatic-03", name: "Prizmatic 3 — Prizmatic koleksiyonu", image: "https://static.tildacdn.com/stor3635-3039-4638-a264-383936343934/18913763.jpg" },
+  { id: "prizmatic-04", name: "Prizmatic 4 — Prizmatic koleksiyonu", image: "https://static.tildacdn.com/stor3239-3630-4133-b933-636662303739/23158672.jpg" },
+  { id: "prizmatic-05", name: "Prizmatic 5 — Prizmatic koleksiyonu", image: "https://static.tildacdn.com/stor6538-3461-4362-b936-343133346131/82531493.jpg" },
+  { id: "prizmatic-06", name: "Prizmatic 6 — Prizmatic koleksiyonu", image: "https://static.tildacdn.com/stor3634-3036-4336-a133-376664643731/58033547.jpg" },
+  { id: "prizmatic-07", name: "Prizmatic 7 — Prizmatic koleksiyonu", image: "https://static.tildacdn.com/stor3930-3539-4436-b166-333163396636/89171747.jpg" },
+];
+
+/** Tilda albinails.ru — Sonbahar koleksiyonu AUTUMN COLLECTION (5 ton; ortak seri kartı + modal). */
+const AUTUMN_SERIES = "Sonbahar koleksiyonu (AUTUMN COLLECTION) — 5 jel oje";
+const AUTUMN_SERIES_GALLERY = [
+  "https://static.tildacdn.com/stor3034-6562-4337-a161-666334353835/57780565.jpg",
+  "https://static.tildacdn.com/stor3834-6361-4139-b565-393961326163/80554416.jpg",
+  "https://static.tildacdn.com/stor3962-3636-4734-a534-396666353133/62650882.jpg",
+  "https://static.tildacdn.com/stor3362-6463-4331-b332-633765643265/98971322.jpg",
+  "https://static.tildacdn.com/stor3061-6435-4764-a537-386230366335/91055748.jpg",
+  "https://static.tildacdn.com/stor3836-3866-4235-b838-633535363937/20475417.jpg",
+  "https://static.tildacdn.com/stor3162-3466-4335-b561-353133663136/91505879.jpg",
+  "https://static.tildacdn.com/stor3038-3535-4361-b862-383165636266/91998990.jpg",
+  "https://static.tildacdn.com/stor3663-6364-4164-a232-333532343637/22078193.jpg",
+  "https://static.tildacdn.com/stor3166-3239-4566-a538-383536336262/13537127.jpg",
+  "https://static.tildacdn.com/stor3863-6431-4166-b163-643735643566/31113171.jpg",
+  "https://static.tildacdn.com/stor6661-3166-4365-b637-363566353635/14948948.jpg",
+];
+const AUTUMN_SERIES_ABOUT =
+  "ALBI Sonbahar koleksiyonu (AUTUMN COLLECTION): beş sonbahar tonu.\n\n" +
+  "Yoğun pigmentli, kendiliğinden dengeleyen yapı ve orta-yoğun kıvam; 1–2 ince kat ile renk derinliği ayarlanır. Klasik kaplamanın yanında gradient ve nail art için uygundur.\n\n" +
+  "Tilda’da set tek SKU (Осенняя коллекция) olarak satılır; burada tonlar 01–05 ile ayrı kartlarda listelenir.\n\n" +
+  "Saklama: serin ve kuru ortam, 10–26 °C; açıkken UV/LED ışığından uzak tutun.";
+
+const AUTUMN_SERIES_PRODUCT_SEED = [
+  { id: "autumn-01", name: "Sonbahar 01 — Sonbahar koleksiyonu", image: "https://static.tildacdn.com/stor3034-6562-4337-a161-666334353835/57780565.jpg" },
+  { id: "autumn-02", name: "Sonbahar 02 — Sonbahar koleksiyonu", image: "https://static.tildacdn.com/stor3834-6361-4139-b565-393961326163/80554416.jpg" },
+  { id: "autumn-03", name: "Sonbahar 03 — Sonbahar koleksiyonu", image: "https://static.tildacdn.com/stor3962-3636-4734-a534-396666353133/62650882.jpg" },
+  { id: "autumn-04", name: "Sonbahar 04 — Sonbahar koleksiyonu", image: "https://static.tildacdn.com/stor3362-6463-4331-b332-633765643265/98971322.jpg" },
+  { id: "autumn-05", name: "Sonbahar 05 — Sonbahar koleksiyonu", image: "https://static.tildacdn.com/stor3061-6435-4764-a537-386230366335/91055748.jpg" },
+];
+
+/** Tilda albinails.ru — Star koleksiyonu STAR COLLECTION 1–19 (19 ton; ortak seri kartı + modal). */
+const STAR_SERIES = "Star koleksiyonu (STAR COLLECTION) — 19 jel oje";
+const STAR_SERIES_GALLERY = [
+  "https://static.tildacdn.com/stor3630-6234-4136-a461-323631313434/78723559.jpg",
+  "https://static.tildacdn.com/stor3332-3538-4464-a362-633833613564/21583509.jpg",
+  "https://static.tildacdn.com/stor3064-6334-4334-b364-396361373633/92605972.jpg",
+  "https://static.tildacdn.com/stor3665-3562-4063-b166-303138313639/42474026.jpg",
+  "https://static.tildacdn.com/stor6565-3735-4131-b735-346637613238/38613507.jpg",
+  "https://static.tildacdn.com/stor3634-6561-4038-b266-383363613739/50878891.jpg",
+  "https://static.tildacdn.com/stor6566-3035-4238-b033-666366326334/94431169.jpg",
+  "https://static.tildacdn.com/stor3061-6639-4432-b961-313663626332/87885818.jpg",
+  "https://static.tildacdn.com/stor6661-3630-4534-a664-353535666433/99781169.jpg",
+  "https://static.tildacdn.com/stor6234-3433-4334-b335-616130366564/28741546.jpg",
+  "https://static.tildacdn.com/stor6362-6436-4165-a165-643364643630/84785961.jpg",
+  "https://static.tildacdn.com/stor6136-3732-4962-b839-666432616332/57152986.jpg",
+  "https://static.tildacdn.com/stor3231-6362-4835-b834-643861343336/87499074.jpg",
+  "https://static.tildacdn.com/stor3665-3730-4530-b361-626430306362/12939802.jpg",
+  "https://static.tildacdn.com/stor6432-6431-4661-b636-656432383234/52253862.jpg",
+  "https://static.tildacdn.com/stor3632-6364-4037-b861-346336666239/36943954.jpg",
+  "https://static.tildacdn.com/stor6230-6337-4362-a162-643261643830/71880384.jpg",
+  "https://static.tildacdn.com/stor3336-3435-4461-b964-636532396135/66633176.jpg",
+  "https://static.tildacdn.com/stor6561-3965-4536-b331-653263656630/56646347.jpg",
+];
+const STAR_SERIES_ABOUT =
+  "ALBI Star (STAR COLLECTION / Звезда): 19 ton. Tilda’da iki ürün kartı — «1–10» (Star1–Star10 / Star-1…Star-10) ve «11–19» (Star11–Star19 / Star-11…Star-19).\n\n" +
+  "Yoğun pigmentli, kendiliğinden dengeleyen yapı; 1–2 ince kat ile opaklık ayarlanır. Klasik kaplama, gradient ve nail art için uygundur. Hacim 15 ml.\n\n" +
+  "Bazı tonlar dönemsel stok dışı olabilir; güncel stok için Tilda mağazasına bakın.\n\n" +
+  "Saklama: serin ve kuru ortam, 10–26 °C; açıkken UV/LED ışığından uzak tutun. Kullanım öncesi şişeyi hafifçe yuvarlayın.";
+
+const STAR_SERIES_PRODUCT_SEED = [
+  { id: "star-01", name: "Star 01 — Star koleksiyonu", image: "https://static.tildacdn.com/stor3630-6234-4136-a461-323631313434/78723559.jpg" },
+  { id: "star-02", name: "Star 02 — Star koleksiyonu", image: "https://static.tildacdn.com/stor3332-3538-4464-a362-633833613564/21583509.jpg" },
+  { id: "star-03", name: "Star 03 — Star koleksiyonu", image: "https://static.tildacdn.com/stor3064-6334-4334-b364-396361373633/92605972.jpg" },
+  { id: "star-04", name: "Star 04 — Star koleksiyonu", image: "https://static.tildacdn.com/stor3665-3562-4063-b166-303138313639/42474026.jpg" },
+  { id: "star-05", name: "Star 05 — Star koleksiyonu", image: "https://static.tildacdn.com/stor6565-3735-4131-b735-346637613238/38613507.jpg" },
+  { id: "star-06", name: "Star 06 — Star koleksiyonu", image: "https://static.tildacdn.com/stor3634-6561-4038-b266-383363613739/50878891.jpg" },
+  { id: "star-07", name: "Star 07 — Star koleksiyonu", image: "https://static.tildacdn.com/stor6566-3035-4238-b033-666366326334/94431169.jpg" },
+  { id: "star-08", name: "Star 08 — Star koleksiyonu", image: "https://static.tildacdn.com/stor3061-6639-4432-b961-313663626332/87885818.jpg" },
+  { id: "star-09", name: "Star 09 — Star koleksiyonu", image: "https://static.tildacdn.com/stor6661-3630-4534-a664-353535666433/99781169.jpg" },
+  { id: "star-10", name: "Star 10 — Star koleksiyonu", image: "https://static.tildacdn.com/stor6234-3433-4334-b335-616130366564/28741546.jpg" },
+  { id: "star-11", name: "Star 11 — Star koleksiyonu", image: "https://static.tildacdn.com/stor6362-6436-4165-a165-643364643630/84785961.jpg" },
+  { id: "star-12", name: "Star 12 — Star koleksiyonu", image: "https://static.tildacdn.com/stor6136-3732-4962-b839-666432616332/57152986.jpg" },
+  { id: "star-13", name: "Star 13 — Star koleksiyonu", image: "https://static.tildacdn.com/stor3231-6362-4835-b834-643861343336/87499074.jpg" },
+  { id: "star-14", name: "Star 14 — Star koleksiyonu", image: "https://static.tildacdn.com/stor3665-3730-4530-b361-626430306362/12939802.jpg" },
+  { id: "star-15", name: "Star 15 — Star koleksiyonu", image: "https://static.tildacdn.com/stor6432-6431-4661-b636-656432383234/52253862.jpg" },
+  { id: "star-16", name: "Star 16 — Star koleksiyonu", image: "https://static.tildacdn.com/stor3632-6364-4037-b861-346336666239/36943954.jpg" },
+  { id: "star-17", name: "Star 17 — Star koleksiyonu", image: "https://static.tildacdn.com/stor6230-6337-4362-a162-643261643830/71880384.jpg" },
+  { id: "star-18", name: "Star 18 — Star koleksiyonu", image: "https://static.tildacdn.com/stor3336-3435-4461-b964-636532396135/66633176.jpg" },
+  { id: "star-19", name: "Star 19 — Star koleksiyonu", image: "https://static.tildacdn.com/stor6561-3965-4536-b331-653263656630/56646347.jpg" },
+];
+
+/** Tilda albinails.ru — Metal koleksiyonu METALLIC COLLECTION (8 ton; ortak seri kartı + modal). */
+const METALLIC_SERIES = "Metal koleksiyonu (METALLIC COLLECTION) — 8 jel oje";
+const METALLIC_SERIES_GALLERY = [
+  "https://static.tildacdn.com/stor6132-3732-4765-b833-653937323962/12475252.jpg",
+];
+const METALLIC_SERIES_ABOUT =
+  "ALBI Metal (METALLIC COLLECTION / Коллекция Металл): metalik pigmentli jel oje; Tilda’da Metallic1–Metallic8 (SKU Metallic-1 … Metallic-8) seçenekleriyle satılır.\n\n" +
+  "Hacim 5 ml; kavanozda fırça yok (ayrı aplikatör / fırça ile kullanım). Yoğun pigmentli, kendiliğinden dengeleyen yapı; 1–2 ince kat ile opaklık ayarlanır. Klasik kaplama, gradient ve nail art için uygundur.\n\n" +
+  "Tilda sayfasında ton başına ayrı kapak görseli yoksa katalogda ortak vitrin görseli kullanılır; ton renkleri için mağaza / numune bilgisine bakın.\n\n" +
+  "Saklama: serin ve kuru ortam, 10–26 °C; açıkken UV/LED ışığından uzak tutun.";
+
+const METALLIC_SERIES_PRODUCT_SEED = [
+  { id: "metallic-01", name: "Metallic 01 — Metal koleksiyonu", image: "https://static.tildacdn.com/stor6132-3732-4765-b833-653937323962/12475252.jpg" },
+  { id: "metallic-02", name: "Metallic 02 — Metal koleksiyonu", image: "https://static.tildacdn.com/stor6132-3732-4765-b833-653937323962/12475252.jpg" },
+  { id: "metallic-03", name: "Metallic 03 — Metal koleksiyonu", image: "https://static.tildacdn.com/stor6132-3732-4765-b833-653937323962/12475252.jpg" },
+  { id: "metallic-04", name: "Metallic 04 — Metal koleksiyonu", image: "https://static.tildacdn.com/stor6132-3732-4765-b833-653937323962/12475252.jpg" },
+  { id: "metallic-05", name: "Metallic 05 — Metal koleksiyonu", image: "https://static.tildacdn.com/stor6132-3732-4765-b833-653937323962/12475252.jpg" },
+  { id: "metallic-06", name: "Metallic 06 — Metal koleksiyonu", image: "https://static.tildacdn.com/stor6132-3732-4765-b833-653937323962/12475252.jpg" },
+  { id: "metallic-07", name: "Metallic 07 — Metal koleksiyonu", image: "https://static.tildacdn.com/stor6132-3732-4765-b833-653937323962/12475252.jpg" },
+  { id: "metallic-08", name: "Metallic 08 — Metal koleksiyonu", image: "https://static.tildacdn.com/stor6132-3732-4765-b833-653937323962/12475252.jpg" },
+];
+
+/** Tilda albinails.ru — Mozaic büyük sim / holo jel oje 405–412 (8 ton; ortak seri kartı + modal). */
+const MOZAIC_SERIES = "Mozaic koleksiyonu — büyük simli jel oje (405–412)";
+const MOZAIC_SERIES_GALLERY = [
+  "https://static.tildacdn.com/stor6439-6532-4139-b762-613531653566/20754297.jpg",
+  "https://static.tildacdn.com/stor3832-3264-4866-a531-346632303836/95832839.jpg",
+  "https://static.tildacdn.com/stor6434-3838-4435-a264-653132666565/67371940.jpg",
+  "https://static.tildacdn.com/stor6264-3437-4834-a661-633134626638/84664041.jpg",
+];
+const MOZAIC_SERIES_ABOUT =
+  "ALBI Mozaic: büyük simli, holografi ve renk yoğunluğunu bir arada veren jel oje çizgisi; Tilda’da «Эффекты: Блестки» seçeneğiyle anlatılır.\n\n" +
+  "Tonlar 405–412 (SKU Mozaic405 … Mozaic412). Hacim 15 ml. Yoğun pigment, kendiliğinden dengeleyen kıvam; 1–2 ince kat. Gradient ve nail art için uygundur.\n\n" +
+  "Tilda’da 407 ve 411 dönemsel stok dışı olabilir; güncel stok için mağazaya bakın.\n\n" +
+  "Saklama: serin ve kuru ortam, 10–26 °C; açıkken UV/LED ışığından uzak tutun. Kullanım öncesi şişeyi hafifçe yuvarlayın.";
+
+const MOZAIC_SERIES_PRODUCT_SEED = [
+  { id: "mozaic-405", name: "Mozaic 405 — Mozaic koleksiyonu", image: "https://static.tildacdn.com/stor6439-6532-4139-b762-613531653566/20754297.jpg" },
+  { id: "mozaic-406", name: "Mozaic 406 — Mozaic koleksiyonu", image: "https://static.tildacdn.com/stor3832-3264-4866-a531-346632303836/95832839.jpg" },
+  { id: "mozaic-407", name: "Mozaic 407 — Mozaic koleksiyonu", image: "https://static.tildacdn.com/stor6434-3838-4435-a264-653132666565/67371940.jpg" },
+  { id: "mozaic-408", name: "Mozaic 408 — Mozaic koleksiyonu", image: "https://static.tildacdn.com/stor6264-3437-4834-a661-633134626638/84664041.jpg" },
+  { id: "mozaic-409", name: "Mozaic 409 — Mozaic koleksiyonu", image: "https://static.tildacdn.com/stor6439-6532-4139-b762-613531653566/20754297.jpg" },
+  { id: "mozaic-410", name: "Mozaic 410 — Mozaic koleksiyonu", image: "https://static.tildacdn.com/stor3832-3264-4866-a531-346632303836/95832839.jpg" },
+  { id: "mozaic-411", name: "Mozaic 411 — Mozaic koleksiyonu", image: "https://static.tildacdn.com/stor6434-3838-4435-a264-653132666565/67371940.jpg" },
+  { id: "mozaic-412", name: "Mozaic 412 — Mozaic koleksiyonu", image: "https://static.tildacdn.com/stor6264-3437-4834-a661-633134626638/84664041.jpg" },
+];
+
+/** Tilda albinails.ru — SILK CAT (Шёлковые кошки); vitrin 01–05 / 06–12 / 13–15 / 016 tek / 17–22, ince sim ipek etkisi. */
+const SILK_CAT_SERIES = "SILK CAT — İpek kediler koleksiyonu (01–22)";
+const SILK_CAT_SERIES_GALLERY = [
+  "https://static.tildacdn.com/stor3731-3239-4161-b639-326266343334/57001223.jpg",
+  "https://static.tildacdn.com/stor3336-6265-4437-a139-376263333661/86693400.jpg",
+  "https://static.tildacdn.com/stor3633-3765-4361-b463-333739303635/24696481.jpg",
+  "https://static.tildacdn.com/stor3331-3739-4863-a433-323330313331/72137342.jpg",
+  "https://static.tildacdn.com/stor3630-6365-4161-a432-343062396237/51522678.jpg",
+  "https://static.tildacdn.com/stor6362-3832-4333-a365-316633656530/60047880.jpg",
+  "https://static.tildacdn.com/stor3434-3537-4661-a361-623133376633/48792037.jpg",
+  "https://static.tildacdn.com/stor3739-3433-4133-b839-646634366335/46904171.jpg",
+  "https://static.tildacdn.com/stor3036-3137-4564-b830-636663313064/90599401.jpg",
+  "https://static.tildacdn.com/stor3837-3236-4634-b231-666633643237/51643432.jpg",
+  "https://static.tildacdn.com/stor6466-3932-4538-a633-636536393234/67461240.jpg",
+  "https://static.tildacdn.com/stor6665-3965-4865-b337-396230386535/44288597.jpg",
+  "https://static.tildacdn.com/stor3239-3236-4530-b662-643633376139/84036235.jpg",
+  "https://static.tildacdn.com/stor3463-3132-4237-b466-626665383235/20724695.jpg",
+  "https://static.tildacdn.com/stor3231-6538-4635-a536-623735343264/70523460.jpg",
+  "https://static.tildacdn.com/stor3636-3531-4135-b065-656136666336/74150569.jpg",
+  "https://static.tildacdn.com/stor6333-6163-4634-b265-316635376162/71938305.jpg",
+  "https://static.tildacdn.com/stor3762-6431-4638-b732-326330613566/70268574.jpg",
+  "https://static.tildacdn.com/stor6330-6539-4232-a433-643638323161/10294275.jpg",
+  "https://static.tildacdn.com/stor6634-3664-4235-a166-653632313862/96106260.jpg",
+  "https://static.tildacdn.com/stor3365-6463-4134-a231-663563346463/62802287.jpg",
+  "https://static.tildacdn.com/stor3263-3164-4730-b332-323132373430/55091127.jpg",
+  "https://static.tildacdn.com/stor6434-6536-4439-a666-636239623464/18115604.jpg",
+  "https://static.tildacdn.com/stor6361-6463-4661-a262-353463623332/28645507.jpg",
+  "https://static.tildacdn.com/stor3434-6266-4262-a261-363863396531/99955622.jpg",
+  "https://static.tildacdn.com/stor6439-3561-4636-a530-386538376638/46248459.png",
+  "https://static.tildacdn.com/stor3265-6333-4030-a263-383938653135/64021899.jpg",
+  "https://static.tildacdn.com/stor3637-6666-4432-a632-633265356334/e440a90a5f7f5a50e23ffbcbde55f1b9.jpg",
+  "https://static.tildacdn.com/stor3965-3662-4430-b132-303536663664/e3e0c3e83ede3e41fdf897f15f1ec7d9.jpg",
+  "https://static.tildacdn.com/stor3035-6536-4231-a632-646564356161/b3e4dd3a937538fb86726987b59373c1.jpg",
+  "https://static.tildacdn.com/stor6665-6661-4434-b239-646438376234/a9f349be250bb67ea82142366a35b314.jpg",
+  "https://static.tildacdn.com/stor6132-3565-4465-a236-336339303564/294aabcda1f93865e1f258dc51e44ea9.jpg",
+  "https://static.tildacdn.com/stor3838-6630-4035-a262-663661396234/e80834ff1cf37c79f02335a891b6a24d.jpg",
+  "https://static.tildacdn.com/stor6235-3136-4537-a161-333561366164/78b5568a3e86a787c1ea1a2ebcf56cdd.jpg",
+  "https://static.tildacdn.com/stor6633-3166-4332-b436-313938656162/fed1e3aeb702b94669039485047b373b.jpg",
+  "https://static.tildacdn.com/stor6437-3637-4435-a339-396463313039/84b1680c649849c5ffef378d616d5c56.jpg",
+  "https://static.tildacdn.com/stor3064-3463-4433-b962-383532386637/d15eba374dffb58ff7814704afa7e869.jpg",
+  "https://static.tildacdn.com/stor3564-3433-4563-a235-346534363739/df354c5ba80e7795ee18e64568920912.jpg",
+];
+const SILK_CAT_SERIES_ABOUT =
+  "ALBI SILK CATS: Tilda’da «Kore kedileri» çizgisi — çok ince simle ipeksi yüzey, yarı saydam ve hafif nü tonlar.\n\n" +
+  "Yirmi iki ton (01 … 22). Tilda’da beş vitrin kartı: 01–05, 06–12, 13–15, 016 tek başına, 17–22.\n\n" +
+  "2026 metinleri Tilda’da 13–15, 016 ve 17–22 sayfalarında geçer.\n\n" +
+  "Katalogda hacim 15 ml (diğer ALBI jel ojelerle uyum); kesin hacim ve stok için mağazaya bakın.\n\n" +
+  "Saklama: serin ve kuru ortam, 10–26 °C; açıkken UV/LED ışığından uzak tutun.";
+
+const SILK_CAT_SERIES_PRODUCT_SEED = [
+  { id: "silkcat-01", name: "SILK CAT 01 — İpek kediler", image: "https://static.tildacdn.com/stor3336-6265-4437-a139-376263333661/86693400.jpg" },
+  { id: "silkcat-02", name: "SILK CAT 02 — İpek kediler", image: "https://static.tildacdn.com/stor3633-3765-4361-b463-333739303635/24696481.jpg" },
+  { id: "silkcat-03", name: "SILK CAT 03 — İpek kediler", image: "https://static.tildacdn.com/stor3331-3739-4863-a433-323330313331/72137342.jpg" },
+  { id: "silkcat-04", name: "SILK CAT 04 — İpek kediler", image: "https://static.tildacdn.com/stor3630-6365-4161-a432-343062396237/51522678.jpg" },
+  { id: "silkcat-05", name: "SILK CAT 05 — İpek kediler", image: "https://static.tildacdn.com/stor6362-3832-4333-a365-316633656530/60047880.jpg" },
+  { id: "silkcat-06", name: "SILK CAT 06 — İpek kediler", image: "https://static.tildacdn.com/stor3739-3433-4133-b839-646634366335/46904171.jpg" },
+  { id: "silkcat-07", name: "SILK CAT 07 — İpek kediler", image: "https://static.tildacdn.com/stor3036-3137-4564-b830-636663313064/90599401.jpg" },
+  { id: "silkcat-08", name: "SILK CAT 08 — İpek kediler", image: "https://static.tildacdn.com/stor3837-3236-4634-b231-666633643237/51643432.jpg" },
+  { id: "silkcat-09", name: "SILK CAT 09 — İpek kediler", image: "https://static.tildacdn.com/stor6466-3932-4538-a633-636536393234/67461240.jpg" },
+  { id: "silkcat-10", name: "SILK CAT 10 — İpek kediler", image: "https://static.tildacdn.com/stor6665-3965-4865-b337-396230386535/44288597.jpg" },
+  { id: "silkcat-11", name: "SILK CAT 11 — İpek kediler", image: "https://static.tildacdn.com/stor3239-3236-4530-b662-643633376139/84036235.jpg" },
+  { id: "silkcat-12", name: "SILK CAT 12 — İpek kediler", image: "https://static.tildacdn.com/stor3463-3132-4237-b466-626665383235/20724695.jpg" },
+  { id: "silkcat-13", name: "SILK CAT 13 — İpek kediler", image: "https://static.tildacdn.com/stor6634-3664-4235-a166-653632313862/96106260.jpg" },
+  { id: "silkcat-14", name: "SILK CAT 14 — İpek kediler", image: "https://static.tildacdn.com/stor3365-6463-4134-a231-663563346463/62802287.jpg" },
+  { id: "silkcat-15", name: "SILK CAT 15 — İpek kediler", image: "https://static.tildacdn.com/stor3263-3164-4730-b332-323132373430/55091127.jpg" },
+  { id: "silkcat-16", name: "SILK CAT 16 — İpek kediler", image: "https://static.tildacdn.com/stor6437-3637-4435-a339-396463313039/84b1680c649849c5ffef378d616d5c56.jpg" },
+  { id: "silkcat-17", name: "SILK CAT 17 — İpek kediler", image: "https://static.tildacdn.com/stor3035-6536-4231-a632-646564356161/b3e4dd3a937538fb86726987b59373c1.jpg" },
+  { id: "silkcat-18", name: "SILK CAT 18 — İpek kediler", image: "https://static.tildacdn.com/stor6665-6661-4434-b239-646438376234/a9f349be250bb67ea82142366a35b314.jpg" },
+  { id: "silkcat-19", name: "SILK CAT 19 — İpek kediler", image: "https://static.tildacdn.com/stor6132-3565-4465-a236-336339303564/294aabcda1f93865e1f258dc51e44ea9.jpg" },
+  { id: "silkcat-20", name: "SILK CAT 20 — İpek kediler", image: "https://static.tildacdn.com/stor3838-6630-4035-a262-663661396234/e80834ff1cf37c79f02335a891b6a24d.jpg" },
+  { id: "silkcat-21", name: "SILK CAT 21 — İpek kediler", image: "https://static.tildacdn.com/stor6235-3136-4537-a161-333561366164/78b5568a3e86a787c1ea1a2ebcf56cdd.jpg" },
+  { id: "silkcat-22", name: "SILK CAT 22 — İpek kediler", image: "https://static.tildacdn.com/stor6633-3166-4332-b436-313938656162/fed1e3aeb702b94669039485047b373b.jpg" },
+];
+
+/** Tilda albinails.ru — Коллекция Франция / French (01–09); Tilda başlığında «COLLETCION» yazım hatası. */
+const FRENCH_SERIES = "French koleksiyonu — Fransız serisi (01–09)";
+const FRENCH_SERIES_GALLERY = [
+  "https://static.tildacdn.com/stor3766-3963-4530-a238-303135393862/35560026.jpg",
+  "https://static.tildacdn.com/stor3062-3936-4239-a234-376238666165/97942316.jpg",
+  "https://static.tildacdn.com/stor3033-3139-4161-a535-343633303961/79087609.jpg",
+  "https://static.tildacdn.com/stor3462-3866-4262-b731-333164313261/43537792.jpg",
+  "https://static.tildacdn.com/stor6530-3734-4532-a130-643234343731/48386854.jpg",
+  "https://static.tildacdn.com/stor6132-6335-4733-a336-343733623430/68675677.jpg",
+  "https://static.tildacdn.com/stor3435-3338-4165-b461-343737633165/87687226.jpg",
+  "https://static.tildacdn.com/stor3337-3538-4133-b939-363230333633/66422105.jpg",
+  "https://static.tildacdn.com/stor3738-3364-4862-b435-343131373565/24487211.jpg",
+  "https://static.tildacdn.com/stor6361-6461-4137-a134-643231623862/21475618.jpg",
+  "https://static.tildacdn.com/stor3836-6135-4431-b562-643161663262/85924082.jpg",
+];
+const FRENCH_SERIES_ABOUT =
+  "ALBI French (Коллекция Франция): Tilda’daki standart ALBI jel oje anlatımı — yoğun pigment, kendiliğinden dengeleyen yapı; 1–2 ince kat ile opaklık. Klasik kaplama, gradient ve nail art için uygundur.\n\n" +
+  "Dokuz ton (01 … 09). Tilda’da ton düğmelerinde kapak görseli yoksa katalogda vitrin sırası slider ile eşlenir.\n\n" +
+  "Katalogda hacim 15 ml; kesin bilgi için mağazaya bakın.\n\n" +
+  "Saklama: serin ve kuru ortam, 10–26 °C; açıkken UV/LED ışığından uzak tutun.";
+
+const FRENCH_SERIES_PRODUCT_SEED = [
+  { id: "french-01", name: "French 01 — French koleksiyonu", image: "https://static.tildacdn.com/stor3766-3963-4530-a238-303135393862/35560026.jpg" },
+  { id: "french-02", name: "French 02 — French koleksiyonu", image: "https://static.tildacdn.com/stor3062-3936-4239-a234-376238666165/97942316.jpg" },
+  { id: "french-03", name: "French 03 — French koleksiyonu", image: "https://static.tildacdn.com/stor3033-3139-4161-a535-343633303961/79087609.jpg" },
+  { id: "french-04", name: "French 04 — French koleksiyonu", image: "https://static.tildacdn.com/stor3462-3866-4262-b731-333164313261/43537792.jpg" },
+  { id: "french-05", name: "French 05 — French koleksiyonu", image: "https://static.tildacdn.com/stor6530-3734-4532-a130-643234343731/48386854.jpg" },
+  { id: "french-06", name: "French 06 — French koleksiyonu", image: "https://static.tildacdn.com/stor6132-6335-4733-a336-343733623430/68675677.jpg" },
+  { id: "french-07", name: "French 07 — French koleksiyonu", image: "https://static.tildacdn.com/stor3435-3338-4165-b461-343737633165/87687226.jpg" },
+  { id: "french-08", name: "French 08 — French koleksiyonu", image: "https://static.tildacdn.com/stor3337-3538-4133-b939-363230333633/66422105.jpg" },
+  { id: "french-09", name: "French 09 — French koleksiyonu", image: "https://static.tildacdn.com/stor3738-3364-4862-b435-343131373565/24487211.jpg" },
+];
+
+/** Tilda albinails.ru — Men + Women sınırlı set (12 ton; ortak seri kartı + modal). */
+const MEN_WOMEN_SERIES = "Men + Women koleksiyonu — sınırlı set (12 jel oje)";
+const MEN_WOMEN_SERIES_GALLERY = [
+  "https://static.tildacdn.com/stor3862-6635-4335-b566-363361626237/26299078.jpg",
+  "https://static.tildacdn.com/stor3564-6338-4934-a333-626261623032/60381595.jpg",
+  "https://static.tildacdn.com/stor6335-3161-4135-a263-326138366434/41644840.jpg",
+  "https://static.tildacdn.com/stor6430-3863-4333-b431-396336376439/38038015.jpg",
+  "https://static.tildacdn.com/stor3636-3333-4463-b766-373563643837/56513912.jpg",
+  "https://static.tildacdn.com/stor3130-6630-4231-a166-656336316264/87687004.jpg",
+  "https://static.tildacdn.com/stor6264-6632-4134-b536-356139303061/83319603.jpg",
+  "https://static.tildacdn.com/stor3835-6138-4939-a439-373433303036/61434302.jpg",
+  "https://static.tildacdn.com/stor3835-3831-4638-b465-646261386431/15966448.jpg",
+  "https://static.tildacdn.com/stor6239-3362-4266-b733-613937366332/32129649.jpg",
+  "https://static.tildacdn.com/stor6235-6432-4561-b161-326130623233/52817519.jpg",
+  "https://static.tildacdn.com/stor3962-3361-4665-b437-646336363931/28923893.jpg",
+  "https://static.tildacdn.com/stor3565-3332-4531-b933-633935633532/70903980.jpg",
+  "https://static.tildacdn.com/stor6531-3538-4332-b661-613237663863/43872735.jpg",
+  "https://static.tildacdn.com/stor3361-3838-4339-a461-613631323834/20029032.jpg",
+  "https://static.tildacdn.com/stor6433-6437-4438-a333-383134613765/19226912.jpg",
+];
+const MEN_WOMEN_SERIES_ABOUT =
+  "ALBI Men + Women: 23 Şubat ve 8 Mart’a özel, sınırlı adet üretilen iki parçalı koleksiyon — erkek ve kadın serileri.\n\n" +
+  "Farklı karakterler; birlikte uyumlu çiftler oluşturur. Stok sınırlıdır.\n\n" +
+  "Tilda setinde: çıkarılmış tipserler (etiketli) ve ALBI kurucusu Kristina Lvova’dan kadın meditasyonu / afirmasyonu için QR’lı kart hediyesi anlatılır; kampanya ve fiyat için mağaza bilgisine bakın.\n\n" +
+  "Saklama: serin ve kuru ortam, 10–26 °C; açıkken UV/LED ışığından uzak tutun.";
+
 const defaultProducts = [
   { id: "kalipso-top-flakes-velor-15", name: "TOP FLAKES VELOR, 15 ML", brand: "Kalipso", size: "15 ml", image: "https://vo-kalipso.com/wp-content/uploads/2021/05/\u0432\u0435\u0440\u043b\u044e\u0440-\u043c\u0430\u0442\u043e\u0432-1--600x600.jpg", categories: ["top-coat"] },
   { id: "kalipso-top-snow-flakes-15", name: "TOP SNOW FLAKES WITHOUT STICKY LAYER, 15 ML", brand: "Kalipso", size: "15 ml", image: "https://vo-kalipso.com/wp-content/uploads/2021/05/\u0441\u043d\u0435\u0436\u043d\u044b\u0435-\u0445\u043b\u043e\u043f--600x600.jpg", categories: ["top-coat"] },
@@ -1483,6 +1896,110 @@ const defaultProducts = [
     seriesGallery: BUTTERFLY_SERIES_GALLERY,
     seriesAbout: BUTTERFLY_SERIES_ABOUT,
   },
+  ...WOMEN_SERIES_PRODUCT_SEED.map((row) => ({
+    ...row,
+    brand: "ALBI",
+    size: "10 ml",
+    series: WOMEN_SERIES,
+    categories: ["gel-polish", "new"],
+    seriesGallery: WOMEN_SERIES_GALLERY,
+    seriesAbout: WOMEN_SERIES_ABOUT,
+  })),
+  ...CLASSIC_SERIES_PRODUCT_SEED.map((row) => ({
+    ...row,
+    brand: "ALBI",
+    size: "10 ml",
+    series: CLASSIC_SERIES,
+    categories: ["gel-polish", "new"],
+    seriesGallery: CLASSIC_SERIES_GALLERY,
+    seriesAbout: CLASSIC_SERIES_ABOUT,
+  })),
+  ...CAT5D_SERIES_PRODUCT_SEED.map((row) => ({
+    ...row,
+    brand: "ALBI",
+    size: "15 ml",
+    series: CAT5D_SERIES,
+    categories: ["gel-polish", "new"],
+    seriesGallery: CAT5D_SERIES_GALLERY,
+    seriesAbout: CAT5D_SERIES_ABOUT,
+  })),
+  ...PRIZMATIC_SERIES_PRODUCT_SEED.map((row) => ({
+    ...row,
+    brand: "ALBI",
+    size: "15 ml",
+    series: PRIZMATIC_SERIES,
+    categories: ["gel-polish", "new"],
+    seriesGallery: PRIZMATIC_SERIES_GALLERY,
+    seriesAbout: PRIZMATIC_SERIES_ABOUT,
+  })),
+  ...AUTUMN_SERIES_PRODUCT_SEED.map((row) => ({
+    ...row,
+    brand: "ALBI",
+    size: "10 ml",
+    series: AUTUMN_SERIES,
+    categories: ["gel-polish", "new"],
+    seriesGallery: AUTUMN_SERIES_GALLERY,
+    seriesAbout: AUTUMN_SERIES_ABOUT,
+  })),
+  ...STAR_SERIES_PRODUCT_SEED.map((row) => ({
+    ...row,
+    brand: "ALBI",
+    size: "15 ml",
+    series: STAR_SERIES,
+    categories: ["gel-polish", "new"],
+    seriesGallery: STAR_SERIES_GALLERY,
+    seriesAbout: STAR_SERIES_ABOUT,
+  })),
+  ...METALLIC_SERIES_PRODUCT_SEED.map((row) => ({
+    ...row,
+    brand: "ALBI",
+    size: "5 ml",
+    series: METALLIC_SERIES,
+    categories: ["gel-polish", "new"],
+    seriesGallery: METALLIC_SERIES_GALLERY,
+    seriesAbout: METALLIC_SERIES_ABOUT,
+  })),
+  ...MOZAIC_SERIES_PRODUCT_SEED.map((row) => ({
+    ...row,
+    brand: "ALBI",
+    size: "15 ml",
+    series: MOZAIC_SERIES,
+    categories: ["gel-polish", "new"],
+    seriesGallery: MOZAIC_SERIES_GALLERY,
+    seriesAbout: MOZAIC_SERIES_ABOUT,
+  })),
+  ...SILK_CAT_SERIES_PRODUCT_SEED.map((row) => ({
+    ...row,
+    brand: "ALBI",
+    size: "15 ml",
+    series: SILK_CAT_SERIES,
+    categories: ["gel-polish", "new"],
+    seriesGallery: SILK_CAT_SERIES_GALLERY,
+    seriesAbout: SILK_CAT_SERIES_ABOUT,
+  })),
+  ...FRENCH_SERIES_PRODUCT_SEED.map((row) => ({
+    ...row,
+    brand: "ALBI",
+    size: "15 ml",
+    series: FRENCH_SERIES,
+    categories: ["gel-polish", "new"],
+    seriesGallery: FRENCH_SERIES_GALLERY,
+    seriesAbout: FRENCH_SERIES_ABOUT,
+  })),
+  ...Array.from({ length: 12 }, (_, i) => {
+    const num = String(i + 1).padStart(2, "0");
+    return {
+      id: `menwomen-${num}`,
+      name: `${num} — Men + Women koleksiyonu`,
+      brand: "ALBI",
+      size: "10 ml",
+      series: MEN_WOMEN_SERIES,
+      image: MEN_WOMEN_SERIES_GALLERY[i],
+      categories: ["gel-polish", "new"],
+      seriesGallery: MEN_WOMEN_SERIES_GALLERY,
+      seriesAbout: MEN_WOMEN_SERIES_ABOUT,
+    };
+  }),
   {
     id: "tilda-albin-primer-ultrabond",
     name: "Asidsiz primer (Ultrabond)",
@@ -1609,7 +2126,23 @@ const loadProducts = () => {
     let changed = false;
     const next = arr.filter((p) => {
       const id = String(p?.id || "").toLowerCase();
-      if (id.startsWith("hypnotic-") || id.startsWith("burgundy-") || id.startsWith("men-") || id.startsWith("butterfly-"))
+      if (
+        id.startsWith("hypnotic-") ||
+        id.startsWith("burgundy-") ||
+        id.startsWith("men-") ||
+        id.startsWith("butterfly-") ||
+        id.startsWith("menwomen-") ||
+        id.startsWith("women-") ||
+        id.startsWith("classic-") ||
+        id.startsWith("cat5d-") ||
+        id.startsWith("prizmatic-") ||
+        id.startsWith("autumn-") ||
+        id.startsWith("star-") ||
+        id.startsWith("metallic-") ||
+        id.startsWith("mozaic-") ||
+        id.startsWith("silkcat-") ||
+        id.startsWith("french-")
+      )
         return true;
       if (id.startsWith("albi-")) {
         changed = true;
@@ -1646,7 +2179,7 @@ const loadProducts = () => {
       let changedInner = false;
       const out = arr.map((p) => {
         const id = String(p?.id || "").toLowerCase();
-        if (!/^(hypnotic|burgundy|men|butterfly)-/.test(id)) return p;
+        if (!/^(hypnotic|burgundy|men|butterfly|menwomen|women|classic|cat5d|prizmatic|autumn|star|metallic|mozaic|silkcat|french)-/.test(id)) return p;
         let row = { ...p };
         if (String(row.brand || "").trim() !== "ALBI") {
           row.brand = "ALBI";
@@ -1689,7 +2222,7 @@ const loadProducts = () => {
     }
     const migrateAppendTildaHypnoticBundle = (arr) => {
       const seeds = defaultProducts.filter((p) =>
-        /^(hypnotic-|burgundy-|men-|butterfly-|tilda-albin-)/.test(String(p?.id || ""))
+        /^(hypnotic-|burgundy-|men-|butterfly-|menwomen-|women-|classic-|cat5d-|prizmatic-|autumn-|star-|metallic-|mozaic-|silkcat-|french-|tilda-albin-)/.test(String(p?.id || ""))
       );
       if (!seeds.length) return { next: arr, changed: false };
       const have = new Set(arr.map((p) => String(p?.id || "")));

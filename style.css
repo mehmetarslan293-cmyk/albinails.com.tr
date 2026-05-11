@@ -1156,13 +1156,14 @@ h3 {
 }
 
 .series-detail-modal {
-  max-width: min(1080px, 100vw - 24px);
+  max-width: min(1080px, calc(100vw - 24px));
   width: 100%;
   padding: 0;
   border: none;
   border-radius: 16px;
   background: #fff;
   box-shadow: 0 24px 60px rgba(20, 12, 18, 0.25);
+  box-sizing: border-box;
 }
 
 .series-detail-modal::backdrop {
@@ -1172,6 +1173,8 @@ h3 {
 .series-detail-modal__panel {
   position: relative;
   padding: 20px 20px 24px;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 .series-detail-modal__close {
@@ -1203,19 +1206,30 @@ h3 {
   padding-top: 8px;
 }
 
+.series-detail-modal__layout > * {
+  min-width: 0;
+}
+
 .series-detail-modal__hero {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
   background: #faf7f9;
   border-radius: 14px;
   overflow: hidden;
   border: 1px solid var(--line);
 }
 
-.series-detail-modal__hero img {
+.series-detail-modal__hero > img {
+  align-self: center;
+  flex: 0 1 auto;
   display: block;
-  width: 100%;
+  max-width: 100%;
+  width: auto;
   height: auto;
   max-height: min(78vh, 720px);
   object-fit: contain;
+  object-position: center;
 }
 
 .series-detail-modal__gallery-strip {
@@ -1354,7 +1368,12 @@ h3 {
 
 @media (max-width: 900px) {
   .series-detail-modal__layout {
-    grid-template-columns: 1fr;
+    /* minmax(0,1fr): içeriğin min-intrinsic genişliği (büyük foto) sütunu taşırmaz */
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .series-detail-modal__panel {
+    padding: 16px 14px 20px;
   }
 
   .series-detail-modal__side {
@@ -1366,6 +1385,10 @@ h3 {
     overflow-x: auto;
     padding-bottom: 4px;
     -webkit-overflow-scrolling: touch;
+  }
+
+  .series-detail-modal__hero > img {
+    max-height: min(62vh, 560px);
   }
 }
 

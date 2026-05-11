@@ -5,15 +5,73 @@
       "id": "kalipso_albi_turkey",
       "handle": "@kalipso_albi_turkey",
       "profile_url": "https://www.instagram.com/kalipso_albi_turkey/",
-      "updated_at": "",
-      "items": []
+      "updated_at": "2026-05-11T00:00:00+00:00",
+      "items": [
+        {
+          "id": "seed-kalipso-1",
+          "caption": "ALBI French — jel oje vitrininden. Canlı paylaşımlar için Instagram profilimize uğrayın.",
+          "image": "https://static.tildacdn.com/stor3766-3963-4530-a238-303135393862/35560026.jpg",
+          "permalink": "https://www.instagram.com/kalipso_albi_turkey/",
+          "timestamp": ""
+        },
+        {
+          "id": "seed-kalipso-2",
+          "caption": "SILK CAT koleksiyonu — ipeksi finish tonları.",
+          "image": "https://static.tildacdn.com/stor3336-6265-4437-a139-376263333661/86693400.jpg",
+          "permalink": "https://www.instagram.com/kalipso_albi_turkey/",
+          "timestamp": ""
+        },
+        {
+          "id": "seed-kalipso-3",
+          "caption": "Mozaic & renkli jel oje — vitrin görseli.",
+          "image": "https://static.tildacdn.com/stor6439-6532-4139-b762-613531653566/20754297.jpg",
+          "permalink": "https://www.instagram.com/kalipso_albi_turkey/",
+          "timestamp": ""
+        },
+        {
+          "id": "seed-kalipso-4",
+          "caption": "ALBI ürün gamı — güncel kampanyalar için takipte kalın.",
+          "image": "https://static.tildacdn.com/stor6634-3664-4235-a166-653632313862/96106260.jpg",
+          "permalink": "https://www.instagram.com/kalipso_albi_turkey/",
+          "timestamp": ""
+        }
+      ]
     },
     {
       "id": "lovely_albi_kalipso",
       "handle": "@lovely_albi_kalipso",
       "profile_url": "https://www.instagram.com/lovely_albi_kalipso/",
-      "updated_at": "",
-      "items": []
+      "updated_at": "2026-05-11T00:00:00+00:00",
+      "items": [
+        {
+          "id": "seed-lovely-1",
+          "caption": "LOVELY × ALBI — vitrin görselleri (Tilda CDN). Canlı Reels ve paylaşımlar için @lovely_albi_kalipso.",
+          "image": "https://static.tildacdn.com/stor3365-6463-4134-a231-663563346463/62802287.jpg",
+          "permalink": "https://www.instagram.com/lovely_albi_kalipso/",
+          "timestamp": ""
+        },
+        {
+          "id": "seed-lovely-2",
+          "caption": "SILK CAT tonları — mağaza ve Instagram'dan takip edin.",
+          "image": "https://static.tildacdn.com/stor3263-3164-4730-b332-323132373430/55091127.jpg",
+          "permalink": "https://www.instagram.com/lovely_albi_kalipso/",
+          "timestamp": ""
+        },
+        {
+          "id": "seed-lovely-3",
+          "caption": "ALBI jel oje vitrini — yeni koleksiyonlar.",
+          "image": "https://static.tildacdn.com/stor6434-6536-4439-a666-636239623464/18115604.jpg",
+          "permalink": "https://www.instagram.com/lovely_albi_kalipso/",
+          "timestamp": ""
+        },
+        {
+          "id": "seed-lovely-4",
+          "caption": "Renk paleti — güncel içerikler Instagram'da.",
+          "image": "https://static.tildacdn.com/stor6665-3965-4865-b337-396230386535/44288597.jpg",
+          "permalink": "https://www.instagram.com/lovely_albi_kalipso/",
+          "timestamp": ""
+        }
+      ]
     }
   ]
 }
