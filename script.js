@@ -657,9 +657,20 @@ const SILK_CAT_SERIES_PRODUCT_SEED = [
   { id: "silkcat-22", name: "SILK CAT 22 — İpek kediler", image: "https://static.tildacdn.com/stor6633-3166-4332-b436-313938656162/fed1e3aeb702b94669039485047b373b.jpg" },
 ];
 
-/** Tilda albinails.ru — Коллекция Франция / French (01–09); Tilda başlığında «COLLETCION» yazım hatası. */
+/** Tilda albinails.com — French jel oje (01–09) + French manicure kit seti. */
 const FRENCH_SERIES = "French koleksiyonu — Fransız serisi (01–09)";
+/** French manicure kit ürün sayfası slider (t-slds) + vitrin görselleri. */
 const FRENCH_SERIES_GALLERY = [
+  "https://static.tildacdn.com/stor6565-3139-4665-a431-376231326666/71758041.jpg",
+  "https://static.tildacdn.com/stor6265-3432-4565-a433-343161636534/17491542.jpg",
+  "https://static.tildacdn.com/stor3537-3039-4931-a662-623037346436/96617927.jpg",
+  "https://static.tildacdn.com/stor6266-3436-4636-a165-623139633066/17611528.jpg",
+  "https://static.tildacdn.com/stor3130-3364-4934-b632-393830356239/40147668.jpg",
+  "https://static.tildacdn.com/stor3332-3663-4231-b865-653839396537/87065962.jpg",
+  "https://static.tildacdn.com/stor3830-6561-4561-b031-613866333237/35270951.jpg",
+  "https://static.tildacdn.com/stor3238-3635-4265-b639-393864333666/78574635.jpg",
+  "https://static.tildacdn.com/stor3562-3731-4131-b039-663763663039/43922439.jpg",
+  "https://static.tildacdn.com/stor6363-3631-4135-b737-653639623932/37199198.jpg",
   "https://static.tildacdn.com/stor3766-3963-4530-a238-303135393862/35560026.jpg",
   "https://static.tildacdn.com/stor3062-3936-4239-a234-376238666165/97942316.jpg",
   "https://static.tildacdn.com/stor3033-3139-4161-a535-343633303961/79087609.jpg",
@@ -673,10 +684,11 @@ const FRENCH_SERIES_GALLERY = [
   "https://static.tildacdn.com/stor3836-6135-4431-b562-643161663262/85924082.jpg",
 ];
 const FRENCH_SERIES_ABOUT =
-  "ALBI French (Коллекция Франция): Tilda’daki standart ALBI jel oje anlatımı — yoğun pigment, kendiliğinden dengeleyen yapı; 1–2 ince kat ile opaklık. Klasik kaplama, gradient ve nail art için uygundur.\n\n" +
-  "Dokuz ton (01 … 09). Tilda’da ton düğmelerinde kapak görseli yoksa katalogda vitrin sırası slider ile eşlenir.\n\n" +
-  "Katalogda hacim 15 ml; kesin bilgi için mağazaya bakın.\n\n" +
-  "Saklama: serin ve kuru ortam, 10–26 °C; açıkken UV/LED ışığından uzak tutun.";
+  "ALBI French (Коллекция Франция): jel oje tonları 01–09; ayrıca mağazada «French manicure kit» adlı hazır set bulunur.\n\n" +
+  "Set içeriği (Tilda ürün kartı): renkli rubber baz SECRET BEIGE; renkli rubber baz SECRET ROSE; NO WIPE üst cila; jel oje 154; jel oje 016.\n\n" +
+  "Uygulama: tırnak yüzeyini hazırlayın; dehidrasyon ve primer. Baz katı LED’de kurutun. Renkli jel ojeyi 1–2 ince kat uygulayın; her kat yaklaşık 60 sn LED. Üst cila ve kurutma.\n\n" +
+  "Tonlar: yoğun pigment, kendiliğinden dengeleyen yapı; klasik kaplama, gradient ve nail art için uygundur. Katalogda hacim 15 ml; kesin bilgi için mağazaya bakın.\n\n" +
+  "Saklama: serin ve kuru ortam, 10–26 °C; açıkken UV/LED ışığından uzak tutun. Ekran rengi farklılık gösterebilir.";
 
 const FRENCH_SERIES_PRODUCT_SEED = [
   { id: "french-01", name: "French 01 — French koleksiyonu", image: "https://static.tildacdn.com/stor3766-3963-4530-a238-303135393862/35560026.jpg" },
@@ -688,6 +700,7 @@ const FRENCH_SERIES_PRODUCT_SEED = [
   { id: "french-07", name: "French 07 — French koleksiyonu", image: "https://static.tildacdn.com/stor3435-3338-4165-b461-343737633165/87687226.jpg" },
   { id: "french-08", name: "French 08 — French koleksiyonu", image: "https://static.tildacdn.com/stor3337-3538-4133-b939-363230333633/66422105.jpg" },
   { id: "french-09", name: "French 09 — French koleksiyonu", image: "https://static.tildacdn.com/stor3738-3364-4862-b435-343131373565/24487211.jpg" },
+  { id: "french-manicure-kit", name: "French manicure kit — set", image: "https://static.tildacdn.com/stor6265-3432-4565-a433-343161636534/17491542.jpg" },
 ];
 
 /** Tilda albinails.ru — Men + Women sınırlı set (12 ton; ortak seri kartı + modal). */
