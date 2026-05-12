@@ -270,17 +270,22 @@ const CAT5D_SERIES_PRODUCT_SEED = [
   { id: "cat5d-10", name: "Cat5D 10 — Cat 5D koleksiyonu", image: "https://static.tildacdn.com/stor6135-3764-4561-a135-666239356334/11718340.jpg" },
 ];
 
-/** Tilda albinails.ru — Prizmatic koleksiyonu (7 ton; script.js ile aynı tohum). */
+/** Tilda albinails.com — Gel polish Albi Prizmatic (7 Color varyantı; script.js ile aynı tohum). */
 const PRIZMATIC_SERIES = "Prizmatic koleksiyonu — yansıtıcı jel oje (7 ton)";
+/** Ürün sayfası slider + ek kampanya görselleri (sıra: Tilda t-slds, ardından önceki setten tekrarsız). */
 const PRIZMATIC_SERIES_GALLERY = [
-  "https://static.tildacdn.com/stor3730-6236-4666-b933-333166306531/39571399.jpg",
   "https://static.tildacdn.com/stor3939-3939-4965-b966-373931633536/32693815.jpg",
-  "https://static.tildacdn.com/stor3536-3065-4764-b661-636139383361/89998282.jpg",
-  "https://static.tildacdn.com/stor3635-3039-4638-a264-383936343934/18913763.jpg",
-  "https://static.tildacdn.com/stor3239-3630-4133-b933-636662303739/23158672.jpg",
-  "https://static.tildacdn.com/stor6538-3461-4362-b936-343133346131/82531493.jpg",
-  "https://static.tildacdn.com/stor3634-3036-4336-a133-376664643731/58033547.jpg",
+  "https://static.tildacdn.com/stor3232-6632-4133-b337-353365376338/86228639.jpg",
+  "https://static.tildacdn.com/stor3831-6666-4238-a236-393333343063/53800171.jpg",
+  "https://static.tildacdn.com/stor3730-6236-4666-b933-333166306531/39571399.jpg",
+  "https://static.tildacdn.com/stor3063-3934-4234-a263-653265633035/51291548.jpg",
+  "https://static.tildacdn.com/stor3433-3664-4231-a263-373364623165/75763116.jpg",
   "https://static.tildacdn.com/stor3930-3539-4436-b166-333163396636/89171747.jpg",
+  "https://static.tildacdn.com/stor3634-3036-4336-a133-376664643731/58033547.jpg",
+  "https://static.tildacdn.com/stor6538-3461-4362-b936-343133346131/82531493.jpg",
+  "https://static.tildacdn.com/stor3239-3630-4133-b933-636662303739/23158672.jpg",
+  "https://static.tildacdn.com/stor3635-3039-4638-a264-383936343934/18913763.jpg",
+  "https://static.tildacdn.com/stor3536-3065-4764-b661-636139383361/89998282.jpg",
   "https://static.tildacdn.com/tild6361-3236-4431-a432-393361326637/IMG_2892.jpg",
   "https://static.tildacdn.com/stor3330-6362-4530-b835-636539326661/75462307.png",
   "https://static.tildacdn.com/stor3434-6538-4436-a332-373166393137/26532160.png",
@@ -294,10 +299,11 @@ const PRIZMATIC_SERIES_GALLERY = [
   "https://static.tildacdn.com/stor3737-3164-4264-b338-323461386239/29856162.jpg",
 ];
 const PRIZMATIC_SERIES_ABOUT =
-  "ALBI Prizmatic (PRIZMATIC COLLECTION): çok yönlü yansıma ve prizmatik parıltı; yoğun pigmentli, kendiliğinden dengeleyen orta-yoğun kıvam.\n\n" +
-  "Prizmatic 1–7: Tilda mağazasında ton seçimi bu SKU adlarıyla verilir.\n\n" +
-  "1–2 ince kat ile opaklık ayarlanır; klasik kaplama, gradient ve nail art için uygundur. Hacim 15 ml.\n\n" +
-  "Saklama: serin ve kuru ortam, 10–26 °C; açıkken UV/LED ışığından uzak tutun. Kullanım öncesi şişeyi hafifçe yuvarlayın.";
+  "Gel polish Albi Prizmatic (PRIZMATIC COLLECTION). Yoğun, kendiliğinden dengeleyen doku; yüksek pigment ve orta–kalın tutarlılık. En iyi renk derinliği için 1–2 ince kat uygulayın. Klasik kaplama, gradient ve detaylı nail art için uygundur.\n\n" +
+  "Uygulama: tırnak yüzeyini hazırlayın; dehidrasyon ve primer kullanın. Baz katı sürüp LED’de kurutun. Renkli jel ojeyi 1–2 ince kat halinde uygulayın; her katı LED’de yaklaşık 60 sn kurutun. Üst cila sürüp LED’de kurutun.\n\n" +
+  "Mağazada tonlar «Color» 1–7 ve SKU «Prizmatic 1» … «Prizmatic 7» ile seçilir.\n\n" +
+  "Kaynak (Tilda ürün kartı): https://albinails.com/shop/gelpolish/tproduct/703414475-861068634882-gel-polish-albi-prizmatic\n\n" +
+  "Hacim 15 ml. Saklama: serin ve kuru ortam, 10–26 °C; açıkken UV/LED ışığından uzak tutun. Ekran ayarları gerçek rengi hafifçe değiştirebilir.";
 
 const PRIZMATIC_SERIES_PRODUCT_SEED = [
   { id: "prizmatic-01", name: "Prizmatic 1 — Prizmatic koleksiyonu", image: "https://static.tildacdn.com/stor3939-3939-4965-b966-373931633536/32693815.jpg" },
