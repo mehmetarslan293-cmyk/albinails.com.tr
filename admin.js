@@ -41,9 +41,20 @@ const tildaThumbnailSrc = (originalUrl, maxEdgePx = 96) => {
   }
 };
 
-/** Tilda albinails.ru — Hypnotic koleksiyonu (script.js ile aynı tohum). */
+/** Tilda albinails.com — HYPNOTIC COLLECTION (script.js ile aynı tohum). */
 const HYPNOTIC_SERIES = "Hypnotic — yansıtıcı jel oje";
+/** Ürün sayfası slider sırası (t-slds); ardından önceki kampanya görselleri. */
 const HYPNOTIC_SERIES_GALLERY = [
+  "https://static.tildacdn.com/stor3730-3035-4061-b361-643732643733/84807775.png",
+  "https://static.tildacdn.com/stor3437-6261-4138-b036-353933393134/39813479.jpg",
+  "https://static.tildacdn.com/stor6465-6335-4734-a435-663231366563/33803261.png",
+  "https://static.tildacdn.com/stor3337-3665-4336-b165-356366653235/73341050.png",
+  "https://static.tildacdn.com/stor3966-6161-4463-a362-633464393934/70963064.png",
+  "https://static.tildacdn.com/stor3132-3366-4236-b463-323163363163/45540229.png",
+  "https://static.tildacdn.com/stor6437-3035-4635-b531-383737333062/32367429.png",
+  "https://static.tildacdn.com/stor6631-6235-4331-b661-353863393366/58812821.png",
+  "https://static.tildacdn.com/stor3432-3861-4732-b831-383330633430/50253539.png",
+  "https://static.tildacdn.com/stor3539-6564-4136-b334-626364366232/99630403.png",
   "https://static.tildacdn.com/stor3139-6565-4433-a135-623762343732/75565413.jpg",
   "https://static.tildacdn.com/stor3535-6630-4339-b537-636536636633/15607787.jpg",
   "https://static.tildacdn.com/stor3463-6239-4533-a236-366461613166/69327459.jpg",
@@ -60,18 +71,19 @@ const HYPNOTIC_SERIES_GALLERY = [
   "https://static.tildacdn.com/stor6462-6239-4433-a462-623462353465/97379710.jpg",
 ];
 const HYPNOTIC_SERIES_ABOUT =
-  "Yeni sınırlı üretim yansıtıcı (reflektör) jel oje koleksiyonu: yapay ışıkta belirgin parıltı, doğal ışıkta da canlı görünüm.\n\n" +
-  "NIGHT NO SLEEP — siyah (hit)\n" +
-  "DARKSIDE EFFECT — koyu lacivert\n" +
-  "DOUBLE HARMONY — derin mor\n" +
-  "HEART DIAMOND — yoğun kırmızı\n" +
-  "LADY DANGER — bej altın\n" +
-  "EUPHORIA — pembe altın\n" +
-  "BRILLIANT ADDICTION — gümüş\n" +
-  "EXTREME SHINE — ekstra parlama\n" +
-  "INTOXICATED — (Tilda mağazasında önizleme görseli diğer tonla paylaşılmış olabilir; siparişte SKU doğrulanır.)\n\n" +
-  "Sınırlı stok. 1–2 ince kat ile opaklık ayarlanabilir; gradient ve nail art için uygundur.\n\n" +
-  "Saklama: serin ve kuru ortam, 10–26 °C; açıkken UV/LED ışığından uzak tutun.";
+  "HYPNOTIC COLLECTION — ALBI yansıtıcı (reflektör) jel oje. Yapay ışıkta belirgin parıltı, doğal ışıkta canlı görünüm. Tilda mağazasında aynı ürün kartında «HYPNOTIC COLLECTION» (set) veya tek tek Color seçenekleri (ör. Night to sleep, Heart diamond) bulunur; burada tonlar 01–09 ile listelenir.\n\n" +
+  "01 NIGHT NO SLEEP — siyah (hit)\n" +
+  "02 DARKSIDE EFFECT — koyu lacivert\n" +
+  "03 DOUBLE HARMONY — derin mor\n" +
+  "04 HEART DIAMOND — yoğun kırmızı\n" +
+  "05 LADY DANGER — bej altın\n" +
+  "06 EUPHORIA — pembe altın\n" +
+  "07 BRILLIANT ADDICTION — gümüş\n" +
+  "08 EXTREME SHINE — ekstra parlama (kartta «Exstreme shine» yazımı)\n" +
+  "09 INTOXICATED — yoğun yansıma\n\n" +
+  "Uygulama: tırnak yüzeyini hazırlayın; dehidrasyon ve primer. Baz katı LED’de kurutun. Renkli jel ojeyi 1–2 ince kat uygulayın; her kat yaklaşık 60 sn LED. Üst cila ve kurutma.\n\n" +
+  "Sınırlı stok. Gradient ve nail art için uygundur.\n\n" +
+  "Saklama: serin ve kuru ortam, 10–26 °C; açıkken UV/LED ışığından uzak tutun. Ekran ayarları rengi hafifçe değiştirebilir.";
 
 /** Tilda albinails.ru — Burgundy koleksiyonu (script.js ile aynı tohum). */
 const BURGUNDY_SERIES = "Burgundy koleksiyonu — bordo jel oje";
@@ -1514,7 +1526,7 @@ const defaultProducts = [
     brand: "ALBI",
     size: "10 ml",
     series: HYPNOTIC_SERIES,
-    image: "https://static.tildacdn.com/stor6331-6138-4265-a336-613737393631/50032507.jpg",
+    image: "https://static.tildacdn.com/stor3730-3035-4061-b361-643732643733/84807775.png",
     categories: ["gel-polish", "new"],
     seriesGallery: HYPNOTIC_SERIES_GALLERY,
     seriesAbout: HYPNOTIC_SERIES_ABOUT,
@@ -1525,7 +1537,7 @@ const defaultProducts = [
     brand: "ALBI",
     size: "10 ml",
     series: HYPNOTIC_SERIES,
-    image: "https://static.tildacdn.com/stor3463-6239-4533-a236-366461613166/69327459.jpg",
+    image: "https://static.tildacdn.com/stor6437-3035-4635-b531-383737333062/32367429.png",
     categories: ["gel-polish", "new"],
     seriesGallery: HYPNOTIC_SERIES_GALLERY,
     seriesAbout: HYPNOTIC_SERIES_ABOUT,
@@ -1536,7 +1548,7 @@ const defaultProducts = [
     brand: "ALBI",
     size: "10 ml",
     series: HYPNOTIC_SERIES,
-    image: "https://static.tildacdn.com/stor6133-6531-4265-b939-643361613132/94370768.jpg",
+    image: "https://static.tildacdn.com/stor6631-6235-4331-b661-353863393366/58812821.png",
     categories: ["gel-polish", "new"],
     seriesGallery: HYPNOTIC_SERIES_GALLERY,
     seriesAbout: HYPNOTIC_SERIES_ABOUT,
@@ -1547,7 +1559,7 @@ const defaultProducts = [
     brand: "ALBI",
     size: "10 ml",
     series: HYPNOTIC_SERIES,
-    image: "https://static.tildacdn.com/stor3137-3963-4362-b162-373733373931/14402646.jpg",
+    image: "https://static.tildacdn.com/stor3539-6564-4136-b334-626364366232/99630403.png",
     categories: ["gel-polish", "new"],
     seriesGallery: HYPNOTIC_SERIES_GALLERY,
     seriesAbout: HYPNOTIC_SERIES_ABOUT,
@@ -1558,7 +1570,7 @@ const defaultProducts = [
     brand: "ALBI",
     size: "10 ml",
     series: HYPNOTIC_SERIES,
-    image: "https://static.tildacdn.com/stor6162-6437-4531-b434-633230633936/84481830.jpg",
+    image: "https://static.tildacdn.com/stor6465-6335-4734-a435-663231366563/33803261.png",
     categories: ["gel-polish", "new"],
     seriesGallery: HYPNOTIC_SERIES_GALLERY,
     seriesAbout: HYPNOTIC_SERIES_ABOUT,
@@ -1569,7 +1581,7 @@ const defaultProducts = [
     brand: "ALBI",
     size: "10 ml",
     series: HYPNOTIC_SERIES,
-    image: "https://static.tildacdn.com/stor6634-3063-4664-b233-633133366462/76129448.jpg",
+    image: "https://static.tildacdn.com/stor3432-3861-4732-b831-383330633430/50253539.png",
     categories: ["gel-polish", "new"],
     seriesGallery: HYPNOTIC_SERIES_GALLERY,
     seriesAbout: HYPNOTIC_SERIES_ABOUT,
@@ -1580,7 +1592,7 @@ const defaultProducts = [
     brand: "ALBI",
     size: "10 ml",
     series: HYPNOTIC_SERIES,
-    image: "https://static.tildacdn.com/stor3535-6630-4339-b537-636536636633/15607787.jpg",
+    image: "https://static.tildacdn.com/stor3132-3366-4236-b463-323163363163/45540229.png",
     categories: ["gel-polish", "new"],
     seriesGallery: HYPNOTIC_SERIES_GALLERY,
     seriesAbout: HYPNOTIC_SERIES_ABOUT,
@@ -1591,7 +1603,7 @@ const defaultProducts = [
     brand: "ALBI",
     size: "10 ml",
     series: HYPNOTIC_SERIES,
-    image: "https://static.tildacdn.com/stor3535-6630-4339-b537-636536636633/15607787.jpg",
+    image: "https://static.tildacdn.com/stor3337-3665-4336-b165-356366653235/73341050.png",
     categories: ["gel-polish", "new"],
     seriesGallery: HYPNOTIC_SERIES_GALLERY,
     seriesAbout: HYPNOTIC_SERIES_ABOUT,
@@ -1602,7 +1614,7 @@ const defaultProducts = [
     brand: "ALBI",
     size: "10 ml",
     series: HYPNOTIC_SERIES,
-    image: "https://static.tildacdn.com/stor3535-6630-4339-b537-636536636633/15607787.jpg",
+    image: "https://static.tildacdn.com/stor3966-6161-4463-a362-633464393934/70963064.png",
     categories: ["gel-polish", "new"],
     seriesGallery: HYPNOTIC_SERIES_GALLERY,
     seriesAbout: HYPNOTIC_SERIES_ABOUT,
