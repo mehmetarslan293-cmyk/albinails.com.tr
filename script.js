@@ -361,54 +361,41 @@ const CLASSIC_SERIES_PRODUCT_SEED = Array.from({ length: 6 }, (_, i) => {
   };
 });
 
-/** Tilda albinails.ru — Cat 5D koleksiyonu (10 ton; ortak seri kartı + modal). */
+/** Tilda albinails.com — Gel polish ALBI Cat 5D (10 renk; slider + küçük resim sırası). */
 const CAT5D_SERIES = "Cat 5D koleksiyonu — manyetik jel oje";
 const CAT5D_SERIES_GALLERY = [
-  "https://static.tildacdn.com/stor3232-3063-4533-a161-373463653133/51799516.png",
-  "https://static.tildacdn.com/stor3864-3666-4538-b234-346638616564/33482813.jpg",
-  "https://static.tildacdn.com/stor3563-3538-4261-b062-373438343536/78752901.jpg",
-  "https://static.tildacdn.com/stor3762-3665-4433-b163-333136333237/18127817.jpg",
-  "https://static.tildacdn.com/stor6463-3964-4261-b537-616430663362/91726469.jpg",
-  "https://static.tildacdn.com/stor3364-6634-4231-b937-656163306132/35870833.jpg",
-  "https://static.tildacdn.com/stor6265-3931-4132-a236-393132306636/35297600.jpg",
-  "https://static.tildacdn.com/stor3330-3166-4333-a334-396231336330/71332042.jpg",
-  "https://static.tildacdn.com/stor6664-6537-4962-a236-623032356235/21890839.jpg",
-  "https://static.tildacdn.com/stor6135-3764-4561-a135-666239356334/11718340.jpg",
-  "https://static.tildacdn.com/stor3137-6366-4463-b366-323838323832/48967043.jpg",
-  "https://static.tildacdn.com/stor3361-3935-4832-b935-653038633237/69746196.jpg",
-  "https://static.tildacdn.com/stor3537-3564-4131-b130-353562663463/93975558.jpg",
-  "https://static.tildacdn.com/stor6463-6234-4862-a330-656538656134/48663381.jpg",
-  "https://static.tildacdn.com/stor6430-3965-4933-a235-393030346535/30597498.jpg",
-  "https://static.tildacdn.com/stor3430-6331-4933-b239-343436346233/41061797.jpg",
-  "https://static.tildacdn.com/stor3931-3535-4866-a639-653164316264/24750072.jpg",
-  "https://static.tildacdn.com/stor3237-3736-4532-a636-663039383762/93158492.jpg",
-  "https://static.tildacdn.com/stor3435-3132-4266-b939-386334663232/15724203.jpg",
-  "https://static.tildacdn.com/stor3064-6461-4066-a562-366332663935/75593132.jpg",
-  "https://static.tildacdn.com/stor3661-3833-4432-a562-626565623064/32617040.jpg",
-  "https://static.tildacdn.com/stor3065-3761-4266-b262-356266643362/58914165.jpg",
-  "https://static.tildacdn.com/stor6130-3334-4431-b964-656661363832/47755757.jpg",
-  "https://static.tildacdn.com/stor6263-6135-4337-b531-616636653534/89126876.jpg",
-  "https://static.tildacdn.com/stor6265-6664-4435-a538-623833336332/71100719.jpg",
-  "https://static.tildacdn.com/stor6137-6166-4163-a133-376535663031/26478395.jpg",
-  "https://static.tildacdn.com/stor6432-6430-4564-a430-396462636364/11544492.jpg",
+  "https://static.tildacdn.com/stor3333-3964-4664-b037-316135613231/80731657.jpg",
+  "https://static.tildacdn.com/stor3039-3862-4664-a637-393638316437/75428379.jpg",
+  "https://static.tildacdn.com/tild6264-3963-4037-b461-623966383133/Cat_5D_1-10.jpg",
+  "https://static.tildacdn.com/stor3065-3032-4136-b132-616365363664/33328796.jpg",
+  "https://static.tildacdn.com/stor3535-3261-4161-a434-613337393138/21691124.jpg",
+  "https://static.tildacdn.com/stor3635-6661-4461-b865-633361303365/15280449.jpg",
+  "https://static.tildacdn.com/stor3334-6630-4732-b739-616163333963/88657966.jpg",
+  "https://static.tildacdn.com/stor6463-3039-4566-a535-303934313335/73968461.jpg",
+  "https://static.tildacdn.com/stor6265-6437-4437-b663-313938303639/72797110.jpg",
+  "https://static.tildacdn.com/stor6666-6339-4166-a439-666238326330/76983987.jpg",
+  "https://static.tildacdn.com/stor3230-6438-4038-b161-623264656265/66922619.jpg",
+  "https://static.tildacdn.com/stor3434-6565-4439-b737-363833336135/23161181.jpg",
 ];
 const CAT5D_SERIES_ABOUT =
-  "ALBI Cat 5D: manyetik parçacıklı jel oje; özel mıknatıs ile 5D kedi gözü efekti ve farklı açılarda derin, hacimli yansıma verir.\n\n" +
-  "Tonlar: Cat5D 01–10. Yoğun pigment ve kendiliğinden dengeleyen kıvam sayesinde 1–2 ince katta derinlik ayarlanır.\n\n" +
-  "Klasik uygulamanın yanında gradient ve nail art için de uygundur.\n\n" +
-  "Saklama: serin-kuru ortam, 10–26 °C; açıkken UV/LED ışığından uzak tutun. Her kullanım öncesi şişeyi avuçta hafifçe yuvarlayın.";
+  "Gel polish ALBI Cat 5D (Tilda ürün metni): manyetik “kedi gözü” parçacıkları; uygun mıknatısla desen oluşturulur. Işık ve bakış açısına göre parlar, 3 boyutlu desen etkisi verir. Siyah alt katman gerektirmez.\n\n" +
+  "ALBI jel ojeler: yoğun pigment, orta-akıcı kıvam, kendiliğinden dengeleyen yoğun doku; en iyi renk için 1–2 ince kat. Klasik kaplama, gradient ve nail art için uygundur.\n\n" +
+  "Kullanım (özet): tırnak hazırlığı; dehidrasyon ve primer. Baz LED’de kurutulur. Renk 1–2 ince kat, her kat ~60 sn LED. Üst cila LED’de kurutulur.\n\n" +
+  "Ürün sayfası: https://albinails.com/shop/gelpolish/tproduct/703414475-520687819202-gel-polish-albi-cat-5d\n\n" +
+  "Saklama: serin ve kuru ortam, doğrudan güneşten uzak; 10–26 °C. Açıkken şişe ve fırçayı UV/LED ışığından koruyun. Ekran rengi farklılık gösterebilir.\n\n" +
+  "Varyantlar: SKU Cat5D 01 … Cat5D 010 (katalogda 01–10). Hacim için mağazaya bakın.";
 
 const CAT5D_SERIES_PRODUCT_SEED = [
-  { id: "cat5d-01", name: "Cat5D 01 — Cat 5D koleksiyonu", image: "https://static.tildacdn.com/stor3864-3666-4538-b234-346638616564/33482813.jpg" },
-  { id: "cat5d-02", name: "Cat5D 02 — Cat 5D koleksiyonu", image: "https://static.tildacdn.com/stor3563-3538-4261-b062-373438343536/78752901.jpg" },
-  { id: "cat5d-03", name: "Cat5D 03 — Cat 5D koleksiyonu", image: "https://static.tildacdn.com/stor3762-3665-4433-b163-333136333237/18127817.jpg" },
-  { id: "cat5d-04", name: "Cat5D 04 — Cat 5D koleksiyonu", image: "https://static.tildacdn.com/stor6463-3964-4261-b537-616430663362/91726469.jpg" },
-  { id: "cat5d-05", name: "Cat5D 05 — Cat 5D koleksiyonu", image: "https://static.tildacdn.com/stor3364-6634-4231-b937-656163306132/35870833.jpg" },
-  { id: "cat5d-06", name: "Cat5D 06 — Cat 5D koleksiyonu", image: "https://static.tildacdn.com/stor6265-3931-4132-a236-393132306636/35297600.jpg" },
-  { id: "cat5d-07", name: "Cat5D 07 — Cat 5D koleksiyonu", image: "https://static.tildacdn.com/stor3330-3166-4333-a334-396231336330/71332042.jpg" },
-  { id: "cat5d-08", name: "Cat5D 08 — Cat 5D koleksiyonu", image: "https://static.tildacdn.com/stor6664-6537-4962-a236-623032356235/21890839.jpg" },
-  { id: "cat5d-09", name: "Cat5D 09 — Cat 5D koleksiyonu", image: "https://static.tildacdn.com/stor6664-6537-4962-a236-623032356235/21890839.jpg" },
-  { id: "cat5d-10", name: "Cat5D 10 — Cat 5D koleksiyonu", image: "https://static.tildacdn.com/stor6135-3764-4561-a135-666239356334/11718340.jpg" },
+  { id: "cat5d-01", name: "Cat5D 01 — Gel polish ALBI Cat 5D", image: "https://static.tildacdn.com/stor3065-3032-4136-b132-616365363664/33328796.jpg" },
+  { id: "cat5d-02", name: "Cat5D 02 — Gel polish ALBI Cat 5D", image: "https://static.tildacdn.com/stor3535-3261-4161-a434-613337393138/21691124.jpg" },
+  { id: "cat5d-03", name: "Cat5D 03 — Gel polish ALBI Cat 5D", image: "https://static.tildacdn.com/stor3635-6661-4461-b865-633361303365/15280449.jpg" },
+  { id: "cat5d-04", name: "Cat5D 04 — Gel polish ALBI Cat 5D", image: "https://static.tildacdn.com/stor3334-6630-4732-b739-616163333963/88657966.jpg" },
+  { id: "cat5d-05", name: "Cat5D 05 — Gel polish ALBI Cat 5D", image: "https://static.tildacdn.com/stor6463-3039-4566-a535-303934313335/73968461.jpg" },
+  { id: "cat5d-06", name: "Cat5D 06 — Gel polish ALBI Cat 5D", image: "https://static.tildacdn.com/stor6265-6437-4437-b663-313938303639/72797110.jpg" },
+  { id: "cat5d-07", name: "Cat5D 07 — Gel polish ALBI Cat 5D", image: "https://static.tildacdn.com/stor6666-6339-4166-a439-666238326330/76983987.jpg" },
+  { id: "cat5d-08", name: "Cat5D 08 — Gel polish ALBI Cat 5D", image: "https://static.tildacdn.com/stor3230-6438-4038-b161-623264656265/66922619.jpg" },
+  { id: "cat5d-09", name: "Cat5D 09 — Gel polish ALBI Cat 5D", image: "https://static.tildacdn.com/stor3434-6565-4439-b737-363833336135/23161181.jpg" },
+  { id: "cat5d-10", name: "Cat5D 10 — Gel polish ALBI Cat 5D", image: "https://static.tildacdn.com/stor3766-3335-4834-a563-356162633163/93074630.jpg" },
 ];
 
 /** Tilda albinails.com — Gel polish Albi Prizmatic (7 Color varyantı; ortak seri kartı + modal). */
@@ -485,55 +472,59 @@ const AUTUMN_SERIES_PRODUCT_SEED = [
   { id: "autumn-05", name: "Sonbahar 05 — Sonbahar koleksiyonu", image: "https://static.tildacdn.com/stor3061-6435-4764-a537-386230366335/91055748.jpg" },
 ];
 
-/** Tilda albinails.ru — Star koleksiyonu STAR COLLECTION 1–19 (19 ton; ortak seri kartı + modal). */
+/** Tilda albinails.com — Star koleksiyonu STAR COLLECTION 1–19 (19 ton; 1–10 kartı slider + 11–19). */
 const STAR_SERIES = "Star koleksiyonu (STAR COLLECTION) — 19 jel oje";
 const STAR_SERIES_GALLERY = [
-  "https://static.tildacdn.com/stor3630-6234-4136-a461-323631313434/78723559.jpg",
-  "https://static.tildacdn.com/stor3332-3538-4464-a362-633833613564/21583509.jpg",
-  "https://static.tildacdn.com/stor3064-6334-4334-b364-396361373633/92605972.jpg",
-  "https://static.tildacdn.com/stor3665-3562-4063-b166-303138313639/42474026.jpg",
-  "https://static.tildacdn.com/stor6565-3735-4131-b735-346637613238/38613507.jpg",
-  "https://static.tildacdn.com/stor3634-6561-4038-b266-383363613739/50878891.jpg",
-  "https://static.tildacdn.com/stor6566-3035-4238-b033-666366326334/94431169.jpg",
-  "https://static.tildacdn.com/stor3061-6639-4432-b961-313663626332/87885818.jpg",
-  "https://static.tildacdn.com/stor6661-3630-4534-a664-353535666433/99781169.jpg",
+  "https://static.tildacdn.com/tild3663-6634-4235-b236-653136383664/Star_1-10.jpg",
   "https://static.tildacdn.com/stor6234-3433-4334-b335-616130366564/28741546.jpg",
-  "https://static.tildacdn.com/stor6362-6436-4165-a165-643364643630/84785961.jpg",
+  "https://static.tildacdn.com/stor6661-3630-4534-a664-353535666433/99781169.jpg",
+  "https://static.tildacdn.com/stor3061-6639-4432-b961-313663626332/87885818.jpg",
+  "https://static.tildacdn.com/stor6566-3035-4238-b033-666366326334/94431169.jpg",
+  "https://static.tildacdn.com/stor3634-6561-4038-b266-383363613739/50878891.jpg",
+  "https://static.tildacdn.com/stor6565-3735-4131-b735-346637613238/38613507.jpg",
+  "https://static.tildacdn.com/stor3665-3562-4063-b166-303138313639/42474026.jpg",
+  "https://static.tildacdn.com/stor3064-6334-4334-b364-396361373633/92605972.jpg",
+  "https://static.tildacdn.com/stor3332-3538-4464-a362-633833613564/21583509.jpg",
+  "https://static.tildacdn.com/tild3535-6434-4930-a232-363737623537/Star_11-19.jpg",
   "https://static.tildacdn.com/stor6136-3732-4962-b839-666432616332/57152986.jpg",
   "https://static.tildacdn.com/stor3231-6362-4835-b834-643861343336/87499074.jpg",
   "https://static.tildacdn.com/stor3665-3730-4530-b361-626430306362/12939802.jpg",
+  "https://static.tildacdn.com/stor3336-3435-4461-b964-636532396135/66633176.jpg",
   "https://static.tildacdn.com/stor6432-6431-4661-b636-656432383234/52253862.jpg",
   "https://static.tildacdn.com/stor3632-6364-4037-b861-346336666239/36943954.jpg",
   "https://static.tildacdn.com/stor6230-6337-4362-a162-643261643830/71880384.jpg",
-  "https://static.tildacdn.com/stor3336-3435-4461-b964-636532396135/66633176.jpg",
   "https://static.tildacdn.com/stor6561-3965-4536-b331-653263656630/56646347.jpg",
 ];
 const STAR_SERIES_ABOUT =
-  "ALBI Star (STAR COLLECTION / Звезда): 19 ton. Tilda’da iki ürün kartı — «1–10» (Star1–Star10 / Star-1…Star-10) ve «11–19» (Star11–Star19 / Star-11…Star-19).\n\n" +
-  "Yoğun pigmentli, kendiliğinden dengeleyen yapı; 1–2 ince kat ile opaklık ayarlanır. Klasik kaplama, gradient ve nail art için uygundur. Hacim 15 ml.\n\n" +
-  "Bazı tonlar dönemsel stok dışı olabilir; güncel stok için Tilda mağazasına bakın.\n\n" +
-  "Saklama: serin ve kuru ortam, 10–26 °C; açıkken UV/LED ışığından uzak tutun. Kullanım öncesi şişeyi hafifçe yuvarlayın.";
+  "ALBI Star (STAR COLLECTION): 19 ton.\n\n" +
+  "«Gel polish Albi Star 1–10» (Star-1 … Star-10; renk 5 Tilda’da yok): https://albinails.com/shop/gelpolish/tproduct/703414475-859170482012-gel-polish-albi-star-1-10\n\n" +
+  "«Gel polish Albi Star 11–19» (Star-11 … Star-19): https://albinails.com/shop/gelpolish/tproduct/703414475-355239930822-gel-polish-albi-star-11-19\n\n" +
+  "Renk 18 için Tilda ürün kartında swatch görseli boş; katalogda vitrin görseli (Star_11-19) kullanılır.\n\n" +
+  "ALBI jel ojeler: yoğun pigment, orta-akıcı kıvam, kendiliğinden dengeleyen doku; 1–2 ince kat. Klasik kaplama, gradient ve nail art için uygundur.\n\n" +
+  "Kullanım (özet): tırnak hazırlığı; dehidrasyon ve primer. Baz LED’de kurutulur. Renk 1–2 ince kat, her kat ~60 sn LED. Üst cila LED’de kurutulur.\n\n" +
+  "Star-1 ve Star-2 (1–10 kartında) dönemsel stok dışı görünebilir; güncel stok için mağazaya bakın.\n\n" +
+  "Saklama: serin ve kuru ortam, 10–26 °C; açıkken UV/LED ışığından uzak tutun. Ekran rengi farklılık gösterebilir.";
 
 const STAR_SERIES_PRODUCT_SEED = [
-  { id: "star-01", name: "Star 01 — Star koleksiyonu", image: "https://static.tildacdn.com/stor3630-6234-4136-a461-323631313434/78723559.jpg" },
-  { id: "star-02", name: "Star 02 — Star koleksiyonu", image: "https://static.tildacdn.com/stor3332-3538-4464-a362-633833613564/21583509.jpg" },
-  { id: "star-03", name: "Star 03 — Star koleksiyonu", image: "https://static.tildacdn.com/stor3064-6334-4334-b364-396361373633/92605972.jpg" },
-  { id: "star-04", name: "Star 04 — Star koleksiyonu", image: "https://static.tildacdn.com/stor3665-3562-4063-b166-303138313639/42474026.jpg" },
-  { id: "star-05", name: "Star 05 — Star koleksiyonu", image: "https://static.tildacdn.com/stor6565-3735-4131-b735-346637613238/38613507.jpg" },
-  { id: "star-06", name: "Star 06 — Star koleksiyonu", image: "https://static.tildacdn.com/stor3634-6561-4038-b266-383363613739/50878891.jpg" },
-  { id: "star-07", name: "Star 07 — Star koleksiyonu", image: "https://static.tildacdn.com/stor6566-3035-4238-b033-666366326334/94431169.jpg" },
-  { id: "star-08", name: "Star 08 — Star koleksiyonu", image: "https://static.tildacdn.com/stor3061-6639-4432-b961-313663626332/87885818.jpg" },
-  { id: "star-09", name: "Star 09 — Star koleksiyonu", image: "https://static.tildacdn.com/stor6661-3630-4534-a664-353535666433/99781169.jpg" },
-  { id: "star-10", name: "Star 10 — Star koleksiyonu", image: "https://static.tildacdn.com/stor6234-3433-4334-b335-616130366564/28741546.jpg" },
-  { id: "star-11", name: "Star 11 — Star koleksiyonu", image: "https://static.tildacdn.com/stor6362-6436-4165-a165-643364643630/84785961.jpg" },
-  { id: "star-12", name: "Star 12 — Star koleksiyonu", image: "https://static.tildacdn.com/stor6136-3732-4962-b839-666432616332/57152986.jpg" },
-  { id: "star-13", name: "Star 13 — Star koleksiyonu", image: "https://static.tildacdn.com/stor3231-6362-4835-b834-643861343336/87499074.jpg" },
-  { id: "star-14", name: "Star 14 — Star koleksiyonu", image: "https://static.tildacdn.com/stor3665-3730-4530-b361-626430306362/12939802.jpg" },
-  { id: "star-15", name: "Star 15 — Star koleksiyonu", image: "https://static.tildacdn.com/stor6432-6431-4661-b636-656432383234/52253862.jpg" },
-  { id: "star-16", name: "Star 16 — Star koleksiyonu", image: "https://static.tildacdn.com/stor3632-6364-4037-b861-346336666239/36943954.jpg" },
-  { id: "star-17", name: "Star 17 — Star koleksiyonu", image: "https://static.tildacdn.com/stor6230-6337-4362-a162-643261643830/71880384.jpg" },
-  { id: "star-18", name: "Star 18 — Star koleksiyonu", image: "https://static.tildacdn.com/stor3336-3435-4461-b964-636532396135/66633176.jpg" },
-  { id: "star-19", name: "Star 19 — Star koleksiyonu", image: "https://static.tildacdn.com/stor6561-3965-4536-b331-653263656630/56646347.jpg" },
+  { id: "star-01", name: "Star-1 — Gel polish ALBI Star 1–10", image: "https://static.tildacdn.com/stor6234-3433-4334-b335-616130366564/28741546.jpg" },
+  { id: "star-02", name: "Star-2 — Gel polish ALBI Star 1–10", image: "https://static.tildacdn.com/stor6661-3630-4534-a664-353535666433/99781169.jpg" },
+  { id: "star-03", name: "Star-3 — Gel polish ALBI Star 1–10", image: "https://static.tildacdn.com/stor3061-6639-4432-b961-313663626332/87885818.jpg" },
+  { id: "star-04", name: "Star-4 — Gel polish ALBI Star 1–10", image: "https://static.tildacdn.com/stor6566-3035-4238-b033-666366326334/94431169.jpg" },
+  { id: "star-05", name: "Star-5 — Gel polish ALBI Star 1–10", image: "https://static.tildacdn.com/tild3663-6634-4235-b236-653136383664/Star_1-10.jpg" },
+  { id: "star-06", name: "Star-6 — Gel polish ALBI Star 1–10", image: "https://static.tildacdn.com/stor3634-6561-4038-b266-383363613739/50878891.jpg" },
+  { id: "star-07", name: "Star-7 — Gel polish ALBI Star 1–10", image: "https://static.tildacdn.com/stor6565-3735-4131-b735-346637613238/38613507.jpg" },
+  { id: "star-08", name: "Star-8 — Gel polish ALBI Star 1–10", image: "https://static.tildacdn.com/stor3665-3562-4063-b166-303138313639/42474026.jpg" },
+  { id: "star-09", name: "Star-9 — Gel polish ALBI Star 1–10", image: "https://static.tildacdn.com/stor3064-6334-4334-b364-396361373633/92605972.jpg" },
+  { id: "star-10", name: "Star-10 — Gel polish ALBI Star 1–10", image: "https://static.tildacdn.com/stor3332-3538-4464-a362-633833613564/21583509.jpg" },
+  { id: "star-11", name: "Star-11 — Gel polish ALBI Star 11–19", image: "https://static.tildacdn.com/stor6136-3732-4962-b839-666432616332/57152986.jpg" },
+  { id: "star-12", name: "Star-12 — Gel polish ALBI Star 11–19", image: "https://static.tildacdn.com/stor3231-6362-4835-b834-643861343336/87499074.jpg" },
+  { id: "star-13", name: "Star-13 — Gel polish ALBI Star 11–19", image: "https://static.tildacdn.com/stor3665-3730-4530-b361-626430306362/12939802.jpg" },
+  { id: "star-14", name: "Star-14 — Gel polish ALBI Star 11–19", image: "https://static.tildacdn.com/stor3336-3435-4461-b964-636532396135/66633176.jpg" },
+  { id: "star-15", name: "Star-15 — Gel polish ALBI Star 11–19", image: "https://static.tildacdn.com/stor6432-6431-4661-b636-656432383234/52253862.jpg" },
+  { id: "star-16", name: "Star-16 — Gel polish ALBI Star 11–19", image: "https://static.tildacdn.com/stor3632-6364-4037-b861-346336666239/36943954.jpg" },
+  { id: "star-17", name: "Star-17 — Gel polish ALBI Star 11–19", image: "https://static.tildacdn.com/stor6230-6337-4362-a162-643261643830/71880384.jpg" },
+  { id: "star-18", name: "Star-18 — Gel polish ALBI Star 11–19", image: "https://static.tildacdn.com/tild3535-6434-4930-a232-363737623537/Star_11-19.jpg" },
+  { id: "star-19", name: "Star-19 — Gel polish ALBI Star 11–19", image: "https://static.tildacdn.com/stor6561-3965-4536-b331-653263656630/56646347.jpg" },
 ];
 
 /** Tilda albinails.ru — Metal koleksiyonu METALLIC COLLECTION (8 ton; ortak seri kartı + modal). */
@@ -657,6 +648,49 @@ const SILK_CAT_SERIES_PRODUCT_SEED = [
   { id: "silkcat-22", name: "SILK CAT 22 — İpek kediler", image: "https://static.tildacdn.com/stor6633-3166-4332-b436-313938656162/fed1e3aeb702b94669039485047b373b.jpg" },
 ];
 
+/** Tilda albinails.com — Gel polish ALBI Shine Cat (SHINE; 6 renk, SKU ShineCat-1 … ShineCat-6). */
+const SHINE_CAT_SERIES = "SHINE CAT — manyetik jel oje (6 ton)";
+const SHINE_CAT_SERIES_GALLERY = [
+  "https://static.tildacdn.com/stor3465-3966-4563-b865-343638623333/12019996.jpg",
+  "https://static.tildacdn.com/tild3033-3366-4261-b164-623261653439/Shine_Cat_1-6__.jpg",
+  "https://static.tildacdn.com/stor6530-6233-4530-b334-656336376235/75993941.jpg",
+  "https://static.tildacdn.com/stor3138-6363-4162-b135-383535653363/48429069.jpg",
+  "https://static.tildacdn.com/stor3931-6263-4232-a537-366436626262/15383582.jpg",
+  "https://static.tildacdn.com/stor3730-6261-4465-b838-333338653964/96414527.jpg",
+  "https://static.tildacdn.com/stor3138-6663-4532-b035-336433386233/98625130.jpg",
+  "https://static.tildacdn.com/stor3861-3866-4832-a663-313839376331/52891652.jpg",
+  "https://static.tildacdn.com/stor6138-3266-4535-b937-393933303836/27650450.jpg",
+  "https://static.tildacdn.com/stor3932-6664-4261-b938-336335316330/66127967.jpg",
+  "https://static.tildacdn.com/stor6132-6331-4066-b435-626330646134/82073849.jpg",
+  "https://static.tildacdn.com/stor6537-6131-4434-b564-623065313239/42291291.jpg",
+  "https://static.tildacdn.com/stor3261-3363-4434-b164-393062373337/32226920.jpg",
+  "https://static.tildacdn.com/stor3730-3932-4138-b264-623034653138/40682076.jpg",
+  "https://static.tildacdn.com/stor3361-3339-4161-a461-383937393339/96013332.jpg",
+  "https://static.tildacdn.com/stor3433-3363-4164-b239-396335303465/84025976.jpg",
+  "https://static.tildacdn.com/stor3035-3062-4664-b737-336637653763/61822905.jpg",
+  "https://static.tildacdn.com/stor3835-3062-4532-b562-316262643233/37875929.jpg",
+  "https://static.tildacdn.com/stor3432-6134-4166-a231-366233346363/83446611.jpg",
+  "https://static.tildacdn.com/stor3863-3536-4063-b838-343737336664/84057045.jpg",
+];
+const SHINE_CAT_SERIES_ABOUT =
+  "Gel polish ALBI Shine Cat — SHINE serisi (Tilda ürün metni): yeni nesil kedi gözü formatı; manyetik parçacıkların parlaklığı ve derinlik etkisi.\n\n" +
+  "ALBI ekibi trendleri takip eder; SHINE koleksiyonunun büyüsüne ilk siz dokunun. Işıkta ve açıda parlayan tonlar; sıra dışı manikürlere ilham verir.\n\n" +
+  "Siyah alt bazda tam spektrum yoğunluğu; beyaz üzerinde daha zarif, yumuşak bir etki (Tilda açıklaması). Manyetik parçacıklar özel mıknatısla desenlenir; farklı ışık ve açıda parlar, hacimli desen hissi verir. Metinde ayrıca siyah alt katman zorunlu değildir ifadesi de geçer — uygulama tercihinize göre baz rengi seçin.\n\n" +
+  "ALBI jel ojeler: yoğun pigment, orta-akıcı kıvam, kendiliğinden dengeleyen doku; 1–2 ince kat. Klasik kaplama, gradient ve nail art için uygundur.\n\n" +
+  "Kullanım (özet): tırnak hazırlığı; dehidrasyon ve primer. Baz LED’de kurutulur. Renk 1–2 ince kat, her kat ~60 sn LED. Üst cila LED’de kurutulur.\n\n" +
+  "Ürün sayfası: https://albinails.com/shop/gelpolish/tproduct/703414475-306311311512-gel-polish-albi-shine-cat\n\n" +
+  "Saklama: serin ve kuru ortam, doğrudan güneşten uzak; 10–26 °C. Açıkken şişe ve fırçayı UV/LED ışığından koruyun. Ekran rengi farklılık gösterebilir.\n\n" +
+  "Varyantlar: SKU ShineCat-1 … ShineCat-6 (katalogda shinecat-01 … shinecat-06). Hacim için mağazaya bakın.";
+
+const SHINE_CAT_SERIES_PRODUCT_SEED = [
+  { id: "shinecat-01", name: "ShineCat-1 — Gel polish ALBI Shine Cat", image: "https://static.tildacdn.com/stor6530-6233-4530-b334-656336376235/75993941.jpg" },
+  { id: "shinecat-02", name: "ShineCat-2 — Gel polish ALBI Shine Cat", image: "https://static.tildacdn.com/stor3138-6663-4532-b035-336433386233/98625130.jpg" },
+  { id: "shinecat-03", name: "ShineCat-3 — Gel polish ALBI Shine Cat", image: "https://static.tildacdn.com/stor3932-6664-4261-b938-336335316330/66127967.jpg" },
+  { id: "shinecat-04", name: "ShineCat-4 — Gel polish ALBI Shine Cat", image: "https://static.tildacdn.com/stor3730-3932-4138-b264-623034653138/40682076.jpg" },
+  { id: "shinecat-05", name: "ShineCat-5 — Gel polish ALBI Shine Cat", image: "https://static.tildacdn.com/stor3433-3363-4164-b239-396335303465/84025976.jpg" },
+  { id: "shinecat-06", name: "ShineCat-6 — Gel polish ALBI Shine Cat", image: "https://static.tildacdn.com/stor3863-3536-4063-b838-343737336664/84057045.jpg" },
+];
+
 /** Tilda albinails.com — French jel oje (01–09) + French manicure kit seti. */
 const FRENCH_SERIES = "French koleksiyonu — Fransız serisi (01–09)";
 /** French manicure kit ürün sayfası slider (t-slds) + vitrin görselleri. */
@@ -728,6 +762,1227 @@ const MEN_WOMEN_SERIES_ABOUT =
   "Farklı karakterler; birlikte uyumlu çiftler oluşturur. Stok sınırlıdır.\n\n" +
   "Tilda setinde: çıkarılmış tipserler (etiketli) ve ALBI kurucusu Kristina Lvova’dan kadın meditasyonu / afirmasyonu için QR’lı kart hediyesi anlatılır; kampanya ve fiyat için mağaza bilgisine bakın.\n\n" +
   "Saklama: serin ve kuru ortam, 10–26 °C; açıkken UV/LED ışığından uzak tutun.";
+
+/** Tilda — ALBI Sculptural gel Papaya (tek renk; galeri küçük resim sırasıyla uyumlu). */
+const ALBI_SCULPTURAL_GEL_PAPAYA_SERIES = "ALBI Sculptural gel — Papaya";
+const ALBI_SCULPTURAL_GEL_PAPAYA_GALLERY = [
+  "https://static.tildacdn.com/stor3235-3431-4666-b861-396466613935/46344736.jpg",
+  "https://static.tildacdn.com/stor3561-3964-4235-b235-643339376537/89438924.jpg",
+  "https://static.tildacdn.com/tild3338-3334-4738-b335-303539306239/skulptural_gel_Limit.jpg",
+];
+const ALBI_SCULPTURAL_GEL_PAPAYA_ABOUT =
+  "ALBI Sculptural gel — Papaya (SKU: Papaya): modelleme / yapılandırma için sculptural jel.\n\n" +
+  "Özellikler (Tilda ürün metni):\n" +
+  "• Akıcı kıvam: kolay uygulama ve kendiliğinden dengeleme.\n" +
+  "• Kamuflaj tonları: serbest kenarı iyi kapatır, tırnak eti hizasında transparanlık korur.\n" +
+  "• Çok yönlülük: modelleme, renk düzeltme ve doğal tırnak güçlendirme için uygundur.\n" +
+  "• Hızlı kürlenme: hibrit lambada yaklaşık 60 saniye.\n" +
+  "• Düşük tüketim: az ürünle verimli kullanım.\n" +
+  "• Kolay çıkarma: freze ile rahat kaldırılabilir.\n\n" +
+  "Baz kat gerektirir.\n\n" +
+  "Tilda’da boyut: 5 ml / 15 ml seçenekleri; mağazada 15 ml satırı görünür. Kesin stok ve fiyat için mağazaya bakın.\n\n" +
+  "Saklama: serin ve kuru ortam, 10–26 °C; açıkken UV/LED ışığından uzak tutun.";
+
+/** Tilda — ALBI Sculptural gel Peach (vitrin + küçük resim sırası). */
+const ALBI_SCULPTURAL_GEL_PEACH_SERIES = "ALBI Sculptural gel — Peach";
+const ALBI_SCULPTURAL_GEL_PEACH_GALLERY = [
+  "https://static.tildacdn.com/stor3833-3736-4366-b233-396339373765/87841160.jpg",
+  "https://static.tildacdn.com/tild3338-3334-4738-b335-303539306239/skulptural_gel_Limit.jpg",
+  "https://static.tildacdn.com/stor6464-3331-4330-b664-643836663165/46434841.jpg",
+];
+const ALBI_SCULPTURAL_GEL_PEACH_ABOUT =
+  "ALBI Sculptural gel — Peach (SKU: Peach): modelleme / yapılandırma için sculptural jel.\n\n" +
+  "Özellikler (Tilda ürün metni):\n" +
+  "• Akıcı kıvam: kolay uygulama ve kendiliğinden dengeleme.\n" +
+  "• Kamuflaj tonları: serbest kenarı iyi kapatır, tırnak eti hizasında transparanlık korur.\n" +
+  "• Çok yönlülük: modelleme, renk düzeltme ve doğal tırnak güçlendirme için uygundur.\n" +
+  "• Hızlı kürlenme: hibrit lambada yaklaşık 60 saniye.\n" +
+  "• Düşük tüketim: az ürünle verimli kullanım.\n" +
+  "• Kolay çıkarma: freze ile rahat kaldırılabilir.\n\n" +
+  "Baz kat gerektirir.\n\n" +
+  "Tilda’da boyut: 5 ml / 15 ml seçenekleri; fiyat örneği 15 ml 55 AED, 5 ml 19 AED (stok mağazaya göre değişir). Kesin stok ve fiyat için mağazaya bakın.\n\n" +
+  "Saklama: serin ve kuru ortam, 10–26 °C; açıkken UV/LED ışığından uzak tutun.";
+
+/** Tilda — ALBI Sculptural gel Banana (vitrin + küçük resim sırası). */
+const ALBI_SCULPTURAL_GEL_BANANA_SERIES = "ALBI Sculptural gel — Banana";
+const ALBI_SCULPTURAL_GEL_BANANA_GALLERY = [
+  "https://static.tildacdn.com/stor3536-3963-4237-a261-623765376665/51058518.jpg",
+  "https://static.tildacdn.com/tild3338-3334-4738-b335-303539306239/skulptural_gel_Limit.jpg",
+  "https://static.tildacdn.com/stor6339-6366-4532-b763-663934306432/65580408.jpg",
+];
+const ALBI_SCULPTURAL_GEL_BANANA_ABOUT =
+  "ALBI Sculptural gel — Banana (SKU: Banana): modelleme / yapılandırma için sculptural jel.\n\n" +
+  "Özellikler (Tilda ürün metni):\n" +
+  "• Akıcı kıvam: kolay uygulama ve kendiliğinden dengeleme.\n" +
+  "• Kamuflaj tonları: serbest kenarı iyi kapatır, tırnak eti hizasında transparanlık korur.\n" +
+  "• Çok yönlülük: modelleme, renk düzeltme ve doğal tırnak güçlendirme için uygundur.\n" +
+  "• Hızlı kürlenme: hibrit lambada yaklaşık 60 saniye.\n" +
+  "• Düşük tüketim: az ürünle verimli kullanım.\n" +
+  "• Kolay çıkarma: freze ile rahat kaldırılabilir.\n\n" +
+  "Baz kat gerektirir.\n\n" +
+  "Tilda’da boyut: 5 ml / 15 ml seçenekleri; fiyat örneği 15 ml 55 AED, 5 ml 19 AED (stok mağazaya göre değişir). Kesin stok ve fiyat için mağazaya bakın.\n\n" +
+  "Saklama: serin ve kuru ortam, 10–26 °C; açıkken UV/LED ışığından uzak tutun.";
+
+/** Tilda — ALBI Sculptural gel Aqua (vitrin + küçük resim sırası). */
+const ALBI_SCULPTURAL_GEL_AQUA_SERIES = "ALBI Sculptural gel — Aqua";
+const ALBI_SCULPTURAL_GEL_AQUA_GALLERY = [
+  "https://static.tildacdn.com/stor6237-3662-4331-b437-633163646436/71998450.jpg",
+  "https://static.tildacdn.com/tild3338-3334-4738-b335-303539306239/skulptural_gel_Limit.jpg",
+  "https://static.tildacdn.com/stor3134-3534-4366-b331-313561646332/34115759.jpg",
+];
+const ALBI_SCULPTURAL_GEL_AQUA_ABOUT =
+  "ALBI Sculptural gel — Aqua (SKU: Aqua): modelleme / yapılandırma için sculptural jel.\n\n" +
+  "Özellikler (Tilda ürün metni):\n" +
+  "• Akıcı kıvam: kolay uygulama ve kendiliğinden dengeleme.\n" +
+  "• Kamuflaj tonları: serbest kenarı iyi kapatır, tırnak eti hizasında transparanlık korur.\n" +
+  "• Çok yönlülük: modelleme, renk düzeltme ve doğal tırnak güçlendirme için uygundur.\n" +
+  "• Hızlı kürlenme: hibrit lambada yaklaşık 60 saniye.\n" +
+  "• Düşük tüketim: az ürünle verimli kullanım.\n" +
+  "• Kolay çıkarma: freze ile rahat kaldırılabilir.\n\n" +
+  "Baz kat gerektirir.\n\n" +
+  "Tilda’da boyut: 5 ml / 15 ml seçenekleri; fiyat örneği 15 ml 55 AED, 5 ml 19 AED (stok mağazaya göre değişir). Kesin stok ve fiyat için mağazaya bakın.\n\n" +
+  "Saklama: serin ve kuru ortam, 10–26 °C; açıkken UV/LED ışığından uzak tutun.";
+
+/** Tilda — ALBI Sculptural gel Cloud (vitrin + küçük resim sırası). */
+const ALBI_SCULPTURAL_GEL_CLOUD_SERIES = "ALBI Sculptural gel — Cloud";
+const ALBI_SCULPTURAL_GEL_CLOUD_GALLERY = [
+  "https://static.tildacdn.com/stor3762-3534-4033-b165-313434326365/75630950.jpg",
+  "https://static.tildacdn.com/tild3338-3334-4738-b335-303539306239/skulptural_gel_Limit.jpg",
+  "https://static.tildacdn.com/stor3362-3761-4964-b565-316531303533/11646927.jpg",
+];
+const ALBI_SCULPTURAL_GEL_CLOUD_ABOUT =
+  "ALBI Sculptural gel — Cloud (SKU: Cloud): modelleme / yapılandırma için sculptural jel.\n\n" +
+  "Özellikler (Tilda ürün metni):\n" +
+  "• Akıcı kıvam: kolay uygulama ve kendiliğinden dengeleme.\n" +
+  "• Kamuflaj tonları: serbest kenarı iyi kapatır, tırnak eti hizasında transparanlık korur.\n" +
+  "• Çok yönlülük: modelleme, renk düzeltme ve doğal tırnak güçlendirme için uygundur.\n" +
+  "• Hızlı kürlenme: hibrit lambada yaklaşık 60 saniye.\n" +
+  "• Düşük tüketim: az ürünle verimli kullanım.\n" +
+  "• Kolay çıkarma: freze ile rahat kaldırılabilir.\n\n" +
+  "Baz kat gerektirir.\n\n" +
+  "Tilda’da boyut: 5 ml / 15 ml seçenekleri; fiyat örneği 15 ml 55 AED, 5 ml 19 AED (stok mağazaya göre değişir). Kesin stok ve fiyat için mağazaya bakın.\n\n" +
+  "Saklama: serin ve kuru ortam, 10–26 °C; açıkken UV/LED ışığından uzak tutun.";
+
+/** Tilda — ALBI Sculptural gel Orchid (vitrin + küçük resim sırası). */
+const ALBI_SCULPTURAL_GEL_ORCHID_SERIES = "ALBI Sculptural gel — Orchid";
+const ALBI_SCULPTURAL_GEL_ORCHID_GALLERY = [
+  "https://static.tildacdn.com/stor3861-3461-4733-b864-666461646539/46891927.jpg",
+  "https://static.tildacdn.com/tild3338-3334-4738-b335-303539306239/skulptural_gel_Limit.jpg",
+  "https://static.tildacdn.com/stor3131-3535-4365-a133-383363326438/94359378.jpg",
+];
+const ALBI_SCULPTURAL_GEL_ORCHID_ABOUT =
+  "ALBI Sculptural gel — Orchid (SKU: Orchid): modelleme / yapılandırma için sculptural jel.\n\n" +
+  "Özellikler (Tilda ürün metni):\n" +
+  "• Akıcı kıvam: kolay uygulama ve kendiliğinden dengeleme.\n" +
+  "• Kamuflaj tonları: serbest kenarı iyi kapatır, tırnak eti hizasında transparanlık korur.\n" +
+  "• Çok yönlülük: modelleme, renk düzeltme ve doğal tırnak güçlendirme için uygundur.\n" +
+  "• Hızlı kürlenme: hibrit lambada yaklaşık 60 saniye.\n" +
+  "• Düşük tüketim: az ürünle verimli kullanım.\n" +
+  "• Kolay çıkarma: freze ile rahat kaldırılabilir.\n\n" +
+  "Baz kat gerektirir.\n\n" +
+  "Tilda’da boyut: 5 ml / 15 ml seçenekleri; fiyat örneği 15 ml 55 AED, 5 ml 19 AED (stok mağazaya göre değişir). Kesin stok ve fiyat için mağazaya bakın.\n\n" +
+  "Saklama: serin ve kuru ortam, 10–26 °C; açıkken UV/LED ışığından uzak tutun.";
+
+/** Tilda — ALBI Sculptural gel Azure (vitrin + küçük resim sırası). */
+const ALBI_SCULPTURAL_GEL_AZURE_SERIES = "ALBI Sculptural gel — Azure";
+const ALBI_SCULPTURAL_GEL_AZURE_GALLERY = [
+  "https://static.tildacdn.com/stor3733-6365-4531-a637-353966353437/20544292.jpg",
+  "https://static.tildacdn.com/tild3338-3334-4738-b335-303539306239/skulptural_gel_Limit.jpg",
+  "https://static.tildacdn.com/stor3966-6263-4463-a433-626265336164/66576511.jpg",
+];
+const ALBI_SCULPTURAL_GEL_AZURE_ABOUT =
+  "ALBI Sculptural gel — Azure (SKU: Azure): modelleme / yapılandırma için sculptural jel.\n\n" +
+  "Özellikler (Tilda ürün metni):\n" +
+  "• Akıcı kıvam: kolay uygulama ve kendiliğinden dengeleme.\n" +
+  "• Kamuflaj tonları: serbest kenarı iyi kapatır, tırnak eti hizasında transparanlık korur.\n" +
+  "• Çok yönlülük: modelleme, renk düzeltme ve doğal tırnak güçlendirme için uygundur.\n" +
+  "• Hızlı kürlenme: hibrit lambada yaklaşık 60 saniye.\n" +
+  "• Düşük tüketim: az ürünle verimli kullanım.\n" +
+  "• Kolay çıkarma: freze ile rahat kaldırılabilir.\n\n" +
+  "Baz kat gerektirir.\n\n" +
+  "Tilda’da boyut: 5 ml / 15 ml seçenekleri; fiyat örneği 15 ml 55 AED, 5 ml 19 AED (stok mağazaya göre değişir). Kesin stok ve fiyat için mağazaya bakın.\n\n" +
+  "Saklama: serin ve kuru ortam, 10–26 °C; açıkken UV/LED ışığından uzak tutun.";
+
+/** Tilda — ALBI Sculptural gel Innocent (vitrin + küçük resim sırası; dosya adı Tilda’da «inocent»). */
+const ALBI_SCULPTURAL_GEL_INNOCENT_SERIES = "ALBI Sculptural gel — Innocent";
+const ALBI_SCULPTURAL_GEL_INNOCENT_GALLERY = [
+  "https://static.tildacdn.com/tild3939-6239-4938-a630-326663313736/inocent.jpg",
+  "https://static.tildacdn.com/stor6235-3539-4465-b430-363263393561/43827503.jpg",
+];
+const ALBI_SCULPTURAL_GEL_INNOCENT_ABOUT =
+  "ALBI Sculptural gel — Innocent (Tilda vitrin SKU: INNOCENT; 5 ml varyant SKU: INNOCENT-4): modelleme / yapılandırma için sculptural jel.\n\n" +
+  "Özellikler (Tilda ürün metni):\n" +
+  "• Akıcı kıvam: kolay uygulama ve kendiliğinden dengeleme.\n" +
+  "• Kamuflaj tonları: serbest kenarı iyi kapatır, tırnak eti hizasında transparanlık korur.\n" +
+  "• Çok yönlülük: modelleme, renk düzeltme ve doğal tırnak güçlendirme için uygundur.\n" +
+  "• Hızlı kürlenme: hibrit lambada yaklaşık 60 saniye.\n" +
+  "• Düşük tüketim: az ürünle verimli kullanım.\n" +
+  "• Kolay çıkarma: freze ile rahat kaldırılabilir.\n\n" +
+  "Baz kat gerektirir.\n\n" +
+  "Tilda’da boyut: 5 / 15 / 30 / 50 ml; fiyat örnekleri 5 ml 19 AED, 15 ml 55 AED, 30 ml 85 AED, 50 ml 130 AED (stok mağazaya göre değişir).\n\n" +
+  "Saklama: serin ve kuru ortam, 10–26 °C; açıkken UV/LED ışığından uzak tutun.";
+
+/** Tilda — ALBI Sculptural gel Champagne (tek vitrin görseli). */
+const ALBI_SCULPTURAL_GEL_CHAMPAGNE_SERIES = "ALBI Sculptural gel — Champagne";
+const ALBI_SCULPTURAL_GEL_CHAMPAGNE_GALLERY = [
+  "https://static.tildacdn.com/tild3439-6131-4163-a537-646636373632/champagne.jpg",
+];
+const ALBI_SCULPTURAL_GEL_CHAMPAGNE_ABOUT =
+  "ALBI Sculptural gel — Champagne (Tilda vitrin SKU: CHAMPAGNE; renk seçimi: CHAMPAGNE): modelleme / yapılandırma için sculptural jel.\n\n" +
+  "Özellikler (Tilda ürün metni):\n" +
+  "• Akıcı kıvam: kolay uygulama ve kendiliğinden dengeleme.\n" +
+  "• Kamuflaj tonları: serbest kenarı iyi kapatır, tırnak eti hizasında transparanlık korur.\n" +
+  "• Çok yönlülük: modelleme, renk düzeltme ve doğal tırnak güçlendirme için uygundur.\n" +
+  "• Hızlı kürlenme: hibrit lambada yaklaşık 60 saniye.\n" +
+  "• Düşük tüketim: az ürünle verimli kullanım.\n" +
+  "• Kolay çıkarma: freze ile rahat kaldırılabilir.\n\n" +
+  "Baz kat gerektirir.\n\n" +
+  "Tilda’da boyut: 5 / 15 / 30 / 50 ml; fiyat örnekleri 5 ml 19 AED, 15 ml 55 AED, 30 ml 85 AED, 50 ml 130 AED (stok mağazaya göre değişir).\n\n" +
+  "Saklama: serin ve kuru ortam, 10–26 °C; açıkken UV/LED ışığından uzak tutun.";
+
+/** Tilda — ALBI Sculptural gel Gentle (vitrin + küçük resim sırası). */
+const ALBI_SCULPTURAL_GEL_GENTLE_SERIES = "ALBI Sculptural gel — Gentle";
+const ALBI_SCULPTURAL_GEL_GENTLE_GALLERY = [
+  "https://static.tildacdn.com/tild3237-3130-4461-b730-633930343639/gentle.jpg",
+  "https://static.tildacdn.com/stor6235-3835-4238-b266-623538393833/67041486.jpg",
+];
+const ALBI_SCULPTURAL_GEL_GENTLE_ABOUT =
+  "ALBI Sculptural gel — Gentle (Tilda vitrin SKU: GENTLE; renk seçimi: GENTLE): modelleme / yapılandırma için sculptural jel.\n\n" +
+  "Özellikler (Tilda ürün metni):\n" +
+  "• Akıcı kıvam: kolay uygulama ve kendiliğinden dengeleme.\n" +
+  "• Kamuflaj tonları: serbest kenarı iyi kapatır, tırnak eti hizasında transparanlık korur.\n" +
+  "• Çok yönlülük: modelleme, renk düzeltme ve doğal tırnak güçlendirme için uygundur.\n" +
+  "• Hızlı kürlenme: hibrit lambada yaklaşık 60 saniye.\n" +
+  "• Düşük tüketim: az ürünle verimli kullanım.\n" +
+  "• Kolay çıkarma: freze ile rahat kaldırılabilir.\n\n" +
+  "Baz kat gerektirir.\n\n" +
+  "Tilda’da boyut: 5 / 15 / 30 / 50 ml; fiyat örnekleri 5 ml 19 AED, 15 ml 55 AED, 30 ml 85 AED, 50 ml 130 AED (stok mağazaya göre değişir).\n\n" +
+  "Saklama: serin ve kuru ortam, 10–26 °C; açıkken UV/LED ışığından uzak tutun.";
+
+/** Tilda — ALBI Cream gel Beige (vitrin + ikinci küçük resim sırası; sculptural değil). */
+const ALBI_CREAM_GEL_BEIGE_SERIES = "ALBI Cream gel — Beige";
+const ALBI_CREAM_GEL_BEIGE_GALLERY = [
+  "https://static.tildacdn.com/tild3266-6566-4663-b533-343434666338/__Beige.jpg",
+  "https://static.tildacdn.com/stor6138-3064-4536-a231-363237343838/93712533.jpg",
+];
+const ALBI_CREAM_GEL_BEIGE_ABOUT =
+  "ALBI Cream gel — Beige (Tilda vitrin SKU: Beige_15; renk seçimi: Beige): yapı ve estetik için cream gel hattı.\n\n" +
+  "Özellikler (Tilda ürün metni):\n" +
+  "• Orta–kalın kıvam.\n" +
+  "• İyi kendiliğinden dengeleme.\n" +
+  "• Polimerizasyon sırasında minimal yanma hissi.\n" +
+  "• İnce tırnakları da kırılmaya karşı korur.\n" +
+  "• Törpülemeden güçlendirme tekniklerine uygun.\n\n" +
+  "Aynı cream gel hattında Tilda’da üç ton anlatılır: MILK (hindistan cevizi tonu), BEIGE (klasik bej), ROSE (kremsi açık ton). Bu satır BEIGE tonu içindir.\n\n" +
+  "Tilda’da boyut: 5 / 15 / 30 / 50 ml; fiyat örnekleri 5 ml 19 AED, 15 ml 55 AED, 30 ml 85 AED, 50 ml 130 AED (stok mağazaya göre değişir).\n\n" +
+  "Saklama: serin ve kuru ortam, 10–26 °C; açıkken UV/LED ışığından uzak tutun.";
+
+/** Tilda — ALBI Cream gel Rose (vitrin + ikinci küçük resim sırası; sculptural değil). */
+const ALBI_CREAM_GEL_ROSE_SERIES = "ALBI Cream gel — Rose";
+const ALBI_CREAM_GEL_ROSE_GALLERY = [
+  "https://static.tildacdn.com/tild3334-6335-4732-a564-653933623564/__Rose.jpg",
+  "https://static.tildacdn.com/stor3662-6537-4332-b833-623065343132/41998638.jpg",
+];
+const ALBI_CREAM_GEL_ROSE_ABOUT =
+  "ALBI Cream gel — Rose (Tilda vitrin SKU: Rose_15; renk seçimi: Rose): yapı ve estetik için cream gel hattı.\n\n" +
+  "Özellikler (Tilda ürün metni):\n" +
+  "• Orta–kalın kıvam.\n" +
+  "• İyi kendiliğinden dengeleme.\n" +
+  "• Polimerizasyon sırasında minimal yanma hissi.\n" +
+  "• İnce tırnakları da kırılmaya karşı korur.\n" +
+  "• Törpülemeden güçlendirme tekniklerine uygun.\n\n" +
+  "Aynı cream gel hattında Tilda’da üç ton anlatılır: MILK (hindistan cevizi tonu), BEIGE (klasik bej), ROSE (kremsi açık ton). Bu satır ROSE tonu içindir.\n\n" +
+  "Tilda’da boyut: 5 / 15 / 30 / 50 ml; fiyat örnekleri 5 ml 19 AED, 15 ml 55 AED, 30 ml 85 AED, 50 ml 130 AED (stok mağazaya göre değişir).\n\n" +
+  "Saklama: serin ve kuru ortam, 10–26 °C; açıkken UV/LED ışığından uzak tutun.";
+
+/** Tilda — ALBI Sculptural gel NEW (çok renk; popup galeri küçük resim sırası). */
+const ALBI_SCULPTURAL_GEL_NEW_SERIES = "ALBI Sculptural gel — NEW";
+const ALBI_SCULPTURAL_GEL_NEW_GALLERY = [
+  "https://static.tildacdn.com/tild3132-3932-4539-b866-616230316333/IMG_2628.jpg",
+  "https://static.tildacdn.com/stor3665-3631-4139-b536-326364373661/27133724.jpg",
+  "https://static.tildacdn.com/stor3865-3736-4230-b665-353262343033/11412219.jpg",
+  "https://static.tildacdn.com/stor6335-3265-4462-b262-346565386263/53621591.jpg",
+  "https://static.tildacdn.com/stor3534-3762-4734-a236-386361663437/50819861.jpg",
+  "https://static.tildacdn.com/stor3538-3839-4239-b836-386464613663/55634876.jpg",
+  "https://static.tildacdn.com/stor3934-3830-4336-b932-613738303663/92088181.jpg",
+  "https://static.tildacdn.com/stor6566-6462-4239-b538-623364666266/16965260.jpg",
+  "https://static.tildacdn.com/stor3661-6435-4566-a663-646563396533/60295131.jpg",
+  "https://static.tildacdn.com/stor3633-6132-4265-b334-313463616561/61184607.jpg",
+  "https://static.tildacdn.com/stor3537-6166-4139-b136-356335616163/53290258.jpg",
+  "https://static.tildacdn.com/stor3563-6235-4332-a337-663161626265/61513677.jpg",
+  "https://static.tildacdn.com/stor3534-6261-4231-b432-393265303432/10837410.jpg",
+  "https://static.tildacdn.com/stor6564-3733-4464-b035-393564373236/15722021.jpg",
+  "https://static.tildacdn.com/stor6330-6337-4331-b735-613563656233/30570523.jpg",
+  "https://static.tildacdn.com/stor3630-3430-4261-a335-323934623932/39325661.jpg",
+  "https://static.tildacdn.com/stor3038-3465-4466-a236-663963386161/13552832.jpg",
+  "https://static.tildacdn.com/stor3462-6465-4636-b961-636531323237/40034509.jpg",
+];
+const ALBI_SCULPTURAL_GEL_NEW_ABOUT =
+  "ALBI Sculptural gel — NEW: Tilda’daki çok renkli modelleme jeli (renk başına ayrı vitrin satırı; aynı ürün varyantları).\n\n" +
+  "Tırnakları güçlendirir; kaplama daha uzun ömürlü, kırılma daha seyrek olabilir. Özellikler (Tilda ürün metni):\n" +
+  "• Akıcı kıvam: kolay uygulama ve kendiliğinden dengeleme.\n" +
+  "• Kamuflaj tonları: serbest kenarı iyi kapatır, tırnak eti hizasında transparanlık korur.\n" +
+  "• Çok yönlülük: modelleme, renk düzeltme ve doğal tırnak güçlendirme.\n" +
+  "• Hızlı kürlenme: hibrit lambada yaklaşık 60 saniye.\n" +
+  "• Düşük tüketim.\n" +
+  "• Kolay çıkarma: freze ile.\n\n" +
+  "Baz kat gerektirir.\n\n" +
+  "Tilda’da boyutlar: 5 / 15 / 30 / 50 ml; fiyat örneği 15 ml için 55 AED (varyanta göre 19–130 AED aralığı görülebilir). Renk ve stok için https://albinails.com mağazasına bakın.\n\n" +
+  "Saklama: serin ve kuru ortam, 10–26 °C; açıkken UV/LED ışığından uzak tutun.";
+
+/** Tilda — 1+1 Sculptural gel NEW MILKY ROSE (30 ml vitrin; SKU: Milky rose). */
+const ALBI_SCULPTURAL_GEL_NEW_MILKY_ROSE_1PLUS1_30ML_ABOUT =
+  "Tilda vitrin başlığı: «1+1 Sculptural gel ALBI NEW MILKY ROSE» (30 ml; SKU: Milky rose).\n\n" +
+  "15 ml satırı «tilda-albi-sculptural-gel-new-milky-rose-15ml» ile aynı dörtlü galeri sırasına sahiptir; bu kart ayrı hacim ve 1+1 / 30 ml fiyatı içindir (Tilda örnek 150 AED; güncel için mağazaya bakın).\n\n" +
+  "Özellikler (Tilda İngilizce özet): kolay uygulama ve self-leveling; kamuflaj tonları; modelleme, renk düzeltme ve güçlendirme; hibrit lamba ~60 sn; düşük tüketim; freze ile çıkarma. Baz kat gerekir.\n\n" +
+  "Saklama: serin ve kuru ortam, 10–26 °C; açıkken UV/LED ışığından uzak tutun.";
+
+const ALBI_SCULPTURAL_GEL_NEW_PRODUCT_SEED = [
+  {
+    id: "tilda-albi-sculptural-gel-new-coco-15ml",
+    name: "Sculptural gel ALBI NEW — Coco — 15 ml",
+    image: "https://static.tildacdn.com/stor3865-3736-4230-b665-353262343033/11412219.jpg",
+  },
+  {
+    id: "tilda-albi-sculptural-gel-new-ice-pink-15ml",
+    name: "Sculptural gel ALBI NEW — Ice pink — 15 ml (Tilda: lce pink)",
+    image: "https://static.tildacdn.com/stor6335-3265-4462-b262-346565386263/53621591.jpg",
+  },
+  {
+    id: "tilda-albi-sculptural-gel-new-violet-15ml",
+    name: "Sculptural gel ALBI NEW — Violet — 15 ml",
+    image: "https://static.tildacdn.com/stor3534-3762-4734-a236-386361663437/50819861.jpg",
+  },
+  {
+    id: "tilda-albi-sculptural-gel-new-nude-15ml",
+    name: "Sculptural gel ALBI NEW — Nude — 15 ml",
+    image: "https://static.tildacdn.com/stor3934-3830-4336-b932-613738303663/92088181.jpg",
+  },
+  {
+    id: "tilda-albi-sculptural-gel-new-pink-15ml",
+    name: "Sculptural gel ALBI NEW — Pink — 15 ml",
+    image: "https://static.tildacdn.com/stor6566-6462-4239-b538-623364666266/16965260.jpg",
+  },
+  {
+    id: "tilda-albi-sculptural-gel-new-rose-15ml",
+    name: "Sculptural gel ALBI NEW — Rose — 15 ml",
+    image: "https://static.tildacdn.com/stor6564-3733-4464-b035-393564373236/15722021.jpg",
+  },
+  {
+    id: "tilda-albi-sculptural-gel-new-skin-15ml",
+    name: "Sculptural gel ALBI NEW — Skin — 15 ml",
+    image: "https://static.tildacdn.com/stor3630-3430-4261-a335-323934623932/39325661.jpg",
+  },
+  {
+    id: "tilda-albi-sculptural-gel-new-delicate-15ml",
+    name: "Sculptural gel ALBI NEW — Delicate — 15 ml",
+    image: "https://static.tildacdn.com/stor3661-6435-4566-a663-646563396533/60295131.jpg",
+  },
+  {
+    id: "tilda-albi-sculptural-gel-new-ivory-15ml",
+    name: "Sculptural gel ALBI NEW IVORY — 15 ml (Tilda SKU: lvory)",
+    image: "https://static.tildacdn.com/stor3136-3830-4231-b630-643765646338/58529377.jpg",
+    gallery: [
+      "https://static.tildacdn.com/stor3136-3830-4231-b630-643765646338/58529377.jpg",
+      "https://static.tildacdn.com/stor6434-3336-4563-a631-383338373430/29233442.jpg",
+      "https://static.tildacdn.com/tild3132-3932-4539-b866-616230316333/IMG_2628.jpg",
+      "https://static.tildacdn.com/stor3332-3233-4631-b562-326239353535/79690620.jpg",
+    ],
+  },
+  {
+    id: "tilda-albi-sculptural-gel-new-clear-15ml",
+    name: "Sculptural gel ALBI NEW CLEAR — 15 ml (SKU: Clear)",
+    image: "https://static.tildacdn.com/stor3666-3931-4266-b335-336365646261/26641182.jpg",
+    gallery: [
+      "https://static.tildacdn.com/stor3666-3931-4266-b335-336365646261/26641182.jpg",
+      "https://static.tildacdn.com/tild3132-3932-4539-b866-616230316333/IMG_2628.jpg",
+      "https://static.tildacdn.com/stor6363-6132-4834-a239-363232623531/93929957.jpg",
+      "https://static.tildacdn.com/stor6363-3565-4135-b161-643235383362/28322880.jpg",
+      "https://static.tildacdn.com/stor3465-3861-4665-b161-326637666238/20261780.jpg",
+    ],
+  },
+  {
+    id: "tilda-albi-sculptural-gel-new-milky-rose-15ml",
+    name: "Sculptural gel ALBI NEW MILKY ROSE — 15 ml (SKU: Milky rose)",
+    image: "https://static.tildacdn.com/stor3338-3131-4335-b335-383037383766/30975319.jpg",
+    gallery: [
+      "https://static.tildacdn.com/stor3338-3131-4335-b335-383037383766/30975319.jpg",
+      "https://static.tildacdn.com/stor6138-6434-4636-a434-616232373437/70672255.jpg",
+      "https://static.tildacdn.com/tild3132-3932-4539-b866-616230316333/IMG_2628.jpg",
+      "https://static.tildacdn.com/stor3230-3431-4239-b132-636334643130/76004091.jpg",
+    ],
+  },
+  {
+    id: "tilda-albi-sculptural-gel-new-ice-cream-15ml",
+    name: "Sculptural gel ALBI NEW ICE CREAM — 15 ml (Tilda SKU: lce_cream; renk etiketi: lce cream)",
+    image: "https://static.tildacdn.com/stor3938-3739-4932-b931-333136636365/61760044.jpg",
+    gallery: [
+      "https://static.tildacdn.com/stor3938-3739-4932-b931-333136636365/61760044.jpg",
+      "https://static.tildacdn.com/stor3761-3463-4632-b966-326366626232/78424397.png",
+      "https://static.tildacdn.com/tild3132-3932-4539-b866-616230316333/IMG_2628.jpg",
+      "https://static.tildacdn.com/stor6232-3663-4839-b935-333832383330/24029219.jpg",
+    ],
+  },
+  {
+    id: "tilda-albi-sculptural-gel-new-sky-15ml",
+    name: "Sculptural gel ALBI NEW SKY — 15 ml (SKU: Sky)",
+    image: "https://static.tildacdn.com/stor3232-6232-4237-b531-396133353538/53912596.jpg",
+    gallery: [
+      "https://static.tildacdn.com/stor3232-6232-4237-b531-396133353538/53912596.jpg",
+      "https://static.tildacdn.com/stor6339-6437-4438-b837-313739393532/88832976.jpg",
+      "https://static.tildacdn.com/tild3132-3932-4539-b866-616230316333/IMG_2628.jpg",
+      "https://static.tildacdn.com/stor6664-6137-4131-b362-613332363533/50647841.jpg",
+    ],
+  },
+];
+
+/** Tilda — ALBI Sculptural gel SHINE (ton başına vitrin satırı). */
+const ALBI_SCULPTURAL_GEL_SHINE_SERIES = "ALBI Sculptural gel — SHINE";
+const ALBI_SCULPTURAL_GEL_SHINE_ABOUT =
+  "ALBI Sculptural gel — SHINE: Tilda’daki SHINE modelleme jel tonları (ürün adındaki ton / SKU ile ayırt edilir).\n\n" +
+  "Özellikler (Tilda ürün metni):\n" +
+  "• Akıcı kıvam: kolay uygulama ve kendiliğinden dengeleme.\n" +
+  "• Kamuflaj tonları: serbest kenarı iyi kapatır, tırnak eti hizasında transparanlık korur.\n" +
+  "• Çok yönlülük: modelleme, renk düzeltme ve doğal tırnak güçlendirme.\n" +
+  "• Hızlı kürlenme: hibrit lambada yaklaşık 60 saniye.\n" +
+  "• Düşük tüketim.\n" +
+  "• Kolay çıkarma: freze ile.\n\n" +
+  "Baz kat gerektirir.\n\n" +
+  "Tilda’da boyut: 15 ml / 30 ml; fiyat örneği 15 ml 55 AED, 30 ml 85 AED. Stok ve güncel fiyat için https://albinails.com mağazasına bakın.\n\n" +
+  "Saklama: serin ve kuru ortam, 10–26 °C; açıkken UV/LED ışığından uzak tutun.";
+
+const ALBI_SCULPTURAL_GEL_SHINE_PRODUCT_SEED = [
+  {
+    id: "tilda-albi-sculptural-gel-shine-tea-rose-15ml",
+    name: "Sculptural gel ALBI SHINE TEA ROSE — 15 ml (SKU: Shine tea rose)",
+    image: "https://static.tildacdn.com/tild3031-6134-4133-a630-623034323230/18721dlt5s4lj1vt5s41.jpg",
+  },
+  {
+    id: "tilda-albi-sculptural-gel-shine-pink-heaven-15ml",
+    name: "Sculptural gel ALBI SHINE PINK — 15 ml (SKU: Shine pink heaven)",
+    image: "https://static.tildacdn.com/tild6431-3734-4336-b033-373665643335/IMG_5854.PNG",
+  },
+  {
+    id: "tilda-albi-sculptural-gel-shine-nude-15ml",
+    name: "Sculptural gel ALBI SHINE NUDE — 15 ml (SKU: Shine nude)",
+    image: "https://static.tildacdn.com/tild3065-3536-4634-b065-373131346438/lss5ntre6hwuezc2ohtm.jpg",
+  },
+  {
+    id: "tilda-albi-sculptural-gel-shine-natural-15ml",
+    name: "Sculptural gel ALBI SHINE NATURAL — 15 ml (SKU: Shine natural)",
+    image: "https://static.tildacdn.com/tild3238-6439-4338-a262-316138306363/9vgs63igvl2e8rkhlqrc.jpg",
+  },
+  {
+    id: "tilda-albi-sculptural-gel-shine-french-15ml",
+    name: "Sculptural gel ALBI SHINE FRENCH — 15 ml (SKU: Shine french)",
+    image: "https://static.tildacdn.com/tild6663-3162-4666-a433-626131656265/vmu3lsf9ln4yp2i7rqi3.jpg",
+  },
+  {
+    id: "tilda-albi-sculptural-gel-shine-cream-15ml",
+    name: "Sculptural gel ALBI SHINE CREAM — 15 ml (SKU: Shine cream)",
+    image: "https://static.tildacdn.com/tild3066-3133-4331-a665-636630663064/gpvoughmc3edzg2zc12x.jpg",
+  },
+  {
+    id: "tilda-albi-sculptural-gel-shine-milk-15ml",
+    name: "Sculptural gel ALBI SHINE MILK — 15 ml (SKU: Milk shine)",
+    image: "https://static.tildacdn.com/tild3738-6238-4262-b338-303439653034/_.jpg",
+  },
+];
+
+/** Tilda — ALBI Liquid polygel (sıvı polijel; ortak ürün metni parçası). */
+const ALBI_LIQUID_POLYGEL_TILDA_BODY =
+  "Özellikler (Tilda ürün metni):\n" +
+  "• Tırnak onarımı ve yapı için sıvı polijel.\n" +
+  "• Esnek baz ve sert jel özelliklerini birleştiren güçlü materyal; kullanımda çekme yapmaz.\n" +
+  "• Orta kıvam.\n" +
+  "• Hızlı kendiliğinden dengeleme.\n" +
+  "• «Törpüsüz» (No Filing) tekniği için uygun.\n" +
+  "• Freze ile kolay çıkarma.\n\n" +
+  "Kullanım (Tilda): Hazırlanmış tırnak tabanına ince kat ALBI FLEX elastik baz uygulayın; baz kürlenince polijeli dengeleme katmanı olarak uygulayın.\n\n" +
+  "Polimerizasyon: 60 / 120 saniye.\n\n" +
+  "Saklama: serin ve kuru, doğrudan güneşten uzak, 10–26 °C; açıldıktan sonra UV/LED ışığından koruyun.\n\n";
+
+/** Tilda — ALBI Liquid polygel Silver line (popup galeri küçük resim sırası). */
+const ALBI_LIQUID_POLYGEL_SILVER_SERIES = "ALBI Liquid polygel — Silver line";
+const ALBI_LIQUID_POLYGEL_SILVER_GALLERY = [
+  "https://static.tildacdn.com/stor3665-6630-4032-b437-363431616362/71133146.jpg",
+  "https://static.tildacdn.com/stor3334-3166-4935-a164-373032363139/47591529.jpg",
+  "https://static.tildacdn.com/stor3663-3364-4963-b436-353864356162/24538100.jpg",
+  "https://static.tildacdn.com/stor3639-6638-4233-a238-303433633135/22445982.jpg",
+  "https://static.tildacdn.com/stor3761-3664-4364-b937-636637313264/62575717.jpg",
+  "https://static.tildacdn.com/stor6232-3638-4666-a331-313235353834/66157464.jpg",
+];
+const ALBI_LIQUID_POLYGEL_SILVER_ABOUT =
+  "ALBI Liquid polygel — Silver line: Tilda’daki dört «silver» ton (SKU: silver ice, silver beige, silver rose, silver milk); vitrin galeri sırası tüm tonlar için ortaktır.\n\n" +
+  ALBI_LIQUID_POLYGEL_TILDA_BODY +
+  "Tilda fiyat örneği: 15 ml 55 AED / ton (güncel mağazaya bakın).";
+
+const ALBI_LIQUID_POLYGEL_SILVER_PRODUCT_SEED = [
+  {
+    id: "tilda-albi-liquid-polygel-silver-ice-15ml",
+    name: "Liquid polygel ALBI — Silver — 15 ml (SKU: silver ice)",
+    image: "https://static.tildacdn.com/stor3663-3364-4963-b436-353864356162/24538100.jpg",
+  },
+  {
+    id: "tilda-albi-liquid-polygel-silver-beige-15ml",
+    name: "Liquid polygel ALBI — Silver — 15 ml (SKU: silver beige)",
+    image: "https://static.tildacdn.com/stor3639-6638-4233-a238-303433633135/22445982.jpg",
+  },
+  {
+    id: "tilda-albi-liquid-polygel-silver-rose-15ml",
+    name: "Liquid polygel ALBI — Silver — 15 ml (SKU: silver rose)",
+    image: "https://static.tildacdn.com/stor3761-3664-4364-b937-636637313264/62575717.jpg",
+  },
+  {
+    id: "tilda-albi-liquid-polygel-silver-milk-15ml",
+    name: "Liquid polygel ALBI — Silver — 15 ml (SKU: silver milk)",
+    image: "https://static.tildacdn.com/stor6232-3638-4666-a331-313235353834/66157464.jpg",
+  },
+];
+
+/** Tilda — ALBI Liquid polygel numara serisi (ör. 08). */
+const ALBI_LIQUID_POLYGEL_NUMBERED_SERIES = "ALBI Liquid polygel — Numara";
+const ALBI_LIQUID_POLYGEL_08_GALLERY = [
+  "https://static.tildacdn.com/stor3366-3962-4666-b864-346432383164/98871218.jpg",
+];
+const ALBI_LIQUID_POLYGEL_08_ABOUT =
+  "Liquid polygel ALBI 08 (Tilda vitrin SKU: 08; renk seçimi: 08).\n\n" +
+  ALBI_LIQUID_POLYGEL_TILDA_BODY +
+  "Tilda fiyat örneği: 15 ml 55 AED (güncel mağazaya bakın).";
+
+/** Tilda — ALBI Liquid polygel 01–07 (Liquid Polygel vitrin; «SUMMER COLLECTION 0X» ile aynı görsel olabilir, farklı ürün URL). */
+const ALBI_LIQUID_POLYGEL_NUMBERED_SHADES_01_07_SEED = [
+  {
+    sku: "01",
+    image: "https://static.tildacdn.com/stor3162-6366-4435-b039-343939363964/84899061.jpg",
+  },
+  {
+    sku: "02",
+    image: "https://static.tildacdn.com/stor3537-3837-4537-b365-623261633264/55065288.jpg",
+  },
+  {
+    sku: "03",
+    image: "https://static.tildacdn.com/stor3235-3466-4364-b362-373661303030/56196036.jpg",
+  },
+  {
+    sku: "04",
+    image: "https://static.tildacdn.com/stor6432-3731-4062-b062-386439623936/38587303.jpg",
+  },
+  {
+    sku: "05",
+    image: "https://static.tildacdn.com/stor6162-6161-4131-b561-306537636430/25083730.jpg",
+  },
+  {
+    sku: "06",
+    image: "https://static.tildacdn.com/stor6461-3763-4766-b462-653239653438/50780759.jpg",
+  },
+  {
+    sku: "07",
+    image: "https://static.tildacdn.com/stor3963-3539-4534-b434-316433303935/41456175.jpg",
+  },
+];
+
+/** Tilda — ALBI Liquid polygel Pearly (ton başına vitrin; popup küçük resim sırası). */
+const ALBI_LIQUID_POLYGEL_PEARLY_SERIES = "ALBI Liquid polygel — Pearly";
+const ALBI_LIQUID_POLYGEL_PEARLY_ABOUT =
+  "ALBI Liquid polygel — Pearly: Tilda’daki inci etkili tonlar (SKU: PEARLY_NUDE, PEARLY NATURAL, PEARLY WHITE, PEARLY ROSE; NATURAL / WHITE / ROSE SKU’larında boşluklu yazım Tilda ile aynı).\n\n" +
+  ALBI_LIQUID_POLYGEL_TILDA_BODY +
+  "Tilda fiyat örneği: 15 ml 55 AED / ton (güncel mağazaya bakın).";
+
+const ALBI_LIQUID_POLYGEL_PEARLY_PRODUCT_SEED = [
+  {
+    id: "tilda-albi-liquid-polygel-pearly-nude-15ml",
+    name: "Liquid polygel ALBI PEARLY — 15 ml (SKU: PEARLY_NUDE)",
+    image: "https://static.tildacdn.com/stor6135-3361-4535-b566-326564303833/91767649.jpg",
+    gallery: [
+      "https://static.tildacdn.com/stor6135-3361-4535-b566-326564303833/91767649.jpg",
+      "https://static.tildacdn.com/stor6333-3839-4661-a638-323031663736/46586693.jpg",
+      "https://static.tildacdn.com/stor6137-3033-4262-b338-616634333130/34155053.jpg",
+      "https://static.tildacdn.com/stor6337-3461-4562-a637-306530336539/72589562.jpg",
+    ],
+  },
+  {
+    id: "tilda-albi-liquid-polygel-pearly-natural-15ml",
+    name: "Liquid polygel ALBI PEARLY NATURAL — 15 ml (SKU: PEARLY NATURAL)",
+    image: "https://static.tildacdn.com/stor3266-6432-4664-a262-633765636330/15689916.jpg",
+    gallery: [
+      "https://static.tildacdn.com/stor3266-6432-4664-a262-633765636330/15689916.jpg",
+      "https://static.tildacdn.com/stor6339-3330-4362-b730-373662313830/33015157.jpg",
+      "https://static.tildacdn.com/stor6137-3033-4262-b338-616634333130/34155053.jpg",
+      "https://static.tildacdn.com/stor6337-3461-4562-a637-306530336539/72589562.jpg",
+    ],
+  },
+  {
+    id: "tilda-albi-liquid-polygel-pearly-white-15ml",
+    name: "Liquid polygel ALBI PEARLY WHITE — 15 ml (SKU: PEARLY WHITE)",
+    image: "https://static.tildacdn.com/stor6137-6430-4037-b134-653539336532/95500756.jpg",
+    gallery: [
+      "https://static.tildacdn.com/stor6137-6430-4037-b134-653539336532/95500756.jpg",
+      "https://static.tildacdn.com/stor3437-6630-4335-b532-633866636632/76297271.jpg",
+      "https://static.tildacdn.com/stor6137-3033-4262-b338-616634333130/34155053.jpg",
+      "https://static.tildacdn.com/stor6337-3461-4562-a637-306530336539/72589562.jpg",
+    ],
+  },
+  {
+    id: "tilda-albi-liquid-polygel-pearly-rose-15ml",
+    name: "Liquid polygel ALBI PEARLY ROSE — 15 ml (SKU: PEARLY ROSE)",
+    image: "https://static.tildacdn.com/stor6334-3235-4436-b833-396135346437/47566952.jpg",
+    gallery: [
+      "https://static.tildacdn.com/stor6334-3235-4436-b833-396135346437/47566952.jpg",
+      "https://static.tildacdn.com/stor6635-6435-4634-a633-643133366366/22093908.jpg",
+      "https://static.tildacdn.com/stor6137-3033-4262-b338-616634333130/34155053.jpg",
+      "https://static.tildacdn.com/stor6337-3461-4562-a637-306530336539/72589562.jpg",
+    ],
+  },
+];
+
+/** Tilda — ALBI Liquid polygel RED series (01 / 02 / 03; popup küçük resim sırası ton başına). */
+const ALBI_LIQUID_POLYGEL_RED_SERIES = "ALBI Liquid polygel — RED series";
+const ALBI_LIQUID_POLYGEL_RED_01_GALLERY = [
+  "https://static.tildacdn.com/stor6539-3538-4439-b634-613538343038/24731764.jpg",
+  "https://static.tildacdn.com/stor3739-6464-4639-a534-306261616531/71919049.jpg",
+  "https://static.tildacdn.com/stor3931-6233-4865-b165-326631626363/71979734.jpg",
+];
+const ALBI_LIQUID_POLYGEL_RED_01_ABOUT =
+  "Liquid polygel ALBI RED 01 Fiery red (Tilda vitrin SKU: RED SERIES 01; renk kodu: 01).\n\n" +
+  "RED SERIES — Tilda seri anlatımı (üç ton):\n" +
+  "• 01 — aranan klasik parlak kırmızı (bu vitrin satırı).\n" +
+  "• 02 — daha koyu ve yumuşak, yine doygun bir taş tonu.\n" +
+  "• 03 — kristal bardaktaki İtalyan tatlı şarabı hissi veren çekici bir ton.\n\n" +
+  ALBI_LIQUID_POLYGEL_TILDA_BODY +
+  "Tilda fiyat örneği: 15 ml 55 AED (güncel mağazaya bakın).";
+
+/** Tilda — «Liquid Polygel» bölümündeki RED 01 kısa vitrin (SKU: 01; vitrin görseli RED SERIES 01 ile aynı olabilir). */
+const ALBI_LIQUID_POLYGEL_RED_BUILDING_01_GALLERY = [
+  "https://static.tildacdn.com/stor6539-3538-4439-b634-613538343038/24731764.jpg",
+];
+const ALBI_LIQUID_POLYGEL_RED_BUILDING_01_ABOUT =
+  "Liquid polygel ALBI RED 01 (Tilda «Liquid Polygel» vitrin SKU: 01; renk seçimi: 01). NEW bölümündeki «RED SERIES 01 — Fiery red» satırıyla aynı vitrin görseli olabilir; ürün URL’si Tilda’da ayrıdır.\n\n" +
+  ALBI_LIQUID_POLYGEL_TILDA_BODY +
+  "Tilda fiyat örneği: 15 ml 55 AED (güncel mağazaya bakın).";
+
+const ALBI_LIQUID_POLYGEL_RED_02_GALLERY = [
+  "https://static.tildacdn.com/stor3039-3162-4632-a235-656536396663/90471515.jpg",
+  "https://static.tildacdn.com/stor3931-6233-4865-b165-326631626363/71979734.jpg",
+];
+const ALBI_LIQUID_POLYGEL_RED_02_ABOUT =
+  "Liquid polygel ALBI RED 02 Cherry bomb (Tilda vitrin SKU: RED SERIES 02; renk kodu: 02).\n\n" +
+  "RED SERIES — Tilda seri anlatımı (üç ton):\n" +
+  "• 01 — aranan klasik parlak kırmızı.\n" +
+  "• 02 — daha koyu ve yumuşak, yine doygun bir taş tonu (bu vitrin satırı).\n" +
+  "• 03 — kristal bardaktaki İtalyan tatlı şarabı hissi veren çekici bir ton.\n\n" +
+  ALBI_LIQUID_POLYGEL_TILDA_BODY +
+  "Tilda fiyat örneği: 15 ml 55 AED (güncel mağazaya bakın).";
+
+const ALBI_LIQUID_POLYGEL_RED_03_GALLERY = [
+  "https://static.tildacdn.com/stor3334-6664-4130-a636-333663303637/73570605.jpg",
+  "https://static.tildacdn.com/stor3666-6263-4431-a466-373666656535/55173113.jpg",
+  "https://static.tildacdn.com/stor3931-6233-4865-b165-326631626363/71979734.jpg",
+];
+const ALBI_LIQUID_POLYGEL_RED_03_ABOUT =
+  "Liquid polygel ALBI RED 03 Deep wine (Tilda vitrin SKU: RED SERIES 03; renk kodu: 03).\n\n" +
+  "RED SERIES — Tilda seri anlatımı (üç ton):\n" +
+  "• 01 — aranan klasik parlak kırmızı.\n" +
+  "• 02 — daha koyu ve yumuşak, yine doygun bir taş tonu.\n" +
+  "• 03 — kristal bardaktaki İtalyan tatlı şarabı hissi veren çekici bir ton (bu vitrin satırı).\n\n" +
+  ALBI_LIQUID_POLYGEL_TILDA_BODY +
+  "Tilda fiyat örneği: 15 ml 55 AED (güncel mağazaya bakın).";
+
+/** Tilda — ALBI Liquid polygel Nude Inspire (popup küçük resim sırası). */
+const ALBI_LIQUID_POLYGEL_NUDE_INSPIRE_SERIES = "ALBI Liquid polygel — Nude Inspire";
+const ALBI_LIQUID_POLYGEL_NUDE_INSPIRE_GALLERY = [
+  "https://static.tildacdn.com/stor6334-3263-4163-b831-356561656163/46249595.jpg",
+  "https://static.tildacdn.com/stor6636-3938-4164-b030-393233646532/59612466.jpg",
+  "https://static.tildacdn.com/stor3034-6338-4966-b731-393331376664/24773739.jpg",
+  "https://static.tildacdn.com/stor3964-6162-4735-b263-636636633531/36263364.jpg",
+];
+const ALBI_LIQUID_POLYGEL_NUDE_INSPIRE_ABOUT =
+  "Liquid polygel ALBI NUDE INSPIRE (Tilda vitrin SKU: INSPIRE; renk seçimi: INSPIRE).\n\n" +
+  ALBI_LIQUID_POLYGEL_TILDA_BODY +
+  "Tilda fiyat örneği: 15 ml 55 AED (güncel mağazaya bakın).";
+
+/** Tilda — ALBI Liquid polygel Nude Almond Milk (popup küçük resim sırası). */
+const ALBI_LIQUID_POLYGEL_NUDE_ALMOND_MILK_SERIES = "ALBI Liquid polygel — Nude Almond Milk";
+const ALBI_LIQUID_POLYGEL_NUDE_ALMOND_MILK_GALLERY = [
+  "https://static.tildacdn.com/stor6233-3966-4064-b630-313530663231/38837929.jpg",
+  "https://static.tildacdn.com/stor6636-3938-4164-b030-393233646532/59612466.jpg",
+  "https://static.tildacdn.com/stor3034-6338-4966-b731-393331376664/24773739.jpg",
+  "https://static.tildacdn.com/stor3964-6162-4735-b263-636636633531/36263364.jpg",
+];
+const ALBI_LIQUID_POLYGEL_NUDE_ALMOND_MILK_ABOUT =
+  "Liquid polygel ALBI NUDE ALMOND MILK (Tilda vitrin SKU: ALMOND MILK; renk seçimi: ALMOND MILK).\n\n" +
+  ALBI_LIQUID_POLYGEL_TILDA_BODY +
+  "Tilda fiyat örneği: 15 ml 55 AED (güncel mağazaya bakın).";
+
+/** Tilda — ALBI Liquid polygel Nude Blossom (liste kartı + aynı NUDE vitrin sırası). */
+const ALBI_LIQUID_POLYGEL_NUDE_BLOSSOM_SERIES = "ALBI Liquid polygel — Nude Blossom";
+const ALBI_LIQUID_POLYGEL_NUDE_BLOSSOM_GALLERY = [
+  "https://static.tildacdn.com/stor3431-3737-4436-a539-386631643561/64494633.jpg",
+  "https://static.tildacdn.com/stor6636-3938-4164-b030-393233646532/59612466.jpg",
+  "https://static.tildacdn.com/stor3034-6338-4966-b731-393331376664/24773739.jpg",
+  "https://static.tildacdn.com/stor3964-6162-4735-b263-636636633531/36263364.jpg",
+];
+const ALBI_LIQUID_POLYGEL_NUDE_BLOSSOM_ABOUT =
+  "Liquid polygel ALBI NUDE BLOSSOM (Tilda vitrin SKU: BLOSSOM; renk seçimi: BLOSSOM).\n\n" +
+  ALBI_LIQUID_POLYGEL_TILDA_BODY +
+  "Tilda fiyat örneği: 15 ml 55 AED (güncel mağazaya bakın).";
+
+/** Tilda — ALBI Liquid polygel Nude Sensitive. */
+const ALBI_LIQUID_POLYGEL_NUDE_SENSITIVE_SERIES = "ALBI Liquid polygel — Nude Sensitive";
+const ALBI_LIQUID_POLYGEL_NUDE_SENSITIVE_GALLERY = [
+  "https://static.tildacdn.com/stor3066-3163-4436-b334-633130386665/94529523.jpg",
+  "https://static.tildacdn.com/stor6636-3938-4164-b030-393233646532/59612466.jpg",
+  "https://static.tildacdn.com/stor3034-6338-4966-b731-393331376664/24773739.jpg",
+  "https://static.tildacdn.com/stor3964-6162-4735-b263-636636633531/36263364.jpg",
+];
+const ALBI_LIQUID_POLYGEL_NUDE_SENSITIVE_ABOUT =
+  "Liquid polygel ALBI NUDE SENSITIVE (Tilda vitrin SKU: SENSITIVE; renk seçimi: SENSITIVE).\n\n" +
+  ALBI_LIQUID_POLYGEL_TILDA_BODY +
+  "Tilda fiyat örneği: 15 ml 55 AED (güncel mağazaya bakın).";
+
+/** Tilda — ALBI Liquid polygel Nude Cashmere. */
+const ALBI_LIQUID_POLYGEL_NUDE_CASHMERE_SERIES = "ALBI Liquid polygel — Nude Cashmere";
+const ALBI_LIQUID_POLYGEL_NUDE_CASHMERE_GALLERY = [
+  "https://static.tildacdn.com/stor3266-3762-4537-a564-323032616264/88412456.jpg",
+  "https://static.tildacdn.com/stor6636-3938-4164-b030-393233646532/59612466.jpg",
+  "https://static.tildacdn.com/stor3034-6338-4966-b731-393331376664/24773739.jpg",
+  "https://static.tildacdn.com/stor3964-6162-4735-b263-636636633531/36263364.jpg",
+];
+const ALBI_LIQUID_POLYGEL_NUDE_CASHMERE_ABOUT =
+  "Liquid polygel ALBI NUDE CASHMERE (Tilda vitrin SKU: CASHMERE; renk seçimi: CASHMERE).\n\n" +
+  ALBI_LIQUID_POLYGEL_TILDA_BODY +
+  "Tilda fiyat örneği: 15 ml 55 AED (güncel mağazaya bakın).";
+
+/** Tilda — ALBI Liquid polygel Nude Toffee. */
+const ALBI_LIQUID_POLYGEL_NUDE_TOFFEE_SERIES = "ALBI Liquid polygel — Nude Toffee";
+const ALBI_LIQUID_POLYGEL_NUDE_TOFFEE_GALLERY = [
+  "https://static.tildacdn.com/stor6262-3030-4634-b630-663763383662/18276568.jpg",
+  "https://static.tildacdn.com/stor6636-3938-4164-b030-393233646532/59612466.jpg",
+  "https://static.tildacdn.com/stor3034-6338-4966-b731-393331376664/24773739.jpg",
+  "https://static.tildacdn.com/stor3964-6162-4735-b263-636636633531/36263364.jpg",
+];
+const ALBI_LIQUID_POLYGEL_NUDE_TOFFEE_ABOUT =
+  "Liquid polygel ALBI NUDE TOFFEE (Tilda vitrin SKU: TOFFEE; renk seçimi: TOFFEE).\n\n" +
+  ALBI_LIQUID_POLYGEL_TILDA_BODY +
+  "Tilda fiyat örneği: 15 ml 55 AED (güncel mağazaya bakın).";
+
+/** Tilda — ALBI Liquid polygel Nude Candy Cotton. */
+const ALBI_LIQUID_POLYGEL_NUDE_CANDY_COTTON_SERIES = "ALBI Liquid polygel — Nude Candy Cotton";
+const ALBI_LIQUID_POLYGEL_NUDE_CANDY_COTTON_GALLERY = [
+  "https://static.tildacdn.com/stor6534-3835-4130-b061-646263643766/69191638.jpg",
+  "https://static.tildacdn.com/stor6636-3938-4164-b030-393233646532/59612466.jpg",
+  "https://static.tildacdn.com/stor3034-6338-4966-b731-393331376664/24773739.jpg",
+  "https://static.tildacdn.com/stor3964-6162-4735-b263-636636633531/36263364.jpg",
+];
+const ALBI_LIQUID_POLYGEL_NUDE_CANDY_COTTON_ABOUT =
+  "Liquid polygel ALBI NUDE CANDY COTTON (Tilda vitrin SKU: CANDY COTTON; renk seçimi: CANDY COTTON).\n\n" +
+  ALBI_LIQUID_POLYGEL_TILDA_BODY +
+  "Tilda fiyat örneği: 15 ml 55 AED (güncel mağazaya bakın).";
+
+/** Tilda — ALBI Liquid polygel Nude Inhale. */
+const ALBI_LIQUID_POLYGEL_NUDE_INHALE_SERIES = "ALBI Liquid polygel — Nude Inhale";
+const ALBI_LIQUID_POLYGEL_NUDE_INHALE_GALLERY = [
+  "https://static.tildacdn.com/stor3235-3936-4430-b333-323337656561/23830650.jpg",
+  "https://static.tildacdn.com/stor6636-3938-4164-b030-393233646532/59612466.jpg",
+  "https://static.tildacdn.com/stor3034-6338-4966-b731-393331376664/24773739.jpg",
+  "https://static.tildacdn.com/stor3964-6162-4735-b263-636636633531/36263364.jpg",
+];
+const ALBI_LIQUID_POLYGEL_NUDE_INHALE_ABOUT =
+  "Liquid polygel ALBI NUDE INHALE (Tilda vitrin SKU: INHALE; renk seçimi: INHALE).\n\n" +
+  ALBI_LIQUID_POLYGEL_TILDA_BODY +
+  "Tilda fiyat örneği: 15 ml 55 AED (güncel mağazaya bakın).";
+
+/** Tilda — ALBI Liquid polygel Tea Rose (liste kartı tek vitrin). */
+const ALBI_LIQUID_POLYGEL_TEA_ROSE_SERIES = "ALBI Liquid polygel — Tea Rose";
+const ALBI_LIQUID_POLYGEL_TEA_ROSE_GALLERY = [
+  "https://static.tildacdn.com/stor6665-3039-4434-b862-386437343962/44662733.png",
+];
+const ALBI_LIQUID_POLYGEL_TEA_ROSE_ABOUT =
+  "Liquid polygel ALBI TEA ROSE (Tilda vitrin SKU: TEA ROSE; renk seçimi: TEA ROSE).\n\n" +
+  ALBI_LIQUID_POLYGEL_TILDA_BODY +
+  "Tilda fiyat örneği: 15 ml 55 AED (güncel mağazaya bakın).";
+
+/** Tilda — ALBI Liquid polygel Summer Collection 01–08 (liste kartı: vitrin + ortak ikinci görsel). */
+const ALBI_LIQUID_POLYGEL_SUMMER_COLLECTION_SERIES = "ALBI Liquid polygel — Summer Collection";
+const ALBI_LIQUID_POLYGEL_SUMMER_COLLECTION_SECOND =
+  "https://static.tildacdn.com/stor6538-3663-4530-a338-663732646533/67500450.jpg";
+const ALBI_LIQUID_POLYGEL_SUMMER_COLLECTION_ABOUT =
+  "ALBI SUMMER COLLECTION — Tilda mağazasında 01–08 arası sekiz ayrı sıvı polygel vitrin satırı; her satır kendi Tilda SKU’su (01 … 08) ile listelenir.\n\n" +
+  ALBI_LIQUID_POLYGEL_TILDA_BODY +
+  "Tilda fiyat örneği: 15 ml 55 AED (güncel mağazaya bakın).";
+const ALBI_LIQUID_POLYGEL_SUMMER_COLLECTION_PRODUCT_SEED = [
+  {
+    sku: "01",
+    title: "Liquid polygel ALBI SUMMER COLLECTION 01",
+    image: "https://static.tildacdn.com/stor3162-6366-4435-b039-343939363964/84899061.jpg",
+  },
+  {
+    sku: "02",
+    title: "Liquid polygel ALBI SUMMER COLLECTION 02",
+    image: "https://static.tildacdn.com/stor6364-6534-4665-b864-626632333865/15799987.jpg",
+  },
+  {
+    sku: "03",
+    title: "Liquid polygel ALBI SUMMER COLLECTION 03",
+    image: "https://static.tildacdn.com/stor3737-3132-4134-b461-303034393539/39073489.jpg",
+  },
+  {
+    sku: "04",
+    title: "Liquid polygel ALBI SUMMER COLLECTION 04",
+    image: "https://static.tildacdn.com/stor6432-3731-4062-b062-386439623936/38587303.jpg",
+  },
+  {
+    sku: "05",
+    title: "Liquid polygel ALBI SUMMER COLLECTION 05",
+    image: "https://static.tildacdn.com/stor6162-6161-4131-b561-306537636430/25083730.jpg",
+  },
+  {
+    sku: "06",
+    title: "Liquid polygel ALBI SUMMER COLLECTION 06",
+    image: "https://static.tildacdn.com/stor6461-3763-4766-b462-653239653438/50780759.jpg",
+  },
+  {
+    sku: "07",
+    title: "Liquid polygel ALBI SUMMER COLLECTION 07",
+    image: "https://static.tildacdn.com/stor3537-3465-4137-b432-353932306639/82170588.jpg",
+  },
+  {
+    sku: "08",
+    title: "Liquid polygel ALBI SUMMER COLLECTION 08",
+    image: "https://static.tildacdn.com/stor3366-3962-4666-b864-346432383164/98871218.jpg",
+  },
+];
+
+/** Tilda albinails.com — Starter kit (tek SKU; slider küçük resim sırası). */
+const STARTER_KIT_SERIES = "ALBI Starter kit";
+const STARTER_KIT_GALLERY = [
+  "https://static.tildacdn.com/stor3538-6662-4262-b833-663333643539/74818866.jpg",
+  "https://static.tildacdn.com/stor3034-3562-4761-a330-383732393663/48918250.png",
+  "https://static.tildacdn.com/stor6239-3065-4436-b136-316431303266/71364066.jpg",
+  "https://static.tildacdn.com/stor3339-3838-4862-a533-323162636365/92708745.jpg",
+];
+const STARTER_KIT_ABOUT =
+  "ALBI Starter kit (Tilda SKU: starter kit): başlangıç seviyesi için jel oje seti.\n\n" +
+  "İçerik (Tilda ürün metni): 20 jel oje tonu; Flex baz + No Wipe üst cila. Ton aralığı: nude, klasik kırmızı ve koyu tonlar, parlak renkler, simli yüzeyler.\n\n" +
+  "Tilda fiyat örneği: 849 AED (üstü çizili liste 910 AED). Kampanya ve güncel fiyat için https://albinails.com mağazasına bakın.\n\n" +
+  "Saklama: serin ve kuru ortam, 10–26 °C; açıkken UV/LED ışığından uzak tutun.";
+
+/** Tilda albinails.com — Nail and Skin Care (shop/skincare; vitrin + ikinci görsel). */
+const ALBI_SKINCARE_SHOP_SERIES = "ALBI Skincare (Tilda Nail and Skin Care)";
+const ALBI_SKINCARE_SHOP_ABOUT =
+  "ALBI el, ayak ve kütikül bakımı — Tilda mağaza «Nail and Skin Care» vitrininden.\n\n" +
+  "Bölüm: https://albinails.com/shop/skincare\n\n" +
+  "Kart fiyat örnekleri Tilda’dan (AED): 300 ml kremler 39; 340 ml kremler 42; bademli kütikül yağı 16. Güncel fiyat ve stok için ilgili ürün sayfasına bakın.\n\n" +
+  "Saklama: serin ve kuru ortam; ürün etiketindeki kullanım önerisine uyun.";
+
+/** Tilda albinails.com — Nail Files (shop/nailfiles; vitrin + ikinci görsel). */
+const ALBI_NAIL_FILES_SHOP_SERIES = "ALBI Nail files (Tilda Nail Files)";
+const ALBI_NAIL_FILES_SHOP_ABOUT =
+  "ALBI törpüler — Tilda mağaza «Nail Files» vitrininden.\n\n" +
+  "Bölüm: https://albinails.com/shop/nailfiles\n\n" +
+  "Tilda kart açıklaması: plastik zemin üzerinde («on plastic base»). Kart fiyat örnekleri (AED): MOON 6; BOOMERANG ve STRAIGHT 5. Abrasive (grit) seçenekleri ürün sayfasında; bu tohumdaki her satır vitrinde görünen varsayılan grit + Tilda SKU ile eşlenir.\n\n" +
+  "Güncel stok ve fiyat için ilgili ürün sayfasına bakın.";
+
+/** Tilda albinails.com — Gel polish SUMMER 143–151 seti (tek ürün kartı; çoklu Color sürümü). */
+const ALBI_GEL_POLISH_SUMMER_143_151_SERIES = "ALBI Gel polish — Summer 143–151 (Tilda)";
+const ALBI_GEL_POLISH_SUMMER_143_151_GALLERY = [
+  "https://static.tildacdn.com/stor3061-3863-4230-b835-663661653032/91904699.jpg",
+  "https://static.tildacdn.com/stor3534-3932-4739-b565-386633333130/18052791.jpg",
+  "https://static.tildacdn.com/stor6664-3734-4531-b837-346637376330/62132845.jpg",
+  "https://static.tildacdn.com/stor3965-6535-4361-a465-313662386632/77891420.png",
+  "https://static.tildacdn.com/stor3464-3538-4363-a631-386436316265/22572306.jpg",
+  "https://static.tildacdn.com/stor6466-3464-4630-b536-326162353731/54564487.jpg",
+  "https://static.tildacdn.com/stor6638-6361-4263-b164-343761643764/18639608.png",
+  "https://static.tildacdn.com/stor6462-6361-4631-a338-356330623861/40199785.png",
+  "https://static.tildacdn.com/stor3639-6363-4139-a564-333464346134/54039789.png",
+  "https://static.tildacdn.com/stor6434-3531-4638-b339-303666623030/22564092.jpg",
+  "https://static.tildacdn.com/stor6565-3138-4833-a664-653664393066/89867468.jpg",
+  "https://static.tildacdn.com/stor6135-6535-4130-b031-343039623639/91088546.jpg",
+  "https://static.tildacdn.com/stor6266-3432-4233-b238-313733613463/24645894.jpg",
+  "https://static.tildacdn.com/stor6530-6464-4862-b135-313031643130/89779095.jpg",
+  "https://static.tildacdn.com/stor6439-3531-4937-b161-353431303731/43380204.jpg",
+  "https://static.tildacdn.com/stor3662-6330-4535-a630-356665313564/65186877.jpg",
+  "https://static.tildacdn.com/stor3465-6230-4666-b335-323630306333/24268948.jpg",
+  "https://static.tildacdn.com/stor3031-6563-4335-b233-376162623832/33573262.jpg",
+];
+const ALBI_GEL_POLISH_SUMMER_143_151_ABOUT =
+  "Gel polish Albi 143–151 — Tilda mağaza ürün sayfası (SUMMER COLLECTION).\n\n" +
+  "Bağlantı: https://albinails.com/shop/gelpolish/tproduct/703414475-592713131792-gel-polish-albi-143-151\n\n" +
+  "Tilda’da tek ürün kartında çoklu «Color» sürümü: tam set SKU «summer collectiom full 143-151» (Tilda yazımı) ve ayrı ayrı 143 … 151 tonları. Örnek fiyatlar (AED): tam set 288; tek ton 40 (Tilda şema / vitrin; güncel fiyat için ürün sayfasına bakın).\n\n" +
+  "Ürün metni (Tilda İngilizce özeti): yoğun kendi seviyesini bulan doku, yüksek pigment, orta-kalın viskozite; klasik kaplama, degrade ve nail art için uygun. Kullanım: plaka hazırlığı, dehydrator, primer; baz + LED; renk 1–2 ince kat + LED; üst cila + LED. Saklama: serin ve kuru, 10–26 °C; açıkken UV/LED’ten koruyun. Ekran rengi sapabilir.\n\n" +
+  "Galeri: Tilda ürün JSON’undaki 18 görsel sırası (slider + vitrin küçük resimleri ile uyumlu).";
+
+/** Tilda albinails.com — Gel polish SUMMER 159–169 seti (tek ürün kartı; çoklu Color sürümü). */
+const ALBI_GEL_POLISH_SUMMER_159_169_SERIES = "ALBI Gel polish — Summer 159–169 (Tilda)";
+const ALBI_GEL_POLISH_SUMMER_159_169_GALLERY = [
+  "https://static.tildacdn.com/stor3938-6437-4031-a338-346336663961/64615977.jpg",
+  "https://static.tildacdn.com/stor3537-3730-4762-a330-646166643932/57006656.png",
+  "https://static.tildacdn.com/stor6232-6238-4831-b739-643737616166/75643820.jpg",
+  "https://static.tildacdn.com/stor6362-3735-4865-a263-626330363865/13365681.jpg",
+  "https://static.tildacdn.com/stor6663-3437-4632-b233-653339623366/90067666.jpg",
+  "https://static.tildacdn.com/stor3162-3037-4432-b030-343366303864/45710854.jpg",
+  "https://static.tildacdn.com/stor3062-3166-4039-b464-306634376163/61623253.jpg",
+  "https://static.tildacdn.com/stor3037-3565-4833-b661-663161336339/39417314.jpg",
+  "https://static.tildacdn.com/stor3961-6361-4237-b365-633237313738/78956182.jpg",
+  "https://static.tildacdn.com/stor6538-3336-4662-a262-613130333232/16702172.jpg",
+  "https://static.tildacdn.com/stor3662-6335-4834-b332-626662386635/51762425.jpg",
+  "https://static.tildacdn.com/stor6565-3333-4433-a266-376437643565/97507136.jpg",
+  "https://static.tildacdn.com/stor3538-6664-4832-b666-396334333563/92197760.jpg",
+  "https://static.tildacdn.com/stor3136-6461-4064-a631-323233343433/60989674.jpg",
+  "https://static.tildacdn.com/stor6131-6133-4733-a235-336535303961/16221122.jpg",
+];
+const ALBI_GEL_POLISH_SUMMER_159_169_ABOUT =
+  "Gel polish Albi 159–169 — Tilda mağaza ürün sayfası.\n\n" +
+  "Bağlantı: https://albinails.com/shop/gelpolish/tproduct/703414475-153181165902-gel-polish-albi-159-169\n\n" +
+  "Tilda’da tek ürün kartında çoklu «Color» sürümü: tam set SKU «full collection 159-169» ve ayrı ayrı 159, 161–169 tonları (Tilda seçicide 160 yok). Örnek fiyatlar (AED): tam set 320; tek ton 40. Tilda şemasında 168 «OutOfStock» olarak işaretlenmiş olabilir; güncel stok için ürün sayfasına bakın.\n\n" +
+  "Ürün metni: 143–151 seti ile aynı ALBI jel oje kullanım ve saklama özeti (yoğun doku, 1–2 ince kat, LED; serin kuru ortam 10–26 °C; UV/LED’ten koruma; ekran rengi sapabilir).\n\n" +
+  "Galeri: Tilda slider küçük resim sırasıyla uyumlu 15 vitrin görseli.";
+
+/** Tilda albinails.com — Base Coat bölümü (liste kartı: vitrin + ikinci görsel). */
+const ALBI_BASE_COAT_SHOP_SERIES = "ALBI baz (Tilda Base Coat)";
+const ALBI_BASE_COAT_SHOP_ABOUT =
+  "ALBI baz ürünleri — Tilda mağaza «Base Coat» vitrininden.\n\n" +
+  "Bölüm: https://albinails.com/shop/basecoat\n\n" +
+  "Kart fiyat örneği 55 AED (15 ml); 30 / 50 ml seçenekleri ürüne göre kapalı olabilir. Stok, SKU ve güncel fiyat için ilgili ürün sayfasına bakın.\n\n" +
+  "Saklama: serin ve kuru ortam, 10–26 °C; açıkken UV/LED ışığından uzak tutun.";
+
+const ALBI_BASE_COAT_SHOP_PRODUCT_SEED = [
+  {
+    id: "tilda-albi-bc-flex-15",
+    name: "Base Coat FLEX — 15 ml (SKU Flex15)",
+    image: "https://static.tildacdn.com/tild3332-3666-4431-b134-393139303332/instasaver-613215040.jpg",
+    gallery: [
+      "https://static.tildacdn.com/tild3332-3666-4431-b134-393139303332/instasaver-613215040.jpg",
+      "https://static.tildacdn.com/stor6262-3936-4265-b531-386161323737/63424026.jpg",
+    ],
+  },
+  {
+    id: "tilda-albi-bc-rubber-15",
+    name: "Base RUBBER — 15 ml (SKU RUBBER15)",
+    image: "https://static.tildacdn.com/tild3366-3239-4632-b865-663535323261/base_rubber.jpg",
+    gallery: [
+      "https://static.tildacdn.com/tild3366-3239-4632-b865-663535323261/base_rubber.jpg",
+      "https://static.tildacdn.com/stor3137-3361-4862-b639-653065646361/31256837.jpg",
+    ],
+  },
+  {
+    id: "tilda-albi-bc-pedicure-lite-15",
+    name: "Pedicure Base Coat LITE — 15 ml (SKU LITE15)",
+    image: "https://static.tildacdn.com/tild3930-6438-4964-a230-363661343937/IMG_7407.jpg",
+    gallery: [
+      "https://static.tildacdn.com/tild3930-6438-4964-a230-363661343937/IMG_7407.jpg",
+      "https://static.tildacdn.com/stor6262-3936-4265-b531-386161323737/63424026.jpg",
+    ],
+  },
+  {
+    id: "tilda-albi-bc-secret-milk-15",
+    name: "Base Coat SECRET MILK — 15 ml (SKU Secret Milk)",
+    image: "https://static.tildacdn.com/tild3935-3837-4338-b532-356561656437/albi_cover1-1280x128.jpg",
+    gallery: [
+      "https://static.tildacdn.com/tild3935-3837-4338-b532-356561656437/albi_cover1-1280x128.jpg",
+      "https://static.tildacdn.com/tild3064-6538-4830-b635-386565313131/IMG_9826.jpg",
+    ],
+  },
+  {
+    id: "tilda-albi-bc-secret-rose-15",
+    name: "Base Coat SECRET ROSE — 15 ml (SKU Secret_rose15)",
+    image: "https://static.tildacdn.com/stor6363-3631-4135-b737-653639623932/37199198.jpg",
+    gallery: [
+      "https://static.tildacdn.com/stor6363-3631-4135-b737-653639623932/37199198.jpg",
+      "https://static.tildacdn.com/tild3931-3764-4431-b833-303738643634/secret_rose.jpg",
+    ],
+  },
+  {
+    id: "tilda-albi-bc-secret-beige-15",
+    name: "Base Coat SECRET BEIGE — 15 ml (SKU Secret_beige15)",
+    image: "https://static.tildacdn.com/stor6565-3139-4665-a431-376231326666/71758041.jpg",
+    gallery: [
+      "https://static.tildacdn.com/stor6565-3139-4665-a431-376231326666/71758041.jpg",
+      "https://static.tildacdn.com/tild3839-3764-4337-b130-316630386565/secret_beige.jpg",
+    ],
+  },
+  {
+    id: "tilda-albi-bc-neon-orange-15",
+    name: "Base Coat NEON — Neon Orange — 15 ml",
+    image: "https://static.tildacdn.com/stor3264-3066-4662-b334-373030303363/53052930.jpg",
+    gallery: [
+      "https://static.tildacdn.com/stor3264-3066-4662-b334-373030303363/53052930.jpg",
+      "https://static.tildacdn.com/tild3930-6164-4136-b762-336331653230/IMG_9997.jpg",
+    ],
+  },
+  {
+    id: "tilda-albi-bc-neon-lemon-15",
+    name: "Base Coat NEON Lemon — 15 ml",
+    image: "https://static.tildacdn.com/stor3137-6166-4633-a430-663966366533/90255051.jpg",
+    gallery: [
+      "https://static.tildacdn.com/stor3137-6166-4633-a430-663966366533/90255051.jpg",
+      "https://static.tildacdn.com/tild3930-6164-4136-b762-336331653230/IMG_9997.jpg",
+    ],
+  },
+  {
+    id: "tilda-albi-bc-neon-coral-15",
+    name: "Base Coat NEON Coral — 15 ml",
+    image: "https://static.tildacdn.com/stor3239-6634-4630-b832-303339633337/58031039.jpg",
+    gallery: [
+      "https://static.tildacdn.com/stor3239-6634-4630-b832-303339633337/58031039.jpg",
+      "https://static.tildacdn.com/tild3930-6164-4136-b762-336331653230/IMG_9997.jpg",
+    ],
+  },
+  {
+    id: "tilda-albi-bc-neon-mango-15",
+    name: "Base Coat NEON Mango — 15 ml",
+    image: "https://static.tildacdn.com/stor6562-6366-4565-b536-666438323739/39369013.jpg",
+    gallery: [
+      "https://static.tildacdn.com/stor6562-6366-4565-b536-666438323739/39369013.jpg",
+      "https://static.tildacdn.com/tild3930-6164-4136-b762-336331653230/IMG_9997.jpg",
+    ],
+  },
+  {
+    id: "tilda-albi-bc-neon-lime-15",
+    name: "Base Coat NEON Lime — 15 ml",
+    image: "https://static.tildacdn.com/stor3530-3631-4435-a530-613636333531/21411719.jpg",
+    gallery: [
+      "https://static.tildacdn.com/stor3530-3631-4435-a530-613636333531/21411719.jpg",
+      "https://static.tildacdn.com/tild3930-6164-4136-b762-336331653230/IMG_9997.jpg",
+    ],
+  },
+  {
+    id: "tilda-albi-bc-neon-yellow-15",
+    name: "Base Coat NEON Yellow — 15 ml",
+    image: "https://static.tildacdn.com/stor3961-3037-4030-b136-653664303838/37468721.jpg",
+    gallery: [
+      "https://static.tildacdn.com/stor3961-3037-4030-b136-653664303838/37468721.jpg",
+      "https://static.tildacdn.com/tild3864-6336-4466-b733-393437613731/IMG_1854.jpg",
+    ],
+  },
+  {
+    id: "tilda-albi-bc-neon-pink-15",
+    name: "Base Coat NEON Pink — 15 ml",
+    image: "https://static.tildacdn.com/stor6166-3831-4531-b661-303134663838/19738003.jpg",
+    gallery: [
+      "https://static.tildacdn.com/stor6166-3831-4531-b661-303134663838/19738003.jpg",
+      "https://static.tildacdn.com/tild3930-6164-4136-b762-336331653230/IMG_9997.jpg",
+    ],
+  },
+  {
+    id: "tilda-albi-bc-potal-rose-15",
+    name: "Base Coat POTAL Rose — 15 ml (SKU Rose_potal)",
+    image: "https://static.tildacdn.com/stor3565-6537-4361-a238-393535653839/43676346.jpg",
+    gallery: [
+      "https://static.tildacdn.com/stor3565-6537-4361-a238-393535653839/43676346.jpg",
+      "https://static.tildacdn.com/stor6132-3962-4233-b162-333462323033/69777531.jpg",
+    ],
+  },
+  {
+    id: "tilda-albi-bc-potal-milk-15",
+    name: "Base Coat POTAL Milk — 15 ml (SKU Milk_potal)",
+    image: "https://static.tildacdn.com/stor3737-3838-4466-a634-353230643565/35434161.jpg",
+    gallery: [
+      "https://static.tildacdn.com/stor3737-3838-4466-a634-353230643565/35434161.jpg",
+      "https://static.tildacdn.com/stor6263-6661-4434-a564-633338653738/30262677.jpg",
+    ],
+  },
+  {
+    id: "tilda-albi-bc-yogurt-01",
+    name: "Base Coat YOGURT 1 — 15 ml (SKU ALBI YOGURT BASE1)",
+    image: "https://static.tildacdn.com/tild3265-3133-4166-b336-643031393163/1_2.jpg",
+    gallery: [
+      "https://static.tildacdn.com/tild3265-3133-4166-b336-643031393163/1_2.jpg",
+      "https://static.tildacdn.com/tild3033-3964-4165-b232-393239333938/3U1A0060.jpg",
+    ],
+  },
+  {
+    id: "tilda-albi-bc-yogurt-02",
+    name: "Base Coat YOGURT 2 — 15 ml (SKU ALBI YOGURT BASE2)",
+    image: "https://static.tildacdn.com/tild3231-6666-4233-b531-363062633264/2_2.jpg",
+    gallery: [
+      "https://static.tildacdn.com/tild3231-6666-4233-b531-363062633264/2_2.jpg",
+      "https://static.tildacdn.com/tild3033-3964-4165-b232-393239333938/3U1A0060.jpg",
+    ],
+  },
+  {
+    id: "tilda-albi-bc-yogurt-03",
+    name: "Base Coat YOGURT 3 — 15 ml (SKU ALBI YOGURT BASE3)",
+    image: "https://static.tildacdn.com/tild6266-3134-4231-b231-336262303063/3_2.jpg",
+    gallery: [
+      "https://static.tildacdn.com/tild6266-3134-4231-b231-336262303063/3_2.jpg",
+      "https://static.tildacdn.com/tild3033-3964-4165-b232-393239333938/3U1A0060.jpg",
+    ],
+  },
+  {
+    id: "tilda-albi-bc-yogurt-04",
+    name: "Base Coat YOGURT 4 — 15 ml (SKU ALBI YOGURT BASE4)",
+    image: "https://static.tildacdn.com/tild3662-3232-4936-b934-646332383337/4_2.jpg",
+    gallery: [
+      "https://static.tildacdn.com/tild3662-3232-4936-b934-646332383337/4_2.jpg",
+      "https://static.tildacdn.com/tild3033-3964-4165-b232-393239333938/3U1A0060.jpg",
+    ],
+  },
+  {
+    id: "tilda-albi-bc-yogurt-05",
+    name: "Base Coat YOGURT 5 — 15 ml (SKU ALBI YOGURT BASE5)",
+    image: "https://static.tildacdn.com/tild6533-3238-4435-b236-323361326361/5_2.jpg",
+    gallery: [
+      "https://static.tildacdn.com/tild6533-3238-4435-b236-323361326361/5_2.jpg",
+      "https://static.tildacdn.com/tild3033-3964-4165-b232-393239333938/3U1A0060.jpg",
+    ],
+  },
+  {
+    id: "tilda-albi-bc-yogurt-06",
+    name: "Base Coat YOGURT 6 — 15 ml (SKU ALBI YOGURT BASE6)",
+    image: "https://static.tildacdn.com/tild6632-3136-4434-b632-326564366239/6_2.jpg",
+    gallery: [
+      "https://static.tildacdn.com/tild6632-3136-4434-b632-326564366239/6_2.jpg",
+      "https://static.tildacdn.com/tild3033-3964-4165-b232-393239333938/3U1A0060.jpg",
+    ],
+  },
+  {
+    id: "tilda-albi-bc-yogurt-07",
+    name: "Base Coat YOGURT 7 — 15 ml (SKU ALBI YOGURT BASE7)",
+    image: "https://static.tildacdn.com/tild3132-3061-4236-b630-666462396135/7_2.jpg",
+    gallery: [
+      "https://static.tildacdn.com/tild3132-3061-4236-b630-666462396135/7_2.jpg",
+      "https://static.tildacdn.com/tild3033-3964-4165-b232-393239333938/3U1A0060.jpg",
+    ],
+  },
+  {
+    id: "tilda-albi-bc-yogurt-08",
+    name: "Base Coat YOGURT 8 — 15 ml (SKU ALBI YOGURT BASE8)",
+    image: "https://static.tildacdn.com/tild6135-3938-4466-b134-323232316137/8_1.jpg",
+    gallery: [
+      "https://static.tildacdn.com/tild6135-3938-4466-b134-323232316137/8_1.jpg",
+      "https://static.tildacdn.com/tild3033-3964-4165-b232-393239333938/3U1A0060.jpg",
+    ],
+  },
+];
+
+/** Tilda albinails.com — Top Coat bölümü (liste kartı: vitrin + ikinci görsel). */
+const ALBI_TOP_COAT_SHOP_SERIES = "ALBI üst cila (Tilda Top Coat)";
+const ALBI_TOP_COAT_SHOP_ABOUT =
+  "ALBI üst cila ürünleri — Tilda mağaza «Top Coat» vitrininden.\n\n" +
+  "Bölüm: https://albinails.com/shop/topcoat\n\n" +
+  "Kart fiyat örneği 55 AED (15 ml). Boyut / renk seçenekleri ürüne göre değişir; Top Coat SHINE kartında Tilda’da dört ton (Shine 1–4) vardır — katalogda varsayılan vitrin Shine 1’dir. Top Coat POTAL’da dört metalik yüzey seçeneği vardır — vitrin matte gold görselidir.\n\n" +
+  "Saklama: serin ve kuru ortam, 10–26 °C; açıkken UV/LED ışığından uzak tutun.";
+
+const ALBI_TOP_COAT_SHOP_PRODUCT_SEED = [
+  {
+    id: "tilda-albi-tc-no-wipe-15",
+    name: "Top Coat NO WIPE — 15 ml (SKU COAT_NO_WIPE_15)",
+    image: "https://static.tildacdn.com/stor6230-3561-4963-b733-356233636563/76736726.jpg",
+    gallery: [
+      "https://static.tildacdn.com/stor6230-3561-4963-b733-356233636563/76736726.jpg",
+      "https://static.tildacdn.com/stor3863-3335-4634-b232-666236373237/68823344.jpg",
+    ],
+  },
+  {
+    id: "tilda-albi-tc-no-wipe-uv-filter-15",
+    name: "Top Coat NO WIPE with UV-filter — 15 ml (SKU No_wipe_uf_filter_15)",
+    image: "https://static.tildacdn.com/tild3534-3333-4036-a162-633436316466/RM0A4340.jpg",
+    gallery: [
+      "https://static.tildacdn.com/tild3534-3333-4036-a162-633436316466/RM0A4340.jpg",
+      "https://static.tildacdn.com/stor3863-3335-4634-b232-666236373237/68823344.jpg",
+    ],
+  },
+  {
+    id: "tilda-albi-tc-velvet-15",
+    name: "Top Coat VELVET — 15 ml (SKU Velvet_15)",
+    image: "https://static.tildacdn.com/tild6636-6538-4337-b132-626362383866/instasaver-613215040.jpg",
+    gallery: [
+      "https://static.tildacdn.com/tild6636-6538-4337-b132-626362383866/instasaver-613215040.jpg",
+      "https://static.tildacdn.com/tild3230-6434-4234-b930-663566366439/VELVET_TOP.jpg",
+    ],
+  },
+  {
+    id: "tilda-albi-tc-shine-01-15",
+    name: "Top Coat SHINE 1 — 15 ml (SKU Shine_1; Tilda’da Shine 2–4)",
+    image: "https://static.tildacdn.com/stor3764-3435-4262-a636-353630383236/50915875.jpg",
+    gallery: [
+      "https://static.tildacdn.com/stor3764-3435-4262-a636-353630383236/50915875.jpg",
+      "https://static.tildacdn.com/tild3539-3533-4362-b564-393837663338/_SHINE_1.jpg",
+    ],
+  },
+  {
+    id: "tilda-albi-tc-smuzy-15",
+    name: "Top Coat SMUZY — 15 ml (SKU Smuzy_15)",
+    image: "https://static.tildacdn.com/stor6265-3237-4139-b634-643666313934/67056214.jpg",
+    gallery: [
+      "https://static.tildacdn.com/stor6265-3237-4139-b634-643666313934/67056214.jpg",
+      "https://static.tildacdn.com/tild3431-3635-4432-a637-616362313337/IMG_0094.jpg",
+    ],
+  },
+  {
+    id: "tilda-albi-tc-potal-15",
+    name: "Top Coat POTAL — 15 ml (SKU Potal_gold_matte; Tilda’da gloss/matte gold/silver)",
+    image: "https://static.tildacdn.com/tild3963-3332-4638-a435-646539313761/IMG_4325.jpg",
+    gallery: [
+      "https://static.tildacdn.com/tild3963-3332-4638-a435-646539313761/IMG_4325.jpg",
+      "https://static.tildacdn.com/tild6663-6162-4163-a164-393565353036/IMG_0376.jpg",
+    ],
+  },
+  {
+    id: "tilda-albi-tc-bomb-15",
+    name: "Top Coat BOMB — 15 ml (SKU Bomb)",
+    image: "https://static.tildacdn.com/tild3136-3766-4361-a136-656330616631/IMG_4926.jpg",
+    gallery: [
+      "https://static.tildacdn.com/tild3136-3766-4361-a136-656330616631/IMG_4926.jpg",
+      "https://static.tildacdn.com/tild6436-3431-4661-a533-343735656262/IMG_5709.jpg",
+    ],
+  },
+  {
+    id: "tilda-albi-tc-color-sweet-pink-15",
+    name: "Top Coat COLOR Sweet pink — 15 ml",
+    image: "https://static.tildacdn.com/stor6637-6131-4334-a661-333934343161/95401483.jpg",
+    gallery: [
+      "https://static.tildacdn.com/stor6637-6131-4334-a661-333934343161/95401483.jpg",
+      "https://static.tildacdn.com/stor3561-3365-4432-a637-623435316632/32792389.jpg",
+    ],
+  },
+  {
+    id: "tilda-albi-tc-color-naked-15",
+    name: "Top Coat COLOR Naked — 15 ml",
+    image: "https://static.tildacdn.com/stor3638-6631-4264-b932-666562303333/41992704.jpg",
+    gallery: [
+      "https://static.tildacdn.com/stor3638-6631-4264-b932-666562303333/41992704.jpg",
+      "https://static.tildacdn.com/stor3561-3365-4432-a637-623435316632/32792389.jpg",
+    ],
+  },
+  {
+    id: "tilda-albi-tc-color-real-natural-15",
+    name: "Top Coat COLOR Real natural — 15 ml",
+    image: "https://static.tildacdn.com/stor3530-3230-4563-b266-636537343532/22005565.jpg",
+    gallery: [
+      "https://static.tildacdn.com/stor3530-3230-4563-b266-636537343532/22005565.jpg",
+      "https://static.tildacdn.com/stor3561-3365-4432-a637-623435316632/32792389.jpg",
+    ],
+  },
+  {
+    id: "tilda-albi-tc-color-fiery-red-15",
+    name: "Top Coat COLOR Fiery red — 15 ml",
+    image: "https://static.tildacdn.com/stor3564-6365-4633-b435-333865366262/97114048.jpg",
+    gallery: [
+      "https://static.tildacdn.com/stor3564-6365-4633-b435-333865366262/97114048.jpg",
+      "https://static.tildacdn.com/stor3963-3338-4636-b632-386261303332/91695515.jpg",
+    ],
+  },
+  {
+    id: "tilda-albi-tc-color-cherry-bomb-15",
+    name: "Top Coat COLOR Cherry bomb — 15 ml",
+    image: "https://static.tildacdn.com/stor3433-6130-4533-a335-336530306633/70114642.jpg",
+    gallery: [
+      "https://static.tildacdn.com/stor3433-6130-4533-a335-336530306633/70114642.jpg",
+      "https://static.tildacdn.com/stor3039-6631-4033-b031-393134623638/84687778.jpg",
+    ],
+  },
+  {
+    id: "tilda-albi-tc-color-deep-wine-15",
+    name: "Top Coat COLOR Deep wine — 15 ml",
+    image: "https://static.tildacdn.com/stor6562-3833-4534-a263-306537333338/85113242.jpg",
+    gallery: [
+      "https://static.tildacdn.com/stor6562-3833-4534-a263-306537333338/85113242.jpg",
+      "https://static.tildacdn.com/stor3538-3335-4135-b433-393230396139/26570730.jpg",
+    ],
+  },
+];
 
 const defaultProducts = [
   { id: "kalipso-top-flakes-velor-15", name: "TOP FLAKES VELOR, 15 ML", brand: "Kalipso", size: "15 ml", image: "https://vo-kalipso.com/wp-content/uploads/2021/05/\u0432\u0435\u0440\u043b\u044e\u0440-\u043c\u0430\u0442\u043e\u0432-1--600x600.jpg", categories: ["top-coat"] },
@@ -2007,6 +3262,15 @@ const defaultProducts = [
     seriesGallery: SILK_CAT_SERIES_GALLERY,
     seriesAbout: SILK_CAT_SERIES_ABOUT,
   })),
+  ...SHINE_CAT_SERIES_PRODUCT_SEED.map((row) => ({
+    ...row,
+    brand: "ALBI",
+    size: "15 ml",
+    series: SHINE_CAT_SERIES,
+    categories: ["gel-polish", "new"],
+    seriesGallery: SHINE_CAT_SERIES_GALLERY,
+    seriesAbout: SHINE_CAT_SERIES_ABOUT,
+  })),
   ...FRENCH_SERIES_PRODUCT_SEED.map((row) => ({
     ...row,
     brand: "ALBI",
@@ -2030,6 +3294,28 @@ const defaultProducts = [
       seriesAbout: MEN_WOMEN_SERIES_ABOUT,
     };
   }),
+  ...ALBI_BASE_COAT_SHOP_PRODUCT_SEED.map((row) => ({
+    id: row.id,
+    name: row.name,
+    brand: "ALBI",
+    size: "15 ml",
+    series: ALBI_BASE_COAT_SHOP_SERIES,
+    image: row.image,
+    seriesGallery: row.gallery,
+    seriesAbout: ALBI_BASE_COAT_SHOP_ABOUT,
+    categories: ["base-coat", "new"],
+  })),
+  ...ALBI_TOP_COAT_SHOP_PRODUCT_SEED.map((row) => ({
+    id: row.id,
+    name: row.name,
+    brand: "ALBI",
+    size: "15 ml",
+    series: ALBI_TOP_COAT_SHOP_SERIES,
+    image: row.image,
+    seriesGallery: row.gallery,
+    seriesAbout: ALBI_TOP_COAT_SHOP_ABOUT,
+    categories: ["top-coat", "new"],
+  })),
   {
     id: "tilda-albin-primer-ultrabond",
     name: "Asidsiz primer (Ultrabond)",
@@ -2062,6 +3348,529 @@ const defaultProducts = [
     image: "https://static.tildacdn.com/tild6138-6562-4137-b231-326632656537/IMG_7408.jpg",
     categories: ["base-coat", "new"],
   },
+  {
+    id: "tilda-albi-sculptural-gel-papaya-15ml",
+    name: "Sculptural gel ALBI Papaya — 15 ml",
+    brand: "ALBI",
+    size: "15 ml",
+    series: ALBI_SCULPTURAL_GEL_PAPAYA_SERIES,
+    image: "https://static.tildacdn.com/stor3235-3431-4666-b861-396466613935/46344736.jpg",
+    categories: ["building-gel", "new"],
+    seriesGallery: ALBI_SCULPTURAL_GEL_PAPAYA_GALLERY,
+    seriesAbout: ALBI_SCULPTURAL_GEL_PAPAYA_ABOUT,
+  },
+  {
+    id: "tilda-albi-sculptural-gel-peach-15ml",
+    name: "Sculptural gel ALBI PEACH — 15 ml (SKU: Peach)",
+    brand: "ALBI",
+    size: "15 ml",
+    series: ALBI_SCULPTURAL_GEL_PEACH_SERIES,
+    image: "https://static.tildacdn.com/stor3833-3736-4366-b233-396339373765/87841160.jpg",
+    categories: ["building-gel", "new"],
+    seriesGallery: ALBI_SCULPTURAL_GEL_PEACH_GALLERY,
+    seriesAbout: ALBI_SCULPTURAL_GEL_PEACH_ABOUT,
+  },
+  {
+    id: "tilda-albi-sculptural-gel-banana-15ml",
+    name: "Sculptural gel ALBI BANANA — 15 ml (SKU: Banana)",
+    brand: "ALBI",
+    size: "15 ml",
+    series: ALBI_SCULPTURAL_GEL_BANANA_SERIES,
+    image: "https://static.tildacdn.com/stor3536-3963-4237-a261-623765376665/51058518.jpg",
+    categories: ["building-gel", "new"],
+    seriesGallery: ALBI_SCULPTURAL_GEL_BANANA_GALLERY,
+    seriesAbout: ALBI_SCULPTURAL_GEL_BANANA_ABOUT,
+  },
+  {
+    id: "tilda-albi-sculptural-gel-aqua-15ml",
+    name: "Sculptural gel ALBI AQUA — 15 ml (SKU: Aqua)",
+    brand: "ALBI",
+    size: "15 ml",
+    series: ALBI_SCULPTURAL_GEL_AQUA_SERIES,
+    image: "https://static.tildacdn.com/stor6237-3662-4331-b437-633163646436/71998450.jpg",
+    categories: ["building-gel", "new"],
+    seriesGallery: ALBI_SCULPTURAL_GEL_AQUA_GALLERY,
+    seriesAbout: ALBI_SCULPTURAL_GEL_AQUA_ABOUT,
+  },
+  {
+    id: "tilda-albi-sculptural-gel-cloud-15ml",
+    name: "Sculptural gel ALBI CLOUD — 15 ml (SKU: Cloud)",
+    brand: "ALBI",
+    size: "15 ml",
+    series: ALBI_SCULPTURAL_GEL_CLOUD_SERIES,
+    image: "https://static.tildacdn.com/stor3762-3534-4033-b165-313434326365/75630950.jpg",
+    categories: ["building-gel", "new"],
+    seriesGallery: ALBI_SCULPTURAL_GEL_CLOUD_GALLERY,
+    seriesAbout: ALBI_SCULPTURAL_GEL_CLOUD_ABOUT,
+  },
+  {
+    id: "tilda-albi-sculptural-gel-orchid-15ml",
+    name: "Sculptural gel ALBI ORCHID — 15 ml (SKU: Orchid)",
+    brand: "ALBI",
+    size: "15 ml",
+    series: ALBI_SCULPTURAL_GEL_ORCHID_SERIES,
+    image: "https://static.tildacdn.com/stor3861-3461-4733-b864-666461646539/46891927.jpg",
+    categories: ["building-gel", "new"],
+    seriesGallery: ALBI_SCULPTURAL_GEL_ORCHID_GALLERY,
+    seriesAbout: ALBI_SCULPTURAL_GEL_ORCHID_ABOUT,
+  },
+  {
+    id: "tilda-albi-sculptural-gel-azure-15ml",
+    name: "Sculptural gel ALBI AZURE — 15 ml (SKU: Azure)",
+    brand: "ALBI",
+    size: "15 ml",
+    series: ALBI_SCULPTURAL_GEL_AZURE_SERIES,
+    image: "https://static.tildacdn.com/stor3733-6365-4531-a637-353966353437/20544292.jpg",
+    categories: ["building-gel", "new"],
+    seriesGallery: ALBI_SCULPTURAL_GEL_AZURE_GALLERY,
+    seriesAbout: ALBI_SCULPTURAL_GEL_AZURE_ABOUT,
+  },
+  {
+    id: "tilda-albi-sculptural-gel-innocent-15ml",
+    name: "Sculptural gel ALBI INNOCENT — 15 ml (SKU: INNOCENT)",
+    brand: "ALBI",
+    size: "15 ml",
+    series: ALBI_SCULPTURAL_GEL_INNOCENT_SERIES,
+    image: "https://static.tildacdn.com/tild3939-6239-4938-a630-326663313736/inocent.jpg",
+    categories: ["building-gel", "new"],
+    seriesGallery: ALBI_SCULPTURAL_GEL_INNOCENT_GALLERY,
+    seriesAbout: ALBI_SCULPTURAL_GEL_INNOCENT_ABOUT,
+  },
+  {
+    id: "tilda-albi-sculptural-gel-champagne-15ml",
+    name: "Sculptural gel ALBI CHAMPAGNE — 15 ml (SKU: CHAMPAGNE)",
+    brand: "ALBI",
+    size: "15 ml",
+    series: ALBI_SCULPTURAL_GEL_CHAMPAGNE_SERIES,
+    image: "https://static.tildacdn.com/tild3439-6131-4163-a537-646636373632/champagne.jpg",
+    categories: ["building-gel", "new"],
+    seriesGallery: ALBI_SCULPTURAL_GEL_CHAMPAGNE_GALLERY,
+    seriesAbout: ALBI_SCULPTURAL_GEL_CHAMPAGNE_ABOUT,
+  },
+  {
+    id: "tilda-albi-sculptural-gel-gentle-15ml",
+    name: "Sculptural gel ALBI GENTLE — 15 ml (SKU: GENTLE)",
+    brand: "ALBI",
+    size: "15 ml",
+    series: ALBI_SCULPTURAL_GEL_GENTLE_SERIES,
+    image: "https://static.tildacdn.com/tild3237-3130-4461-b730-633930343639/gentle.jpg",
+    categories: ["building-gel", "new"],
+    seriesGallery: ALBI_SCULPTURAL_GEL_GENTLE_GALLERY,
+    seriesAbout: ALBI_SCULPTURAL_GEL_GENTLE_ABOUT,
+  },
+  {
+    id: "tilda-albi-cream-gel-beige-15ml",
+    name: "Cream gel ALBI BEIGE — 15 ml (SKU: Beige_15)",
+    brand: "ALBI",
+    size: "15 ml",
+    series: ALBI_CREAM_GEL_BEIGE_SERIES,
+    image: "https://static.tildacdn.com/tild3266-6566-4663-b533-343434666338/__Beige.jpg",
+    categories: ["building-gel", "new"],
+    seriesGallery: ALBI_CREAM_GEL_BEIGE_GALLERY,
+    seriesAbout: ALBI_CREAM_GEL_BEIGE_ABOUT,
+  },
+  {
+    id: "tilda-albi-cream-gel-rose-15ml",
+    name: "Cream gel ALBI ROSE — 15 ml (SKU: Rose_15)",
+    brand: "ALBI",
+    size: "15 ml",
+    series: ALBI_CREAM_GEL_ROSE_SERIES,
+    image: "https://static.tildacdn.com/tild3334-6335-4732-a564-653933623564/__Rose.jpg",
+    categories: ["building-gel", "new"],
+    seriesGallery: ALBI_CREAM_GEL_ROSE_GALLERY,
+    seriesAbout: ALBI_CREAM_GEL_ROSE_ABOUT,
+  },
+  ...ALBI_LIQUID_POLYGEL_SILVER_PRODUCT_SEED.map((row) => ({
+    id: row.id,
+    name: row.name,
+    brand: "ALBI",
+    size: "15 ml",
+    series: ALBI_LIQUID_POLYGEL_SILVER_SERIES,
+    image: row.image,
+    categories: ["liquid-polygel", "new"],
+    seriesGallery: ALBI_LIQUID_POLYGEL_SILVER_GALLERY,
+    seriesAbout: ALBI_LIQUID_POLYGEL_SILVER_ABOUT,
+  })),
+  {
+    id: "tilda-albi-liquid-polygel-08-15ml",
+    name: "Liquid polygel ALBI 08 — 15 ml (SKU: 08)",
+    brand: "ALBI",
+    size: "15 ml",
+    series: ALBI_LIQUID_POLYGEL_NUMBERED_SERIES,
+    image: "https://static.tildacdn.com/stor3366-3962-4666-b864-346432383164/98871218.jpg",
+    categories: ["liquid-polygel", "new"],
+    seriesGallery: ALBI_LIQUID_POLYGEL_08_GALLERY,
+    seriesAbout: ALBI_LIQUID_POLYGEL_08_ABOUT,
+  },
+  ...ALBI_LIQUID_POLYGEL_NUMBERED_SHADES_01_07_SEED.map((row) => ({
+    id: `tilda-albi-liquid-polygel-${row.sku}-15ml`,
+    name: `Liquid polygel ALBI ${row.sku} — 15 ml (SKU: ${row.sku})`,
+    brand: "ALBI",
+    size: "15 ml",
+    series: ALBI_LIQUID_POLYGEL_NUMBERED_SERIES,
+    image: row.image,
+    categories: ["liquid-polygel", "new"],
+    seriesGallery: [row.image],
+    seriesAbout:
+      `Liquid polygel ALBI ${row.sku} (Tilda vitrin SKU: ${row.sku}; renk seçimi: ${row.sku}). «SUMMER COLLECTION ${row.sku}» vitrininde aynı görsel kullanılıyorsa bile ürün bağlantısı Tilda’da ayrı olabilir.\n\n` +
+      ALBI_LIQUID_POLYGEL_TILDA_BODY +
+      "Tilda fiyat örneği: 15 ml 55 AED (güncel mağazaya bakın).",
+  })),
+  ...ALBI_LIQUID_POLYGEL_PEARLY_PRODUCT_SEED.map((row) => ({
+    id: row.id,
+    name: row.name,
+    brand: "ALBI",
+    size: "15 ml",
+    series: ALBI_LIQUID_POLYGEL_PEARLY_SERIES,
+    image: row.image,
+    categories: ["liquid-polygel", "new"],
+    seriesGallery: row.gallery,
+    seriesAbout: ALBI_LIQUID_POLYGEL_PEARLY_ABOUT,
+  })),
+  {
+    id: "tilda-albi-liquid-polygel-red-01-15ml",
+    name: "Liquid polygel ALBI RED 01 Fiery red — 15 ml (SKU: RED SERIES 01)",
+    brand: "ALBI",
+    size: "15 ml",
+    series: ALBI_LIQUID_POLYGEL_RED_SERIES,
+    image: "https://static.tildacdn.com/stor6539-3538-4439-b634-613538343038/24731764.jpg",
+    categories: ["liquid-polygel", "new"],
+    seriesGallery: ALBI_LIQUID_POLYGEL_RED_01_GALLERY,
+    seriesAbout: ALBI_LIQUID_POLYGEL_RED_01_ABOUT,
+  },
+  {
+    id: "tilda-albi-liquid-polygel-red-01-building-15ml",
+    name: "Liquid polygel ALBI RED 01 — 15 ml (SKU: 01)",
+    brand: "ALBI",
+    size: "15 ml",
+    series: ALBI_LIQUID_POLYGEL_RED_SERIES,
+    image: "https://static.tildacdn.com/stor6539-3538-4439-b634-613538343038/24731764.jpg",
+    categories: ["liquid-polygel", "new"],
+    seriesGallery: ALBI_LIQUID_POLYGEL_RED_BUILDING_01_GALLERY,
+    seriesAbout: ALBI_LIQUID_POLYGEL_RED_BUILDING_01_ABOUT,
+  },
+  {
+    id: "tilda-albi-liquid-polygel-red-02-15ml",
+    name: "Liquid polygel ALBI RED 02 Cherry bomb — 15 ml (SKU: RED SERIES 02)",
+    brand: "ALBI",
+    size: "15 ml",
+    series: ALBI_LIQUID_POLYGEL_RED_SERIES,
+    image: "https://static.tildacdn.com/stor3039-3162-4632-a235-656536396663/90471515.jpg",
+    categories: ["liquid-polygel", "new"],
+    seriesGallery: ALBI_LIQUID_POLYGEL_RED_02_GALLERY,
+    seriesAbout: ALBI_LIQUID_POLYGEL_RED_02_ABOUT,
+  },
+  {
+    id: "tilda-albi-liquid-polygel-red-03-15ml",
+    name: "Liquid polygel ALBI RED 03 Deep wine — 15 ml (SKU: RED SERIES 03)",
+    brand: "ALBI",
+    size: "15 ml",
+    series: ALBI_LIQUID_POLYGEL_RED_SERIES,
+    image: "https://static.tildacdn.com/stor3334-6664-4130-a636-333663303637/73570605.jpg",
+    categories: ["liquid-polygel", "new"],
+    seriesGallery: ALBI_LIQUID_POLYGEL_RED_03_GALLERY,
+    seriesAbout: ALBI_LIQUID_POLYGEL_RED_03_ABOUT,
+  },
+  {
+    id: "tilda-albi-liquid-polygel-nude-inspire-15ml",
+    name: "Liquid polygel ALBI NUDE INSPIRE — 15 ml (SKU: INSPIRE)",
+    brand: "ALBI",
+    size: "15 ml",
+    series: ALBI_LIQUID_POLYGEL_NUDE_INSPIRE_SERIES,
+    image: "https://static.tildacdn.com/stor6334-3263-4163-b831-356561656163/46249595.jpg",
+    categories: ["liquid-polygel", "new"],
+    seriesGallery: ALBI_LIQUID_POLYGEL_NUDE_INSPIRE_GALLERY,
+    seriesAbout: ALBI_LIQUID_POLYGEL_NUDE_INSPIRE_ABOUT,
+  },
+  {
+    id: "tilda-albi-liquid-polygel-nude-almond-milk-15ml",
+    name: "Liquid polygel ALBI NUDE ALMOND MILK — 15 ml (SKU: ALMOND MILK)",
+    brand: "ALBI",
+    size: "15 ml",
+    series: ALBI_LIQUID_POLYGEL_NUDE_ALMOND_MILK_SERIES,
+    image: "https://static.tildacdn.com/stor6233-3966-4064-b630-313530663231/38837929.jpg",
+    categories: ["liquid-polygel", "new"],
+    seriesGallery: ALBI_LIQUID_POLYGEL_NUDE_ALMOND_MILK_GALLERY,
+    seriesAbout: ALBI_LIQUID_POLYGEL_NUDE_ALMOND_MILK_ABOUT,
+  },
+  {
+    id: "tilda-albi-liquid-polygel-nude-blossom-15ml",
+    name: "Liquid polygel ALBI NUDE BLOSSOM — 15 ml (SKU: BLOSSOM)",
+    brand: "ALBI",
+    size: "15 ml",
+    series: ALBI_LIQUID_POLYGEL_NUDE_BLOSSOM_SERIES,
+    image: "https://static.tildacdn.com/stor3431-3737-4436-a539-386631643561/64494633.jpg",
+    categories: ["liquid-polygel", "new"],
+    seriesGallery: ALBI_LIQUID_POLYGEL_NUDE_BLOSSOM_GALLERY,
+    seriesAbout: ALBI_LIQUID_POLYGEL_NUDE_BLOSSOM_ABOUT,
+  },
+  {
+    id: "tilda-albi-liquid-polygel-nude-sensitive-15ml",
+    name: "Liquid polygel ALBI NUDE SENSITIVE — 15 ml (SKU: SENSITIVE)",
+    brand: "ALBI",
+    size: "15 ml",
+    series: ALBI_LIQUID_POLYGEL_NUDE_SENSITIVE_SERIES,
+    image: "https://static.tildacdn.com/stor3066-3163-4436-b334-633130386665/94529523.jpg",
+    categories: ["liquid-polygel", "new"],
+    seriesGallery: ALBI_LIQUID_POLYGEL_NUDE_SENSITIVE_GALLERY,
+    seriesAbout: ALBI_LIQUID_POLYGEL_NUDE_SENSITIVE_ABOUT,
+  },
+  {
+    id: "tilda-albi-liquid-polygel-nude-cashmere-15ml",
+    name: "Liquid polygel ALBI NUDE CASHMERE — 15 ml (SKU: CASHMERE)",
+    brand: "ALBI",
+    size: "15 ml",
+    series: ALBI_LIQUID_POLYGEL_NUDE_CASHMERE_SERIES,
+    image: "https://static.tildacdn.com/stor3266-3762-4537-a564-323032616264/88412456.jpg",
+    categories: ["liquid-polygel", "new"],
+    seriesGallery: ALBI_LIQUID_POLYGEL_NUDE_CASHMERE_GALLERY,
+    seriesAbout: ALBI_LIQUID_POLYGEL_NUDE_CASHMERE_ABOUT,
+  },
+  {
+    id: "tilda-albi-liquid-polygel-nude-toffee-15ml",
+    name: "Liquid polygel ALBI NUDE TOFFEE — 15 ml (SKU: TOFFEE)",
+    brand: "ALBI",
+    size: "15 ml",
+    series: ALBI_LIQUID_POLYGEL_NUDE_TOFFEE_SERIES,
+    image: "https://static.tildacdn.com/stor6262-3030-4634-b630-663763383662/18276568.jpg",
+    categories: ["liquid-polygel", "new"],
+    seriesGallery: ALBI_LIQUID_POLYGEL_NUDE_TOFFEE_GALLERY,
+    seriesAbout: ALBI_LIQUID_POLYGEL_NUDE_TOFFEE_ABOUT,
+  },
+  {
+    id: "tilda-albi-liquid-polygel-nude-candy-cotton-15ml",
+    name: "Liquid polygel ALBI NUDE CANDY COTTON — 15 ml (SKU: CANDY COTTON)",
+    brand: "ALBI",
+    size: "15 ml",
+    series: ALBI_LIQUID_POLYGEL_NUDE_CANDY_COTTON_SERIES,
+    image: "https://static.tildacdn.com/stor6534-3835-4130-b061-646263643766/69191638.jpg",
+    categories: ["liquid-polygel", "new"],
+    seriesGallery: ALBI_LIQUID_POLYGEL_NUDE_CANDY_COTTON_GALLERY,
+    seriesAbout: ALBI_LIQUID_POLYGEL_NUDE_CANDY_COTTON_ABOUT,
+  },
+  {
+    id: "tilda-albi-liquid-polygel-nude-inhale-15ml",
+    name: "Liquid polygel ALBI NUDE INHALE — 15 ml (SKU: INHALE)",
+    brand: "ALBI",
+    size: "15 ml",
+    series: ALBI_LIQUID_POLYGEL_NUDE_INHALE_SERIES,
+    image: "https://static.tildacdn.com/stor3235-3936-4430-b333-323337656561/23830650.jpg",
+    categories: ["liquid-polygel", "new"],
+    seriesGallery: ALBI_LIQUID_POLYGEL_NUDE_INHALE_GALLERY,
+    seriesAbout: ALBI_LIQUID_POLYGEL_NUDE_INHALE_ABOUT,
+  },
+  {
+    id: "tilda-albi-liquid-polygel-tea-rose-15ml",
+    name: "Liquid polygel ALBI TEA ROSE — 15 ml (SKU: TEA ROSE)",
+    brand: "ALBI",
+    size: "15 ml",
+    series: ALBI_LIQUID_POLYGEL_TEA_ROSE_SERIES,
+    image: "https://static.tildacdn.com/stor6665-3039-4434-b862-386437343962/44662733.png",
+    categories: ["liquid-polygel", "new"],
+    seriesGallery: ALBI_LIQUID_POLYGEL_TEA_ROSE_GALLERY,
+    seriesAbout: ALBI_LIQUID_POLYGEL_TEA_ROSE_ABOUT,
+  },
+  ...ALBI_LIQUID_POLYGEL_SUMMER_COLLECTION_PRODUCT_SEED.map((row) => ({
+    id: `tilda-albi-liquid-polygel-summer-collection-${row.sku}-15ml`,
+    name: `${row.title} — 15 ml (SKU: ${row.sku})`,
+    brand: "ALBI",
+    size: "15 ml",
+    series: ALBI_LIQUID_POLYGEL_SUMMER_COLLECTION_SERIES,
+    image: row.image,
+    categories: ["liquid-polygel", "new"],
+    seriesGallery: [row.image, ALBI_LIQUID_POLYGEL_SUMMER_COLLECTION_SECOND],
+    seriesAbout: ALBI_LIQUID_POLYGEL_SUMMER_COLLECTION_ABOUT,
+  })),
+  ...ALBI_SCULPTURAL_GEL_NEW_PRODUCT_SEED.map((row) => ({
+    id: row.id,
+    name: row.name,
+    brand: "ALBI",
+    size: "15 ml",
+    series: ALBI_SCULPTURAL_GEL_NEW_SERIES,
+    image: row.image,
+    seriesGallery: row.gallery ?? ALBI_SCULPTURAL_GEL_NEW_GALLERY,
+    seriesAbout: ALBI_SCULPTURAL_GEL_NEW_ABOUT,
+    categories: ["building-gel", "new"],
+  })),
+  {
+    id: "tilda-albi-sculptural-gel-new-milky-rose-1plus1-30ml",
+    name: "1+1 Sculptural gel ALBI NEW MILKY ROSE — 30 ml (SKU: Milky rose)",
+    brand: "ALBI",
+    size: "30 ml",
+    series: ALBI_SCULPTURAL_GEL_NEW_SERIES,
+    image: "https://static.tildacdn.com/stor3338-3131-4335-b335-383037383766/30975319.jpg",
+    categories: ["building-gel", "new"],
+    seriesGallery: [
+      "https://static.tildacdn.com/stor3338-3131-4335-b335-383037383766/30975319.jpg",
+      "https://static.tildacdn.com/stor6138-6434-4636-a434-616232373437/70672255.jpg",
+      "https://static.tildacdn.com/tild3132-3932-4539-b866-616230316333/IMG_2628.jpg",
+      "https://static.tildacdn.com/stor3230-3431-4239-b132-636334643130/76004091.jpg",
+    ],
+    seriesAbout: ALBI_SCULPTURAL_GEL_NEW_MILKY_ROSE_1PLUS1_30ML_ABOUT,
+  },
+  ...ALBI_SCULPTURAL_GEL_SHINE_PRODUCT_SEED.map((row) => ({
+    id: row.id,
+    name: row.name,
+    brand: "ALBI",
+    size: "15 ml",
+    series: ALBI_SCULPTURAL_GEL_SHINE_SERIES,
+    image: row.image,
+    seriesGallery: row.gallery ?? [row.image],
+    seriesAbout: ALBI_SCULPTURAL_GEL_SHINE_ABOUT,
+    categories: ["building-gel", "new"],
+  })),
+  {
+    id: "tilda-albi-regenerating-hand-cream-seaweed-coconut-300ml",
+    name:
+      "Albi regenerating HAND cream with seaweed extract and coconut oil — 300 ml (SKU: 4627180898485)",
+    brand: "ALBI",
+    size: "300 ml",
+    series: ALBI_SKINCARE_SHOP_SERIES,
+    image: "https://static.tildacdn.com/stor3161-6332-4262-a337-373233363564/97771341.jpg",
+    categories: ["nail-skin-care", "new"],
+    seriesGallery: [
+      "https://static.tildacdn.com/stor3161-6332-4262-a337-373233363564/97771341.jpg",
+      "https://static.tildacdn.com/stor3731-3432-4634-b536-653630633631/42083209.jpg",
+    ],
+    seriesAbout: ALBI_SKINCARE_SHOP_ABOUT,
+  },
+  {
+    id: "tilda-albi-tired-feet-cream-menthol-camphor-300ml",
+    name: "Albi cream for tired feet with menthol and camphor — 300 ml (SKU: 4627180898454)",
+    brand: "ALBI",
+    size: "300 ml",
+    series: ALBI_SKINCARE_SHOP_SERIES,
+    image: "https://static.tildacdn.com/stor6233-6330-4138-b637-303533333332/53971918.jpg",
+    categories: ["nail-skin-care", "new"],
+    seriesGallery: [
+      "https://static.tildacdn.com/stor6233-6330-4138-b637-303533333332/53971918.jpg",
+      "https://static.tildacdn.com/stor6131-6433-4263-b733-653939303962/21903970.jpg",
+    ],
+    seriesAbout: ALBI_SKINCARE_SHOP_ABOUT,
+  },
+  {
+    id: "tilda-albi-foot-cream-softening-corns-cracks-300ml",
+    name: "Albi FOOT cream softening corns, corns and cracks — 300 ml (SKU: 4627180898461)",
+    brand: "ALBI",
+    size: "300 ml",
+    series: ALBI_SKINCARE_SHOP_SERIES,
+    image: "https://static.tildacdn.com/stor3961-3939-4336-a439-343862356365/42986164.jpg",
+    categories: ["nail-skin-care", "new"],
+    seriesGallery: [
+      "https://static.tildacdn.com/stor3961-3939-4336-a439-343862356365/42986164.jpg",
+      "https://static.tildacdn.com/stor3834-6231-4962-b461-623663336462/94607593.jpg",
+    ],
+    seriesAbout: ALBI_SKINCARE_SHOP_ABOUT,
+  },
+  {
+    id: "tilda-albi-nourishing-hand-cream-340ml",
+    name: "ALBI Nourishing HAND Cream — 340 ml (SKU: 4627180898478)",
+    brand: "ALBI",
+    size: "340 ml",
+    series: ALBI_SKINCARE_SHOP_SERIES,
+    image: "https://static.tildacdn.com/stor6561-6164-4630-b033-653634646165/10560910.jpg",
+    categories: ["nail-skin-care", "new"],
+    seriesGallery: ["https://static.tildacdn.com/stor6561-6164-4630-b033-653634646165/10560910.jpg"],
+    seriesAbout: ALBI_SKINCARE_SHOP_ABOUT,
+  },
+  {
+    id: "tilda-albi-foot-softening-cream-340ml",
+    name: "Albi FOOT Softening Cream — 340 ml (SKU: 4687203999360)",
+    brand: "ALBI",
+    size: "340 ml",
+    series: ALBI_SKINCARE_SHOP_SERIES,
+    image: "https://static.tildacdn.com/stor3462-3539-4462-b665-393865396231/74741060.png",
+    categories: ["nail-skin-care", "new"],
+    seriesGallery: ["https://static.tildacdn.com/stor3462-3539-4462-b665-393865396231/74741060.png"],
+    seriesAbout: ALBI_SKINCARE_SHOP_ABOUT,
+  },
+  {
+    id: "tilda-albi-cuticle-oil-almond",
+    name: "Cuticle oil ALBI Almond (SKU: 4627178842032)",
+    brand: "ALBI",
+    size: "1 adet",
+    series: ALBI_SKINCARE_SHOP_SERIES,
+    image: "https://static.tildacdn.com/stor3762-3838-4630-a465-393063663633/92347093.jpg",
+    categories: ["nail-skin-care", "new"],
+    seriesGallery: [
+      "https://static.tildacdn.com/stor3762-3838-4630-a465-393063663633/92347093.jpg",
+      "https://static.tildacdn.com/stor6138-6432-4564-b562-376439663533/97064375.png",
+    ],
+    seriesAbout: ALBI_SKINCARE_SHOP_ABOUT,
+  },
+  {
+    id: "tilda-albi-nail-file-moon-120-120",
+    name: "Nail file ALBI MOON — 120/120, plastic base (SKU: moon_120/120)",
+    brand: "ALBI",
+    size: "1 adet",
+    series: ALBI_NAIL_FILES_SHOP_SERIES,
+    image: "https://static.tildacdn.com/tild6164-3465-4638-b132-613439663766/3U1A9406.jpg",
+    categories: ["nail-files", "new"],
+    seriesGallery: [
+      "https://static.tildacdn.com/tild6164-3465-4638-b132-613439663766/3U1A9406.jpg",
+      "https://static.tildacdn.com/tild3932-3630-4339-a531-396338643033/Screenshot_2021-07-1.png",
+    ],
+    seriesAbout: ALBI_NAIL_FILES_SHOP_ABOUT,
+  },
+  {
+    id: "tilda-albi-nail-file-boomerang-80-80-180",
+    name: "Nail file ALBI BOOMERANG — 80/80/180, plastic base (SKU: boomerang_80/80/180)",
+    brand: "ALBI",
+    size: "1 adet",
+    series: ALBI_NAIL_FILES_SHOP_SERIES,
+    image: "https://static.tildacdn.com/tild6437-3761-4339-a434-656333386337/3U1A9417.jpg",
+    categories: ["nail-files", "new"],
+    seriesGallery: [
+      "https://static.tildacdn.com/tild6437-3761-4339-a434-656333386337/3U1A9417.jpg",
+      "https://static.tildacdn.com/tild6162-3961-4664-b039-326162346531/Screenshot_2021-07-1.png",
+    ],
+    seriesAbout: ALBI_NAIL_FILES_SHOP_ABOUT,
+  },
+  {
+    id: "tilda-albi-nail-file-straight-100-180",
+    name: "Nail file ALBI STRAIGHT — 100/180, plastic base (SKU: straight_100/180)",
+    brand: "ALBI",
+    size: "1 adet",
+    series: ALBI_NAIL_FILES_SHOP_SERIES,
+    image: "https://static.tildacdn.com/tild3637-3130-4535-a366-623561646430/Screenshot_2021-07-1.png",
+    categories: ["nail-files", "new"],
+    seriesGallery: ["https://static.tildacdn.com/tild3637-3130-4535-a366-623561646430/Screenshot_2021-07-1.png"],
+    seriesAbout: ALBI_NAIL_FILES_SHOP_ABOUT,
+  },
+  {
+    id: "tilda-albi-gel-polish-summer-143-151-bundle-15ml",
+    name:
+      "Gel polish Albi 143–151 — SUMMER COLLECTION set (SKU: summer collectiom full 143-151)",
+    brand: "ALBI",
+    size: "9 × 15 ml",
+    series: ALBI_GEL_POLISH_SUMMER_143_151_SERIES,
+    image: "https://static.tildacdn.com/stor3061-3863-4230-b835-663661653032/91904699.jpg",
+    categories: ["gel-polish", "new"],
+    seriesGallery: ALBI_GEL_POLISH_SUMMER_143_151_GALLERY,
+    seriesAbout: ALBI_GEL_POLISH_SUMMER_143_151_ABOUT,
+  },
+  {
+    id: "tilda-albi-gel-polish-summer-159-169-bundle-15ml",
+    name: "Gel polish Albi 159–169 — set (SKU: full collection 159-169)",
+    brand: "ALBI",
+    size: "10 × 15 ml",
+    series: ALBI_GEL_POLISH_SUMMER_159_169_SERIES,
+    image: "https://static.tildacdn.com/stor3938-6437-4031-a338-346336663961/64615977.jpg",
+    categories: ["gel-polish", "new"],
+    seriesGallery: ALBI_GEL_POLISH_SUMMER_159_169_GALLERY,
+    seriesAbout: ALBI_GEL_POLISH_SUMMER_159_169_ABOUT,
+  },
+  {
+    id: "starter-kit",
+    name: "Starter kit — ALBI",
+    brand: "ALBI",
+    size: "1 set",
+    series: STARTER_KIT_SERIES,
+    image: "https://static.tildacdn.com/stor3538-6662-4262-b833-663333643539/74818866.jpg",
+    categories: ["gel-polish", "new"],
+    seriesGallery: STARTER_KIT_GALLERY,
+    seriesAbout: STARTER_KIT_ABOUT,
+  },
 ];
 
 const isLegacySeedData = (products) => {
@@ -2072,19 +3881,19 @@ const isLegacySeedData = (products) => {
 const defaultBanners = [
   {
     id: "b1",
-    subtitle: "Profesyonel Jel Seti",
-    price: "220 AED",
-    title: "FRANSIZ MANİKÜRÜ",
-    description: "Tırnaklarınız için kusursuz Fransız manikürü seti",
-    buttonText: "Detayları İncele",
+    subtitle: "ALBI Profesyonel Seri",
+    price: "",
+    title: "Koleksiyonu Keşfedin",
+    description: "Profesyonel tırnak bakımında zarafet ve kalite bir arada.",
+    buttonText: "Kataloğa Git",
     buttonUrl: "./katalog.html?filter=all",
-    image: "",
+    image: "./assets/albi-hero-collection.png",
+    imageFocus: "left",
   },
 ];
 
 const loadProducts = () => {
   const REMOVED_PRODUCT_IDS = new Set([
-    "starter-kit",
     "albi-regenerating-hand-cream-seaweed-coconut",
     "albi-cream-for-tired-feet-menthol-camphor",
     "albi-foot-cream-softening-corns-cracks",
@@ -2171,6 +3980,7 @@ const loadProducts = () => {
         id.startsWith("metallic-") ||
         id.startsWith("mozaic-") ||
         id.startsWith("silkcat-") ||
+        id.startsWith("shinecat-") ||
         id.startsWith("french-")
       )
         return true;
@@ -2209,7 +4019,7 @@ const loadProducts = () => {
       let changedInner = false;
       const out = arr.map((p) => {
         const id = String(p?.id || "").toLowerCase();
-        if (!/^(hypnotic|burgundy|men|butterfly|menwomen|women|classic|cat5d|prizmatic|autumn|star|metallic|mozaic|silkcat|french)-/.test(id)) return p;
+        if (!/^(hypnotic|burgundy|men|butterfly|menwomen|women|classic|cat5d|prizmatic|autumn|star|metallic|mozaic|silkcat|shinecat|french)-/.test(id)) return p;
         let row = { ...p };
         if (String(row.brand || "").trim() !== "ALBI") {
           row.brand = "ALBI";
@@ -2228,6 +4038,296 @@ const loadProducts = () => {
     if (hypoMig.changed) {
       changed = true;
       next = hypoMig.next;
+    }
+    const cat5dCanonById = new Map(
+      defaultProducts.filter((p) => String(p?.id || "").startsWith("cat5d-")).map((p) => [p.id, p])
+    );
+    const migrateCat5dTildaSync = (arr) => {
+      let changedInner = false;
+      const out = arr.map((p) => {
+        const def = cat5dCanonById.get(p?.id);
+        if (!def) return p;
+        let row = { ...p };
+        const apply = (key, val) => {
+          if (val === undefined) return;
+          const prev = row[key];
+          const same = Array.isArray(val)
+            ? Array.isArray(prev) && JSON.stringify(prev) === JSON.stringify(val)
+            : prev === val;
+          if (same) return;
+          row[key] = Array.isArray(val) ? [...val] : val;
+          changedInner = true;
+        };
+        apply("name", def.name);
+        apply("image", def.image);
+        apply("series", def.series);
+        apply("seriesGallery", def.seriesGallery);
+        apply("seriesAbout", def.seriesAbout);
+        apply("brand", def.brand);
+        apply("size", def.size);
+        apply("categories", def.categories);
+        return row;
+      });
+      return { next: out, changed: changedInner };
+    };
+    const cat5dMig = migrateCat5dTildaSync(next);
+    if (cat5dMig.changed) {
+      changed = true;
+      next = cat5dMig.next;
+    }
+    const shinecatCanonById = new Map(
+      defaultProducts.filter((p) => String(p?.id || "").startsWith("shinecat-")).map((p) => [p.id, p])
+    );
+    const migrateShineCatTildaSync = (arr) => {
+      let changedInner = false;
+      const out = arr.map((p) => {
+        const def = shinecatCanonById.get(p?.id);
+        if (!def) return p;
+        let row = { ...p };
+        const apply = (key, val) => {
+          if (val === undefined) return;
+          const prev = row[key];
+          const same = Array.isArray(val)
+            ? Array.isArray(prev) && JSON.stringify(prev) === JSON.stringify(val)
+            : prev === val;
+          if (same) return;
+          row[key] = Array.isArray(val) ? [...val] : val;
+          changedInner = true;
+        };
+        apply("name", def.name);
+        apply("image", def.image);
+        apply("series", def.series);
+        apply("seriesGallery", def.seriesGallery);
+        apply("seriesAbout", def.seriesAbout);
+        apply("brand", def.brand);
+        apply("size", def.size);
+        apply("categories", def.categories);
+        return row;
+      });
+      return { next: out, changed: changedInner };
+    };
+    const shinecatMig = migrateShineCatTildaSync(next);
+    if (shinecatMig.changed) {
+      changed = true;
+      next = shinecatMig.next;
+    }
+    const starCanonById = new Map(
+      defaultProducts.filter((p) => String(p?.id || "").startsWith("star-")).map((p) => [p.id, p])
+    );
+    const migrateStarTildaSync = (arr) => {
+      let changedInner = false;
+      const out = arr.map((p) => {
+        const def = starCanonById.get(p?.id);
+        if (!def) return p;
+        let row = { ...p };
+        const apply = (key, val) => {
+          if (val === undefined) return;
+          const prev = row[key];
+          const same = Array.isArray(val)
+            ? Array.isArray(prev) && JSON.stringify(prev) === JSON.stringify(val)
+            : prev === val;
+          if (same) return;
+          row[key] = Array.isArray(val) ? [...val] : val;
+          changedInner = true;
+        };
+        apply("name", def.name);
+        apply("image", def.image);
+        apply("series", def.series);
+        apply("seriesGallery", def.seriesGallery);
+        apply("seriesAbout", def.seriesAbout);
+        apply("brand", def.brand);
+        apply("size", def.size);
+        apply("categories", def.categories);
+        return row;
+      });
+      return { next: out, changed: changedInner };
+    };
+    const starMig = migrateStarTildaSync(next);
+    if (starMig.changed) {
+      changed = true;
+      next = starMig.next;
+    }
+    const starterKitDef = defaultProducts.find((p) => p?.id === "starter-kit");
+    const migrateStarterKitTildaSync = (arr) => {
+      if (!starterKitDef) return { next: arr, changed: false };
+      let changedInner = false;
+      const out = arr.map((p) => {
+        if (p?.id !== "starter-kit") return p;
+        let row = { ...p };
+        const apply = (key, val) => {
+          if (val === undefined) return;
+          const prev = row[key];
+          const same = Array.isArray(val)
+            ? Array.isArray(prev) && JSON.stringify(prev) === JSON.stringify(val)
+            : prev === val;
+          if (same) return;
+          row[key] = Array.isArray(val) ? [...val] : val;
+          changedInner = true;
+        };
+        apply("name", starterKitDef.name);
+        apply("image", starterKitDef.image);
+        apply("series", starterKitDef.series);
+        apply("seriesGallery", starterKitDef.seriesGallery);
+        apply("seriesAbout", starterKitDef.seriesAbout);
+        apply("brand", starterKitDef.brand);
+        apply("size", starterKitDef.size);
+        apply("categories", starterKitDef.categories);
+        return row;
+      });
+      return { next: out, changed: changedInner };
+    };
+    const starterMig = migrateStarterKitTildaSync(next);
+    if (starterMig.changed) {
+      changed = true;
+      next = starterMig.next;
+    }
+    const albiBaseCoatShopCanonById = new Map(
+      defaultProducts.filter((p) => String(p?.id || "").startsWith("tilda-albi-bc-")).map((p) => [p.id, p])
+    );
+    const migrateAlbiBaseCoatShopTildaSync = (arr) => {
+      let changedInner = false;
+      const out = arr.map((p) => {
+        const def = albiBaseCoatShopCanonById.get(p?.id);
+        if (!def) return p;
+        let row = { ...p };
+        const apply = (key, val) => {
+          if (val === undefined) return;
+          const prev = row[key];
+          const same = Array.isArray(val)
+            ? Array.isArray(prev) && JSON.stringify(prev) === JSON.stringify(val)
+            : prev === val;
+          if (same) return;
+          row[key] = Array.isArray(val) ? [...val] : val;
+          changedInner = true;
+        };
+        apply("name", def.name);
+        apply("image", def.image);
+        apply("series", def.series);
+        apply("seriesGallery", def.seriesGallery);
+        apply("seriesAbout", def.seriesAbout);
+        apply("brand", def.brand);
+        apply("size", def.size);
+        apply("categories", def.categories);
+        return row;
+      });
+      return { next: out, changed: changedInner };
+    };
+    const albiBcMig = migrateAlbiBaseCoatShopTildaSync(next);
+    if (albiBcMig.changed) {
+      changed = true;
+      next = albiBcMig.next;
+    }
+    const albiTopCoatShopCanonById = new Map(
+      defaultProducts.filter((p) => String(p?.id || "").startsWith("tilda-albi-tc-")).map((p) => [p.id, p])
+    );
+    const migrateAlbiTopCoatShopTildaSync = (arr) => {
+      let changedInner = false;
+      const out = arr.map((p) => {
+        const def = albiTopCoatShopCanonById.get(p?.id);
+        if (!def) return p;
+        let row = { ...p };
+        const apply = (key, val) => {
+          if (val === undefined) return;
+          const prev = row[key];
+          const same = Array.isArray(val)
+            ? Array.isArray(prev) && JSON.stringify(prev) === JSON.stringify(val)
+            : prev === val;
+          if (same) return;
+          row[key] = Array.isArray(val) ? [...val] : val;
+          changedInner = true;
+        };
+        apply("name", def.name);
+        apply("image", def.image);
+        apply("series", def.series);
+        apply("seriesGallery", def.seriesGallery);
+        apply("seriesAbout", def.seriesAbout);
+        apply("brand", def.brand);
+        apply("size", def.size);
+        apply("categories", def.categories);
+        return row;
+      });
+      return { next: out, changed: changedInner };
+    };
+    const albiTcMig = migrateAlbiTopCoatShopTildaSync(next);
+    if (albiTcMig.changed) {
+      changed = true;
+      next = albiTcMig.next;
+    }
+    const albiSculpturalNewCanonById = new Map(
+      defaultProducts
+        .filter((p) => String(p?.id || "").startsWith("tilda-albi-sculptural-gel-new-"))
+        .map((p) => [p.id, p])
+    );
+    const migrateAlbiSculpturalGelNewTildaSync = (arr) => {
+      let changedInner = false;
+      const out = arr.map((p) => {
+        const def = albiSculpturalNewCanonById.get(p?.id);
+        if (!def) return p;
+        let row = { ...p };
+        const apply = (key, val) => {
+          if (val === undefined) return;
+          const prev = row[key];
+          const same = Array.isArray(val)
+            ? Array.isArray(prev) && JSON.stringify(prev) === JSON.stringify(val)
+            : prev === val;
+          if (same) return;
+          row[key] = Array.isArray(val) ? [...val] : val;
+          changedInner = true;
+        };
+        apply("name", def.name);
+        apply("image", def.image);
+        apply("series", def.series);
+        apply("seriesGallery", def.seriesGallery);
+        apply("seriesAbout", def.seriesAbout);
+        apply("brand", def.brand);
+        apply("size", def.size);
+        apply("categories", def.categories);
+        return row;
+      });
+      return { next: out, changed: changedInner };
+    };
+    const albiSgNewMig = migrateAlbiSculpturalGelNewTildaSync(next);
+    if (albiSgNewMig.changed) {
+      changed = true;
+      next = albiSgNewMig.next;
+    }
+    const albiSculpturalShineCanonById = new Map(
+      defaultProducts
+        .filter((p) => String(p?.id || "").startsWith("tilda-albi-sculptural-gel-shine-"))
+        .map((p) => [p.id, p])
+    );
+    const migrateAlbiSculpturalGelShineTildaSync = (arr) => {
+      let changedInner = false;
+      const out = arr.map((p) => {
+        const def = albiSculpturalShineCanonById.get(p?.id);
+        if (!def) return p;
+        let row = { ...p };
+        const apply = (key, val) => {
+          if (val === undefined) return;
+          const prev = row[key];
+          const same = Array.isArray(val)
+            ? Array.isArray(prev) && JSON.stringify(prev) === JSON.stringify(val)
+            : prev === val;
+          if (same) return;
+          row[key] = Array.isArray(val) ? [...val] : val;
+          changedInner = true;
+        };
+        apply("name", def.name);
+        apply("image", def.image);
+        apply("series", def.series);
+        apply("seriesGallery", def.seriesGallery);
+        apply("seriesAbout", def.seriesAbout);
+        apply("brand", def.brand);
+        apply("size", def.size);
+        apply("categories", def.categories);
+        return row;
+      });
+      return { next: out, changed: changedInner };
+    };
+    const albiSgShineMig = migrateAlbiSculpturalGelShineTildaSync(next);
+    if (albiSgShineMig.changed) {
+      changed = true;
+      next = albiSgShineMig.next;
     }
     const migrateStripKirpikMarkaliCategory = (arr) => {
       let changedInner = false;
@@ -2263,6 +4363,148 @@ const loadProducts = () => {
     if (tildaMig.changed) {
       changed = true;
       next = tildaMig.next;
+    }
+    /** Kalipso’lu eski localStorage’ta da yeni Tilda/ALBI tohumları eksik kalmasın. */
+    const CATALOG_MERGE_MISSING_IDS = new Set([
+      "tilda-albi-sculptural-gel-papaya-15ml",
+      "tilda-albi-sculptural-gel-peach-15ml",
+      "tilda-albi-sculptural-gel-banana-15ml",
+      "tilda-albi-sculptural-gel-aqua-15ml",
+      "tilda-albi-sculptural-gel-cloud-15ml",
+      "tilda-albi-sculptural-gel-orchid-15ml",
+      "tilda-albi-sculptural-gel-azure-15ml",
+      "tilda-albi-sculptural-gel-innocent-15ml",
+      "tilda-albi-sculptural-gel-champagne-15ml",
+      "tilda-albi-sculptural-gel-gentle-15ml",
+      "tilda-albi-cream-gel-beige-15ml",
+      "tilda-albi-cream-gel-rose-15ml",
+      "tilda-albi-liquid-polygel-silver-ice-15ml",
+      "tilda-albi-liquid-polygel-silver-beige-15ml",
+      "tilda-albi-liquid-polygel-silver-rose-15ml",
+      "tilda-albi-liquid-polygel-silver-milk-15ml",
+      "tilda-albi-liquid-polygel-01-15ml",
+      "tilda-albi-liquid-polygel-02-15ml",
+      "tilda-albi-liquid-polygel-03-15ml",
+      "tilda-albi-liquid-polygel-04-15ml",
+      "tilda-albi-liquid-polygel-05-15ml",
+      "tilda-albi-liquid-polygel-06-15ml",
+      "tilda-albi-liquid-polygel-07-15ml",
+      "tilda-albi-liquid-polygel-08-15ml",
+      "tilda-albi-liquid-polygel-pearly-nude-15ml",
+      "tilda-albi-liquid-polygel-pearly-natural-15ml",
+      "tilda-albi-liquid-polygel-pearly-white-15ml",
+      "tilda-albi-liquid-polygel-pearly-rose-15ml",
+      "tilda-albi-liquid-polygel-red-01-15ml",
+      "tilda-albi-liquid-polygel-red-01-building-15ml",
+      "tilda-albi-liquid-polygel-red-02-15ml",
+      "tilda-albi-liquid-polygel-red-03-15ml",
+      "tilda-albi-liquid-polygel-nude-inspire-15ml",
+      "tilda-albi-liquid-polygel-nude-almond-milk-15ml",
+      "tilda-albi-liquid-polygel-nude-blossom-15ml",
+      "tilda-albi-liquid-polygel-nude-sensitive-15ml",
+      "tilda-albi-liquid-polygel-nude-cashmere-15ml",
+      "tilda-albi-liquid-polygel-nude-toffee-15ml",
+      "tilda-albi-liquid-polygel-nude-candy-cotton-15ml",
+      "tilda-albi-liquid-polygel-nude-inhale-15ml",
+      "tilda-albi-liquid-polygel-tea-rose-15ml",
+      "tilda-albi-liquid-polygel-summer-collection-01-15ml",
+      "tilda-albi-liquid-polygel-summer-collection-02-15ml",
+      "tilda-albi-liquid-polygel-summer-collection-03-15ml",
+      "tilda-albi-liquid-polygel-summer-collection-04-15ml",
+      "tilda-albi-liquid-polygel-summer-collection-05-15ml",
+      "tilda-albi-liquid-polygel-summer-collection-06-15ml",
+      "tilda-albi-liquid-polygel-summer-collection-07-15ml",
+      "tilda-albi-liquid-polygel-summer-collection-08-15ml",
+      "tilda-albi-regenerating-hand-cream-seaweed-coconut-300ml",
+      "tilda-albi-tired-feet-cream-menthol-camphor-300ml",
+      "tilda-albi-foot-cream-softening-corns-cracks-300ml",
+      "tilda-albi-nourishing-hand-cream-340ml",
+      "tilda-albi-foot-softening-cream-340ml",
+      "tilda-albi-cuticle-oil-almond",
+      "tilda-albi-nail-file-moon-120-120",
+      "tilda-albi-nail-file-boomerang-80-80-180",
+      "tilda-albi-nail-file-straight-100-180",
+      "tilda-albi-gel-polish-summer-143-151-bundle-15ml",
+      "tilda-albi-gel-polish-summer-159-169-bundle-15ml",
+      "starter-kit",
+    ]);
+    const migrateMergeMissingCatalogIds = (arr) => {
+      const have = new Set(arr.map((p) => String(p?.id || "")));
+      const add = defaultProducts.filter(
+        (p) => p?.id && CATALOG_MERGE_MISSING_IDS.has(String(p.id)) && !have.has(String(p.id))
+      );
+      if (!add.length) return { next: arr, changed: false };
+      return { next: [...arr, ...add], changed: true };
+    };
+    const mergeMig = migrateMergeMissingCatalogIds(next);
+    if (mergeMig.changed) {
+      changed = true;
+      next = mergeMig.next;
+    }
+    const migrateAppendShineCatFromDefaults = (arr) => {
+      const have = new Set(arr.map((p) => String(p?.id || "")));
+      const add = defaultProducts.filter(
+        (p) => String(p?.id || "").startsWith("shinecat-") && !have.has(String(p.id))
+      );
+      if (!add.length) return { next: arr, changed: false };
+      return { next: [...arr, ...add], changed: true };
+    };
+    const shineAppendMig = migrateAppendShineCatFromDefaults(next);
+    if (shineAppendMig.changed) {
+      changed = true;
+      next = shineAppendMig.next;
+    }
+    const migrateAppendAlbiBaseCoatShopFromDefaults = (arr) => {
+      const have = new Set(arr.map((p) => String(p?.id || "")));
+      const add = defaultProducts.filter(
+        (p) => String(p?.id || "").startsWith("tilda-albi-bc-") && !have.has(String(p.id))
+      );
+      if (!add.length) return { next: arr, changed: false };
+      return { next: [...arr, ...add], changed: true };
+    };
+    const albiBcAppendMig = migrateAppendAlbiBaseCoatShopFromDefaults(next);
+    if (albiBcAppendMig.changed) {
+      changed = true;
+      next = albiBcAppendMig.next;
+    }
+    const migrateAppendAlbiTopCoatShopFromDefaults = (arr) => {
+      const have = new Set(arr.map((p) => String(p?.id || "")));
+      const add = defaultProducts.filter(
+        (p) => String(p?.id || "").startsWith("tilda-albi-tc-") && !have.has(String(p.id))
+      );
+      if (!add.length) return { next: arr, changed: false };
+      return { next: [...arr, ...add], changed: true };
+    };
+    const albiTcAppendMig = migrateAppendAlbiTopCoatShopFromDefaults(next);
+    if (albiTcAppendMig.changed) {
+      changed = true;
+      next = albiTcAppendMig.next;
+    }
+    const migrateAppendAlbiSculpturalGelNewFromDefaults = (arr) => {
+      const have = new Set(arr.map((p) => String(p?.id || "")));
+      const add = defaultProducts.filter(
+        (p) => String(p?.id || "").startsWith("tilda-albi-sculptural-gel-new-") && !have.has(String(p.id))
+      );
+      if (!add.length) return { next: arr, changed: false };
+      return { next: [...arr, ...add], changed: true };
+    };
+    const albiSgNewAppendMig = migrateAppendAlbiSculpturalGelNewFromDefaults(next);
+    if (albiSgNewAppendMig.changed) {
+      changed = true;
+      next = albiSgNewAppendMig.next;
+    }
+    const migrateAppendAlbiSculpturalGelShineFromDefaults = (arr) => {
+      const have = new Set(arr.map((p) => String(p?.id || "")));
+      const add = defaultProducts.filter(
+        (p) => String(p?.id || "").startsWith("tilda-albi-sculptural-gel-shine-") && !have.has(String(p.id))
+      );
+      if (!add.length) return { next: arr, changed: false };
+      return { next: [...arr, ...add], changed: true };
+    };
+    const albiSgShineAppendMig = migrateAppendAlbiSculpturalGelShineFromDefaults(next);
+    if (albiSgShineAppendMig.changed) {
+      changed = true;
+      next = albiSgShineAppendMig.next;
     }
     if (changed) localStorage.setItem(PRODUCTS_KEY, JSON.stringify(next));
     return next;
@@ -2378,8 +4620,9 @@ const renderHomeSlider = () => {
   const active = banners[currentSlideIndex % banners.length];
   const bannerImg = active.image ? tildaBannerSrc(active.image) : "";
   const safeBannerAlt = escapeHtml(active.title || "Banner");
+  const mediaExtraClass = active.imageFocus === "left" ? " slide-media--focus-left" : active.imageFocus === "right" ? " slide-media--focus-right" : "";
   const imageMarkup = bannerImg
-    ? `<div class="slide-media"><img src="${bannerImg}" alt="${safeBannerAlt}" width="1400" height="788" loading="eager" decoding="async" fetchpriority="high" /></div>`
+    ? `<div class="slide-media${mediaExtraClass}"><img src="${bannerImg}" alt="${safeBannerAlt}" width="1400" height="788" loading="eager" decoding="async" fetchpriority="high" /></div>`
     : `<div class="slide-visual" aria-hidden="true"><div class="bottle b1"></div><div class="bottle b2"></div><div class="bottle b3"></div><div class="bottle b4"></div></div>`;
 
   homeSlider.innerHTML = `

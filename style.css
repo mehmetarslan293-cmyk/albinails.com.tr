@@ -299,6 +299,14 @@ nav {
   display: block;
 }
 
+.slide-media--focus-left img {
+  object-position: left center;
+}
+
+.slide-media--focus-right img {
+  object-position: right center;
+}
+
 .slide-card::before {
   content: "";
   position: absolute;
